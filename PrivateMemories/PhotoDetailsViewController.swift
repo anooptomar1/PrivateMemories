@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Lightbox
 
 class PhotoDetailsViewController: UIViewController, UIScrollViewDelegate {
     
@@ -37,15 +38,8 @@ class PhotoDetailsViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "segueToPreviewViewController" {
-            let photoPreviewVC = segue.destination as! PhotoPreviewViewController
-            photoPreviewVC.presentedImage = self.selectedImage
-        }
-    }
-    
     @objc func handleTapGesture() {
-        performSegue(withIdentifier: "segueToPreviewViewController", sender: self)
+        presentImagePreview()
     }
     
     func provideGestureRecognizing() {
@@ -54,5 +48,15 @@ class PhotoDetailsViewController: UIViewController, UIScrollViewDelegate {
         photoImageView.isUserInteractionEnabled = true
         photoImageView.addGestureRecognizer(singleTapGesture)
     }
+    
+    func presentImagePreview() {
+        guard let imageToPreview = selectedImage else { return }
+        let image = LightboxImage(image: imageToPreview)
+        let controller = LightboxController(images: [image], startIndex: 0)
+        controller.dynamicBackground = true
+        LightboxConfig.PageIndicator.enabled = false
+        present(controller, animated: true, completion: nil)
+    }
+
 }
 

@@ -1,0 +1,24 @@
+PODS:
+  - Cache (4.0.2):
+    - SwiftHash (~> 2.0.0)
+  - Hue (3.0.0)
+  - Imaginary (3.0.0):
+    - Cache (~> 4.0)
+  - Lightbox (2.0.0):
+    - Hue (~> 3.0)
+    - Imaginary (~> 3.0)
+  - SwiftHash (2.0.0)
+
+DEPENDENCIES:
+  - Lightbox
+
+SPEC CHECKSUMS:
+  Cache: 363b6899cee63c82ccbd291e64a6c202abc17a88
+  Hue: b8fe1e43eef13631331eebecb2198b68e2622f95
+  Imaginary: 2765d293d425cbed3b07fa11642554cbaebe913d
+  Lightbox: 83ec9f4aba4c79fc7bb9bcd263386df9969f09bb
+  SwiftHash: d2e09b13495447178cdfb8e46e54a5c46f15f5a9
+
+PODFILE CHECKSUM: 10f5eb41f8e1c5076472547640b275e73c73c144
+
+COCOAPODS: 1.2.1

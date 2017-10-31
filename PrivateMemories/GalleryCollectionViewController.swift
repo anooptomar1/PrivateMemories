@@ -12,6 +12,9 @@ private let reuseIdentifier = "GalleryCollectionViewCell"
 
 class GalleryCollectionViewController: UICollectionViewController {
     
+    fileprivate var padding: CGFloat = 2.0
+    fileprivate var numberOfItemsPerRow = 3
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setTitlelessBackButton()
@@ -53,5 +56,16 @@ class GalleryCollectionViewController: UICollectionViewController {
         return cell
     }
 
+}
 
+extension GalleryCollectionViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let availableWidth = view.frame.width - 2*padding
+        let widthPerItem = availableWidth/3
+        
+        return CGSize(width: widthPerItem, height: widthPerItem)
+    }
+    
 }
