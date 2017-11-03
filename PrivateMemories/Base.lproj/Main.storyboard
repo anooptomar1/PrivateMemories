@@ -45,7 +45,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="photoImageView" destination="gt2-Z4-EBo" id="i9D-al-Fyd"/>
-                                    <segue destination="Qmv-qQ-xuV" kind="show" identifier="segueToDetailsViewController" id="dlW-nE-DHv"/>
+                                    <segue destination="Qmv-qQ-xuV" kind="show" identifier="collectionToDetailsViewController" id="dlW-nE-DHv"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -55,8 +55,15 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Gallery" id="TJI-mY-940">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="pER-lh-huM"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="pER-lh-huM">
+                            <connections>
+                                <action selector="pickPhotoButtonPressed:" destination="AJA-X6-fQA" id="hGm-Cy-hDq"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="Qmv-qQ-xuV" kind="show" identifier="imagepickerToDetailsViewController" id="sWX-wZ-oFt"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lOy-Tg-tI6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -79,7 +86,7 @@
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rw2-Gp-Szb">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="Rw2-Gp-Szb" secondAttribute="height" multiplier="1:1" id="ZGb-gm-0GS"/>
+                                                    <constraint firstAttribute="width" secondItem="Rw2-Gp-Szb" secondAttribute="height" multiplier="1:1" id="7fT-Yg-HGL"/>
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="L6A-zY-Ngd" userLabel="DetailsStack">
@@ -108,13 +115,13 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="Rw2-Gp-Szb" firstAttribute="top" secondItem="c0E-rk-J3c" secondAttribute="top" id="67d-Ho-AbO"/>
-                                            <constraint firstItem="Rw2-Gp-Szb" firstAttribute="leading" secondItem="c0E-rk-J3c" secondAttribute="leading" id="9gd-sc-0ym"/>
                                             <constraint firstItem="L6A-zY-Ngd" firstAttribute="top" secondItem="Rw2-Gp-Szb" secondAttribute="bottom" constant="10" id="Nqr-Rg-CIZ"/>
-                                            <constraint firstAttribute="trailing" secondItem="Rw2-Gp-Szb" secondAttribute="trailing" id="Qfy-3k-hOE"/>
+                                            <constraint firstItem="Rw2-Gp-Szb" firstAttribute="top" secondItem="c0E-rk-J3c" secondAttribute="top" id="Vps-Qv-qp0"/>
                                             <constraint firstAttribute="bottom" secondItem="L6A-zY-Ngd" secondAttribute="bottom" constant="10" id="Wpe-c1-B7f"/>
+                                            <constraint firstItem="Rw2-Gp-Szb" firstAttribute="leading" secondItem="c0E-rk-J3c" secondAttribute="leading" id="bvN-1D-QeP"/>
                                             <constraint firstItem="L6A-zY-Ngd" firstAttribute="leading" secondItem="c0E-rk-J3c" secondAttribute="leading" constant="10" id="c4Z-pj-xjI"/>
                                             <constraint firstAttribute="trailing" secondItem="L6A-zY-Ngd" secondAttribute="trailing" constant="10" id="pTy-Vh-rSL"/>
+                                            <constraint firstAttribute="trailing" secondItem="Rw2-Gp-Szb" secondAttribute="trailing" id="xAf-JT-q5m"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -180,4 +187,7 @@
     <resources>
         <image name="button-dots" width="23" height="5"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="sWX-wZ-oFt"/>
+    </inferredMetricsTieBreakers>
 </document>
