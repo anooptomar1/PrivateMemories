@@ -102,7 +102,7 @@
                                                         <rect key="frame" x="0.0" y="34" width="355" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
+                                                        <color key="highlightedColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMv-cx-GOD">
                                                         <rect key="frame" x="0.0" y="64.5" width="355" height="20.5"/>
@@ -124,12 +124,59 @@
                                             <constraint firstAttribute="trailing" secondItem="Rw2-Gp-Szb" secondAttribute="trailing" id="xAf-JT-q5m"/>
                                         </constraints>
                                     </view>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cAp-HQ-H6U">
+                                        <rect key="frame" x="0.0" y="480" width="375" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="BbN-ed-5bi"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Zoj-4I-LxI">
+                                            <size key="itemSize" width="50" height="40"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TagCollectionViewCell" id="4tF-2S-hI1" customClass="TagCollectionViewCell" customModule="PrivateMemories" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C4b-IF-nzG">
+                                                            <rect key="frame" x="5" y="0.0" width="40" height="40"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstItem="C4b-IF-nzG" firstAttribute="top" secondItem="4tF-2S-hI1" secondAttribute="top" id="Egt-3C-caw"/>
+                                                    <constraint firstItem="C4b-IF-nzG" firstAttribute="leading" secondItem="4tF-2S-hI1" secondAttribute="leading" constant="5" id="ZQ7-j7-ZbK"/>
+                                                    <constraint firstAttribute="bottom" secondItem="C4b-IF-nzG" secondAttribute="bottom" id="ccV-x3-PjO"/>
+                                                    <constraint firstAttribute="trailing" secondItem="C4b-IF-nzG" secondAttribute="trailing" constant="5" id="nJ3-7R-yed"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="tagLabel" destination="C4b-IF-nzG" id="Jao-rF-3xL"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="Qmv-qQ-xuV" id="g30-4X-OoB"/>
+                                            <outlet property="delegate" destination="Qmv-qQ-xuV" id="6TD-fC-fzy"/>
+                                        </connections>
+                                    </collectionView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="c0E-rk-J3c" secondAttribute="trailing" id="2HV-NL-G26"/>
+                                    <constraint firstItem="cAp-HQ-H6U" firstAttribute="leading" secondItem="CCw-6N-W9v" secondAttribute="leading" id="6DD-Ed-GxH"/>
                                     <constraint firstAttribute="bottom" secondItem="c0E-rk-J3c" secondAttribute="bottom" id="9Ny-9u-HAz"/>
+                                    <constraint firstItem="cAp-HQ-H6U" firstAttribute="top" secondItem="c0E-rk-J3c" secondAttribute="bottom" id="JIF-I4-Akg"/>
                                     <constraint firstItem="c0E-rk-J3c" firstAttribute="top" secondItem="CCw-6N-W9v" secondAttribute="top" id="TdN-1b-BlG"/>
+                                    <constraint firstAttribute="trailing" secondItem="cAp-HQ-H6U" secondAttribute="trailing" id="brh-vn-ulQ"/>
                                     <constraint firstItem="c0E-rk-J3c" firstAttribute="leading" secondItem="CCw-6N-W9v" secondAttribute="leading" id="yUt-22-mat"/>
                                 </constraints>
                                 <connections>

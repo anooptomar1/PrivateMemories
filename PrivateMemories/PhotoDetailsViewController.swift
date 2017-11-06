@@ -17,7 +17,7 @@ class PhotoDetailsViewController: UIViewController {
     @IBOutlet weak var likesLabel: UILabel!
     @IBOutlet weak var postLabel: UILabel!
     @IBOutlet weak var tagsLabel: UILabel!
-
+    var tags: [String] = ["example", "photo", "tag", "sample", "ksjskdsjkdsajdaskd", "test", "gallery"]
     
     //MARK: Properties
     
@@ -70,4 +70,39 @@ class PhotoDetailsViewController: UIViewController {
         present(controller, animated: true, completion: nil)
     }
     
+}
+
+extension PhotoDetailsViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return tags.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCollectionViewCell", for: indexPath) as! TagCollectionViewCell
+        cell.tagLabel.text = tags[indexPath.row]
+        
+        return cell
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    
+}
+
+extension PhotoDetailsViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let tagStringSize: CGSize = tags[indexPath.row].getSize(using: UIFont.systemFont(ofSize: 17.0))
+        let insetWidth: CGFloat = 10.0
+        let cellHeight: CGFloat = tagStringSize.height + 2*insetWidth
+        let calculatedWidth : CGFloat = tagStringSize.width + 2*insetWidth
+        let cellWidth: CGFloat = (calculatedWidth > 60) ? calculatedWidth : 60
+
+        return CGSize(width: cellWidth, height: cellHeight)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+    }
 }
