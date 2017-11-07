@@ -16,7 +16,6 @@ class PhotoDetailsViewController: UIViewController {
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var likesLabel: UILabel!
     @IBOutlet weak var postLabel: UILabel!
-    @IBOutlet weak var tagsLabel: UILabel!
     var tags: [String] = ["example", "photo", "tag", "sample", "ksjskdsjkdsajdaskd", "test", "gallery"]
     
     //MARK: Properties
@@ -37,9 +36,8 @@ class PhotoDetailsViewController: UIViewController {
             if let indexPath = presentedPhotoIndexPath {
                 let selectedModelObject = model.posts[indexPath.row]
                 presentedImage = UIImage(named: selectedModelObject["image"]!)
-                likesLabel.text = "♥ \(selectedModelObject["likes"]!) likes"
+                likesLabel.text = "\(selectedModelObject["likes"]!) likes"
                 postLabel.text = selectedModelObject["description"]
-                tagsLabel.text = selectedModelObject["tags"]
                 title = selectedModelObject["title"]
             }
         } else {
@@ -79,7 +77,7 @@ extension PhotoDetailsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCollectionViewCell", for: indexPath) as! TagCollectionViewCell
-        cell.tagLabel.text = tags[indexPath.row]
+        cell.tagLabel.text = "#\(tags[indexPath.row])"
         
         return cell
     }
@@ -93,9 +91,9 @@ extension PhotoDetailsViewController: UICollectionViewDataSource {
 
 extension PhotoDetailsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let tagStringSize: CGSize = tags[indexPath.row].getSize(using: UIFont.systemFont(ofSize: 17.0))
+        let tagStringSize: CGSize = String("#\(tags[indexPath.row])").getSize(using: UIFont.systemFont(ofSize: 15.0))
         let insetWidth: CGFloat = 10.0
-        let cellHeight: CGFloat = tagStringSize.height + 2*insetWidth
+        let cellHeight: CGFloat = tagStringSize.height + insetWidth
         let calculatedWidth : CGFloat = tagStringSize.width + 2*insetWidth
         let cellWidth: CGFloat = (calculatedWidth > 60) ? calculatedWidth : 60
 
@@ -104,5 +102,9 @@ extension PhotoDetailsViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+            return 5.0
     }
 }

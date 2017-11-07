@@ -41,8 +41,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func configureLayoutAppearance() {
         UIApplication.shared.statusBarStyle = .lightContent
-        UINavigationBar.appearance().backIndicatorImage = UIImage(named: "button-back")
-        UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: "button-back")
+        //UINavigationBar.appearance().backIndicatorImage = UIImage(named: "button-back")
+        //UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: "button-back")
     }
 
     // MARK: - Core Data stack

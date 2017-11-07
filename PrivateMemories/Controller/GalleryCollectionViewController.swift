@@ -14,10 +14,10 @@ private let reuseIdentifier = "GalleryCollectionViewCell"
 class GalleryCollectionViewController: UICollectionViewController {
     
     fileprivate var padding: CGFloat = 2.0
-    fileprivate var numberOfItemsPerRow = 3
     
     var pickedImageToPass: UIImage?
     var pickedMetadataToPass: (location: String, date: String) = ("","")
+    var collectionViewLayoutCounter: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,7 +77,6 @@ class GalleryCollectionViewController: UICollectionViewController {
 extension GalleryCollectionViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
         let availableWidth = view.frame.width - 2*padding
         let widthPerItem = availableWidth/3
         
