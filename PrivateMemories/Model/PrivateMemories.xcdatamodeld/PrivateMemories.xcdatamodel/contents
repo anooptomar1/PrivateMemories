@@ -14,7 +14,7 @@
         <relationship name="gallery" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Gallery" inverseName="photos" inverseEntity="Gallery" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Photo" positionX="-63" positionY="-18" width="128" height="148"/>
         <element name="Gallery" positionX="99" positionY="-18" width="128" height="73"/>
+        <element name="Photo" positionX="-63" positionY="-18" width="128" height="150"/>
     </elements>
 </model>
