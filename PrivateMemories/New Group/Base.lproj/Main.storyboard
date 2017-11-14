@@ -337,6 +337,9 @@
                     <navigationItem key="navigationItem" title="Photo" id="JaW-z1-atN">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="button-dots" id="Y3f-uY-GtY">
                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="saveImagePressed:" destination="Qmv-qQ-xuV" id="oxS-ty-eZn"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>

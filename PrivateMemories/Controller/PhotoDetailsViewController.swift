@@ -8,6 +8,7 @@
 
 import UIKit
 import Lightbox
+import CoreData
 
 class PhotoDetailsViewController: UIViewController {
     
@@ -68,6 +69,9 @@ class PhotoDetailsViewController: UIViewController {
         present(controller, animated: true, completion: nil)
     }
     
+    @IBAction func saveImagePressed(_ sender: Any) {
+        saveImage()
+    }
 }
 
 extension PhotoDetailsViewController: UICollectionViewDataSource {
@@ -107,4 +111,38 @@ extension PhotoDetailsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
             return 5.0
     }
+}
+
+extension PhotoDetailsViewController {
+    
+    func saveImage() {
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let context = appDelegate.persistentContainer.viewContext
+        if let photosInsertingManager = NSEntityDescription.insertNewObject(forEntityName: "Photo", into: context) as? Photo {
+            // let thumbnailInseringManager = NSEntityDescription.insertNewObject(forEntityName: "Thumbnail", into: context) a
+            /*
+             // Zmienić na:
+             let entity =
+             NSEntityDescription.entity(forEntityName: "Person",
+             in: managedContext)!
+             
+             let person = NSManagedObject(entity: entity,
+             insertInto: managedContext)
+             
+             person.setValue(name, forKeyPath: "name")
+            */
+            // let date : Double = NSDate().timeIntervalSince1970 - dobre dla ID
+            let photoData = UIImageJPEGRepresentation(presentedImage!, 1.0)
+            photosInsertingManager.fullsizePhoto = photoData
+            photosInsertingManager.location = photoMetadata.location
+            photosInsertingManager.dateStamp = Date()
+            photosInsertingManager.thumbnail = UIImageJPEGRepresentation(presentedImage!, 0.7)
+        }
+        
+        appDelegate.saveContext()
+        
+        context.refreshAllObjects() // clear context
+    }
+    
 }

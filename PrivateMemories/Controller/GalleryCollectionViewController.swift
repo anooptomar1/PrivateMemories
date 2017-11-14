@@ -8,6 +8,7 @@
 
 import UIKit
 import Photos
+import CoreData
 
 private let reuseIdentifier = "GalleryCollectionViewCell"
 
@@ -20,8 +21,11 @@ class GalleryCollectionViewController: UIViewController, UICollectionViewDelegat
     var pickedMetadataToPass: (location: String, date: String) = ("","")
     var collectionViewLayoutCounter: Int = 0
     
+    var images: [Photo] = [Photo]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadImages()
         setTitlelessBackButton()
     }
     
@@ -60,14 +64,16 @@ class GalleryCollectionViewController: UIViewController, UICollectionViewDelegat
 
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return model.posts.count
+        //return model.posts.count
+        return images.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! GalleryCollectionViewCell
         
-        if let imageName = model.posts[indexPath.row]["image"] {
-            cell.photoImageView.image = UIImage(named: imageName)
+        //if let imageName = model.posts[indexPath.row]["image"] {
+        if let imageData = images[indexPath.row].fullsizePhoto {
+            cell.photoImageView.image = UIImage(data: imageData)
         }
         
         return cell
@@ -140,4 +146,18 @@ extension GalleryCollectionViewController: UIImagePickerControllerDelegate, UINa
         dismiss(animated: true, completion: nil)
     }
     
+}
+
+extension GalleryCollectionViewController {
+    func loadImages() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<Photo> = Photo.fetchRequest()
+        fetchRequest.propertiesToFetch = ["fullsizePhoto"]
+        do {
+            try images = context.fetch(fetchRequest)
+        } catch {
+            print("Error occured while fetching")
+        }
+    }
 }
