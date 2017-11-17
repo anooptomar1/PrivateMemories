@@ -22,7 +22,7 @@ class PhotoDetailsViewController: UIViewController {
     
     var isGettingDataFromPicker: Bool = false
     var photoFromPicker: PickedImage?
-    var photoFromModel: Photo?
+    var photoFromModel: Photo? // czy może id thumbnaila?
     var photoViewModel: PhotoViewModel?
     
     override func viewDidLoad() {
@@ -45,7 +45,7 @@ class PhotoDetailsViewController: UIViewController {
         if fromPicker {
             photoViewModel = PhotoViewModel(from: photoFromPicker!)
         } else {
-            photoViewModel = PhotoViewModel(from: photoFromModel!)
+            //TODO: photoViewModel = PhotoViewModel(from: photoFromModel!)
         }
     }
 

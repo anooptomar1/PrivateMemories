@@ -5,6 +5,7 @@
 //  Created by Krzysztof Babis on 17.11.2017.
 //  Copyright © 2017 Krzysztof Babis. All rights reserved.
 //
+import UIKit
 
 extension PhotoDetailsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

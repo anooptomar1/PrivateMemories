@@ -5,6 +5,7 @@
 //  Created by Krzysztof Babis on 17.11.2017.
 //  Copyright © 2017 Krzysztof Babis. All rights reserved.
 //
+import UIKit
 
 extension PhotoDetailsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0B6BCF7E0C53973377205383 /* Pods_PrivateMemories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDC8BB9C836EFA79E5BDE57 /* Pods_PrivateMemories.framework */; };
+		E226035A1FBEFD7D0055568F /* GalleryCollectionViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22603591FBEFD7D0055568F /* GalleryCollectionViewController+CollectionView.swift */; };
+		E226035C1FBEFE0F0055568F /* GalleryCollectionViewController+ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E226035B1FBEFE0F0055568F /* GalleryCollectionViewController+ImagePicker.swift */; };
 		E228BB6A1FB12805006CB9CE /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E228BB691FB12805006CB9CE /* ColorExtension.swift */; };
 		E228CC961FB2891200453952 /* AspectFitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E228CC951FB2891200453952 /* AspectFitButton.swift */; };
 		E2310DCF1FBE749400A7B3B2 /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2310DCE1FBE749400A7B3B2 /* PhotoViewModel.swift */; };
@@ -29,6 +31,8 @@
 /* Begin PBXFileReference section */
 		162604763F4B554FA347A637 /* Pods-PrivateMemories.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrivateMemories.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrivateMemories/Pods-PrivateMemories.debug.xcconfig"; sourceTree = "<group>"; };
 		1BF1283AFD6C408288903DDF /* Pods-PrivateMemories.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrivateMemories.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrivateMemories/Pods-PrivateMemories.release.xcconfig"; sourceTree = "<group>"; };
+		E22603591FBEFD7D0055568F /* GalleryCollectionViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalleryCollectionViewController+CollectionView.swift"; sourceTree = "<group>"; };
+		E226035B1FBEFE0F0055568F /* GalleryCollectionViewController+ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalleryCollectionViewController+ImagePicker.swift"; sourceTree = "<group>"; };
 		E228BB691FB12805006CB9CE /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		E228CC951FB2891200453952 /* AspectFitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectFitButton.swift; sourceTree = "<group>"; };
 		E228CC991FB29BE900453952 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -122,6 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				E2DA41FA1FA77D9D00DED69C /* GalleryCollectionViewController.swift */,
+				E22603591FBEFD7D0055568F /* GalleryCollectionViewController+CollectionView.swift */,
+				E226035B1FBEFE0F0055568F /* GalleryCollectionViewController+ImagePicker.swift */,
 				E2310DD11FBE77C700A7B3B2 /* PickedImage.swift */,
 			);
 			path = Gallery;
@@ -311,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2310DD21FBE77C700A7B3B2 /* PickedImage.swift in Sources */,
+				E226035A1FBEFD7D0055568F /* GalleryCollectionViewController+CollectionView.swift in Sources */,
 				E28396281FB0A9BF00AE0E0E /* TagCollectionViewCell.swift in Sources */,
 				E2DA41FD1FA77DAC00DED69C /* GalleryCollectionViewCell.swift in Sources */,
 				E2310DD61FBE863900A7B3B2 /* PhotoDetailsViewController+CollectionViewDelegateFlowLayout.swift in Sources */,
@@ -318,6 +325,7 @@
 				E2310DD41FBE862100A7B3B2 /* PhotoDetailsViewController+CollectionViewDataSource.swift in Sources */,
 				E2DA42011FA7BEC300DED69C /* PhotoDetailsViewController.swift in Sources */,
 				E283962A1FB0AECC00AE0E0E /* StringExtension.swift in Sources */,
+				E226035C1FBEFE0F0055568F /* GalleryCollectionViewController+ImagePicker.swift in Sources */,
 				E2DA41E61FA77BF800DED69C /* AppDelegate.swift in Sources */,
 				E2DA41EE1FA77BF800DED69C /* PrivateMemories.xcdatamodeld in Sources */,
 				E2DA41FB1FA77D9D00DED69C /* GalleryCollectionViewController.swift in Sources */,

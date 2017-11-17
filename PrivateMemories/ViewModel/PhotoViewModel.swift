@@ -23,6 +23,7 @@ class PhotoViewModel: NSObject {
     // - MARK: Initializers
     
     init(from photo: Photo) {
+        super.init()
         isFavorite = photo.isFavorite
         if let _date = photo.dateStamp { dateStamp = getString(from: _date) }
         if let _location = photo.location { location = _location }
@@ -31,6 +32,7 @@ class PhotoViewModel: NSObject {
     }
     
     init(from pickedImage: PickedImage) {
+        super.init()
         dateStamp = getString(from: pickedImage.date)
         location = getString(from: pickedImage.location)
         fullsizePhoto = pickedImage.image
@@ -41,7 +43,7 @@ class PhotoViewModel: NSObject {
     fileprivate func getDate(from string: String) -> Date {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM dd, yyyy"
-        return dateFormatter.date(from: string)
+        return dateFormatter.date(from: string)!
     }
     
     fileprivate func getString(from date: Date) -> String {
