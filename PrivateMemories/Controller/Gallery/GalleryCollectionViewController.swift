@@ -17,6 +17,7 @@ class GalleryCollectionViewController: UIViewController, NSFetchedResultsControl
     internal let reuseIdentifier = "GalleryCollectionViewCell"
     internal let pickerToDetailsSegueIdentifier = "imagepickerToDetailsViewController"
     internal let modelToDetailsSegueIdentifier = "collectionToDetailsViewController"
+    let notificationName = "reloadGallery"
     
     var pickedImageToPass: PickedImage?
     var images: [Photo] = [Photo]()
@@ -24,12 +25,12 @@ class GalleryCollectionViewController: UIViewController, NSFetchedResultsControl
     // - MARK: NSFetchedResultsController delegate
     // TODO: Przenieść do ViewModel
     
-    internal lazy var fetchedResultsController: NSFetchedResultsController<Photo> = {
+    internal lazy var fetchedResultsController: NSFetchedResultsController<Thumbnail> = {
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         let context = appDelegate?.persistentContainer.viewContext
-        let fetchRequest: NSFetchRequest<Photo> = Photo.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateStamp", ascending: true)]
-        fetchRequest.propertiesToFetch = ["fullsizePhoto"]
+        let fetchRequest: NSFetchRequest<Thumbnail> = Thumbnail.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "id", ascending: true)]
+        fetchRequest.propertiesToFetch = ["thumbnailImage"]
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context!, sectionNameKeyPath: nil, cacheName: nil)
         fetchedResultsController.delegate = self
         return fetchedResultsController
@@ -47,7 +48,21 @@ class GalleryCollectionViewController: UIViewController, NSFetchedResultsControl
     override func viewDidLoad() {
         super.viewDidLoad()
         loadPhotos()
+        addReloadingObserver()
         setTitlelessBackButton()
+    }
+    
+    func addReloadingObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadGallery), name: NSNotification.Name(rawValue: self.notificationName), object: nil)
+    }
+    
+    @objc func reloadGallery() {
+        print("NOTIFICATION RECEIVED")
+        self.loadPhotos()
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+        
     }
     
     func setTitlelessBackButton() {
@@ -73,4 +88,4 @@ class GalleryCollectionViewController: UIViewController, NSFetchedResultsControl
     }
     
 }
-
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      

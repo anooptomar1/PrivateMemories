@@ -19,6 +19,7 @@ class PhotoViewModel: NSObject {
     var location: String = ""
     var tags: String = ""
     var fullsizePhoto: UIImage = UIImage()
+    var thumbnailId: Double = NSDate().timeIntervalSince1970
     
     // - MARK: Initializers
     
@@ -29,6 +30,7 @@ class PhotoViewModel: NSObject {
         if let _location = photo.location { location = _location }
         if let _tags = photo.tags { tags = _tags }
         if let _photoData = photo.fullsizePhoto { fullsizePhoto = getImage(from: _photoData) }
+        if let _thumbnailId = photo.thumbnail?.id { thumbnailId = _thumbnailId }
     }
     
     init(from pickedImage: PickedImage) {
@@ -75,24 +77,31 @@ class PhotoViewModel: NSObject {
         return image
     }
     
+    fileprivate func getThumbnailData(from photo: UIImage) -> Data {
+        let newSize: CGSize = CGSize(width: 300.0, height: 300.0)
+        let thumbnail: UIImage = photo.scale(to: newSize)
+        let thumbnailData: Data = UIImageJPEGRepresentation(thumbnail, 0.7)!
+        
+        return thumbnailData
+    }
+    
     // - MARK: CoreData methods
     
     func saveImage() {
-        
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let context = appDelegate.persistentContainer.viewContext
-        if let photoToSave = NSEntityDescription.insertNewObject(forEntityName: "Photo", into: context) as? Photo {
-            
-            photoToSave.fullsizePhoto = UIImageJPEGRepresentation(self.fullsizePhoto, 1.0)
-            photoToSave.location = self.location
-            photoToSave.dateStamp = getDate(from: self.dateStamp)
-            photoToSave.thumbnail = UIImageJPEGRepresentation(self.fullsizePhoto, 0.7)
-            // let date : Double = NSDate().timeIntervalSince1970 - dobre dla ID
-        }
+        guard let photoToSave = NSEntityDescription.insertNewObject(forEntityName: "Photo", into: context) as? Photo, let thumbnailToSave = NSEntityDescription.insertNewObject(forEntityName: "Thumbnail", into: context) as? Thumbnail else { return }
+        
+        photoToSave.fullsizePhoto = UIImageJPEGRepresentation(self.fullsizePhoto, 1.0)
+        photoToSave.location = self.location
+        photoToSave.dateStamp = getDate(from: self.dateStamp)
+        
+        thumbnailToSave.thumbnailImage = getThumbnailData(from: self.fullsizePhoto)
+        thumbnailToSave.id = self.thumbnailId
+        thumbnailToSave.fullsizePhoto = photoToSave
         
         appDelegate.saveContext()
-        
-        context.refreshAllObjects() // clear context
+        context.refreshAllObjects()
     }
     
 }

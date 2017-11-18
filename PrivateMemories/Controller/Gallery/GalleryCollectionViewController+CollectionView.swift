@@ -14,18 +14,17 @@ extension GalleryCollectionViewController: UICollectionViewDataSource {
         return 1
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let photos = fetchedResultsController.fetchedObjects else { return 0 }
-        return photos.count
+        guard let thumbnails = fetchedResultsController.fetchedObjects else { return 0 }
+        return thumbnails.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! GalleryCollectionViewCell
-        let photoObject = fetchedResultsController.object(at: indexPath)
+        let thumbnailObject = fetchedResultsController.object(at: indexPath)
         
-        if let imageData = photoObject.fullsizePhoto {
-            cell.photoImageView.image = UIImage(data: imageData)
+        if let thumbnailData = thumbnailObject.thumbnailImage {
+            cell.photoImageView.image = UIImage(data: thumbnailData)
         }
         
         return cell

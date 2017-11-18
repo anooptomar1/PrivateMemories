@@ -17,6 +17,7 @@ class PhotoDetailsViewController: UIViewController {
     @IBOutlet weak var likesLabel: UILabel!
     @IBOutlet weak var postLabel: UILabel!
     var tags: [String] = ["example", "photo", "tag", "sample", "ksjskdsjkdsajdaskd", "test", "gallery"]
+    let notificationName = "reloadGallery"
     
     //MARK: Properties
     
@@ -48,12 +49,18 @@ class PhotoDetailsViewController: UIViewController {
             //TODO: photoViewModel = PhotoViewModel(from: photoFromModel!)
         }
     }
+    
+    func notifyAboutReloadingGallery() {
+        print("NOTIFICATION SENT")
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: notificationName), object: nil)
+    }
 
 
 @IBAction func saveImagePressed(_ sender: Any) {
     if let viewModel = photoViewModel {
         viewModel.saveImage()
     }
+    notifyAboutReloadingGallery()
 }
 
 // - MARK: Image preview
