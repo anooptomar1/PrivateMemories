@@ -12,8 +12,11 @@ import CoreData
 
 class PhotoViewModel: NSObject {
     
-    // - MARK: Properties
+    //TODO : Dodać DataManager
+    let notificationName = "reloadGallery"
     
+    // - MARK: Properties
+    var thumbnail: Thumbnail?
     var isFavorite: Bool = false
     var dateStamp: String = ""
     var location: String = ""
@@ -23,14 +26,16 @@ class PhotoViewModel: NSObject {
     
     // - MARK: Initializers
     
-    init(from photo: Photo) {
+    init(from thumbnailId: Double) {
         super.init()
-        isFavorite = photo.isFavorite
-        if let _date = photo.dateStamp { dateStamp = getString(from: _date) }
-        if let _location = photo.location { location = _location }
-        if let _tags = photo.tags { tags = _tags }
-        if let _photoData = photo.fullsizePhoto { fullsizePhoto = getImage(from: _photoData) }
-        if let _thumbnailId = photo.thumbnail?.id { thumbnailId = _thumbnailId }
+        self.thumbnail = fetchThumbnail(id: thumbnailId)
+        if let photo = self.thumbnail?.fullsizePhoto {
+            self.isFavorite = photo.isFavorite
+            if let _date = photo.dateStamp { self.dateStamp = getString(from: _date) }
+            if let _location = photo.location { self.location = _location }
+            if let _tags = photo.tags { self.tags = _tags }
+            if let _photoData = photo.fullsizePhoto { self.fullsizePhoto = getImage(from: _photoData) }
+        }
     }
     
     init(from pickedImage: PickedImage) {
@@ -62,7 +67,9 @@ class PhotoViewModel: NSObject {
             geocoder.reverseGeocodeLocation(location) { (placemarks, error) -> Void in
                 if let placemarksArray = placemarks {
                     let firstPlacemark = placemarksArray[0]
-                    locationString = "\(String(describing: firstPlacemark.locality!)), \(String(describing: (firstPlacemark.country!)))"
+                        if let locality = firstPlacemark.locality, let country = firstPlacemark.country {
+                            locationString = "\(String(describing: locality)), \(String(describing: country))"
+                        }
                 }
             }
         }
@@ -85,23 +92,65 @@ class PhotoViewModel: NSObject {
         return thumbnailData
     }
     
+    func notifyAboutReloadingGallery() {
+        print("NOTIFICATION SENT")
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: notificationName), object: nil)
+    }
+    
     // - MARK: CoreData methods
     
-    func saveImage() {
+    func fetchThumbnail(id: Double) -> Thumbnail {
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        let context = appDelegate?.persistentContainer.viewContext
+        
+        var fetchedThumbnail: Thumbnail?
+        let fetchRequest: NSFetchRequest<Thumbnail> = Thumbnail.fetchRequest()
+        let predicate = NSPredicate(format: "id == %lf", id)
+        fetchRequest.predicate = predicate
+        print("FETCHED ITEM ID: \(id)")
+        
+        do {
+            let fetched = try context?.fetch(fetchRequest)
+            fetchedThumbnail = fetched?.first
+            for fetch in fetched! {
+                print(fetch.id)
+            }
+            
+        } catch {
+            let fetchError = error as NSError
+            print("Unable to perform fetch request: \(fetchError), \(fetchError.localizedDescription)")
+        }
+        
+        return fetchedThumbnail!
+    }
+    
+    func saveImage(isInEditingMode: Bool) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let context = appDelegate.persistentContainer.viewContext
-        guard let photoToSave = NSEntityDescription.insertNewObject(forEntityName: "Photo", into: context) as? Photo, let thumbnailToSave = NSEntityDescription.insertNewObject(forEntityName: "Thumbnail", into: context) as? Thumbnail else { return }
         
-        photoToSave.fullsizePhoto = UIImageJPEGRepresentation(self.fullsizePhoto, 1.0)
-        photoToSave.location = self.location
-        photoToSave.dateStamp = getDate(from: self.dateStamp)
+        let photoToSave: Photo?
+        let thumbnailToSave: Thumbnail?
         
-        thumbnailToSave.thumbnailImage = getThumbnailData(from: self.fullsizePhoto)
-        thumbnailToSave.id = self.thumbnailId
-        thumbnailToSave.fullsizePhoto = photoToSave
+        if isInEditingMode {
+            thumbnailToSave = self.thumbnail
+            photoToSave = self.thumbnail?.fullsizePhoto
+        } else {
+            photoToSave = NSEntityDescription.insertNewObject(forEntityName: "Photo", into: context) as? Photo
+            thumbnailToSave = NSEntityDescription.insertNewObject(forEntityName: "Thumbnail", into: context) as? Thumbnail
+        }
+        
+        photoToSave!.fullsizePhoto = UIImageJPEGRepresentation(self.fullsizePhoto, 1.0)
+        photoToSave!.location = self.location
+        photoToSave!.dateStamp = getDate(from: self.dateStamp)
+        
+        thumbnailToSave!.thumbnailImage = getThumbnailData(from: self.fullsizePhoto)
+        thumbnailToSave!.id = self.thumbnailId
+        thumbnailToSave!.fullsizePhoto = photoToSave
         
         appDelegate.saveContext()
         context.refreshAllObjects()
+        
+        notifyAboutReloadingGallery()
     }
     
 }

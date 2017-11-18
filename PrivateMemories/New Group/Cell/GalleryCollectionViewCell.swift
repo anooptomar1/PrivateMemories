@@ -10,4 +10,5 @@ import UIKit
 
 class GalleryCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var photoImageView: UIImageView!
+    var thumbnailId: Double?
 }

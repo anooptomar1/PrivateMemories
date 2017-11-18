@@ -117,7 +117,12 @@
                         <viewLayoutGuide key="safeArea" id="iWR-IT-WQ9"/>
                     </view>
                     <navigationItem key="navigationItem" title="Gallery" id="VfS-RS-Iqd">
-                        <barButtonItem key="leftBarButtonItem" image="search_small" id="4NL-aB-e4u"/>
+                        <barButtonItem key="leftBarButtonItem" title="Delete all" id="vmK-zZ-QkH">
+                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="deleteAllButtonPressed:" destination="bhP-pl-ja2" id="hXe-2D-up7"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem id="qZO-8c-ZX8"/>
                             <barButtonItem systemItem="add" id="mqX-zg-BMa">
@@ -384,7 +389,6 @@
         <image name="hea" width="256" height="256"/>
         <image name="mono_calendar" width="256" height="256"/>
         <image name="mono_navigation_mark" width="256" height="256"/>
-        <image name="search_small" width="32" height="32"/>
         <image name="settings" width="256" height="256"/>
         <image name="sha" width="256" height="256"/>
     </resources>

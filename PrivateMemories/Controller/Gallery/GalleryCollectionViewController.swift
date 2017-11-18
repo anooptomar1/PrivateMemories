@@ -77,10 +77,24 @@ class GalleryCollectionViewController: UIViewController, NSFetchedResultsControl
         
         if identifier == modelToDetailsSegueIdentifier {
             photoDetailsViewController.isGettingDataFromPicker = false
+            let selectedCell = sender as! GalleryCollectionViewCell
+            photoDetailsViewController.thumbnailId = selectedCell.thumbnailId
         } else if identifier == pickerToDetailsSegueIdentifier {
             photoDetailsViewController.isGettingDataFromPicker = true
             photoDetailsViewController.photoFromPicker = pickedImageToPass
         }
+    }
+    
+    
+    @IBAction func deleteAllButtonPressed(_ sender: Any) {
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = Thumbnail.fetchRequest()
+        let deleteRequest: NSBatchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        do {
+            try self.fetchedResultsController.managedObjectContext.execute(deleteRequest)
+        } catch {
+            print("Error occured while deleting")
+        }
+        reloadGallery()
     }
     
     @IBAction func pickPhotoButtonPressed(_ sender: Any) {

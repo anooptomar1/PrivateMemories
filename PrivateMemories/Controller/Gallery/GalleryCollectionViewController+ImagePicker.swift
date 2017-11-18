@@ -16,8 +16,13 @@ extension GalleryCollectionViewController: UIImagePickerControllerDelegate, UINa
         let assetsCollection = PHAsset.fetchAssets(withALAssetURLs: [url], options: nil)
         
         let image  = info[UIImagePickerControllerOriginalImage] as! UIImage
-        let location = (assetsCollection.firstObject?.location)
-        let date = (assetsCollection.firstObject?.creationDate)
+        var location = (assetsCollection.firstObject?.location)
+        var date = (assetsCollection.firstObject?.creationDate)
+        
+        //TODO: Poprawić
+        if location == nil { location = CLLocation() }
+        if date == nil { date = Date() }
+        
         pickedImageToPass = PickedImage(image: image, location: location!, date: date!)
         
         performSegue(withIdentifier: pickerToDetailsSegueIdentifier, sender: self)

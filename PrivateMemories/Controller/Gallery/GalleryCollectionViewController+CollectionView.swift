@@ -26,6 +26,8 @@ extension GalleryCollectionViewController: UICollectionViewDataSource {
         if let thumbnailData = thumbnailObject.thumbnailImage {
             cell.photoImageView.image = UIImage(data: thumbnailData)
         }
+
+        cell.thumbnailId = thumbnailObject.id
         
         return cell
     }

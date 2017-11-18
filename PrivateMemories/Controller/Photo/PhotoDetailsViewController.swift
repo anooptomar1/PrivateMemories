@@ -17,13 +17,12 @@ class PhotoDetailsViewController: UIViewController {
     @IBOutlet weak var likesLabel: UILabel!
     @IBOutlet weak var postLabel: UILabel!
     var tags: [String] = ["example", "photo", "tag", "sample", "ksjskdsjkdsajdaskd", "test", "gallery"]
-    let notificationName = "reloadGallery"
     
     //MARK: Properties
     
     var isGettingDataFromPicker: Bool = false
     var photoFromPicker: PickedImage?
-    var photoFromModel: Photo? // czy może id thumbnaila?
+    var thumbnailId: Double? // czy może id thumbnaila?
     var photoViewModel: PhotoViewModel?
     
     override func viewDidLoad() {
@@ -46,21 +45,15 @@ class PhotoDetailsViewController: UIViewController {
         if fromPicker {
             photoViewModel = PhotoViewModel(from: photoFromPicker!)
         } else {
-            //TODO: photoViewModel = PhotoViewModel(from: photoFromModel!)
+            photoViewModel = PhotoViewModel(from: thumbnailId!)
         }
-    }
-    
-    func notifyAboutReloadingGallery() {
-        print("NOTIFICATION SENT")
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: notificationName), object: nil)
     }
 
 
 @IBAction func saveImagePressed(_ sender: Any) {
     if let viewModel = photoViewModel {
-        viewModel.saveImage()
+        viewModel.saveImage(isInEditingMode: !isGettingDataFromPicker)
     }
-    notifyAboutReloadingGallery()
 }
 
 // - MARK: Image preview
