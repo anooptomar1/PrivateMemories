@@ -7,9 +7,10 @@
 //
 
 import UIKit
-import CoreData
 
-class GalleryCollectionViewController: UIViewController, NSFetchedResultsControllerDelegate {
+class GalleryCollectionViewController: UIViewController {
+    
+    internal let galleryViewModel = GalleryViewModel()
     
     @IBOutlet weak var collectionView: UICollectionView!
     internal var padding: CGFloat = 2.0
@@ -21,29 +22,6 @@ class GalleryCollectionViewController: UIViewController, NSFetchedResultsControl
     
     var pickedImageToPass: PickedImage?
     var images: [Photo] = [Photo]()
-    
-    // - MARK: NSFetchedResultsController delegate
-    // TODO: Przenieść do ViewModel
-    
-    internal lazy var fetchedResultsController: NSFetchedResultsController<Thumbnail> = {
-        let appDelegate = UIApplication.shared.delegate as? AppDelegate
-        let context = appDelegate?.persistentContainer.viewContext
-        let fetchRequest: NSFetchRequest<Thumbnail> = Thumbnail.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "id", ascending: true)]
-        fetchRequest.propertiesToFetch = ["thumbnailImage"]
-        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context!, sectionNameKeyPath: nil, cacheName: nil)
-        fetchedResultsController.delegate = self
-        return fetchedResultsController
-    }()
-    
-    func loadPhotos() {
-        do {
-            try self.fetchedResultsController.performFetch()
-        } catch {
-            let fetchError = error as NSError
-            print("Unable to perform fetch request: \(fetchError), \(fetchError.localizedDescription)")
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,12 +35,14 @@ class GalleryCollectionViewController: UIViewController, NSFetchedResultsControl
     }
     
     @objc func reloadGallery() {
-        print("NOTIFICATION RECEIVED")
         self.loadPhotos()
         DispatchQueue.main.async {
             self.collectionView.reloadData()
         }
-        
+    }
+    
+    func loadPhotos() {
+        self.galleryViewModel.fetchData()
     }
     
     func setTitlelessBackButton() {
@@ -87,13 +67,7 @@ class GalleryCollectionViewController: UIViewController, NSFetchedResultsControl
     
     
     @IBAction func deleteAllButtonPressed(_ sender: Any) {
-        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = Thumbnail.fetchRequest()
-        let deleteRequest: NSBatchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-        do {
-            try self.fetchedResultsController.managedObjectContext.execute(deleteRequest)
-        } catch {
-            print("Error occured while deleting")
-        }
+        self.galleryViewModel.deleteAllRecords()
         reloadGallery()
     }
     

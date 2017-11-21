@@ -93,7 +93,6 @@ class PhotoViewModel: NSObject {
     }
     
     func notifyAboutReloadingGallery() {
-        print("NOTIFICATION SENT")
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: notificationName), object: nil)
     }
     
