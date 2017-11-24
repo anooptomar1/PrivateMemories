@@ -48,17 +48,25 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rQX-cT-msB">
                                                     <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                                 </imageView>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sft-RT-uyo">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="rQX-cT-msB" secondAttribute="trailing" id="0FG-aF-n1x"/>
+                                            <constraint firstItem="sft-RT-uyo" firstAttribute="leading" secondItem="pc4-Cd-ksx" secondAttribute="leading" id="KH1-60-5m0"/>
                                             <constraint firstItem="rQX-cT-msB" firstAttribute="leading" secondItem="pc4-Cd-ksx" secondAttribute="leading" id="MFZ-SF-E3n"/>
                                             <constraint firstItem="rQX-cT-msB" firstAttribute="top" secondItem="pc4-Cd-ksx" secondAttribute="top" id="Mo2-5g-95a"/>
+                                            <constraint firstAttribute="trailing" secondItem="sft-RT-uyo" secondAttribute="trailing" id="ZNL-eU-C7Q"/>
+                                            <constraint firstItem="sft-RT-uyo" firstAttribute="top" secondItem="pc4-Cd-ksx" secondAttribute="top" id="hQe-rc-BHu"/>
                                             <constraint firstAttribute="bottom" secondItem="rQX-cT-msB" secondAttribute="bottom" id="mIX-A8-999"/>
+                                            <constraint firstAttribute="bottom" secondItem="sft-RT-uyo" secondAttribute="bottom" id="odN-6p-wOd"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="checkboxImageView" destination="sft-RT-uyo" id="jZt-ht-kOk"/>
                                             <outlet property="photoImageView" destination="rQX-cT-msB" id="WKl-CN-sT0"/>
-                                            <segue destination="Qmv-qQ-xuV" kind="show" identifier="collectionToDetailsViewController" id="JFH-oz-u2B"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -117,35 +125,30 @@
                         <viewLayoutGuide key="safeArea" id="iWR-IT-WQ9"/>
                     </view>
                     <navigationItem key="navigationItem" title="Gallery" id="VfS-RS-Iqd">
-                        <barButtonItem key="leftBarButtonItem" title="Delete all" id="vmK-zZ-QkH">
-                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="deleteAllButtonPressed:" destination="bhP-pl-ja2" id="hXe-2D-up7"/>
-                            </connections>
-                        </barButtonItem>
-                        <rightBarButtonItems>
-                            <barButtonItem id="qZO-8c-ZX8"/>
-                            <barButtonItem systemItem="add" id="mqX-zg-BMa">
+                        <leftBarButtonItems>
+                            <barButtonItem systemItem="edit" id="vmK-zZ-QkH">
                                 <connections>
-                                    <action selector="pickPhotoButtonPressed:" destination="bhP-pl-ja2" id="exj-BX-ZuK"/>
+                                    <action selector="editButtonPressed:" destination="bhP-pl-ja2" id="823-aL-wye"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem systemItem="add" id="fTa-4k-cIE">
-                                <color key="tintColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <connections>
                                     <action selector="pickMultipleButtonPressed:" destination="bhP-pl-ja2" id="Lw7-a4-PW4"/>
                                 </connections>
                             </barButtonItem>
-                        </rightBarButtonItems>
+                        </leftBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" id="qZO-8c-ZX8"/>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="LIJ-3M-txN" id="4nL-bD-Ms3"/>
-                        <segue destination="Qmv-qQ-xuV" kind="show" identifier="imagepickerToDetailsViewController" id="oIJ-p6-hvY"/>
+                        <outlet property="editButton" destination="vmK-zZ-QkH" id="yO3-RE-1QJ"/>
+                        <segue destination="Qmv-qQ-xuV" kind="show" identifier="collectionToDetailsViewController" id="PCs-ww-KU2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sgm-17-ids" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="545" y="99"/>
+            <point key="canvasLocation" x="544.79999999999995" y="98.50074962518741"/>
         </scene>
         <!--Photo-->
         <scene sceneID="0jD-Ht-Vu3">
@@ -398,7 +401,4 @@
         <image name="settings" width="256" height="256"/>
         <image name="sha" width="256" height="256"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="JFH-oz-u2B"/>
-    </inferredMetricsTieBreakers>
 </document>

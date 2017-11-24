@@ -15,6 +15,7 @@ extension GalleryCollectionViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("NUMBER OF FETCHED OBJECTS: \(self.galleryViewModel.getNumberOfFetchedObjects())")
         return self.galleryViewModel.getNumberOfFetchedObjects()
     }
     
@@ -26,6 +27,12 @@ extension GalleryCollectionViewController: UICollectionViewDataSource {
         cell.thumbnailId = fetchedThumbnail.id
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if !isEditing {
+            performSegue(withIdentifier: modelToDetailsSegueIdentifier, sender: indexPath)
+        }
     }
     
 }

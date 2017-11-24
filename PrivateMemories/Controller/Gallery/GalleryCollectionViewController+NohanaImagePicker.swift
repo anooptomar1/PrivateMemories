@@ -16,8 +16,8 @@ extension GalleryCollectionViewController: NohanaImagePickerControllerDelegate {
     }
     
     func nohanaImagePicker(_ picker: NohanaImagePickerController, didFinishPickingPhotoKitAssets pickedAssts: [PHAsset]) {
-        self.galleryViewModel.save(pickedPhotos: pickedAssts)
         dismiss(animated: true, completion: nil)
+        self.galleryViewModel.save(pickedPhotos: pickedAssts)
     }
     
     

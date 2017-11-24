@@ -12,21 +12,21 @@ import Photos
 extension GalleryCollectionViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        let url = info[UIImagePickerControllerReferenceURL] as! URL
-        let assetsCollection = PHAsset.fetchAssets(withALAssetURLs: [url], options: nil)
-        
-        let image  = info[UIImagePickerControllerOriginalImage] as! UIImage
-        var location = (assetsCollection.firstObject?.location)
-        var date = (assetsCollection.firstObject?.creationDate)
-        
-        //TODO: Poprawić
-        if location == nil { location = CLLocation() }
-        if date == nil { date = Date() }
-        
-        //pickedImageToPass = PickedImage(image: image, location: location!, date: date!)
-        
-        performSegue(withIdentifier: pickerToDetailsSegueIdentifier, sender: self)
-        dismiss(animated: true, completion: nil)
+//        let url = info[UIImagePickerControllerReferenceURL] as! URL
+//        let assetsCollection = PHAsset.fetchAssets(withALAssetURLs: [url], options: nil)
+//        
+//        let image  = info[UIImagePickerControllerOriginalImage] as! UIImage
+//        var location = (assetsCollection.firstObject?.location)
+//        var date = (assetsCollection.firstObject?.creationDate)
+//        
+//        //TODO: Poprawić
+//        if location == nil { location = CLLocation() }
+//        if date == nil { date = Date() }
+//        
+//        //pickedImageToPass = PickedImage(image: image, location: location!, date: date!)
+//        
+//       // performSegue(withIdentifier: modelToDetailsSegueIdentifier, sender: self)
+//        dismiss(animated: true, completion: nil)
     }
     
     func configureAndPresentPhotoPicker() {

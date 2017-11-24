@@ -150,7 +150,7 @@ class PhotoViewModel: NSObject {
         appDelegate.saveContext()
         context.refreshAllObjects()
         
-        notifyAboutReloadingGallery()
+        //notifyAboutReloadingGallery()
     }
     
 }

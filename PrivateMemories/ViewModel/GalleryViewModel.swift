@@ -14,6 +14,8 @@ class GalleryViewModel: NSObject {
     
     //TODO: NSFetchResultsControllerDelegate, sortowanie elementów, usuwanie poszczególnych elementów, szukanie elementów
     
+    internal var delegate: GalleryViewModelDelegate? = nil
+    
     private lazy var fetchedResultsController: NSFetchedResultsController<Thumbnail> = {
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         let context = appDelegate?.persistentContainer.viewContext
@@ -25,20 +27,21 @@ class GalleryViewModel: NSObject {
         return fetchedResultsController
     }()
     
-    override init() {
-        super.init()
-    }
-    
     func fetchData() {
         do {
             try self.fetchedResultsController.performFetch()
+            print("FETCHED OBJECT: \(String(describing: self.fetchedResultsController.fetchedObjects?.description))")
         } catch {
             let fetchError = error as NSError
             print("Unable to perform fetch request: \(fetchError), \(fetchError.localizedDescription)")
         }
     }
     
+    
     func save(pickedPhotos: [PHAsset]) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let context = appDelegate.persistentContainer.viewContext
+        
         for photo in pickedPhotos {
             let imageToSave = photo.getImage()
             var locationToSave = CLLocation()
@@ -49,10 +52,44 @@ class GalleryViewModel: NSObject {
             if let assetDate = photo.creationDate {
                 dateToSave = assetDate
             }
-            let singlePickedImage = PickedImage(image: imageToSave, location: locationToSave, date: dateToSave)
-            let viewModel = PhotoViewModel(from: singlePickedImage)
-            viewModel.saveImage(asNewObject: true)
+//            let singlePickedImage = PickedImage(image: imageToSave, location: locationToSave, date: dateToSave)
+//            let viewModel = PhotoViewModel(from: singlePickedImage)
+//            viewModel.saveImage(asNewObject: true)
+            
+            let photoToSave = NSEntityDescription.insertNewObject(forEntityName: "Photo", into: context) as? Photo
+            let thumbnailToSave = NSEntityDescription.insertNewObject(forEntityName: "Thumbnail", into: context) as? Thumbnail
+            
+            photoToSave!.fullsizePhoto = UIImageJPEGRepresentation(imageToSave, 1.0)
+            photoToSave!.location = String(describing: locationToSave)
+            photoToSave!.dateStamp = dateToSave
+            
+            thumbnailToSave!.thumbnailImage = getThumbnailData(from: imageToSave)
+            thumbnailToSave!.id = NSDate().timeIntervalSince1970
+            thumbnailToSave!.fullsizePhoto = photoToSave
         }
+        
+        appDelegate.saveContext()
+        context.refreshAllObjects()
+    }
+    
+    fileprivate func getThumbnailData(from photo: UIImage) -> Data {
+        let newSize: CGSize = CGSize(width: 300.0, height: 300.0)
+        let thumbnail: UIImage = photo.scale(to: newSize)
+        let thumbnailData: Data = UIImageJPEGRepresentation(thumbnail, 0.7)!
+        
+        return thumbnailData
+    }
+    
+    func deleteObjects(at indexPaths: [IndexPath]) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let context = appDelegate.persistentContainer.viewContext
+        
+        for indexPath in indexPaths {
+            let objectToDelete = self.fetchedResultsController.object(at: indexPath)
+            context.delete(objectToDelete)
+        }
+        
+        appDelegate.saveContext()
     }
     
     func deleteAllRecords() {
@@ -83,8 +120,4 @@ class GalleryViewModel: NSObject {
         return (fetchedId, fetchedImage)  
     }
     
-}
-
-extension GalleryViewModel: NSFetchedResultsControllerDelegate {
-    //TODO: Metody NSFetchedViewControllerDelegate
 }
