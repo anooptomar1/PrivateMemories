@@ -7,4 +7,5 @@ target 'PrivateMemories' do
 
   # Pods for PrivateMemories
 	pod 'Lightbox'
+    pod 'NohanaImagePicker'
 end

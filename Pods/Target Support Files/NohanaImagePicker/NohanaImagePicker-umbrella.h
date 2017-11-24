@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double HeroVersionNumber;
-FOUNDATION_EXPORT const unsigned char HeroVersionString[];
+FOUNDATION_EXPORT double NohanaImagePickerVersionNumber;
+FOUNDATION_EXPORT const unsigned char NohanaImagePickerVersionString[];
 

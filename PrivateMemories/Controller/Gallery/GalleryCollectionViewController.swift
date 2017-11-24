@@ -10,18 +10,17 @@ import UIKit
 
 class GalleryCollectionViewController: UIViewController {
     
-    internal let galleryViewModel = GalleryViewModel()
-    
-    @IBOutlet weak var collectionView: UICollectionView!
-    internal var padding: CGFloat = 2.0
+
     
     internal let reuseIdentifier = "GalleryCollectionViewCell"
     internal let pickerToDetailsSegueIdentifier = "imagepickerToDetailsViewController"
     internal let modelToDetailsSegueIdentifier = "collectionToDetailsViewController"
     let notificationName = "reloadGallery"
     
-    var pickedImageToPass: PickedImage?
-    var images: [Photo] = [Photo]()
+    @IBOutlet weak var collectionView: UICollectionView!
+    internal var padding: CGFloat = 2.0
+    
+    internal let galleryViewModel = GalleryViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,9 +58,6 @@ class GalleryCollectionViewController: UIViewController {
             photoDetailsViewController.isGettingDataFromPicker = false
             let selectedCell = sender as! GalleryCollectionViewCell
             photoDetailsViewController.thumbnailId = selectedCell.thumbnailId
-        } else if identifier == pickerToDetailsSegueIdentifier {
-            photoDetailsViewController.isGettingDataFromPicker = true
-            photoDetailsViewController.photoFromPicker = pickedImageToPass
         }
     }
     
@@ -71,9 +67,10 @@ class GalleryCollectionViewController: UIViewController {
         reloadGallery()
     }
     
-    @IBAction func pickPhotoButtonPressed(_ sender: Any) {
-        configureAndPresentPhotoPicker()
+    @IBAction func pickMultipleButtonPressed(_ sender: Any) {
+        pickMultiplePhotos()
     }
+    
     
 }
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       

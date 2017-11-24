@@ -8,8 +8,11 @@
 
 import UIKit
 import CoreData
+import Photos
 
-class GalleryViewModel: NSObject, NSFetchedResultsControllerDelegate {
+class GalleryViewModel: NSObject {
+    
+    //TODO: NSFetchResultsControllerDelegate, sortowanie elementów, usuwanie poszczególnych elementów, szukanie elementów
     
     private lazy var fetchedResultsController: NSFetchedResultsController<Thumbnail> = {
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
@@ -35,6 +38,23 @@ class GalleryViewModel: NSObject, NSFetchedResultsControllerDelegate {
         }
     }
     
+    func save(pickedPhotos: [PHAsset]) {
+        for photo in pickedPhotos {
+            let imageToSave = photo.getImage()
+            var locationToSave = CLLocation()
+            if let assetLocation = photo.location {
+                locationToSave = assetLocation
+            }
+            var dateToSave = Date()
+            if let assetDate = photo.creationDate {
+                dateToSave = assetDate
+            }
+            let singlePickedImage = PickedImage(image: imageToSave, location: locationToSave, date: dateToSave)
+            let viewModel = PhotoViewModel(from: singlePickedImage)
+            viewModel.saveImage(asNewObject: true)
+        }
+    }
+    
     func deleteAllRecords() {
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = Thumbnail.fetchRequest()
         let deleteRequest: NSBatchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
@@ -56,9 +76,15 @@ class GalleryViewModel: NSObject, NSFetchedResultsControllerDelegate {
         var fetchedImage = UIImage()
         
         if let fetchedThumbnailData = fetchedObject.thumbnailImage {
-           fetchedImage = UIImage(data: fetchedThumbnailData)!
+            if let imageFromData = UIImage(data: fetchedThumbnailData) {
+                fetchedImage = imageFromData
+            }
         }
         return (fetchedId, fetchedImage)  
     }
     
+}
+
+extension GalleryViewModel: NSFetchedResultsControllerDelegate {
+    //TODO: Metody NSFetchedViewControllerDelegate
 }

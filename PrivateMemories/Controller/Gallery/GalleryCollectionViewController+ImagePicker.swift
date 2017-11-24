@@ -23,7 +23,7 @@ extension GalleryCollectionViewController: UIImagePickerControllerDelegate, UINa
         if location == nil { location = CLLocation() }
         if date == nil { date = Date() }
         
-        pickedImageToPass = PickedImage(image: image, location: location!, date: date!)
+        //pickedImageToPass = PickedImage(image: image, location: location!, date: date!)
         
         performSegue(withIdentifier: pickerToDetailsSegueIdentifier, sender: self)
         dismiss(animated: true, completion: nil)

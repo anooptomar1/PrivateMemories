@@ -7,18 +7,21 @@ PODS:
   - Lightbox (2.0.0):
     - Hue (~> 3.0)
     - Imaginary (~> 3.0)
+  - NohanaImagePicker (0.9.0)
   - SwiftHash (2.0.0)
 
 DEPENDENCIES:
   - Lightbox
+  - NohanaImagePicker
 
 SPEC CHECKSUMS:
   Cache: 363b6899cee63c82ccbd291e64a6c202abc17a88
   Hue: b8fe1e43eef13631331eebecb2198b68e2622f95
   Imaginary: 2765d293d425cbed3b07fa11642554cbaebe913d
   Lightbox: 83ec9f4aba4c79fc7bb9bcd263386df9969f09bb
+  NohanaImagePicker: b39fa5623cabab69597ea6f6a2d6729b9895cd2b
   SwiftHash: d2e09b13495447178cdfb8e46e54a5c46f15f5a9
 
-PODFILE CHECKSUM: 10f5eb41f8e1c5076472547640b275e73c73c144
+PODFILE CHECKSUM: 49979c318da02e819dfe64afc8d275af1a494d22
 
 COCOAPODS: 1.2.1

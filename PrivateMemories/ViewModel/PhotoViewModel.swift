@@ -61,20 +61,21 @@ class PhotoViewModel: NSObject {
     
     fileprivate func getString(from location: CLLocation) -> String {
         let geocoder = CLGeocoder()
-        var locationString = ""
+        var locationString = "\(location.coordinate.longitude), \(location.coordinate.latitude)"
         
-        DispatchQueue.global().async {
             geocoder.reverseGeocodeLocation(location) { (placemarks, error) -> Void in
                 if let placemarksArray = placemarks {
                     let firstPlacemark = placemarksArray[0]
                         if let locality = firstPlacemark.locality, let country = firstPlacemark.country {
                             locationString = "\(String(describing: locality)), \(String(describing: country))"
+                            
                         }
                 }
+                
             }
-        }
             return locationString
     }
+    
     
     fileprivate func getImage(from data: Data) -> UIImage {
         var image = UIImage()
@@ -123,19 +124,19 @@ class PhotoViewModel: NSObject {
         return fetchedThumbnail!
     }
     
-    func saveImage(isInEditingMode: Bool) {
+    func saveImage(asNewObject: Bool) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let context = appDelegate.persistentContainer.viewContext
         
         let photoToSave: Photo?
         let thumbnailToSave: Thumbnail?
         
-        if isInEditingMode {
-            thumbnailToSave = self.thumbnail
-            photoToSave = self.thumbnail?.fullsizePhoto
-        } else {
+        if asNewObject {
             photoToSave = NSEntityDescription.insertNewObject(forEntityName: "Photo", into: context) as? Photo
             thumbnailToSave = NSEntityDescription.insertNewObject(forEntityName: "Thumbnail", into: context) as? Thumbnail
+        } else {
+            thumbnailToSave = self.thumbnail
+            photoToSave = self.thumbnail?.fullsizePhoto
         }
         
         photoToSave!.fullsizePhoto = UIImageJPEGRepresentation(self.fullsizePhoto, 1.0)

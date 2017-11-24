@@ -130,6 +130,12 @@
                                     <action selector="pickPhotoButtonPressed:" destination="bhP-pl-ja2" id="exj-BX-ZuK"/>
                                 </connections>
                             </barButtonItem>
+                            <barButtonItem systemItem="add" id="fTa-4k-cIE">
+                                <color key="tintColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="pickMultipleButtonPressed:" destination="bhP-pl-ja2" id="Lw7-a4-PW4"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>

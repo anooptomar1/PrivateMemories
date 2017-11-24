@@ -52,7 +52,7 @@ class PhotoDetailsViewController: UIViewController {
 
 @IBAction func saveImagePressed(_ sender: Any) {
     if let viewModel = photoViewModel {
-        viewModel.saveImage(isInEditingMode: !isGettingDataFromPicker)
+        viewModel.saveImage(asNewObject: isGettingDataFromPicker)
     }
 }
 
