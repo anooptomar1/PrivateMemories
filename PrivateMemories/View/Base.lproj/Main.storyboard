@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -398,11 +399,14 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="mrK-BC-wYH">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.25098039220000001" green="0.87843137250000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="26"/>
                             <color key="textColor" red="0.25098039215686274" green="0.8784313725490196" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.25098039220000001" green="0.87843137250000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -444,9 +448,8 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zNS-ft-30K">
-                                                    <rect key="frame" x="5" y="5" width="30" height="30"/>
+                                                    <rect key="frame" x="5" y="5" width="45" height="30"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="30" id="7Pl-EI-jpJ"/>
                                                         <constraint firstAttribute="height" constant="30" id="vt0-0w-eCi"/>
                                                     </constraints>
                                                     <state key="normal" title="Delete"/>
@@ -454,36 +457,37 @@
                                                         <action selector="deleteButtonPressed:" destination="acl-fT-7Hr" eventType="touchUpInside" id="Ln3-OZ-Phj"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Memories" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qI9-7D-9Bu">
-                                                    <rect key="frame" x="0.0" y="79" width="200" height="42"/>
-                                                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="36"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="G6h-Mu-7a7" secondAttribute="trailing" id="BEf-cN-d7U"/>
+                                                <constraint firstAttribute="bottom" secondItem="G6h-Mu-7a7" secondAttribute="bottom" constant="45.5" id="LUg-g1-kYx"/>
                                                 <constraint firstItem="zNS-ft-30K" firstAttribute="top" secondItem="BBe-cU-561" secondAttribute="top" constant="5" id="Rfd-2S-ejP"/>
-                                                <constraint firstItem="G6h-Mu-7a7" firstAttribute="top" secondItem="qI9-7D-9Bu" secondAttribute="bottom" constant="10" id="XMt-v0-dUW"/>
-                                                <constraint firstItem="qI9-7D-9Bu" firstAttribute="leading" secondItem="BBe-cU-561" secondAttribute="leading" id="aV2-RR-92y"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zNS-ft-30K" secondAttribute="trailing" constant="20" symbolic="YES" id="eAH-3R-H5u"/>
                                                 <constraint firstItem="G6h-Mu-7a7" firstAttribute="leading" secondItem="BBe-cU-561" secondAttribute="leading" id="f6f-xt-9R1"/>
                                                 <constraint firstItem="zNS-ft-30K" firstAttribute="leading" secondItem="BBe-cU-561" secondAttribute="leading" constant="5" id="gro-XS-BAO"/>
-                                                <constraint firstItem="qI9-7D-9Bu" firstAttribute="centerY" secondItem="BBe-cU-561" secondAttribute="centerY" id="mtt-oX-2ov"/>
-                                                <constraint firstAttribute="trailing" secondItem="qI9-7D-9Bu" secondAttribute="trailing" id="tyT-93-spY"/>
-                                                <constraint firstItem="qI9-7D-9Bu" firstAttribute="centerX" secondItem="BBe-cU-561" secondAttribute="centerX" id="yMg-Ig-rPG"/>
                                             </constraints>
                                         </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Memories" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qI9-7D-9Bu">
+                                            <rect key="frame" x="0.0" y="79" width="200" height="42"/>
+                                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="36"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </view>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="BBe-cU-561" secondAttribute="bottom" id="5cC-xA-s10"/>
+                                    <constraint firstItem="qI9-7D-9Bu" firstAttribute="centerX" secondItem="acl-fT-7Hr" secondAttribute="centerX" id="7eZ-Za-efq"/>
                                     <constraint firstAttribute="bottom" secondItem="cHb-0L-SOd" secondAttribute="bottom" id="BA1-aE-1dt"/>
                                     <constraint firstItem="cHb-0L-SOd" firstAttribute="top" secondItem="acl-fT-7Hr" secondAttribute="top" id="XaA-vS-E5v"/>
+                                    <constraint firstItem="qI9-7D-9Bu" firstAttribute="leading" secondItem="acl-fT-7Hr" secondAttribute="leadingMargin" id="Y7n-bY-ZaY"/>
                                     <constraint firstAttribute="trailing" secondItem="BBe-cU-561" secondAttribute="trailing" id="a08-ye-dhh"/>
                                     <constraint firstItem="BBe-cU-561" firstAttribute="leading" secondItem="acl-fT-7Hr" secondAttribute="leading" id="bE7-LJ-WH7"/>
                                     <constraint firstAttribute="trailing" secondItem="cHb-0L-SOd" secondAttribute="trailing" id="bOc-Ch-Q4S"/>
                                     <constraint firstItem="BBe-cU-561" firstAttribute="top" secondItem="acl-fT-7Hr" secondAttribute="top" id="nJA-Sb-X3r"/>
+                                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="qI9-7D-9Bu" secondAttribute="trailing" id="pMu-EG-vmB"/>
+                                    <constraint firstItem="qI9-7D-9Bu" firstAttribute="centerY" secondItem="acl-fT-7Hr" secondAttribute="centerY" id="wqA-HZ-WIv"/>
                                     <constraint firstItem="cHb-0L-SOd" firstAttribute="leading" secondItem="acl-fT-7Hr" secondAttribute="leading" id="zuB-to-NyA"/>
                                 </constraints>
                                 <size key="customSize" width="200" height="200"/>

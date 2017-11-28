@@ -27,8 +27,10 @@ class AlbumCollectionViewCell: UICollectionViewCell {
         let delta = 1 - ((featuredHeight - frame.height) / (featuredHeight - standardHeight))
         
         coverView.alpha = maxAlpha - (delta * (maxAlpha - minAlpha))
-        titleLabel.alpha = delta
         subtitleLabel.alpha = delta
+        
+        let scale = max(delta, 0.5)
+        titleLabel.transform = CGAffineTransform(scaleX: scale, y: scale)
     }
     
     @IBAction func deleteButtonPressed(_ sender: Any) {

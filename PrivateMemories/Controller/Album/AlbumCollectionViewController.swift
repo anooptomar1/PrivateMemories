@@ -14,14 +14,10 @@ class AlbumCollectionViewController: UICollectionViewController {
 
     fileprivate let albumViewModel = AlbumViewModel()
     
-    override var preferredStatusBarStyle : UIStatusBarStyle {
-        return UIStatusBarStyle.lightContent
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
-        reloadGalleries()
+        reloadAlbum()
     }
     
     func setupLayout() {
@@ -30,7 +26,7 @@ class AlbumCollectionViewController: UICollectionViewController {
         collectionView!.decelerationRate = UIScrollViewDecelerationRateFast
     }
     
-    func reloadGalleries() {
+    func reloadAlbum() {
         self.albumViewModel.fetchData()
         self.collectionView?.reloadData()
     }
@@ -51,7 +47,7 @@ class AlbumCollectionViewController: UICollectionViewController {
             if let galleryName = textField?.text {
                 if galleryName != "" {
                     self.albumViewModel.saveGallery(named: galleryName)
-                    self.reloadGalleries()
+                    self.reloadAlbum()
                 }
             }
         }))

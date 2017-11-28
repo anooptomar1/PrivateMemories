@@ -93,9 +93,9 @@ class GalleryCollectionViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let identifier = segue.identifier
-        let photoDetailsViewController = segue.destination as! PhotoDetailsViewController
         
         if identifier == modelToDetailsSegueIdentifier {
+            let photoDetailsViewController = segue.destination as! PhotoDetailsViewController
             photoDetailsViewController.isGettingDataFromPicker = false
             let selectedCellIndexPath = sender as! IndexPath
             let selectedCell = self.collectionView.cellForItem(at: selectedCellIndexPath) as! GalleryCollectionViewCell
