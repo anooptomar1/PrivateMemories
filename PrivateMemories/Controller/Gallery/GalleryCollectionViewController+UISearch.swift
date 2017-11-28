@@ -25,7 +25,7 @@ extension GalleryCollectionViewController: UISearchResultsUpdating {
         searchBar.placeholder = "Search photos by location"
         searchBar.becomeFirstResponder()
         searchBar.backgroundColor = UIColor.white.alpha(0.5)
-        searchBar.tintColor = UIColor.magenta
+        searchBar.tintColor = UIColor.turquoise
         searchBar.delegate = self
     }
     

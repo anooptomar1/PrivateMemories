@@ -10,5 +10,6 @@ import Foundation
 import UIKit
 
 extension UIColor {
-    static let salmon = UIColor(hex: "EE596C") // hex: EE596C
+    static let salmon = UIColor(hex: "EE596C")
+    static let turquoise = UIColor(hex: "#40E0D0")
 }

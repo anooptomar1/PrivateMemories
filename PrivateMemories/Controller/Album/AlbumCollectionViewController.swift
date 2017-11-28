@@ -35,6 +35,32 @@ class AlbumCollectionViewController: UICollectionViewController {
         self.collectionView?.reloadData()
     }
 
+    @IBAction func addGalleryButtonPressed(_ sender: Any) {
+        presentAddPopup()
+    }
+    
+    func presentAddPopup() {
+        let alert = UIAlertController(title: "Add gallery", message: "Enter a gallery name", preferredStyle: .alert)
+
+        alert.addTextField { (textField) in
+            textField.placeholder = "Gallery name"
+        }
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+            let textField = alert?.textFields![0]
+            if let galleryName = textField?.text {
+                if galleryName != "" {
+                    self.albumViewModel.saveGallery(named: galleryName)
+                    self.reloadGalleries()
+                }
+            }
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     // MARK: - Navigation
  
 
@@ -60,16 +86,16 @@ class AlbumCollectionViewController: UICollectionViewController {
         
         cell.titleLabel.text = fetchedThumbnail.name
         cell.subtitleLabel.text = fetchedThumbnail.creationDate
-        // cell.imageView.image = getRandomImage()
+        cell.imageView.image = UIImage(named: "photo")!
         
         return cell
     }
 
     // MARK: UICollectionViewDelegate
 
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //TODO - pushGalleryViewController
-        super.collectionView(collectionView, didSelectItemAt: indexPath)
-    }
+//    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        //TODO - pushGalleryViewController
+//        super.collectionView(collectionView, didSelectItemAt: indexPath)
+//    }
 
 }
