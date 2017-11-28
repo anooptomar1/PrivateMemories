@@ -10,5 +10,5 @@ import Foundation
 import UIKit
 
 extension UIColor {
-    static let salmon = UIColor(displayP3Red: 238, green: 89, blue: 108, alpha: 1) // hex: EE596C
+    static let salmon = UIColor(hex: "EE596C") // hex: EE596C
 }

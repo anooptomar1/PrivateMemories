@@ -14,13 +14,14 @@ class GalleryCollectionViewController: UIViewController {
     internal let modelToDetailsSegueIdentifier = "collectionToDetailsViewController"
     let notificationName = "reloadGallery"
     
-    @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var collectionView: UICollectionView!
     internal var padding: CGFloat = 2.0
+    internal var numberOfItemsInRow = 3
     
     internal let galleryViewModel = GalleryViewModel()
     internal var blockOperations: [BlockOperation] = []
     internal var shouldReloadCollectionView = false
+    internal var searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,8 @@ class GalleryCollectionViewController: UIViewController {
         blockOperations.removeAll(keepingCapacity: false)
     }
     
+    //TODO: Do usuniecia - mam FetchedResultsController
+    
     func addReloadingObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(reloadGallery), name: NSNotification.Name(rawValue: self.notificationName), object: nil)
     }
@@ -48,6 +51,7 @@ class GalleryCollectionViewController: UIViewController {
             self.collectionView.reloadData()
         }
     }
+    //--------------------------------------------
     
     func loadPhotos() {
         self.galleryViewModel.fetchData()
@@ -55,15 +59,6 @@ class GalleryCollectionViewController: UIViewController {
     
     func setTitlelessBackButton() {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-    }
-    
-    @IBAction func editButtonPressed(_ sender: Any) {
-        setEditingMode(!isEditing)
-    }
-    
-    func setEditingMode(_ isEditingOn: Bool) {
-        setEditing(isEditingOn, animated: true)
-        //zmienic tytul/obrazek dla przycisku edycji na usun
     }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
@@ -77,9 +72,9 @@ class GalleryCollectionViewController: UIViewController {
             cell.isEditing = editing
             
             if editing {
-                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Delete", style: .plain, target: self, action: #selector(self.deleteSelectedImages))
+                self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Delete", style: .plain, target: self, action: #selector(self.deleteSelectedImages))
             } else {
-                self.navigationItem.rightBarButtonItem = nil
+                self.navigationItem.leftBarButtonItem = nil
             }
             
         }
@@ -88,10 +83,9 @@ class GalleryCollectionViewController: UIViewController {
     
     @objc func deleteSelectedImages() {
         if let selectedItemsIndexPaths = self.collectionView.indexPathsForSelectedItems {
-            //self.collectionView.deleteItems(at: selectedItemsIndexPaths)
             self.galleryViewModel.deleteObjects(at: selectedItemsIndexPaths)
         }
-        setEditingMode(false)
+        setEditing(false, animated: true)
     }
     
     
@@ -110,16 +104,35 @@ class GalleryCollectionViewController: UIViewController {
     }
     
     // MARK: IBActions
-    
-    @IBAction func deleteAllButtonPressed(_ sender: Any) {
-        self.galleryViewModel.deleteAllRecords()
-        reloadGallery()
+
+    @IBAction func sortButtonPressed(_ sender: Any) {
+        self.galleryViewModel.sortData()
+        self.collectionView.reloadData()
     }
     
     @IBAction func pickMultipleButtonPressed(_ sender: Any) {
         pickMultiplePhotos()
     }
     
+    @IBAction func editButtonPressed(_ sender: Any) {
+        setEditing(!isEditing, animated: true)
+    }
     
+    @IBAction func searchButtonPressed(_ sender: UIBarButtonItem) {
+        loadSearchBar()
+    }
+    
+    
+    @IBAction func changeLayoutButtonPressed(_ sender: Any) {
+        UIView.transition(with: self.collectionView, duration: 0.5, options: .transitionFlipFromRight, animations: {
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }) { (true) in
+           // completionHandler()
+        }
+        
+        self.numberOfItemsInRow = (numberOfItemsInRow == 3) ? 2 : 3
+    }
 }
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       

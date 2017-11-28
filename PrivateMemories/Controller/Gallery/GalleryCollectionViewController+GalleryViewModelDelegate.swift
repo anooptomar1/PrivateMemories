@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension GalleryCollectionViewController: GalleryViewModelDelegate {
     
@@ -28,7 +29,6 @@ extension GalleryCollectionViewController: GalleryViewModelDelegate {
                             operation.start()
                         }
                     }, completion: { (finished) -> Void in
-                        
                         print("BATCH UPDATES COMPLETED - REMOVING")
                         self.blockOperations.removeAll(keepingCapacity: false)
                     })

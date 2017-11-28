@@ -15,6 +15,7 @@ class GalleryViewModel: NSObject {
     //TODO: NSFetchResultsControllerDelegate, sortowanie elementów, usuwanie poszczególnych elementów, szukanie elementów
     
     internal var delegate: GalleryViewModelDelegate? = nil
+    var ascendingSortDescriptor: Bool = true
     
     private lazy var fetchedResultsController: NSFetchedResultsController<Thumbnail> = {
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
@@ -27,18 +28,38 @@ class GalleryViewModel: NSObject {
         return fetchedResultsController
     }()
     
+    
+    // - MARK: CoreData methods
+    
     func fetchData() {
         do {
             try self.fetchedResultsController.performFetch()
-            print("FETCHED OBJECT: \(String(describing: self.fetchedResultsController.fetchedObjects?.description))")
         } catch {
             let fetchError = error as NSError
             print("Unable to perform fetch request: \(fetchError), \(fetchError.localizedDescription)")
         }
     }
     
+    func searchForObjects(withLocation location: String) {
+        self.fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "fullsizePhoto.location CONTAINS[cd] %@", location) //[c]ase and [d]iacritic insensitive
+        fetchData()
+    }
     
-    func save(pickedPhotos: [PHAsset]) {
+    func sortData() {
+        let ascending = !ascendingSortDescriptor
+        print("ASCENDING: \(ascending)")
+        self.fetchedResultsController.fetchRequest.sortDescriptors = [NSSortDescriptor(key: "id", ascending: ascending)]
+        fetchData()
+        ascendingSortDescriptor = ascending
+    }
+    
+    func clearPredicatesAndFetch() {
+        self.fetchedResultsController.fetchRequest.predicate = nil
+        fetchData()
+    }
+    
+    
+    func save(pickedPhotos: [PHAsset], completion: () -> Void) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let context = appDelegate.persistentContainer.viewContext
         
@@ -52,9 +73,6 @@ class GalleryViewModel: NSObject {
             if let assetDate = photo.creationDate {
                 dateToSave = assetDate
             }
-//            let singlePickedImage = PickedImage(image: imageToSave, location: locationToSave, date: dateToSave)
-//            let viewModel = PhotoViewModel(from: singlePickedImage)
-//            viewModel.saveImage(asNewObject: true)
             
             let photoToSave = NSEntityDescription.insertNewObject(forEntityName: "Photo", into: context) as? Photo
             let thumbnailToSave = NSEntityDescription.insertNewObject(forEntityName: "Thumbnail", into: context) as? Thumbnail
@@ -70,14 +88,7 @@ class GalleryViewModel: NSObject {
         
         appDelegate.saveContext()
         context.refreshAllObjects()
-    }
-    
-    fileprivate func getThumbnailData(from photo: UIImage) -> Data {
-        let newSize: CGSize = CGSize(width: 300.0, height: 300.0)
-        let thumbnail: UIImage = photo.scale(to: newSize)
-        let thumbnailData: Data = UIImageJPEGRepresentation(thumbnail, 0.7)!
-        
-        return thumbnailData
+        completion()
     }
     
     func deleteObjects(at indexPaths: [IndexPath]) {
@@ -102,9 +113,24 @@ class GalleryViewModel: NSObject {
         }
     }
     
+// ------------------------------------------------------------------------------------------------
+    
     func getNumberOfFetchedObjects() -> Int {
         guard let fetchedObjects = self.fetchedResultsController.fetchedObjects else { return 0 }
         return fetchedObjects.count
+    }
+    
+    func getSections() -> [NSFetchedResultsSectionInfo]? {
+        let sections = self.fetchedResultsController.sections
+        return sections
+    }
+    
+    fileprivate func getThumbnailData(from photo: UIImage) -> Data {
+        let newSize: CGSize = CGSize(width: 300.0, height: 300.0)
+        let thumbnail: UIImage = photo.scale(to: newSize)
+        let thumbnailData: Data = UIImageJPEGRepresentation(thumbnail, 0.7)!
+        
+        return thumbnailData
     }
     
     func getDataOfFetchedObject(at indexPath: IndexPath) -> (Double, UIImage) {

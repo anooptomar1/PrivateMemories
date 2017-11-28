@@ -24,6 +24,8 @@ class GalleryCollectionViewCell: UICollectionViewCell {
     override var isSelected: Bool {
         didSet {
             if isEditing {
+//                self.layer.borderColor = UIColor.salmon.cgColor
+//                self.layer.borderWidth = isSelected ? 3.0 : 0.0
                 self.checkboxImageView!.image = isSelected ? UIImage(named: checkedImageName) : UIImage()
                 self.checkboxImageView.contentMode = .center
                 self.checkboxImageView.alpha = isSelected ? 0.5 : 0.0

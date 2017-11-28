@@ -11,8 +11,15 @@ import UIKit
 extension GalleryCollectionViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        if let sections = self.galleryViewModel.getSections() {
+            return sections.count
+        } else {
+            return 0
+        }
     }
+    
+    //TODO: Tytuły sekcji - czy na pewno warto?
+
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print("NUMBER OF FETCHED OBJECTS: \(self.galleryViewModel.getNumberOfFetchedObjects())")
@@ -38,12 +45,10 @@ extension GalleryCollectionViewController: UICollectionViewDataSource {
 }
 
 extension GalleryCollectionViewController: UICollectionViewDelegateFlowLayout {
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let availableWidth = view.frame.width - 2*padding
-        let widthPerItem = availableWidth/3
+        let widthPerItem = availableWidth/CGFloat(numberOfItemsInRow)
         
         return CGSize(width: widthPerItem, height: widthPerItem)
     }
-    
 }

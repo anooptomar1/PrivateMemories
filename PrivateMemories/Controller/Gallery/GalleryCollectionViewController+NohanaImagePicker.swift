@@ -16,8 +16,13 @@ extension GalleryCollectionViewController: NohanaImagePickerControllerDelegate {
     }
     
     func nohanaImagePicker(_ picker: NohanaImagePickerController, didFinishPickingPhotoKitAssets pickedAssts: [PHAsset]) {
-        dismiss(animated: true, completion: nil)
-        self.galleryViewModel.save(pickedPhotos: pickedAssts)
+        dismiss(animated: true) {
+            self.galleryViewModel.save(pickedPhotos: pickedAssts, completion: {
+               //self.animateGalleryFlip()
+            })
+            
+        }
+        
     }
     
     
@@ -39,10 +44,12 @@ extension GalleryCollectionViewController: NohanaImagePickerControllerDelegate {
     func showLargeThumbnailPicker() {
         let picker = NohanaImagePickerController()
         picker.delegate = self
-        //picker.maximumNumberOfSelection =
-        picker.numberOfColumnsInPortrait = 2
+        picker.maximumNumberOfSelection = 10
+        picker.numberOfColumnsInPortrait = 3
         picker.numberOfColumnsInLandscape = 3
-        //picker.config.
+        picker.config.color.background = UIColor.white
+        picker.config.color.separator = UIColor.black
+        picker.config.color.empty = UIColor.magenta
         //picker.canPickAsset
         //picker.toolbarHidden
         present(picker, animated: true, completion: nil)
