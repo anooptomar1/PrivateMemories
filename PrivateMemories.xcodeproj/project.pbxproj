@@ -24,6 +24,7 @@
 		E22510E41FCD97BD00F54494 /* AlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22510E31FCD97BD00F54494 /* AlbumCollectionViewCell.swift */; };
 		E22510E61FCD9AAD00F54494 /* AlbumCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22510E51FCD9AAD00F54494 /* AlbumCollectionViewLayout.swift */; };
 		E22510E81FCDA40400F54494 /* AlbumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22510E71FCDA40400F54494 /* AlbumViewModel.swift */; };
+		E22510EE1FCDC6E300F54494 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22510ED1FCDC6E300F54494 /* CameraViewController.swift */; };
 		E226035A1FBEFD7D0055568F /* GalleryCollectionViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22603591FBEFD7D0055568F /* GalleryCollectionViewController+CollectionView.swift */; };
 		E226035C1FBEFE0F0055568F /* GalleryCollectionViewController+ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E226035B1FBEFE0F0055568F /* GalleryCollectionViewController+ImagePicker.swift */; };
 		E22788E61FC868CF00C45139 /* GalleryCollectionViewController+GalleryViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22788E51FC868CF00C45139 /* GalleryCollectionViewController+GalleryViewModelDelegate.swift */; };
@@ -61,6 +62,7 @@
 		E22510E31FCD97BD00F54494 /* AlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlbumCollectionViewCell.swift; path = PrivateMemories/Controller/Album/AlbumCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		E22510E51FCD9AAD00F54494 /* AlbumCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewLayout.swift; sourceTree = "<group>"; };
 		E22510E71FCDA40400F54494 /* AlbumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewModel.swift; sourceTree = "<group>"; };
+		E22510ED1FCDC6E300F54494 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		E22603591FBEFD7D0055568F /* GalleryCollectionViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalleryCollectionViewController+CollectionView.swift"; sourceTree = "<group>"; };
 		E226035B1FBEFE0F0055568F /* GalleryCollectionViewController+ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalleryCollectionViewController+ImagePicker.swift"; sourceTree = "<group>"; };
 		E22788E51FC868CF00C45139 /* GalleryCollectionViewController+GalleryViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalleryCollectionViewController+GalleryViewModelDelegate.swift"; sourceTree = "<group>"; };
@@ -119,6 +121,14 @@
 			path = Support;
 			sourceTree = "<group>";
 		};
+		E22510EF1FCDC6EC00F54494 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				E22510ED1FCDC6E300F54494 /* CameraViewController.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
 		E228BB6D1FB13C9A006CB9CE /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +155,7 @@
 				E22501261FCCED2700C10DA3 /* Album */,
 				E22CE4931FBDDFA00051BF71 /* Gallery */,
 				E22CE4941FBDDFA60051BF71 /* Photo */,
+				E22510EF1FCDC6EC00F54494 /* Camera */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -385,6 +396,7 @@
 				E2310DD61FBE863900A7B3B2 /* PhotoDetailsViewController+CollectionViewDelegateFlowLayout.swift in Sources */,
 				E22510E41FCD97BD00F54494 /* AlbumCollectionViewCell.swift in Sources */,
 				E225012E1FCCED7800C10DA3 /* UIImageExtension.swift in Sources */,
+				E22510EE1FCDC6E300F54494 /* CameraViewController.swift in Sources */,
 				E22501371FCCED9B00C10DA3 /* GalleryCollectionViewCell.swift in Sources */,
 				E22510E61FCD9AAD00F54494 /* AlbumCollectionViewLayout.swift in Sources */,
 				E22501381FCCED9B00C10DA3 /* TagCollectionViewCell.swift in Sources */,
