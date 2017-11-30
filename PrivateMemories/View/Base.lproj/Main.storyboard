@@ -171,6 +171,13 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OwO-X9-DD4">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LCQ-pX-Wy0">
+                                <rect key="frame" x="285" y="40" width="30" height="30"/>
+                                <state key="normal" title="Grid"/>
+                                <connections>
+                                    <action selector="gridButtonPressed:" destination="Nor-MN-PiJ" eventType="touchUpInside" id="HV0-vd-FEV"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y06-cq-cFJ">
                                 <rect key="frame" x="325" y="40" width="30" height="30"/>
                                 <constraints>
@@ -205,12 +212,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="c6i-1g-SoZ" firstAttribute="trailing" secondItem="LCQ-pX-Wy0" secondAttribute="trailing" constant="60" id="9dg-QR-RMb"/>
                             <constraint firstItem="OwO-X9-DD4" firstAttribute="trailing" secondItem="c6i-1g-SoZ" secondAttribute="trailing" id="Fm6-MH-krn"/>
                             <constraint firstItem="eOj-9n-8Py" firstAttribute="top" secondItem="c6i-1g-SoZ" secondAttribute="top" constant="20" id="Gs4-ad-dhl"/>
                             <constraint firstItem="OwO-X9-DD4" firstAttribute="bottom" secondItem="c6i-1g-SoZ" secondAttribute="bottom" id="JGw-XB-lZI"/>
                             <constraint firstItem="c6i-1g-SoZ" firstAttribute="trailing" secondItem="Y06-cq-cFJ" secondAttribute="trailing" constant="20" id="PFH-xf-ABN"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eOj-9n-8Py" secondAttribute="trailing" constant="20" symbolic="YES" id="QiX-3U-CPT"/>
                             <constraint firstItem="OwO-X9-DD4" firstAttribute="leading" secondItem="c6i-1g-SoZ" secondAttribute="leading" id="bT7-Fr-aL6"/>
+                            <constraint firstItem="LCQ-pX-Wy0" firstAttribute="top" secondItem="c6i-1g-SoZ" secondAttribute="top" constant="20" id="g8N-Sq-UeB"/>
                             <constraint firstItem="eOj-9n-8Py" firstAttribute="leading" secondItem="c6i-1g-SoZ" secondAttribute="leading" constant="20" id="gMO-0x-ZpM"/>
                             <constraint firstItem="Y06-cq-cFJ" firstAttribute="top" secondItem="c6i-1g-SoZ" secondAttribute="top" constant="20" id="hll-Eg-AGu"/>
                             <constraint firstItem="c6i-1g-SoZ" firstAttribute="bottom" secondItem="4Xe-b1-g2I" secondAttribute="bottom" constant="20" id="k07-XW-fgs"/>
@@ -225,6 +234,7 @@
                         <outlet property="captureButton" destination="4Xe-b1-g2I" id="GZJ-s4-u4E"/>
                         <outlet property="capturedImageView" destination="OwO-X9-DD4" id="bHj-xc-eg3"/>
                         <outlet property="flipButton" destination="Y06-cq-cFJ" id="F15-no-fh2"/>
+                        <outlet property="gridButton" destination="LCQ-pX-Wy0" id="Lu4-dh-LbB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kfI-XL-xLM" userLabel="First Responder" sceneMemberID="firstResponder"/>

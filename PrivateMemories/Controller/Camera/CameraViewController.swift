@@ -15,14 +15,15 @@ class CameraViewController: UIViewController {
     @IBOutlet weak var capturedImageView: UIImageView!
     @IBOutlet weak var captureButton: UIButton!
     @IBOutlet weak var flipButton: UIButton!
+    @IBOutlet weak var gridButton: UIButton!
+    
+    var gridView: GridView?
+    var didJustTakePhoto: Bool = false
     
     var captureSession = AVCaptureSession()
-    
     var backCamera: AVCaptureDevice!
     var frontCamera: AVCaptureDevice!
-    
     var currentCamera: AVCaptureDevice!
-    
     var inputDevice: AVCaptureDeviceInput!
     var photoOutput: AVCapturePhotoOutput!
     
@@ -35,6 +36,7 @@ class CameraViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupGridView()
         setElementsVisibility(isCurrentlyPicking: true)
         setupCaptureButtonStyle()
         setupCaptureSession()
@@ -42,14 +44,100 @@ class CameraViewController: UIViewController {
         setupInputOutput()
         setupPreviewLayer()
         startCaptureSession()
+        addGestureRecognizers()
+    }
+    
+    func addGestureRecognizers() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(focus(on:)))
+        let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(zoom(on:)))
+        let swipeDownGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeToDismiss(gesture:)))
+        self.view.addGestureRecognizer(tapGesture)
+        self.view.addGestureRecognizer(pinchGesture)
+        self.view.addGestureRecognizer(swipeDownGesture)
+    }
+    
+    @objc func focus(on gesture: UITapGestureRecognizer) {
+        let touchPoint: CGPoint = gesture.location(in: self.view)
+        guard setFocus(on: touchPoint) else { return }
+        
+        let focusPointViewSize: CGSize = CGSize(width: 30.0, height: 30.0)
+        let focusPointView: UIView = UIView(frame: CGRect(origin: CGPoint.init(x: 0, y: 0) , size: focusPointViewSize))
+        
+        focusPointView.backgroundColor = UIColor.white
+        focusPointView.center = touchPoint
+        focusPointView.layer.cornerRadius = focusPointView.frame.size.height/2
+        focusPointView.isHidden = false
+        focusPointView.alpha = 0.5
+        
+        self.view.addSubview(focusPointView)
+        print(focusPointView.frame)
+        
+        focusPointView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+        
+        UIView.animateKeyframes(withDuration: 1.0, delay: 0, options: UIViewKeyframeAnimationOptions(), animations: {
+            
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.2, animations: {
+                focusPointView.alpha = 0.5
+                focusPointView.transform = CGAffineTransform.identity
+            })
+            
+            UIView.addKeyframe(withRelativeStartTime: 0.6, relativeDuration: 0.2, animations: {
+                focusPointView.alpha = 0
+                focusPointView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+            })
+            
+            
+        }) { (finished) in
+            if finished {
+                focusPointView.isHidden = true
+            }
+        }
+    }
+    
+    @objc func zoom(on gesture: UIPinchGestureRecognizer) {
+        guard let device = currentCamera else { return }
+        
+        let velocity = gesture.velocity
+        let velocityMultiplier: CGFloat = 2.0
+        let finalZoom = device.videoZoomFactor + atan2(velocity, velocityMultiplier)
+        let finalScale = min(max(finalZoom, 1), device.activeFormat.videoMaxZoomFactor)
+        
+        if gesture.state == .began || gesture.state == .changed {
+            do {
+                try device.lockForConfiguration()
+                defer { device.unlockForConfiguration() }
+                device.videoZoomFactor = finalScale
+            } catch {
+                //TODO: Alert provider
+                print("Error occured while zooming")
+            }
+        }
         
     }
+    
+    @objc func swipeToDismiss(gesture: UISwipeGestureRecognizer) {
+        print(gesture.debugDescription)
+        if gesture.direction == .right {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    func setupGridView() {
+        let offset: CGFloat = (self.view.frame.height - self.view.frame.width)/2
+        let gridFrame = CGRect(x: 0, y: offset, width: self.view.frame.width, height: self.view.frame.width)
+        gridView = GridView(frame: gridFrame, columns: 3)
+        gridView?.isHidden = true
+    }
+
     
     func setElementsVisibility(isCurrentlyPicking: Bool) {
         capturedImageView.isHidden = isCurrentlyPicking
         cancelPickingPhotoButton.isHidden = isCurrentlyPicking
+        
         captureButton.isHidden = !isCurrentlyPicking
         flipButton.isHidden = !isCurrentlyPicking
+        gridView?.isHidden = !isCurrentlyPicking
+        gridButton.isHidden = !isCurrentlyPicking
     }
     
     func setupCaptureSession() {
@@ -100,6 +188,31 @@ class CameraViewController: UIViewController {
         captureSession.startRunning()
     }
     
+    func setFocus(on touchPoint: CGPoint) -> Bool {
+        guard let device = currentCamera, currentCamera.position == .back, device.isFocusModeSupported(.continuousAutoFocus) else { return false }
+        
+            let viewSize = self.view.bounds.size
+            let x = touchPoint.y / viewSize.height
+            let y = 1.0 - touchPoint.x / viewSize.width
+            let focusPoint = CGPoint(x: x, y: y)
+        
+            do {
+                try device.lockForConfiguration()
+            
+                device.focusPointOfInterest = focusPoint
+                device.focusMode = .continuousAutoFocus
+                device.autoFocusRangeRestriction = .far
+                device.exposurePointOfInterest = focusPoint
+                device.exposureMode = .continuousAutoExposure
+                device.unlockForConfiguration()
+            } catch {
+                //TODO: AlertProvider
+                print("Cannot set autofocus!")
+            }
+        
+        return true
+    }
+    
     @IBAction func captureButtonPressed(_ sender: UIButton) {
         photoOutput.capturePhoto(with: AVCapturePhotoSettings(), delegate: self)
     }
@@ -116,6 +229,12 @@ class CameraViewController: UIViewController {
         currentCamera = currentCamera == backCamera ? frontCamera : backCamera
         setupInputOutput()
         startCaptureSession()
+    }
+    
+    @IBAction func gridButtonPressed(_ sender: Any) {
+        let currentVisibilityState: Bool = gridView!.isHidden
+        gridView?.isHidden = !currentVisibilityState
+        self.view.addSubview(gridView!)
     }
     
     fileprivate func setupCaptureButtonStyle() {
