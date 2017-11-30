@@ -9,6 +9,12 @@
 import UIKit
 import AVFoundation
 
+enum CurrentFlashMode {
+    case off
+    case on
+    case auto
+}
+
 class CameraViewController: UIViewController {
 
     @IBOutlet weak var cancelPickingPhotoButton: UIButton!
@@ -16,6 +22,7 @@ class CameraViewController: UIViewController {
     @IBOutlet weak var captureButton: UIButton!
     @IBOutlet weak var flipButton: UIButton!
     @IBOutlet weak var gridButton: UIButton!
+    @IBOutlet weak var flashButton: UIButton!
     
     var gridView: GridView?
     var didJustTakePhoto: Bool = false
@@ -26,8 +33,8 @@ class CameraViewController: UIViewController {
     var currentCamera: AVCaptureDevice!
     var inputDevice: AVCaptureDeviceInput!
     var photoOutput: AVCapturePhotoOutput!
-    
     var previewLayer: AVCaptureVideoPreviewLayer!
+    var currentFlashMode: CurrentFlashMode = .off
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -140,6 +147,43 @@ class CameraViewController: UIViewController {
         gridButton.isHidden = !isCurrentlyPicking
     }
     
+    func setNextFlashMode() {
+        
+        var buttonTitle = ""
+        
+            switch currentFlashMode {
+                case .off:
+                    currentFlashMode = .auto
+                    buttonTitle = "Auto"
+                case .auto:
+                    currentFlashMode = .on
+                    buttonTitle = "On"
+                default:
+                    currentFlashMode = .off
+                    buttonTitle = "Off"
+            }
+        
+            flashButton.setTitle(buttonTitle, for: .normal)
+
+            print("TORCH MODE IS: \(currentFlashMode)")
+    }
+    
+    func getSettings(camera: AVCaptureDevice, flashMode: CurrentFlashMode) -> AVCapturePhotoSettings {
+        let settings = AVCapturePhotoSettings()
+        
+        if camera.position == .back {
+            switch flashMode {
+            case .auto: settings.flashMode = .auto
+            case .on: settings.flashMode = .on
+            default: settings.flashMode = .off
+            }
+        }
+        
+        print("PASSING SETTINGS - flash is: \(settings.flashMode.hashValue)")
+        
+        return settings
+    }
+    
     func setupCaptureSession() {
         captureSession.sessionPreset = .photo
     }
@@ -214,8 +258,14 @@ class CameraViewController: UIViewController {
     }
     
     @IBAction func captureButtonPressed(_ sender: UIButton) {
-        photoOutput.capturePhoto(with: AVCapturePhotoSettings(), delegate: self)
+        let currentSettings = getSettings(camera: currentCamera, flashMode: currentFlashMode)
+        photoOutput.capturePhoto(with: currentSettings, delegate: self)
     }
+    
+    @IBAction func flashButtonPressed(_ sender: Any) {
+        setNextFlashMode()
+    }
+    
     
     @IBAction func cancelPickingPhotoButtonPressed(_ sender: Any) {
         startCaptureSession()
@@ -239,7 +289,7 @@ class CameraViewController: UIViewController {
     
     fileprivate func setupCaptureButtonStyle() {
         captureButton.clipsToBounds = true
-        captureButton.layer.cornerRadius = captureButton.frame.width/2
+        captureButton.layer.cornerRadius = captureButton.frame.height/2
         captureButton.layer.borderColor = UIColor.turquoise.cgColor
         captureButton.layer.borderWidth = 6
         captureButton.backgroundColor = UIColor.clear
