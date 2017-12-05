@@ -37,6 +37,7 @@
 		E2310DD61FBE863900A7B3B2 /* PhotoDetailsViewController+CollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2310DD51FBE863900A7B3B2 /* PhotoDetailsViewController+CollectionViewDelegateFlowLayout.swift */; };
 		E23EA3FF1FC3A7590078A366 /* GalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23EA3FE1FC3A7590078A366 /* GalleryViewModel.swift */; };
 		E255B7391FC7391C001F0E27 /* GalleryCollectionViewController+NohanaImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E255B7381FC7391C001F0E27 /* GalleryCollectionViewController+NohanaImagePicker.swift */; };
+		E2A7B61F1FD7650C000DB556 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E2A7B61E1FD7650B000DB556 /* Resnet50.mlmodel */; };
 		E2DA41E61FA77BF800DED69C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DA41E51FA77BF800DED69C /* AppDelegate.swift */; };
 		E2DA41EE1FA77BF800DED69C /* PrivateMemories.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2DA41EC1FA77BF800DED69C /* PrivateMemories.xcdatamodeld */; };
 		E2DA41FB1FA77D9D00DED69C /* GalleryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DA41FA1FA77D9D00DED69C /* GalleryCollectionViewController.swift */; };
@@ -77,6 +78,7 @@
 		E2310DD51FBE863900A7B3B2 /* PhotoDetailsViewController+CollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoDetailsViewController+CollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
 		E23EA3FE1FC3A7590078A366 /* GalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewModel.swift; sourceTree = "<group>"; };
 		E255B7381FC7391C001F0E27 /* GalleryCollectionViewController+NohanaImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalleryCollectionViewController+NohanaImagePicker.swift"; sourceTree = "<group>"; };
+		E2A7B61E1FD7650B000DB556 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 		E2DA41E21FA77BF800DED69C /* PrivateMemories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrivateMemories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2DA41E51FA77BF800DED69C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2DA41ED1FA77BF800DED69C /* PrivateMemories.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PrivateMemories.xcdatamodel; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				E2DA41E51FA77BF800DED69C /* AppDelegate.swift */,
 				E228CC991FB29BE900453952 /* Assets.xcassets */,
 				E2DA41F41FA77BF800DED69C /* Info.plist */,
+				E2A7B61E1FD7650B000DB556 /* Resnet50.mlmodel */,
 				E228BB6D1FB13C9A006CB9CE /* Model */,
 				E2310DCD1FBE744C00A7B3B2 /* ViewModel */,
 				E228BB6E1FB13CA2006CB9CE /* View */,
@@ -418,6 +421,7 @@
 				E2DA41FB1FA77D9D00DED69C /* GalleryCollectionViewController.swift in Sources */,
 				E255B7391FC7391C001F0E27 /* GalleryCollectionViewController+NohanaImagePicker.swift in Sources */,
 				E2310DCF1FBE749400A7B3B2 /* PhotoViewModel.swift in Sources */,
+				E2A7B61F1FD7650C000DB556 /* Resnet50.mlmodel in Sources */,
 				E22B96251FC7AD2800EEF31E /* GalleryViewModel+NSFetchedResultsControllerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

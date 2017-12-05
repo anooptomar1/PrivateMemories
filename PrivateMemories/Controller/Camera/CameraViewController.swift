@@ -7,7 +7,10 @@
 //
 
 import UIKit
-import AVFoundation
+import AVKit
+import Vision //TODO
+import SceneKit
+import ARKit
 
 enum CurrentFlashMode {
     case off
@@ -23,9 +26,9 @@ class CameraViewController: UIViewController {
     @IBOutlet weak var flipButton: UIButton!
     @IBOutlet weak var gridButton: UIButton!
     @IBOutlet weak var flashButton: UIButton!
+    @IBOutlet weak var recognizedObjectLabel: UILabel!
     
     var gridView: GridView?
-    var didJustTakePhoto: Bool = false
     
     var captureSession = AVCaptureSession()
     var backCamera: AVCaptureDevice!
@@ -33,6 +36,10 @@ class CameraViewController: UIViewController {
     var currentCamera: AVCaptureDevice!
     var inputDevice: AVCaptureDeviceInput!
     var photoOutput: AVCapturePhotoOutput!
+    
+    let videoDispatchQueue = DispatchQueue(label: "VideoDispatchQueue")
+    var videoOutput: AVCaptureVideoDataOutput!
+    
     var previewLayer: AVCaptureVideoPreviewLayer!
     var currentFlashMode: CurrentFlashMode = .off
     
@@ -67,12 +74,13 @@ class CameraViewController: UIViewController {
         let touchPoint: CGPoint = gesture.location(in: self.view)
         guard setFocus(on: touchPoint) else { return }
         
-        let focusPointViewSize: CGSize = CGSize(width: 30.0, height: 30.0)
+        let focusPointViewSize: CGSize = CGSize(width: 50.0, height: 50.0)
         let focusPointView: UIView = UIView(frame: CGRect(origin: CGPoint.init(x: 0, y: 0) , size: focusPointViewSize))
         
-        focusPointView.backgroundColor = UIColor.white
+        focusPointView.backgroundColor = UIColor.clear
         focusPointView.center = touchPoint
-        focusPointView.layer.cornerRadius = focusPointView.frame.size.height/2
+        focusPointView.layer.borderColor = UIColor.white.cgColor
+        focusPointView.layer.borderWidth = 2.0
         focusPointView.isHidden = false
         focusPointView.alpha = 0.5
         
@@ -170,17 +178,13 @@ class CameraViewController: UIViewController {
     
     func getSettings(camera: AVCaptureDevice, flashMode: CurrentFlashMode) -> AVCapturePhotoSettings {
         let settings = AVCapturePhotoSettings()
-        
-        if camera.position == .back {
+        if camera.hasFlash {
             switch flashMode {
             case .auto: settings.flashMode = .auto
             case .on: settings.flashMode = .on
             default: settings.flashMode = .off
             }
         }
-        
-        print("PASSING SETTINGS - flash is: \(settings.flashMode.hashValue)")
-        
         return settings
     }
     
@@ -201,7 +205,6 @@ class CameraViewController: UIViewController {
                 frontCamera = device
             }
         }
-        
         currentCamera = backCamera
     }
     
@@ -209,14 +212,25 @@ class CameraViewController: UIViewController {
         do {
             inputDevice = try AVCaptureDeviceInput(device: currentCamera)
             
-            photoOutput  = AVCapturePhotoOutput()
+            
+            photoOutput = AVCapturePhotoOutput()
             photoOutput.setPreparedPhotoSettingsArray([AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])], completionHandler: nil)
             
+            videoOutput = AVCaptureVideoDataOutput()
+            videoOutput.setSampleBufferDelegate(self, queue: videoDispatchQueue)
+
             captureSession.addInput(inputDevice)
             captureSession.addOutput(photoOutput)
+            captureSession.addOutput(videoOutput)
             
         } catch {
             print(error.localizedDescription)
+        }
+    }
+    
+    func updateRecognizedObjectLabel(with text: String) {
+        DispatchQueue.main.async {
+            self.recognizedObjectLabel.text = text
         }
     }
     
@@ -299,10 +313,35 @@ class CameraViewController: UIViewController {
 
 extension CameraViewController: AVCapturePhotoCaptureDelegate {
     
+    
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+        
         if let imageData = photo.fileDataRepresentation() {
             capturedImageView.image = UIImage(data: imageData)
             setElementsVisibility(isCurrentlyPicking: false)
         }
     }
+}
+
+extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
+    
+    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        
+        guard let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
+        guard let recognizeModel = try? VNCoreMLModel(for: Resnet50().model) else { return }
+        let recognizeRequest = VNCoreMLRequest(model: recognizeModel) { (finishedRequest, error) in
+            guard let results = finishedRequest.results as? [VNClassificationObservation] else { return }
+            guard let firstResult = results.first else { return }
+            
+            self.updateRecognizedObjectLabel(with: "\(firstResult.identifier), \(firstResult.confidence) %")
+            print("\(firstResult.identifier), \(firstResult.confidence) %")
+            
+        }
+        try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([recognizeRequest])
+        
+    }
+}
+
+extension CameraViewController: ARSCNViewDelegate {
+    
 }

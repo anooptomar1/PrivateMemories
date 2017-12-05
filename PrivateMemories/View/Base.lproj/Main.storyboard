@@ -216,6 +216,15 @@
                                     <action selector="captureButtonPressed:" destination="Nor-MN-PiJ" eventType="touchUpInside" id="FMo-j7-vLR"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwD-AB-STm">
+                                <rect key="frame" x="23" y="78" width="332" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -245,6 +254,7 @@
                         <outlet property="flashButton" destination="cK9-iR-K7l" id="cXR-It-Wqx"/>
                         <outlet property="flipButton" destination="Y06-cq-cFJ" id="F15-no-fh2"/>
                         <outlet property="gridButton" destination="LCQ-pX-Wy0" id="Lu4-dh-LbB"/>
+                        <outlet property="recognizedObjectLabel" destination="iwD-AB-STm" id="uot-FR-tTR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kfI-XL-xLM" userLabel="First Responder" sceneMemberID="firstResponder"/>
