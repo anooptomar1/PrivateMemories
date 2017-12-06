@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         configureLayoutAppearance()
+        configureSettings()
         
         return true
     }
@@ -45,6 +46,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: "button-back")
     }
 
+    // MARK: - Settings configuration
+    
+    func configureSettings() {
+        if SettingsHandler.Defaults.bool(forKey: SettingsHandler.BundleKeys.isNotFirstRun) == false {
+            print("KONFIGURACJA")
+            //TODO: Ustaw domyślne ustawienia, pokaż samouczek, zezwolenia i ekran konfiguracji kodu
+        }
+    }
+    
     // MARK: - Core Data stack
 
     lazy var persistentContainer: NSPersistentContainer = {

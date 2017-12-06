@@ -8,15 +8,15 @@
 
 import UIKit
 import AVKit
-import Vision //TODO
-import SceneKit
-import ARKit
+import Vision
 
 enum CurrentFlashMode {
     case off
     case on
     case auto
 }
+
+//TODO: Ustawić widoczność elementów, ARKit w CoreML
 
 class CameraViewController: UIViewController {
 
@@ -340,8 +340,4 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([recognizeRequest])
         
     }
-}
-
-extension CameraViewController: ARSCNViewDelegate {
-    
 }

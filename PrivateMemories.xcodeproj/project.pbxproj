@@ -36,8 +36,10 @@
 		E2310DD41FBE862100A7B3B2 /* PhotoDetailsViewController+CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2310DD31FBE862100A7B3B2 /* PhotoDetailsViewController+CollectionViewDataSource.swift */; };
 		E2310DD61FBE863900A7B3B2 /* PhotoDetailsViewController+CollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2310DD51FBE863900A7B3B2 /* PhotoDetailsViewController+CollectionViewDelegateFlowLayout.swift */; };
 		E23EA3FF1FC3A7590078A366 /* GalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23EA3FE1FC3A7590078A366 /* GalleryViewModel.swift */; };
+		E24694911FD780D80093AFB0 /* SettingsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24694901FD780D80093AFB0 /* SettingsHandler.swift */; };
 		E255B7391FC7391C001F0E27 /* GalleryCollectionViewController+NohanaImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E255B7381FC7391C001F0E27 /* GalleryCollectionViewController+NohanaImagePicker.swift */; };
 		E2A7B61F1FD7650C000DB556 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E2A7B61E1FD7650B000DB556 /* Resnet50.mlmodel */; };
+		E2A7B6261FD772B9000DB556 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A7B6251FD772B9000DB556 /* SettingsViewController.swift */; };
 		E2DA41E61FA77BF800DED69C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DA41E51FA77BF800DED69C /* AppDelegate.swift */; };
 		E2DA41EE1FA77BF800DED69C /* PrivateMemories.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2DA41EC1FA77BF800DED69C /* PrivateMemories.xcdatamodeld */; };
 		E2DA41FB1FA77D9D00DED69C /* GalleryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DA41FA1FA77D9D00DED69C /* GalleryCollectionViewController.swift */; };
@@ -77,8 +79,10 @@
 		E2310DD31FBE862100A7B3B2 /* PhotoDetailsViewController+CollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoDetailsViewController+CollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		E2310DD51FBE863900A7B3B2 /* PhotoDetailsViewController+CollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoDetailsViewController+CollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
 		E23EA3FE1FC3A7590078A366 /* GalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewModel.swift; sourceTree = "<group>"; };
+		E24694901FD780D80093AFB0 /* SettingsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHandler.swift; sourceTree = "<group>"; };
 		E255B7381FC7391C001F0E27 /* GalleryCollectionViewController+NohanaImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalleryCollectionViewController+NohanaImagePicker.swift"; sourceTree = "<group>"; };
 		E2A7B61E1FD7650B000DB556 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
+		E2A7B6251FD772B9000DB556 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E2DA41E21FA77BF800DED69C /* PrivateMemories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrivateMemories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2DA41E51FA77BF800DED69C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2DA41ED1FA77BF800DED69C /* PrivateMemories.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PrivateMemories.xcdatamodel; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 		E228BB6D1FB13C9A006CB9CE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E2A7B61E1FD7650B000DB556 /* Resnet50.mlmodel */,
 				E2DA41EC1FA77BF800DED69C /* PrivateMemories.xcdatamodeld */,
 			);
 			path = Model;
@@ -158,9 +163,10 @@
 			isa = PBXGroup;
 			children = (
 				E22501261FCCED2700C10DA3 /* Album */,
+				E22510EF1FCDC6EC00F54494 /* Camera */,
 				E22CE4931FBDDFA00051BF71 /* Gallery */,
 				E22CE4941FBDDFA60051BF71 /* Photo */,
-				E22510EF1FCDC6EC00F54494 /* Camera */,
+				E2A7B6241FD7729D000DB556 /* Settings */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -176,8 +182,7 @@
 				E22501271FCCED7700C10DA3 /* UIImageExtension.swift */,
 				E225012B1FCCED7700C10DA3 /* UIViewExtension.swift */,
 			);
-			name = Extension;
-			path = "New Group1";
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		E228BB721FB13CE4006CB9CE /* Cell */ = {
@@ -187,7 +192,8 @@
 				E22510E31FCD97BD00F54494 /* AlbumCollectionViewCell.swift */,
 				E22501361FCCED9A00C10DA3 /* TagCollectionViewCell.swift */,
 			);
-			path = Cell;
+			name = Cell;
+			path = ../View/Cell;
 			sourceTree = "<group>";
 		};
 		E22CE4931FBDDFA00051BF71 /* Gallery */ = {
@@ -225,6 +231,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		E2A7B6241FD7729D000DB556 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				E2A7B6251FD772B9000DB556 /* SettingsViewController.swift */,
+				E24694901FD780D80093AFB0 /* SettingsHandler.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		E2DA41D91FA77BF800DED69C = {
 			isa = PBXGroup;
 			children = (
@@ -249,7 +264,6 @@
 				E2DA41E51FA77BF800DED69C /* AppDelegate.swift */,
 				E228CC991FB29BE900453952 /* Assets.xcassets */,
 				E2DA41F41FA77BF800DED69C /* Info.plist */,
-				E2A7B61E1FD7650B000DB556 /* Resnet50.mlmodel */,
 				E228BB6D1FB13C9A006CB9CE /* Model */,
 				E2310DCD1FBE744C00A7B3B2 /* ViewModel */,
 				E228BB6E1FB13CA2006CB9CE /* View */,
@@ -393,6 +407,7 @@
 			files = (
 				E22501321FCCED7800C10DA3 /* UIViewExtension.swift in Sources */,
 				E22501331FCCED7800C10DA3 /* StringExtension.swift in Sources */,
+				E2A7B6261FD772B9000DB556 /* SettingsViewController.swift in Sources */,
 				E22510E21FCD975600F54494 /* AlbumCollectionViewController.swift in Sources */,
 				E2310DD21FBE77C700A7B3B2 /* PickedImage.swift in Sources */,
 				E226035A1FBEFD7D0055568F /* GalleryCollectionViewController+CollectionView.swift in Sources */,
@@ -421,6 +436,7 @@
 				E2DA41FB1FA77D9D00DED69C /* GalleryCollectionViewController.swift in Sources */,
 				E255B7391FC7391C001F0E27 /* GalleryCollectionViewController+NohanaImagePicker.swift in Sources */,
 				E2310DCF1FBE749400A7B3B2 /* PhotoViewModel.swift in Sources */,
+				E24694911FD780D80093AFB0 /* SettingsHandler.swift in Sources */,
 				E2A7B61F1FD7650C000DB556 /* Resnet50.mlmodel in Sources */,
 				E22B96251FC7AD2800EEF31E /* GalleryViewModel+NSFetchedResultsControllerDelegate.swift in Sources */,
 			);
