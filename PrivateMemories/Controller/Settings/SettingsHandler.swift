@@ -9,23 +9,54 @@
 import Foundation
 
 class SettingsHandler {
+    fileprivate let appVersionKey = "app_version"
+    fileprivate let isNotFirstRunKey = "first_run"
+    fileprivate let isAppRatedKey = "app_rated"
+    fileprivate let passcodeKey = "code"
+    //TODO: fileprivate let dummyPasscode = "dummy_code"
     
-    static let Defaults = UserDefaults.standard
+    fileprivate let defaults = UserDefaults.standard
     
-    struct BundleKeys {
-        static let appVersion = "app_version"
-        static let isNotFirstRun = "first_run"
-        static let isAppRated = "app_rated"
-        static let code = "code"
-        //TODO: static let dummyCode = "dummy_code"
+    var appVersion: String { get { return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String } }
+    
+    var isNotFirstRun: Bool {
+        get {
+            guard let currentValue = defaults.value(forKey: isNotFirstRunKey) else { return false }
+            return currentValue as! Bool
+        }
+        set {
+            defaults.setValue(newValue, forKey: isNotFirstRunKey)
+            defaults.synchronize()
+        }
     }
     
-    class func setDefault() {
-        let version: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
-        Defaults.setValue(true, forKey: BundleKeys.isNotFirstRun)
-        Defaults.setValue(false, forKey: BundleKeys.isAppRated)
-        Defaults.setValue(version, forKey: BundleKeys.appVersion)
-        Defaults.synchronize()
+    var isAppRated: Bool {
+        get { return defaults.value(forKey: isAppRatedKey) as! Bool}
+        set {
+            defaults.setValue(newValue, forKey: isAppRatedKey)
+            defaults.synchronize()
+        }
+    }
+    
+    var passcode: String {
+        get {
+            if let passcode = defaults.value(forKey: passcodeKey) {
+            return passcode as! String
+        } else {
+                return "123456"
+        }}
+        set {
+            defaults.setValue(newValue, forKey: passcodeKey)
+            defaults.synchronize()
+        }
+    }
+    
+    func setDefault() {
+        defaults.setValue(true, forKey: isNotFirstRunKey)
+        defaults.setValue(false, forKey: isAppRatedKey)
+        //TODO: Zmienić
+        defaults.setValue("123456", forKey: passcodeKey)
+        defaults.synchronize()
     }
     
 }

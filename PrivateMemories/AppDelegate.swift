@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreData
+import TOPasscodeViewController
+import LocalAuthentication
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -29,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
+        presentCodeView(animated: false)
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -36,6 +39,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         self.saveContext()
+    }
+    
+    func presentCodeView(animated: Bool) {
+        print("PRESENT CODE VIEW")
+        guard let rootViewController = getTopViewController() else { print("PRESENT CODE VIEW FAILED"); return }
+        let passcodeViewController = TOPasscodeViewController(style: .translucentDark, passcodeType: .sixDigits)
+        passcodeViewController.allowBiometricValidation = false //checkIfTouchIDAvailable()
+        passcodeViewController.rightAccessoryButton = UIButton()
+        passcodeViewController.accessoryButtonTintColor = UIColor.turquoise
+        passcodeViewController.inputProgressViewTintColor = UIColor.turquoise
+        passcodeViewController.keypadButtonTextColor = UIColor.turquoise
+        passcodeViewController.delegate = self
+        rootViewController.present(passcodeViewController, animated: animated, completion: nil)
+    }
+    
+    func getTopViewController() -> UIViewController? {
+        if var topViewController = UIApplication.shared.keyWindow?.rootViewController {
+            while let presentedViewController = topViewController.presentedViewController {
+                topViewController = presentedViewController
+            }
+            return topViewController
+        } else { return nil }
+    }
+    
+    func checkIfTouchIDAvailable() -> Bool {
+        if #available(iOS 8.0, *) {
+            return LAContext().canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
+        }
+        return false
     }
     
     // MARK: - Layout customization
@@ -49,9 +81,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Settings configuration
     
     func configureSettings() {
-        if SettingsHandler.Defaults.bool(forKey: SettingsHandler.BundleKeys.isNotFirstRun) == false {
+        let settingsHandler = SettingsHandler()
+        if settingsHandler.isNotFirstRun == false {
             print("KONFIGURACJA")
-            //TODO: Ustaw domyślne ustawienia, pokaż samouczek, zezwolenia i ekran konfiguracji kodu
+            settingsHandler.setDefault()
         }
     }
     
@@ -82,5 +115,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+}
+
+extension AppDelegate: TOPasscodeViewControllerDelegate {
+    func passcodeViewController(_ passcodeViewController: TOPasscodeViewController, isCorrectCode code: String) -> Bool {
+        return code == SettingsHandler().passcode
+    }
+    
+    func didTapCancel(in passcodeViewController: TOPasscodeViewController) {
+        passcodeViewController.dismiss(animated: true, completion: nil)
+    }
+    
+    func didInputCorrectPasscode(in passcodeViewController: TOPasscodeViewController) {
+        passcodeViewController.dismiss(animated: true, completion: nil)
+    }
+    
+    func didPerformBiometricValidationRequest(in passcodeViewController: TOPasscodeViewController) {
+        //let authContext = LAContext()
+    }
 }
 

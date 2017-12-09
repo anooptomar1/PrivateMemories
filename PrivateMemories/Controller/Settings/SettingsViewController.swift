@@ -23,7 +23,7 @@ class SettingsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     let settingsCellIdentifier = "SettingsTableViewCell"
-    let preferences = SettingsHandler.Defaults
+    let preferences = SettingsHandler()
     let sections = ["Code", "About application", " "]
     let rowHeight: CGFloat = 70.0
     let headerHeight: CGFloat = 50.0
@@ -52,18 +52,8 @@ class SettingsViewController: UIViewController {
     }
     
     // - MARK: IBActions
-
-    @IBAction func codeButtonTapped(_ sender: Any) {
-        let passcodeViewController = TOPasscodeViewController(style: .translucentDark, passcodeType: .sixDigits)
-        passcodeViewController.allowBiometricValidation  = false
-        passcodeViewController.accessoryButtonTintColor = UIColor.turquoise
-        passcodeViewController.inputProgressViewTintColor = UIColor.turquoise
-        passcodeViewController.keypadButtonTextColor = UIColor.turquoise
-        passcodeViewController.delegate = self
-        self.present(passcodeViewController, animated: true, completion: nil)
-    }
     
-    @IBAction func editCodeButtonTapped(_ sender: Any) {
+    func setNewCode() {
         let passcodeSettingsViewController = TOPasscodeSettingsViewController(style: .dark)
         passcodeSettingsViewController.delegate = self
         passcodeSettingsViewController.passcodeType = .sixDigits
@@ -114,7 +104,7 @@ extension SettingsViewController: UITableViewDataSource {
                 cell.selectionStyle = .none
                 let versionLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
                 cell.accessoryView = versionLabel
-                versionLabel.text = "1.0"
+                versionLabel.text = preferences.appVersion
                 versionLabel.textColor = UIColor.darkGray
             case CellIdentifiers.rateApp: content = ("Rate the app", UIImage(named: "hea")!)
             case CellIdentifiers.reportIssue: content = ("Report bug/Contact", UIImage(named: "del")!)
@@ -135,35 +125,20 @@ extension SettingsViewController: UITableViewDataSource {
 extension SettingsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        //TODO
-    }
-}
-
-extension SettingsViewController: TOPasscodeViewControllerDelegate {
-    func passcodeViewController(_ passcodeViewController: TOPasscodeViewController, isCorrectCode code: String) -> Bool {
-        return code == "123456"
-    }
-    
-    func didTapCancel(in passcodeViewController: TOPasscodeViewController) {
-        passcodeViewController.dismiss(animated: true, completion: nil)
-    }
-    
-    func didInputCorrectPasscode(in passcodeViewController: TOPasscodeViewController) {
-        passcodeViewController.dismiss(animated: true, completion: nil)
-    }
-    
-    func didPerformBiometricValidationRequest(in passcodeViewController: TOPasscodeViewController) {
-        //TODO
+        switch indexPath {
+            case CellIdentifiers.setCode: setNewCode()
+            default: break
+        }
     }
 }
 
 extension SettingsViewController: TOPasscodeSettingsViewControllerDelegate {
     func passcodeSettingsViewController(_ passcodeSettingsViewController: TOPasscodeSettingsViewController, didAttemptCurrentPasscode passcode: String) -> Bool {
-        return passcode == "123456"
+        return passcode == preferences.passcode
     }
     
     func passcodeSettingsViewController(_ passcodeSettingsViewController: TOPasscodeSettingsViewController, didChangeToNewPasscode passcode: String, of type: TOPasscodeType) {
+        preferences.passcode = passcode
         passcodeSettingsViewController.dismiss(animated: true, completion: nil)
-        //TODO
     }
 }

@@ -178,30 +178,13 @@
                                         <rect key="frame" x="20" y="20" width="335" height="619"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2TU-Rm-UQx">
-                                                <rect key="frame" x="50" y="20" width="265" height="28"/>
+                                                <rect key="frame" x="60" y="32" width="267" height="28"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LiN-vB-2ww">
-                                                <rect key="frame" x="159" y="20" width="46" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="46" id="zEu-JR-wTA"/>
-                                                </constraints>
-                                                <state key="normal" title="Code"/>
-                                                <connections>
-                                                    <action selector="codeButtonTapped:" destination="ZUj-p4-vR7" eventType="touchUpInside" id="QFX-oR-oFg"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ys3-oF-7uD">
-                                                <rect key="frame" x="244" y="18" width="65" height="30"/>
-                                                <state key="normal" title="Edit code"/>
-                                                <connections>
-                                                    <action selector="editCodeButtonTapped:" destination="ZUj-p4-vR7" eventType="touchUpInside" id="Are-T3-Oem"/>
-                                                </connections>
-                                            </button>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S81-aw-fIf">
-                                                <rect key="frame" x="0.0" y="90" width="335" height="529"/>
+                                                <rect key="frame" x="0.0" y="100" width="335" height="519"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SettingsTableViewCell" id="j0L-Mt-dsu" customClass="SettingsTableViewCell" customModule="PrivateMemories" customModuleProvider="target">
@@ -243,20 +226,25 @@
                                                     </tableViewCell>
                                                 </prototypes>
                                             </tableView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="set" translatesAutoresizingMaskIntoConstraints="NO" id="eaV-A0-PXA">
+                                                <rect key="frame" x="20" y="30" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="WnM-h3-vS4"/>
+                                                    <constraint firstAttribute="height" constant="30" id="X44-yn-Pfi"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="Ys3-oF-7uD" firstAttribute="leading" secondItem="LiN-vB-2ww" secondAttribute="trailing" constant="39" id="7IX-ch-TYn"/>
-                                            <constraint firstItem="S81-aw-fIf" firstAttribute="top" secondItem="LiN-vB-2ww" secondAttribute="bottom" constant="40" id="IB7-Ww-NvO"/>
-                                            <constraint firstItem="Ys3-oF-7uD" firstAttribute="bottom" secondItem="2TU-Rm-UQx" secondAttribute="bottom" id="IWP-va-GdW"/>
-                                            <constraint firstItem="LiN-vB-2ww" firstAttribute="centerX" secondItem="2TU-Rm-UQx" secondAttribute="centerX" id="Me9-fl-3Rc"/>
-                                            <constraint firstAttribute="trailing" secondItem="Ys3-oF-7uD" secondAttribute="trailing" constant="26" id="NTa-q6-7k8"/>
-                                            <constraint firstAttribute="trailing" secondItem="2TU-Rm-UQx" secondAttribute="trailing" constant="20" id="SFQ-ye-38a"/>
+                                            <constraint firstItem="eaV-A0-PXA" firstAttribute="leading" secondItem="IZd-Ea-ySm" secondAttribute="leading" constant="20" id="8N8-CG-UiE"/>
+                                            <constraint firstItem="S81-aw-fIf" firstAttribute="top" secondItem="2TU-Rm-UQx" secondAttribute="bottom" constant="40" id="HJH-8z-X3p"/>
+                                            <constraint firstAttribute="trailing" secondItem="2TU-Rm-UQx" secondAttribute="trailing" constant="8" id="SFQ-ye-38a"/>
+                                            <constraint firstItem="2TU-Rm-UQx" firstAttribute="leading" secondItem="eaV-A0-PXA" secondAttribute="trailing" constant="10" id="Thu-kY-cHR"/>
                                             <constraint firstItem="S81-aw-fIf" firstAttribute="leading" secondItem="IZd-Ea-ySm" secondAttribute="leading" id="Ycc-h2-ToG"/>
                                             <constraint firstAttribute="bottom" secondItem="S81-aw-fIf" secondAttribute="bottom" id="i8X-da-4yc"/>
-                                            <constraint firstItem="LiN-vB-2ww" firstAttribute="top" secondItem="2TU-Rm-UQx" secondAttribute="top" id="oJ4-jA-khL"/>
+                                            <constraint firstItem="eaV-A0-PXA" firstAttribute="top" secondItem="IZd-Ea-ySm" secondAttribute="top" constant="30" id="q1w-7R-z1r"/>
                                             <constraint firstAttribute="trailing" secondItem="S81-aw-fIf" secondAttribute="trailing" id="qcA-ik-tzR"/>
-                                            <constraint firstItem="2TU-Rm-UQx" firstAttribute="top" secondItem="IZd-Ea-ySm" secondAttribute="top" constant="20" id="zlo-4y-SJH"/>
+                                            <constraint firstItem="2TU-Rm-UQx" firstAttribute="top" secondItem="IZd-Ea-ySm" secondAttribute="top" constant="32" id="zlo-4y-SJH"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -755,6 +743,7 @@
         <image name="hea" width="256" height="256"/>
         <image name="mono_calendar" width="256" height="256"/>
         <image name="mono_navigation_mark" width="256" height="256"/>
+        <image name="set" width="256" height="256"/>
         <image name="settings" width="256" height="256"/>
         <image name="sha" width="256" height="256"/>
     </resources>
