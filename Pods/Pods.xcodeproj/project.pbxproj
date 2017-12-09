@@ -7,142 +7,166 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02520A478C0465BD26AB6E0C8CE4ED5C /* Pods-PrivateMemories-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E2AAAF53BBB8F6141E9309799140D1 /* Pods-PrivateMemories-dummy.m */; };
 		0289E48C2325D044E4FE10164C84F4A8 /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC205BD0E567CBCD5D368736824F19FE /* Cache.framework */; };
-		04C0AB9DA8BE8E34B0F7DE42A6F7EBE8 /* TintImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F000A96220B1165A23906BD7CFD8BE7 /* TintImageProcessor.swift */; };
-		0B8057CAB6C9A7559D2F43CFA202E41A /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3189659830B9F56C59DECB8EE81E62 /* LoadingIndicator.swift */; };
+		04362D4FF705985508A11744375B479F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E5D6AA8ED47372E023665718EF958F7 /* Foundation.framework */; };
+		04C0AB9DA8BE8E34B0F7DE42A6F7EBE8 /* TintImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54C853C8EA4A6C2A5627E645A38838 /* TintImageProcessor.swift */; };
+		0B8057CAB6C9A7559D2F43CFA202E41A /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A073F62BB261281AE14C2753658E0F2A /* LoadingIndicator.swift */; };
 		0F2E8310657F6A3EBEBB5DB0CEEE7C38 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E5D6AA8ED47372E023665718EF958F7 /* Foundation.framework */; };
-		1379675B791DA3D564C2D951FBD68281 /* ExpandingAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0651944B4BC9F6335887382EECAA456 /* ExpandingAnimationController.swift */; };
-		195395B1BE9CFA7D333ACD45C2D16849 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C29505DA4C8E2E700929660EE34CE3A /* Size.swift */; };
-		1A374C6716BAB753B61B5EE9E43C9BF1 /* AnimatableNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DC4989493C128DE109803F1275EFB8 /* AnimatableNavigationController.swift */; };
-		1C9B89C9CDA0A4B1759505C035D71EDA /* ImaginaryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D60E3C8E8836769744F9F3A253904B7 /* ImaginaryError.swift */; };
-		1F0B33A17BFB86175B2936E938102A6C /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C72DC3AA66905BBD631A655BEEEA74A /* FooterView.swift */; };
-		1FD547E1B000EEFB5098C430AAE9C3BC /* AsyncStorageAware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12223418B8ABE5066E2E48E286010E20 /* AsyncStorageAware.swift */; };
-		20070C9501DA782A1D5EDCB4F75AEDE2 /* Hue-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C5F9F87F85F1BCA2FCE8FD8FED875222 /* Hue-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		201783A63EEBE076A0DD64D99254AAE2 /* NohanaImagePicker.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44E4EE59AC94129DB135F43CD0AF2107 /* NohanaImagePicker.xcassets */; };
+		0F55A9135B7C4571C9E0038A23956ADA /* TOPasscodeViewContentLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7E3ED134CDDE83B1BAD2C6B04CABA0 /* TOPasscodeViewContentLayout.m */; };
+		1379675B791DA3D564C2D951FBD68281 /* ExpandingAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C382A717095542E9F62D5DC763E0829A /* ExpandingAnimationController.swift */; };
+		1454DE2EB90CDCFFA60D55A563460844 /* TOPasscodeViewContentLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BA8C813AD4CEB12175BCF0A342C594 /* TOPasscodeViewContentLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16736C6A30F1DA9E1D847623F0797952 /* TOPasscodeSettingsKeypadButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8C3B219F72405F0B2A37DBF995189F /* TOPasscodeSettingsKeypadButton.m */; };
+		193CA2E21883CB5E85332ED5FF8B8AC0 /* Pods-PrivateMemories-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 165FA429A5399F103B22FA3A56100BF8 /* Pods-PrivateMemories-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		195395B1BE9CFA7D333ACD45C2D16849 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = A454319C935D489A88CF8FC2003FDCC5 /* Size.swift */; };
+		1A374C6716BAB753B61B5EE9E43C9BF1 /* AnimatableNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E2E504DB4B28506023EAA06D024DEA /* AnimatableNavigationController.swift */; };
+		1C9B89C9CDA0A4B1759505C035D71EDA /* ImaginaryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59B8C72A52C69D0E0DD74CF99CD06A8 /* ImaginaryError.swift */; };
+		1F0B33A17BFB86175B2936E938102A6C /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7572E99D9EE1F04409A105BE0A73524 /* FooterView.swift */; };
+		1FD547E1B000EEFB5098C430AAE9C3BC /* AsyncStorageAware.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED032525F6E21B79D348CC76AB79C6C /* AsyncStorageAware.swift */; };
+		20070C9501DA782A1D5EDCB4F75AEDE2 /* Hue-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F8FF550FA3973B9E635252739315FCC /* Hue-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		201783A63EEBE076A0DD64D99254AAE2 /* NohanaImagePicker.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F32D9F51115D20B30C20BB5AF57D1464 /* NohanaImagePicker.xcassets */; };
 		208C2D4E7ECBE27C574932C32EB50C03 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31CED764411E80799DD68D3941123222 /* AVKit.framework */; };
 		2100905F9EC6C61422723C8E1AC1CA35 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51EC51B0816DC3ADFED5E939291B0EF0 /* AVFoundation.framework */; };
-		2373B8697D89B08B76DC48C09F97F132 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754E6E2ADF36D90C5338597FF4604934 /* Result.swift */; };
+		2373B8697D89B08B76DC48C09F97F132 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C8177A68333FB47B41FDF8EB2771BE /* Result.swift */; };
 		24049F8284CBF663CDBACBE1C5BA58E9 /* SwiftHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719D2EDB4D73866AEE80683B21FB4038 /* SwiftHash.framework */; };
-		24FF9000F9D89B073219CD035AC9EF15 /* NotificationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA92362C4864D0EEE2A498AC3D47 /* NotificationInfo.swift */; };
-		25DBCBA4D2BB68A7499B2ADB99EFB1CE /* LightboxConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4F51FC0D472E369F12C4A09D219263 /* LightboxConfig.swift */; };
-		27C0F5EC174751E5E8AFAE469B208827 /* SyncStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6E0BECFBC4AE14270794F02BBA3D88 /* SyncStorage.swift */; };
+		24A6121DB402DFF6226BB06B1D486C01 /* TOSettingsKeypadImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8B236A0CE8DC3043AD0B2761E23286 /* TOSettingsKeypadImage.m */; };
+		24FF9000F9D89B073219CD035AC9EF15 /* NotificationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62605429D19EA226ED020FFE6E6BF730 /* NotificationInfo.swift */; };
+		25DBCBA4D2BB68A7499B2ADB99EFB1CE /* LightboxConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE1F66CDFF3E746E9426C5AC0D46F4F /* LightboxConfig.swift */; };
+		27C0F5EC174751E5E8AFAE469B208827 /* SyncStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12D5F00BE966027261957DC53D59363 /* SyncStorage.swift */; };
 		2861515B2461EB9AFA5918ED939C11FE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0495873BF0E59F825E4B010FC229812 /* UIKit.framework */; };
-		2A623EB3BE1DD76DBD04CD94FF4172A1 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A39556CF5ABBD094CA8803504EC8641 /* Types.swift */; };
-		2AD812C5CE48AE0A077648CCCC5CB41A /* NohanaImagePicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 034BC8929DC78C6863BBBA4BA05F8708 /* NohanaImagePicker.bundle */; };
+		28CAF7B450A94F8703BCCB4484AB8353 /* TOPasscodeKeypadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 561289CCD2BD96DF215612FC6B555A79 /* TOPasscodeKeypadView.m */; };
+		2A623EB3BE1DD76DBD04CD94FF4172A1 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5DCF78F24A4B5C0EEC50FDCB528D8A /* Types.swift */; };
+		2AD812C5CE48AE0A077648CCCC5CB41A /* NohanaImagePicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0E0A71FF16B33974C3DA8BBEA272DCCE /* NohanaImagePicker.bundle */; };
 		2C5058B2BA9B84672634D4CDB61E0C33 /* Imaginary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 258FA6ACD46CE93B0966365AF978F2EB /* Imaginary.framework */; };
-		309D2D31FFC42D7ED9BA3FF607525961 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E5D6AA8ED47372E023665718EF958F7 /* Foundation.framework */; };
-		31523898BD49FA9C3BBAD66B796E5117 /* ButtonBackgroundDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D7506061939C94C855758C23187543 /* ButtonBackgroundDisplayer.swift */; };
-		32571DC8A6BFE808F543FF829F3FC887 /* AssetDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D3ED07C280B26F266C42C54B241CEF /* AssetDetailCell.swift */; };
-		34591F19DB8D2E81D1DD074A609FD46E /* Lightbox-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 95729F8A8CA4350048C5C28FD5A4DDFE /* Lightbox-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		38F94BF996854BFFED92A784794F540B /* HybridStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF86578A626A0FC8667AD8DFCAF64CF4 /* HybridStorage.swift */; };
+		2F3BDB5328F9D4F4E4A227C46C720804 /* TOPasscodeCircleImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F3B62B23F8BF0D519304E435BF276A /* TOPasscodeCircleImage.m */; };
+		3070789E1D27C5AA5135DB38C401F88F /* TOPasscodeSettingsKeypadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15538A01B33EB52B5B0CF59461A16570 /* TOPasscodeSettingsKeypadView.m */; };
+		31523898BD49FA9C3BBAD66B796E5117 /* ButtonBackgroundDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B558B2048C0A562C8FDBF3C8AEAF11B /* ButtonBackgroundDisplayer.swift */; };
+		32571DC8A6BFE808F543FF829F3FC887 /* AssetDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90372AA59FE8BCF07426DE1B2ECC9986 /* AssetDetailCell.swift */; };
+		34591F19DB8D2E81D1DD074A609FD46E /* Lightbox-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FDEBE65658CEDEF81014B944B9B4720 /* Lightbox-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38F94BF996854BFFED92A784794F540B /* HybridStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0138912484AA1C1C6A7F5DFA91C0E1 /* HybridStorage.swift */; };
 		3C03DD812C9A86F1F48F953ABE7B8436 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0495873BF0E59F825E4B010FC229812 /* UIKit.framework */; };
-		3CF4C228C94739F05E4A726DB90B8168 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8725AEECB39672E3DE748176417F5CCF /* AlbumCell.swift */; };
+		3C0C60C15371C3ADBBA7303731F2C5AE /* TOPasscodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = DEBA9644E57F144DD9B0A8C3DC7872BE /* TOPasscodeView.m */; };
+		3CF4C228C94739F05E4A726DB90B8168 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED9494267327BDE65217E5FD3077FFA /* AlbumCell.swift */; };
 		3F18B8B8642F11F5A36CE9CF3516DB32 /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC205BD0E567CBCD5D368736824F19FE /* Cache.framework */; };
 		4038DA15B7D4EC2A2484B8DFD1E870BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E5D6AA8ED47372E023665718EF958F7 /* Foundation.framework */; };
-		40791F9196D8095CB24C6B66751FFA2D /* AssetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35306E488D5D4E8DCA9EA2403315F222 /* AssetListViewController.swift */; };
-		40E395810379BA4DEA5DC0F8E26784FE /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3041051AC6A605347C64DA7FC0D4E67 /* MemoryStorage.swift */; };
-		41B54139D0454E349656E14DF42AEAA3 /* MemoryConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1352DDEEDB20BC76E6DC338B74F0D1D1 /* MemoryConfig.swift */; };
-		420D63B844894B325A061EDA95D25A7D /* SwiftHash-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3274D4E41C7ACC1E1E6A3B82BB0326 /* SwiftHash-dummy.m */; };
-		448B97AD5FF5766ED6CA714D8B1F6952 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E050DB54311404516F84E77FF8DEE156 /* ImageDownloader.swift */; };
-		44908B87B8EFF4480D2F91C22F6B1057 /* LightboxImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFFABD2E21DEEB0F850EB9AA5DA1463 /* LightboxImage.swift */; };
-		44AEE56EE0365634D07FE8C01BB758B6 /* AlbumListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE64445349892C1F67B2E9BD60101FC /* AlbumListViewController.swift */; };
-		46418B69ED7C933ED52F68C7A120D7C9 /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC073192572F491ECEE2305713855729 /* ImageFetcher.swift */; };
-		48D89DEFEAFACCA669AC9500C4D96049 /* Cache-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FAC3BE0BD8A8EC59800CFACF860F82B /* Cache-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		40791F9196D8095CB24C6B66751FFA2D /* AssetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2F7B3E6EFEF4CD8F4E1ED2C7852DA1 /* AssetListViewController.swift */; };
+		40E395810379BA4DEA5DC0F8E26784FE /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569F3B5B0C5948F68FCD9FBD33FAA8EB /* MemoryStorage.swift */; };
+		41B54139D0454E349656E14DF42AEAA3 /* MemoryConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE7801031C807F5BA4D03D39B630D7B /* MemoryConfig.swift */; };
+		420D63B844894B325A061EDA95D25A7D /* SwiftHash-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E28F4D0959EFB2827665CD9A07625A08 /* SwiftHash-dummy.m */; };
+		448B97AD5FF5766ED6CA714D8B1F6952 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB326D185AD48EC1113570924B5A8188 /* ImageDownloader.swift */; };
+		44908B87B8EFF4480D2F91C22F6B1057 /* LightboxImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43ADCD9CF7BDF3DF561365D1325F3693 /* LightboxImage.swift */; };
+		44AEE56EE0365634D07FE8C01BB758B6 /* AlbumListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F3C2EEB4BB31A95458DBF05B05434C /* AlbumListViewController.swift */; };
+		46418B69ED7C933ED52F68C7A120D7C9 /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B50B4B64F3FFC334B2142FD67E2793F /* ImageFetcher.swift */; };
+		48D89DEFEAFACCA669AC9500C4D96049 /* Cache-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C6D0AEFB5FF607FF4DA1EA44595B0B8F /* Cache-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4E5FADED454F1AFD99499E3A77EE1A29 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E5D6AA8ED47372E023665718EF958F7 /* Foundation.framework */; };
-		53D8D1864BC90D0F43DA301C74101ECC /* AsyncStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC562B1C33AA82142684758CE62823B /* AsyncStorage.swift */; };
-		577536317EA2DF7592769B04ECA31B34 /* UIView+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446DE7CD5E1D330E1B03709AA09FCC90 /* UIView+Gradient.swift */; };
-		5B7AF01ED73FB4FB9873520687CF8693 /* ru.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 7D43784D59D024E21DD29CD0CBB14BBE /* ru.lproj */; };
+		53D8D1864BC90D0F43DA301C74101ECC /* AsyncStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E7287D742B5A972876499FCDC03CB5 /* AsyncStorage.swift */; };
+		577536317EA2DF7592769B04ECA31B34 /* UIView+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FB47F144FB17030E57251EA5CEE615 /* UIView+Gradient.swift */; };
+		5A209DAB9059B928A04973000525AE8F /* TOPasscodeInputField.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA528E7C310B7359C90A8652D62667E /* TOPasscodeInputField.m */; };
+		5B7AF01ED73FB4FB9873520687CF8693 /* ru.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 03FEB7B7C2F484D83BC26C7BE6836D5C /* ru.lproj */; };
+		5C97238E8AF34A576B156D9084BE9DCA /* TOPasscodeViewControllerConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = A2E41790429EF9DC8DF4FE4CF1D6A336 /* TOPasscodeViewControllerConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6043BF9BCE9F10DD4538C64B2F84041E /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFECABCE52D5451A33D3428783CF29D8 /* Photos.framework */; };
-		60ECEB9A8215E1606D6BDC37D46EC97D /* StorageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA25A7E48AD7059D9B2F33B905934B0 /* StorageError.swift */; };
-		68E63DDB3233845E8408388B47212432 /* View+Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9F2E69E9F04BDD6FEFCA84E32DA48A /* View+Imaginary.swift */; };
-		6F1D26AEE7396A992C08B48D65F99810 /* DiskConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31ECEEA8A39F44D222B710975279E5FB /* DiskConfig.swift */; };
-		707B1DC6E2188F0FE597D992C1C87C62 /* SHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC1E6B91D990614681019C81A69D82B /* SHA1.swift */; };
-		70849E2320C82852AD5213787E8D1B05 /* MomentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A277FFFF3A3A3D98B3C74D0A83EBD713 /* MomentCell.swift */; };
-		70CBCB67007D356F14B8EC15118BA9E3 /* Hue-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A573947F8C4CEDD89A32E7090FCB4E6 /* Hue-dummy.m */; };
-		7161467924CE552AC504F575D8BCA0DC /* NohanaImagePicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E858573957AF986758C76D244798071 /* NohanaImagePicker.storyboard */; };
-		72A49B0187207AB6A6A10C2B796B53D6 /* LightboxTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A71BF047EEEE0E12FE0083B5057606 /* LightboxTransition.swift */; };
-		7348A6BD85B46B148C21D097D2F74303 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FB2925532D01429B05EFFA8041ADAF /* HeaderView.swift */; };
-		7642ABCAD528490DBC79E769AC3CFE6A /* LightboxController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFFA83F514C1C63A187AD170196CDC5 /* LightboxController.swift */; };
+		60ECEB9A8215E1606D6BDC37D46EC97D /* StorageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D865C0ECA5231CA72854A22D577C394D /* StorageError.swift */; };
+		670E6A14A10DAA2D71169092B5620AAC /* TOPasscodeButtonLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E252C05414AD5A65D6FBDA1A2601D7D /* TOPasscodeButtonLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		677DC031681021C295D2D50C7E53B1C9 /* TOPasscodeVariableInputView.h in Headers */ = {isa = PBXBuildFile; fileRef = D51709CB0E2BF867F70C5BC6E642A932 /* TOPasscodeVariableInputView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		688DE9DC1810821DD50B3ADE3469342A /* TOPasscodeInputField.h in Headers */ = {isa = PBXBuildFile; fileRef = 71786A6417DFFAC424FC70F3B707ED23 /* TOPasscodeInputField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		68E63DDB3233845E8408388B47212432 /* View+Imaginary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7ED7C05EC4C73B44022347DE23B86 /* View+Imaginary.swift */; };
+		6D728FCA071FABB7B68039861CC6E848 /* TOPasscodeButtonLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 524DA83B5921A8243DC7732478806F7B /* TOPasscodeButtonLabel.m */; };
+		6F1D26AEE7396A992C08B48D65F99810 /* DiskConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B5F84B047D1C65FF0CD06149629FB0 /* DiskConfig.swift */; };
+		707B1DC6E2188F0FE597D992C1C87C62 /* SHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FD620D5E1468C34BE3EC49F0B5BD5A /* SHA1.swift */; };
+		70849E2320C82852AD5213787E8D1B05 /* MomentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0412A3873AFE190F08946A26EA546D4 /* MomentCell.swift */; };
+		70CBCB67007D356F14B8EC15118BA9E3 /* Hue-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 369DC97E1A89FD868E552F26103FEB09 /* Hue-dummy.m */; };
+		7161467924CE552AC504F575D8BCA0DC /* NohanaImagePicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA94BDA53C71D532661FF0202083BF4F /* NohanaImagePicker.storyboard */; };
+		7262FE24F422C5937920E14D254E7136 /* TOPasscodeCircleImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B0BAEF36DCA7DF18E5103BE73364F15 /* TOPasscodeCircleImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		72A49B0187207AB6A6A10C2B796B53D6 /* LightboxTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9DAD284263DB5978E7D85FBEB78532 /* LightboxTransition.swift */; };
+		7348A6BD85B46B148C21D097D2F74303 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A96C9D62D22CB6A31D7268752A0833F /* HeaderView.swift */; };
+		7642ABCAD528490DBC79E769AC3CFE6A /* LightboxController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C31447DA4D27FB360C84308E8DADC6 /* LightboxController.swift */; };
 		7654819548331A59AAB96E83F6E9353E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0495873BF0E59F825E4B010FC229812 /* UIKit.framework */; };
-		7A5756BE57A737EED25A7B6A858C05EF /* AssetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105FF43ACBD96E5AB4078AC84D1E899A /* AssetCell.swift */; };
-		7A7BDFE2FBD366A5ED4F87E27E49C033 /* Pods-PrivateMemories-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E2AAAF53BBB8F6141E9309799140D1 /* Pods-PrivateMemories-dummy.m */; };
-		7DDF7AF520B7E69F571B94ADF63EC2F0 /* Imaginary-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7774907A4D9E1CE1AF895CFFD53E8CAD /* Imaginary-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7FEF6FE2E8BC9CD9EC30F3743DB41738 /* NohanaImagePicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E5E91CA04FF2D087DC9B3F796B59C7B5 /* NohanaImagePicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7FF33D3CE270368F7E7DE6F70EC8D65C /* ImageWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EF68F6FFB0919A6A5E6FC6F1794670 /* ImageWrapper.swift */; };
-		8097A3F8C5F0A4C5A49144CA2CACE2A9 /* MomentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3618EEE1BBD20345AA7DEA2B4827126 /* MomentViewController.swift */; };
-		821E10762B258991E319F41CA286AB8C /* AssetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C498F79325E2EAC73B39C374C1223E2C /* AssetManager.swift */; };
-		83790D4473D3F8965A7705C0EE1ADFC6 /* UIColor+Hue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9942651B33E0788019F11154EF3C60 /* UIColor+Hue.swift */; };
-		84EC9F608FE06190E69FEEDA6E0E8E80 /* AssetDetailListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6BBCBBBD433C9B04F56019C3B9760A /* AssetDetailListViewController.swift */; };
-		889D619F6A3FE11518F89C0B0A55BB51 /* ContractingAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEF1AD88EB4E99859CB058C6B6A6CC1 /* ContractingAnimationController.swift */; };
-		88C7A352E4E89A29DBAACAB52AB58062 /* AlbumListEmptyIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A659292FA9FAF890E194BCA5F9B20D46 /* AlbumListEmptyIndicator.swift */; };
-		8BFE6719129B21A350ACA02F02C60CD6 /* ActivityIndicatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4102637F7DA3AD7D233E231B678995 /* ActivityIndicatable.swift */; };
-		8F3B6963D0B43F2267A11CAD36BB85D2 /* ButtonDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DCFADA17E6C1406C9A6D3BAFC62256 /* ButtonDisplayer.swift */; };
-		91F339084871922AAFB0ED16375F9BA3 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7FBC524E1966E77C92318D88CFB954 /* Storage.swift */; };
+		7A5756BE57A737EED25A7B6A858C05EF /* AssetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6BBD5A425E148B41371608827A94D5 /* AssetCell.swift */; };
+		7DDF7AF520B7E69F571B94ADF63EC2F0 /* Imaginary-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D3F2DCF928A7A6CAAD5C5089E9653F98 /* Imaginary-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EE85D36271A5746CABF49129D9483F5 /* TOPasscodeCircleView.h in Headers */ = {isa = PBXBuildFile; fileRef = B3BF0914BBE53C8AAFFCEE14E965F5CE /* TOPasscodeCircleView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7FEF6FE2E8BC9CD9EC30F3743DB41738 /* NohanaImagePicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FB055EE9C342A010E1E713E9E27E2E91 /* NohanaImagePicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7FF33D3CE270368F7E7DE6F70EC8D65C /* ImageWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E3347993BC66930B73A156B0B532B0 /* ImageWrapper.swift */; };
+		8097A3F8C5F0A4C5A49144CA2CACE2A9 /* MomentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7A6B119841CD4B92BEE59AC8072BDB /* MomentViewController.swift */; };
+		821E10762B258991E319F41CA286AB8C /* AssetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714FE742CACCCF87CDB0EEACEDFF8788 /* AssetManager.swift */; };
+		83790D4473D3F8965A7705C0EE1ADFC6 /* UIColor+Hue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6B0BFAAC6D436998A86BFE69828B47 /* UIColor+Hue.swift */; };
+		84EC9F608FE06190E69FEEDA6E0E8E80 /* AssetDetailListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F0F8ED9DB034DD406072E5FEC18BD9 /* AssetDetailListViewController.swift */; };
+		867A5CF30B8262A9BA12314115863180 /* TOPasscodeSettingsViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DEDBFF7E4B3E1C0E8F2525FBA619C73 /* TOPasscodeSettingsViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		889D619F6A3FE11518F89C0B0A55BB51 /* ContractingAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACE2D7BB6A91FC896512205F853B250 /* ContractingAnimationController.swift */; };
+		88C7A352E4E89A29DBAACAB52AB58062 /* AlbumListEmptyIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861A5D6C00181A747C6BB3E93AE1D523 /* AlbumListEmptyIndicator.swift */; };
+		8BFE6719129B21A350ACA02F02C60CD6 /* ActivityIndicatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C2158E6223D7F1C2058762261DC52F /* ActivityIndicatable.swift */; };
+		8DFA89BF45B986C0DC84D9ED228AC379 /* TOPasscodeSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECB3E096ADC4BBBC0F72B8C83D61D510 /* TOPasscodeSettingsViewController.m */; };
+		8F3B6963D0B43F2267A11CAD36BB85D2 /* ButtonDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA829F2CD84041D1A67B978621F8341 /* ButtonDisplayer.swift */; };
+		91F339084871922AAFB0ED16375F9BA3 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D2CC6F5B508B7B167E60B72F7215D1 /* Storage.swift */; };
+		9409ED0879F1D6335A4DB49D9A3093BC /* TOPasscodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1935BAB9DC65734CDD026E31601C3CFE /* TOPasscodeViewController.m */; };
 		95272CCA9E8FB1A443A7AEC7C9A2DC30 /* Hue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC8EBD762065619C7594E84BC21C3147 /* Hue.framework */; };
-		954388E298E71C2C8011EBEB2E0EC1C4 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD57438DA3CFB22B838A8AFF996AE76 /* Types.swift */; };
-		97947FD052F0032154F302A1D3FA83B8 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2054AA97489B58EE567A005EFA9970 /* Configuration.swift */; };
+		954388E298E71C2C8011EBEB2E0EC1C4 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F665834F13C6BEAEAFC457E37BDDE2 /* Types.swift */; };
+		97947FD052F0032154F302A1D3FA83B8 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4C0A64661BBD44E9D451CC2A0AD928 /* Configuration.swift */; };
 		9798D1F161F65BEE3E68401DDB175FC9 /* SwiftHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719D2EDB4D73866AEE80683B21FB4038 /* SwiftHash.framework */; };
-		9881B7D7F58D74FBD9E987EDEDD884FF /* ItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3B4AB73162622BCFDCEF1BADAD1633 /* ItemList.swift */; };
-		98DA8D679255239F159D948994511159 /* NohanaImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D4783A301CFDE49361C4EFAEBD297C /* NohanaImagePickerController.swift */; };
-		9A3FA8E6E731502982A1A54C05323815 /* Decompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689DC54077C2118F26989BA519344B8B /* Decompressor.swift */; };
-		9F577917D52F8A559E5356175E1E906B /* DiskStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02462E228B79F00EF761F833B0075C93 /* DiskStorage.swift */; };
-		9F6204E51D5ABB9BF94FF68A6BE5E645 /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = BB10842E7A492702480B24A936F2AFC6 /* en.lproj */; };
-		A338A2A866B665ABB43DCC70AA222068 /* ExpirationMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E521B466B6636649FD2548F2DA7D10BD /* ExpirationMode.swift */; };
-		A3DF09084E87AF2AED35F2BB18AB8287 /* Lightbox.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2461751F1833CF1FE5CE5F3D5C17944D /* Lightbox.bundle */; };
-		A499CF2A5417E5DF29C7B45C020D3641 /* SwipeInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5C4AAEB0C0B3C1C0ED2D11047951CF /* SwipeInteractionController.swift */; };
-		A5ADCD89DBF50D279FAE4760A8A88BD8 /* ImageDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083F4274C5933C75AFAE596B7FB815BF /* ImageDisplayer.swift */; };
-		A6084A469CC1A98724CEF425B36CF0EC /* PhotoKitAlbumList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C54C0B054D57CDD7FB70D800F360A /* PhotoKitAlbumList.swift */; };
+		9881B7D7F58D74FBD9E987EDEDD884FF /* ItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77EA8E0EB5E4C7D817190016A31F527 /* ItemList.swift */; };
+		98DA8D679255239F159D948994511159 /* NohanaImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256D946B6CF36F61E5954F1E07AD812D /* NohanaImagePickerController.swift */; };
+		9A2B5F71166B5C849D79609A13C899B5 /* TOPasscodeCircleButton.h in Headers */ = {isa = PBXBuildFile; fileRef = DB5A1D9120E3BA1423832C00BD3D8A4B /* TOPasscodeCircleButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9A3FA8E6E731502982A1A54C05323815 /* Decompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D9163A75A9B2D9BEC3712CB9E91A44 /* Decompressor.swift */; };
+		9BA0F622C015976CB64C4EC1C9636449 /* TOPasscodeSettingsKeypadView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D9041B61550239E37645DFB338E985C /* TOPasscodeSettingsKeypadView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9D932DB29A380CC808FA800542514C41 /* TOPasscodeViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BDF51DFE38E52195F228B6E4AC3E7359 /* TOPasscodeViewController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9F577917D52F8A559E5356175E1E906B /* DiskStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDCC6F36DCCA91B52CE0C3486396663 /* DiskStorage.swift */; };
+		9F6204E51D5ABB9BF94FF68A6BE5E645 /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C5A59384B8E7CB7AE07B7C60019C4C53 /* en.lproj */; };
+		A1A75D40E6002EF7DF9900258D899BB5 /* TOPasscodeSettingsKeypadButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AD4DF9F0C8C9369F34D122E11F99F79 /* TOPasscodeSettingsKeypadButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A338A2A866B665ABB43DCC70AA222068 /* ExpirationMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F3534E76C2AEE9464BC279FD8D53C0 /* ExpirationMode.swift */; };
+		A3DF09084E87AF2AED35F2BB18AB8287 /* Lightbox.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3EF13828FA26F4CF3B6EE089F2AB6046 /* Lightbox.bundle */; };
+		A499CF2A5417E5DF29C7B45C020D3641 /* SwipeInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D595BC919898A51828EA5ED36B57C492 /* SwipeInteractionController.swift */; };
+		A5ADCD89DBF50D279FAE4760A8A88BD8 /* ImageDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95C167E016A36192ED69386B24D3728 /* ImageDisplayer.swift */; };
+		A6084A469CC1A98724CEF425B36CF0EC /* PhotoKitAlbumList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0408F97B08727FA1E09DFC304F45009 /* PhotoKitAlbumList.swift */; };
 		A6DC9E37DB495FD3AB2CCDE0530E4998 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E5D6AA8ED47372E023665718EF958F7 /* Foundation.framework */; };
-		A8352D8C543292583EA84E9DB8D6F806 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2816ED33D70CDE5D07C98CD9D1FFC5B5 /* PageView.swift */; };
-		AD324429AB52927BC144AB9D3D2FEF4C /* Expiry.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD016E4E0CA39929F2A7A03CD491CCB4 /* Expiry.swift */; };
-		AE37C0FB8063BCAE0191FA9CB84F8767 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFB8D8A1B3A8DB8D4870B3A545BEC7A /* Result.swift */; };
-		AE92AA47DF3F6F90E90AD8473DBAFD72 /* ja.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 4D96A1F5E734298BE928B3185C5DC656 /* ja.lproj */; };
-		AF5DD88331C91C99067F9C8E1AB5F2EE /* MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = B487372E9A4CBF1AA1B6E269759F0E60 /* MD5.swift */; };
-		B1F7A458D3588D7D93C7A0A86542FCAF /* PhotoKitAssetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AA5DB9E4984D8EABA22E574F03BD21 /* PhotoKitAssetList.swift */; };
-		B274A44F7558AF3C30586078EBD7EB4B /* Cache-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EF2C72173F0E273C85C69B01558260 /* Cache-dummy.m */; };
-		BFE6F31DE523EC884CB782005AA9E16D /* MomentSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A4ACF64D2F6AFF6332E37FDEA08D86 /* MomentSectionHeaderView.swift */; };
+		A8352D8C543292583EA84E9DB8D6F806 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80D8929C4FF6BB71FD7E975A23C9607 /* PageView.swift */; };
+		A864FF98A5EB2F86FAEEB88A879E6DE9 /* TOPasscodeView.h in Headers */ = {isa = PBXBuildFile; fileRef = ADC8088FC19E77618E8CFFF02B50A014 /* TOPasscodeView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AD324429AB52927BC144AB9D3D2FEF4C /* Expiry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BF26018250ECF528E1F26B7B9D0C2C /* Expiry.swift */; };
+		ADA0C9876DE8832350D7F4984CF69A45 /* TOPasscodeVariableInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = D32B1B7691BED3A082214F6A1A413028 /* TOPasscodeVariableInputView.m */; };
+		AE37C0FB8063BCAE0191FA9CB84F8767 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5B586C1BD993DDEA6C8FEF7B3ECCEF /* Result.swift */; };
+		AE92AA47DF3F6F90E90AD8473DBAFD72 /* ja.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 6D96CE14DE04964347A52E8B9187F43F /* ja.lproj */; };
+		AF5DD88331C91C99067F9C8E1AB5F2EE /* MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299121A6F7BD06D109AB823EC273AFAA /* MD5.swift */; };
+		B1F7A458D3588D7D93C7A0A86542FCAF /* PhotoKitAssetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC71651C5F35FA63C565650339278B6 /* PhotoKitAssetList.swift */; };
+		B274A44F7558AF3C30586078EBD7EB4B /* Cache-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2A60ED9154C4109DA9A65283F13C3C /* Cache-dummy.m */; };
+		B6B2D1C92DD76242F8C517396C65A305 /* TOPasscodeKeypadView.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BFFB12A4A36C7F72ECA636EFD7D22E6 /* TOPasscodeKeypadView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BA00480A69699E57DED59ED2082CF498 /* TOPasscodeViewControllerAnimatedTransitioning.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AEA97CC4089328CE90798BD23C2E316 /* TOPasscodeViewControllerAnimatedTransitioning.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BE171A58816DA54D01EA41B954C4F2F5 /* TOPasscodeViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 688669E22A03DD74C77685D1DFDDDA25 /* TOPasscodeViewController-dummy.m */; };
+		BFE6F31DE523EC884CB782005AA9E16D /* MomentSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1107B9D1676CEF4ED114E0F15F597D38 /* MomentSectionHeaderView.swift */; };
 		C006DCDF4F4F25DC2FC981C116CF7D69 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E5D6AA8ED47372E023665718EF958F7 /* Foundation.framework */; };
-		C97A0F9D89F4D70E1A0D9299EDEC1831 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1E30E09FB01AB9CAD48C0DDF50CD8 /* Entry.swift */; };
-		CB4D4F8727E1FD1E826C04C41F239E71 /* ObjectSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526111D85286F12C047CADC2421D3622 /* ObjectSerializer.swift */; };
-		D5562D8693B158FB2208041BEDF8D622 /* EmptyIndicatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766E5D74C5CC45C35811AE4F9E4B7707 /* EmptyIndicatable.swift */; };
-		D6A0889E858F505747BC12FC2E653D3F /* DataSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638913AEE56B0EDDF95CDC9A0E64D6CF /* DataSerializer.swift */; };
-		DAEE87A6037960AA031961940C43B359 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357D2411131FDA1E897965A4D4C252CB /* Date+Extensions.swift */; };
-		DB73E02222092C285B98328F709B8743 /* Imaginary-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F3AA526EC842C84FFDEE8612949F4E55 /* Imaginary-dummy.m */; };
-		DFD27498CA2414170E7F15EB67FE56CA /* MultipleImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29150F6A883FDEBBA8088E5E5146C5A5 /* MultipleImageFetcher.swift */; };
+		C13137E2BE65ED75479499417DD36AC5 /* TOPasscodeFixedInputView.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B4745DDE99A9A31FF428228F1370A57 /* TOPasscodeFixedInputView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C97A0F9D89F4D70E1A0D9299EDEC1831 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69825345D64F33221C911F2F8609B48A /* Entry.swift */; };
+		CA014CE4F8104062F6CC9F4C319210D8 /* TOPasscodeFixedInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 526AC166CF727A86AC7F5D5597DDBB61 /* TOPasscodeFixedInputView.m */; };
+		CB4D4F8727E1FD1E826C04C41F239E71 /* ObjectSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E3C0E971148CC1178CA4216548BE60 /* ObjectSerializer.swift */; };
+		CEBF0E6986FFE4B4841B10210DB69EC0 /* TOPasscodeCircleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C82ECC86F82432B22BA313E26568E72A /* TOPasscodeCircleButton.m */; };
+		D5562D8693B158FB2208041BEDF8D622 /* EmptyIndicatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3BF8899A9BF36F17B9BD364275A073 /* EmptyIndicatable.swift */; };
+		D6A0889E858F505747BC12FC2E653D3F /* DataSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA80C35000B6634B38253E6C15DF2F89 /* DataSerializer.swift */; };
+		DAEE87A6037960AA031961940C43B359 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F450BE0117B2EC742C45184C745354E4 /* Date+Extensions.swift */; };
+		DB73E02222092C285B98328F709B8743 /* Imaginary-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F6D81AB2BB4BA803809D4E74931491 /* Imaginary-dummy.m */; };
+		DD4D9992DC7F38C13D4F0D8EF837A485 /* TOPasscodeCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB14CF7911719FD1B313C6EC54FABD36 /* TOPasscodeCircleView.m */; };
+		DFD27498CA2414170E7F15EB67FE56CA /* MultipleImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6015C009075D6D9A88E7D792C327C6 /* MultipleImageFetcher.swift */; };
 		E0661E4E73CFCA923007DD69FA51B3C6 /* SwiftHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719D2EDB4D73866AEE80683B21FB4038 /* SwiftHash.framework */; };
-		E12D36589935298FE5135D3EE9347A21 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A339A58E58D122E14C6B5DABB234887 /* UIImage+Extensions.swift */; };
-		E17369793D4B6DF4C88177468C07ECE9 /* SwiftHash-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 82BC985D3E84A09027A559EE63528B8C /* SwiftHash-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E2426D9EACB62563504C3749F7FD4111 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E6622B5B97B4E369830C57004FF4E7 /* Option.swift */; };
-		E2F7CA7D84E9EE13F5A57E044DC3FD2A /* LayoutConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7B710A5DA2A2B75A8363B75AFFC7E1 /* LayoutConfigurable.swift */; };
-		E7B59D3D4B5CFCF39A0C676A5D2772FD /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFEC4BC1DEE584272B21E405B1C2CA3 /* ImageProcessor.swift */; };
-		E855B8D438F3691B27CC99DF79538167 /* StorageAware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99646057FBDAD4739A0BF82EA2F7A729 /* StorageAware.swift */; };
-		E88B0B58316C82EBFAA1FF40B71BB7B7 /* ImageViewDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73174B43063C419B13D1457AFC29CF83 /* ImageViewDisplayer.swift */; };
-		EA0E999C9399CC2E35ADF5C5E67C5648 /* InfoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07650C82A28A2DCB3B43F2DA2345EC94 /* InfoLabel.swift */; };
-		F18A0E166893080FF26D4F18DC039A94 /* Lightbox-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD7A1D48DC2638BCA411ABA68EF3CC1 /* Lightbox-dummy.m */; };
-		F1C5EC50666122CF2E8BF394EC81928A /* PhotoKitAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65143708AA9846E0C14684CBF097ECA /* PhotoKitAsset.swift */; };
-		F5CFB2BB7818EB421412DFC252820106 /* PickedAssetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B7F2B202BDE5BC4871803E15BBC60 /* PickedAssetList.swift */; };
-		F721F4E6240D276BBB1098700292493D /* NohanaImagePicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ED79DC5409E3E49A013BEA2E95A1C67B /* NohanaImagePicker-dummy.m */; };
-		F85030977A6D1BAC697812B41A5905C7 /* UIImage+Hue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5127B5D456F1CC29ED2FAC1A0C9AE9 /* UIImage+Hue.swift */; };
-		F8C04E377B74E6FFA51BAFB295771EEB /* TypeWrapperStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC47B27736492314B52F08B09C1A550B /* TypeWrapperStorage.swift */; };
+		E12D36589935298FE5135D3EE9347A21 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEF5B767776C2BF6ECE78A20D86DF3B /* UIImage+Extensions.swift */; };
+		E17369793D4B6DF4C88177468C07ECE9 /* SwiftHash-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0720DD2B3743E1EA7686E938924069CA /* SwiftHash-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E2426D9EACB62563504C3749F7FD4111 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = D688D3D9DDB0D84A07BF77EF541C8992 /* Option.swift */; };
+		E2F7CA7D84E9EE13F5A57E044DC3FD2A /* LayoutConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B0ED2B6C0B303CF4553F048CBD05FF /* LayoutConfigurable.swift */; };
+		E7B59D3D4B5CFCF39A0C676A5D2772FD /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7308B5CF0B16D694D233153B822636AF /* ImageProcessor.swift */; };
+		E855B8D438F3691B27CC99DF79538167 /* StorageAware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039C5121CC39A29F04FD0D3F7C62897D /* StorageAware.swift */; };
+		E88B0B58316C82EBFAA1FF40B71BB7B7 /* ImageViewDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8225BA1F21124C0476692A866A4717A /* ImageViewDisplayer.swift */; };
+		E9684C619BDB75F897417C198BE69044 /* TOPasscodeViewControllerAnimatedTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = C16E999C1EA2C7D07758EF30E936D5B4 /* TOPasscodeViewControllerAnimatedTransitioning.m */; };
+		EA0E999C9399CC2E35ADF5C5E67C5648 /* InfoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F137A28FE9E58B5E9B96A3FA55D5CF6B /* InfoLabel.swift */; };
+		EA1739F537AA65A941A346022AADC46F /* TOPasscodeSettingsWarningLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E1DA7991EEEEC9EC996EB540E146974 /* TOPasscodeSettingsWarningLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F03F4E432B5B8540718910A7C57B3469 /* TOSettingsKeypadImage.h in Headers */ = {isa = PBXBuildFile; fileRef = B41B4647CA2FF6F0B4D5DA1A3377D5BB /* TOSettingsKeypadImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F18A0E166893080FF26D4F18DC039A94 /* Lightbox-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD34C45F3F781B2D7C124F1FC6ED0C9 /* Lightbox-dummy.m */; };
+		F1C5EC50666122CF2E8BF394EC81928A /* PhotoKitAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D360101482F952FA931C1E19D756AA /* PhotoKitAsset.swift */; };
+		F20B8241CDA9BB213900F979898797FE /* TOPasscodeViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 32011238FB9E6EE9510DC12D2DF13E16 /* TOPasscodeViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F5CFB2BB7818EB421412DFC252820106 /* PickedAssetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF9A7A97B03E046206739273A1E2769 /* PickedAssetList.swift */; };
+		F721F4E6240D276BBB1098700292493D /* NohanaImagePicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D1FA0EC5FB9DDDEC1B6ED172C8EC5EE7 /* NohanaImagePicker-dummy.m */; };
+		F85030977A6D1BAC697812B41A5905C7 /* UIImage+Hue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9042C44E12AF45EAC2EBD5CBDD53D4A /* UIImage+Hue.swift */; };
+		F8C04E377B74E6FFA51BAFB295771EEB /* TypeWrapperStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0155760F05652FCEA90178C559A985D0 /* TypeWrapperStorage.swift */; };
 		FA7E417BCE287E6ABAFD1A96B51570BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E5D6AA8ED47372E023665718EF958F7 /* Foundation.framework */; };
-		FAD53445B82138941AFFE31286E461B4 /* Pods-PrivateMemories-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 165FA429A5399F103B22FA3A56100BF8 /* Pods-PrivateMemories-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEB8643C4A1BF09F324D21205CA09C53 /* TOPasscodeSettingsWarningLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB4E68C851196CFD662EE5CC9354C59 /* TOPasscodeSettingsWarningLabel.m */; };
+		FF05838AD7C6466705AE830DE44BB270 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E5D6AA8ED47372E023665718EF958F7 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		012B25C9BCECACD043CD46ABFFAD1572 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = ECDD29E5BB6DE98C82D1208813048C9C;
-			remoteInfo = Imaginary;
-		};
-		05C11FE890A70AF72D488FCC350F76EF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1A0140D3954476BEA98E574F3277619A;
-			remoteInfo = Lightbox;
-		};
 		0B7A592A3D705675D26B33310E47AA26 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
@@ -164,19 +188,19 @@
 			remoteGlobalIDString = 3BF669C38F8201499DF8CC8E83D4E54F;
 			remoteInfo = SwiftHash;
 		};
-		393F6753340CB6E3DCD18A7C72DC23FD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F53A817D1C391BE79CB22B25868E784B;
-			remoteInfo = NohanaImagePicker;
-		};
-		457E1582A96B8237BEAB355AB042F745 /* PBXContainerItemProxy */ = {
+		1A724946034826076E6FAF9936D54382 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = B2542602E50EDF091ADB18B4688DF34F;
 			remoteInfo = Hue;
+		};
+		41C6131A80CB4CED12B0354C42FD596A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F53A817D1C391BE79CB22B25868E784B;
+			remoteInfo = NohanaImagePicker;
 		};
 		523B69DCC6039456714B56A034940A0F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -184,13 +208,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = ECDD29E5BB6DE98C82D1208813048C9C;
 			remoteInfo = Imaginary;
-		};
-		756032805545A747D9FEF71BCE7E2C56 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9612E4F19A4EE371553FB485C2B6DEBF;
-			remoteInfo = Cache;
 		};
 		7605413103F5F14CFBA6446629C2BB30 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -206,14 +223,35 @@
 			remoteGlobalIDString = 9612E4F19A4EE371553FB485C2B6DEBF;
 			remoteInfo = Cache;
 		};
-		C2E0D58B84661E3EAFE1869C9566A813 /* PBXContainerItemProxy */ = {
+		B8147EAA6A706CE5C28B9E6F3E126410 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9612E4F19A4EE371553FB485C2B6DEBF;
+			remoteInfo = Cache;
+		};
+		CA2ADDEA445C3CE9DBCFEF2AC607E445 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 761D2CC23066461B9B6FBAEF6AB0DCE2;
+			remoteInfo = TOPasscodeViewController;
+		};
+		CAF80A18EF93C0279AFFC53BE4F644E5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 3BF669C38F8201499DF8CC8E83D4E54F;
 			remoteInfo = SwiftHash;
 		};
-		CAF80A18EF93C0279AFFC53BE4F644E5 /* PBXContainerItemProxy */ = {
+		CB0DEC11F5613D08643716B90CBAD933 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECDD29E5BB6DE98C82D1208813048C9C;
+			remoteInfo = Imaginary;
+		};
+		E09B6F4832B630E602AAAA9D500DFCA7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -227,158 +265,207 @@
 			remoteGlobalIDString = 9612E4F19A4EE371553FB485C2B6DEBF;
 			remoteInfo = Cache;
 		};
+		FEBD2818504D7A66F587EA3EC9F1ABC3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A0140D3954476BEA98E574F3277619A;
+			remoteInfo = Lightbox;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		02462E228B79F00EF761F833B0075C93 /* DiskStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DiskStorage.swift; path = Source/Shared/Storage/DiskStorage.swift; sourceTree = "<group>"; };
-		034BC8929DC78C6863BBBA4BA05F8708 /* NohanaImagePicker.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = NohanaImagePicker.bundle; path = NohanaImagePicker.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		07650C82A28A2DCB3B43F2DA2345EC94 /* InfoLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InfoLabel.swift; path = Source/Views/InfoLabel.swift; sourceTree = "<group>"; };
-		083F4274C5933C75AFAE596B7FB815BF /* ImageDisplayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageDisplayer.swift; path = Sources/Shared/Library/ImageDisplayer.swift; sourceTree = "<group>"; };
-		0A339A58E58D122E14C6B5DABB234887 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+Extensions.swift"; path = "Source/iOS/UIImage+Extensions.swift"; sourceTree = "<group>"; };
-		0CC1E6B91D990614681019C81A69D82B /* SHA1.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SHA1.swift; path = Sources/SHA1.swift; sourceTree = "<group>"; };
-		0DA25A7E48AD7059D9B2F33B905934B0 /* StorageError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StorageError.swift; path = Source/Shared/Library/StorageError.swift; sourceTree = "<group>"; };
-		0FAC3BE0BD8A8EC59800CFACF860F82B /* Cache-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cache-umbrella.h"; sourceTree = "<group>"; };
-		0FFB8D8A1B3A8DB8D4870B3A545BEC7A /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Shared/Library/Result.swift; sourceTree = "<group>"; };
-		105FF43ACBD96E5AB4078AC84D1E899A /* AssetCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssetCell.swift; path = NohanaImagePicker/AssetCell.swift; sourceTree = "<group>"; };
-		12223418B8ABE5066E2E48E286010E20 /* AsyncStorageAware.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncStorageAware.swift; path = Source/Shared/Storage/AsyncStorageAware.swift; sourceTree = "<group>"; };
-		12A4ACF64D2F6AFF6332E37FDEA08D86 /* MomentSectionHeaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MomentSectionHeaderView.swift; path = NohanaImagePicker/MomentSectionHeaderView.swift; sourceTree = "<group>"; };
-		1352DDEEDB20BC76E6DC338B74F0D1D1 /* MemoryConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MemoryConfig.swift; path = Source/Shared/Configuration/MemoryConfig.swift; sourceTree = "<group>"; };
-		14DC89AF4546C420D6A4DB66B0558F77 /* SwiftHash.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftHash.modulemap; sourceTree = "<group>"; };
-		15F81B11FF6F9CD6E476B9B8061A5A06 /* SwiftHash-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftHash-prefix.pch"; sourceTree = "<group>"; };
+		0155760F05652FCEA90178C559A985D0 /* TypeWrapperStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TypeWrapperStorage.swift; path = Source/Shared/Storage/TypeWrapperStorage.swift; sourceTree = "<group>"; };
+		01BA8C813AD4CEB12175BCF0A342C594 /* TOPasscodeViewContentLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOPasscodeViewContentLayout.h; path = TOPasscodeViewController/Models/TOPasscodeViewContentLayout.h; sourceTree = "<group>"; };
+		039C5121CC39A29F04FD0D3F7C62897D /* StorageAware.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StorageAware.swift; path = Source/Shared/Storage/StorageAware.swift; sourceTree = "<group>"; };
+		03FEB7B7C2F484D83BC26C7BE6836D5C /* ru.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = ru.lproj; path = NohanaImagePicker/ru.lproj; sourceTree = "<group>"; };
+		0720DD2B3743E1EA7686E938924069CA /* SwiftHash-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftHash-umbrella.h"; sourceTree = "<group>"; };
+		0B0BAEF36DCA7DF18E5103BE73364F15 /* TOPasscodeCircleImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOPasscodeCircleImage.h; path = TOPasscodeViewController/Models/TOPasscodeCircleImage.h; sourceTree = "<group>"; };
+		0E0A71FF16B33974C3DA8BBEA272DCCE /* NohanaImagePicker.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = NohanaImagePicker.bundle; path = NohanaImagePicker.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FCA07CFDE6C8340C5C6304258040D8E /* TOPasscodeViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TOPasscodeViewController-prefix.pch"; sourceTree = "<group>"; };
+		1107B9D1676CEF4ED114E0F15F597D38 /* MomentSectionHeaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MomentSectionHeaderView.swift; path = NohanaImagePicker/MomentSectionHeaderView.swift; sourceTree = "<group>"; };
+		147C905CFF9578F5C1763D05C7803197 /* Hue-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Hue-prefix.pch"; sourceTree = "<group>"; };
+		1508EBBCA7E6215BBBCC964C4E6C46D9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15538A01B33EB52B5B0CF59461A16570 /* TOPasscodeSettingsKeypadView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOPasscodeSettingsKeypadView.m; path = TOPasscodeViewController/Views/Settings/TOPasscodeSettingsKeypadView.m; sourceTree = "<group>"; };
 		165FA429A5399F103B22FA3A56100BF8 /* Pods-PrivateMemories-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PrivateMemories-umbrella.h"; sourceTree = "<group>"; };
-		1BD57438DA3CFB22B838A8AFF996AE76 /* Types.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Types.swift; path = Sources/Shared/Library/Types.swift; sourceTree = "<group>"; };
-		1D2054AA97489B58EE567A005EFA9970 /* Configuration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Configuration.swift; path = Sources/Shared/Library/Configuration.swift; sourceTree = "<group>"; };
-		1D60E3C8E8836769744F9F3A253904B7 /* ImaginaryError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImaginaryError.swift; path = Sources/Shared/Library/ImaginaryError.swift; sourceTree = "<group>"; };
-		1D6BBCBBBD433C9B04F56019C3B9760A /* AssetDetailListViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssetDetailListViewController.swift; path = NohanaImagePicker/AssetDetailListViewController.swift; sourceTree = "<group>"; };
+		1740005AEA94DD12388777B9511AC8A1 /* NohanaImagePicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NohanaImagePicker-prefix.pch"; sourceTree = "<group>"; };
+		185AF1D9B029FC7E16EE3145303C9BDF /* TOPasscodeViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TOPasscodeViewController.xcconfig; sourceTree = "<group>"; };
+		18F3B62B23F8BF0D519304E435BF276A /* TOPasscodeCircleImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOPasscodeCircleImage.m; path = TOPasscodeViewController/Models/TOPasscodeCircleImage.m; sourceTree = "<group>"; };
+		1935BAB9DC65734CDD026E31601C3CFE /* TOPasscodeViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOPasscodeViewController.m; path = TOPasscodeViewController/TOPasscodeViewController.m; sourceTree = "<group>"; };
+		1A5B586C1BD993DDEA6C8FEF7B3ECCEF /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Shared/Library/Result.swift; sourceTree = "<group>"; };
+		1A96C9D62D22CB6A31D7268752A0833F /* HeaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeaderView.swift; path = Source/Views/HeaderView.swift; sourceTree = "<group>"; };
+		1C8B236A0CE8DC3043AD0B2761E23286 /* TOSettingsKeypadImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOSettingsKeypadImage.m; path = TOPasscodeViewController/Models/TOSettingsKeypadImage.m; sourceTree = "<group>"; };
+		1E9DA1165FA1BC8E140E5FF5E0D4A0D1 /* SwiftHash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftHash.framework; path = SwiftHash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F0831EADABC0502C67766187F2180CA /* Pods-PrivateMemories-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PrivateMemories-acknowledgements.plist"; sourceTree = "<group>"; };
-		1F4F51FC0D472E369F12C4A09D219263 /* LightboxConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LightboxConfig.swift; path = Source/LightboxConfig.swift; sourceTree = "<group>"; };
-		20A71BF047EEEE0E12FE0083B5057606 /* LightboxTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LightboxTransition.swift; path = Source/Library/LightboxTransition.swift; sourceTree = "<group>"; };
-		2461751F1833CF1FE5CE5F3D5C17944D /* Lightbox.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = Lightbox.bundle; path = Resources/Lightbox.bundle; sourceTree = "<group>"; };
+		1F7A6B119841CD4B92BEE59AC8072BDB /* MomentViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MomentViewController.swift; path = NohanaImagePicker/MomentViewController.swift; sourceTree = "<group>"; };
+		256D946B6CF36F61E5954F1E07AD812D /* NohanaImagePickerController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NohanaImagePickerController.swift; path = NohanaImagePicker/NohanaImagePickerController.swift; sourceTree = "<group>"; };
 		258FA6ACD46CE93B0966365AF978F2EB /* Imaginary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Imaginary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		27B8ED0750F4DC4DAEE970D6AE0CA0B8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2816ED33D70CDE5D07C98CD9D1FFC5B5 /* PageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageView.swift; path = Source/Views/PageView.swift; sourceTree = "<group>"; };
-		29150F6A883FDEBBA8088E5E5146C5A5 /* MultipleImageFetcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipleImageFetcher.swift; path = Sources/Shared/Fetcher/MultipleImageFetcher.swift; sourceTree = "<group>"; };
-		2B10DAE7E483760BC2257B3601BAFC67 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2E858573957AF986758C76D244798071 /* NohanaImagePicker.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = NohanaImagePicker.storyboard; path = NohanaImagePicker/NohanaImagePicker.storyboard; sourceTree = "<group>"; };
-		2EB190A8B4D4D9FB72A68F9501ACBE2C /* Cache.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Cache.xcconfig; sourceTree = "<group>"; };
+		299121A6F7BD06D109AB823EC273AFAA /* MD5.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MD5.swift; path = Sources/MD5.swift; sourceTree = "<group>"; };
 		31CED764411E80799DD68D3941123222 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AVKit.framework; sourceTree = DEVELOPER_DIR; };
-		31ECEEA8A39F44D222B710975279E5FB /* DiskConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DiskConfig.swift; path = Source/Shared/Configuration/DiskConfig.swift; sourceTree = "<group>"; };
-		341229C8A8A5DE40B269A6F9D4145808 /* Lightbox-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Lightbox-prefix.pch"; sourceTree = "<group>"; };
-		35306E488D5D4E8DCA9EA2403315F222 /* AssetListViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssetListViewController.swift; path = NohanaImagePicker/AssetListViewController.swift; sourceTree = "<group>"; };
-		357D2411131FDA1E897965A4D4C252CB /* Date+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Date+Extensions.swift"; path = "Source/Shared/Extensions/Date+Extensions.swift"; sourceTree = "<group>"; };
-		37872B19075DCDCFD32416FD5D451D0C /* Hue.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Hue.xcconfig; sourceTree = "<group>"; };
-		37D4783A301CFDE49361C4EFAEBD297C /* NohanaImagePickerController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NohanaImagePickerController.swift; path = NohanaImagePicker/NohanaImagePickerController.swift; sourceTree = "<group>"; };
-		38FB2925532D01429B05EFFA8041ADAF /* HeaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeaderView.swift; path = Source/Views/HeaderView.swift; sourceTree = "<group>"; };
-		39D3ED07C280B26F266C42C54B241CEF /* AssetDetailCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssetDetailCell.swift; path = NohanaImagePicker/AssetDetailCell.swift; sourceTree = "<group>"; };
+		31CF7746EB5E3DC7E40E516F1A52D29E /* NohanaImagePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = NohanaImagePicker.framework; path = NohanaImagePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		32011238FB9E6EE9510DC12D2DF13E16 /* TOPasscodeViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOPasscodeViewController.h; path = TOPasscodeViewController/TOPasscodeViewController.h; sourceTree = "<group>"; };
+		361F45D24D278D6E69A55C66327A9FCC /* Imaginary.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Imaginary.xcconfig; sourceTree = "<group>"; };
+		3635AD26B199D3AB35BB05F4BCBC6B14 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		369DC97E1A89FD868E552F26103FEB09 /* Hue-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Hue-dummy.m"; sourceTree = "<group>"; };
 		3BEDF79341C16B0CAD70FEF4DA27EC73 /* Pods-PrivateMemories.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PrivateMemories.debug.xcconfig"; sourceTree = "<group>"; };
-		3C72DC3AA66905BBD631A655BEEEA74A /* FooterView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FooterView.swift; path = Source/Views/FooterView.swift; sourceTree = "<group>"; };
-		446DE7CD5E1D330E1B03709AA09FCC90 /* UIView+Gradient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Gradient.swift"; path = "Source/Library/UIView+Gradient.swift"; sourceTree = "<group>"; };
-		44E4EE59AC94129DB135F43CD0AF2107 /* NohanaImagePicker.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = NohanaImagePicker.xcassets; path = NohanaImagePicker/NohanaImagePicker.xcassets; sourceTree = "<group>"; };
-		4A996BAA7F99BB22FC2E79C19C53474A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4D1C3CA8FD011EE507A96311F3AD0C11 /* SwiftHash.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftHash.xcconfig; sourceTree = "<group>"; };
-		4D96A1F5E734298BE928B3185C5DC656 /* ja.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = ja.lproj; path = NohanaImagePicker/ja.lproj; sourceTree = "<group>"; };
+		3D2F7B3E6EFEF4CD8F4E1ED2C7852DA1 /* AssetListViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssetListViewController.swift; path = NohanaImagePicker/AssetListViewController.swift; sourceTree = "<group>"; };
+		3E252C05414AD5A65D6FBDA1A2601D7D /* TOPasscodeButtonLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOPasscodeButtonLabel.h; path = TOPasscodeViewController/Views/Shared/TOPasscodeButtonLabel.h; sourceTree = "<group>"; };
+		3EF13828FA26F4CF3B6EE089F2AB6046 /* Lightbox.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = Lightbox.bundle; path = Resources/Lightbox.bundle; sourceTree = "<group>"; };
+		3F8FF550FA3973B9E635252739315FCC /* Hue-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Hue-umbrella.h"; sourceTree = "<group>"; };
+		40AE8A037A1E72EDB742FCD39DA4A4B0 /* Lightbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Lightbox.framework; path = Lightbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		42F6D81AB2BB4BA803809D4E74931491 /* Imaginary-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Imaginary-dummy.m"; sourceTree = "<group>"; };
+		43ADCD9CF7BDF3DF561365D1325F3693 /* LightboxImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LightboxImage.swift; path = Source/LightboxImage.swift; sourceTree = "<group>"; };
+		43D360101482F952FA931C1E19D756AA /* PhotoKitAsset.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PhotoKitAsset.swift; path = NohanaImagePicker/PhotoKitAsset.swift; sourceTree = "<group>"; };
+		45FE2D5D7878F91350B648EE5AE20D84 /* Imaginary-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Imaginary-prefix.pch"; sourceTree = "<group>"; };
+		48A8F9529CD2D537692DFC1BB839175E /* Imaginary.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Imaginary.modulemap; sourceTree = "<group>"; };
+		4B5DCF78F24A4B5C0EEC50FDCB528D8A /* Types.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Types.swift; path = Source/Shared/Library/Types.swift; sourceTree = "<group>"; };
+		4C8C3B219F72405F0B2A37DBF995189F /* TOPasscodeSettingsKeypadButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOPasscodeSettingsKeypadButton.m; path = TOPasscodeViewController/Views/Settings/TOPasscodeSettingsKeypadButton.m; sourceTree = "<group>"; };
+		51E2E504DB4B28506023EAA06D024DEA /* AnimatableNavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatableNavigationController.swift; path = NohanaImagePicker/AnimatableNavigationController.swift; sourceTree = "<group>"; };
 		51EC51B0816DC3ADFED5E939291B0EF0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
-		526111D85286F12C047CADC2421D3622 /* ObjectSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObjectSerializer.swift; path = Source/Shared/Library/ObjectSerializer.swift; sourceTree = "<group>"; };
-		5E4CFD3A30CBE7C1BD3982AF6ECE7F94 /* Imaginary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Imaginary.framework; path = Imaginary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		61A36D2D6A14692EFED7773FFD46A66D /* Lightbox.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Lightbox.modulemap; sourceTree = "<group>"; };
-		638913AEE56B0EDDF95CDC9A0E64D6CF /* DataSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataSerializer.swift; path = Source/Shared/Library/DataSerializer.swift; sourceTree = "<group>"; };
-		63EF2C72173F0E273C85C69B01558260 /* Cache-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Cache-dummy.m"; sourceTree = "<group>"; };
-		674B7BF9DF593ED0CE2A5F22973B2FC6 /* NohanaImagePicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NohanaImagePicker.xcconfig; sourceTree = "<group>"; };
-		689DC54077C2118F26989BA519344B8B /* Decompressor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Decompressor.swift; path = Sources/iOS/Decompressor.swift; sourceTree = "<group>"; };
-		6A339E2FF1B000739784B129611A10B2 /* Pods_PrivateMemories.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PrivateMemories.framework; path = "Pods-PrivateMemories.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6D89D1971FA8EED13330C7DA88553FDF /* Hue-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Hue-prefix.pch"; sourceTree = "<group>"; };
-		6F000A96220B1165A23906BD7CFD8BE7 /* TintImageProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TintImageProcessor.swift; path = Sources/iOS/TintImageProcessor.swift; sourceTree = "<group>"; };
-		6F5F7E45460DAFABDD1DA5746F9443EB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		524DA83B5921A8243DC7732478806F7B /* TOPasscodeButtonLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOPasscodeButtonLabel.m; path = TOPasscodeViewController/Views/Shared/TOPasscodeButtonLabel.m; sourceTree = "<group>"; };
+		526AC166CF727A86AC7F5D5597DDBB61 /* TOPasscodeFixedInputView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOPasscodeFixedInputView.m; path = TOPasscodeViewController/Views/Shared/TOPasscodeFixedInputView.m; sourceTree = "<group>"; };
+		53CEF5AFD8F3C3A100D5DC7D4EF2A891 /* TOPasscodeViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TOPasscodeViewController.framework; path = TOPasscodeViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		561289CCD2BD96DF215612FC6B555A79 /* TOPasscodeKeypadView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOPasscodeKeypadView.m; path = TOPasscodeViewController/Views/Main/TOPasscodeKeypadView.m; sourceTree = "<group>"; };
+		569F3B5B0C5948F68FCD9FBD33FAA8EB /* MemoryStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MemoryStorage.swift; path = Source/Shared/Storage/MemoryStorage.swift; sourceTree = "<group>"; };
+		56C8177A68333FB47B41FDF8EB2771BE /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Sources/Shared/Library/Result.swift; sourceTree = "<group>"; };
+		5B558B2048C0A562C8FDBF3C8AEAF11B /* ButtonBackgroundDisplayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ButtonBackgroundDisplayer.swift; path = Sources/iOS/ButtonBackgroundDisplayer.swift; sourceTree = "<group>"; };
+		5F6E6480FFBCFBC480E7A611F2BBD39B /* Pods_PrivateMemories.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PrivateMemories.framework; path = "Pods-PrivateMemories.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FA528E7C310B7359C90A8652D62667E /* TOPasscodeInputField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOPasscodeInputField.m; path = TOPasscodeViewController/Views/Shared/TOPasscodeInputField.m; sourceTree = "<group>"; };
+		5FDCC6F36DCCA91B52CE0C3486396663 /* DiskStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DiskStorage.swift; path = Source/Shared/Storage/DiskStorage.swift; sourceTree = "<group>"; };
+		62605429D19EA226ED020FFE6E6BF730 /* NotificationInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NotificationInfo.swift; path = NohanaImagePicker/NotificationInfo.swift; sourceTree = "<group>"; };
+		64B009B06F954E82CB661F328AC3BB44 /* Lightbox.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Lightbox.xcconfig; sourceTree = "<group>"; };
+		688669E22A03DD74C77685D1DFDDDA25 /* TOPasscodeViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TOPasscodeViewController-dummy.m"; sourceTree = "<group>"; };
+		69825345D64F33221C911F2F8609B48A /* Entry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Entry.swift; path = Source/Shared/Library/Entry.swift; sourceTree = "<group>"; };
+		6AD4DF9F0C8C9369F34D122E11F99F79 /* TOPasscodeSettingsKeypadButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOPasscodeSettingsKeypadButton.h; path = TOPasscodeViewController/Views/Settings/TOPasscodeSettingsKeypadButton.h; sourceTree = "<group>"; };
+		6B4745DDE99A9A31FF428228F1370A57 /* TOPasscodeFixedInputView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOPasscodeFixedInputView.h; path = TOPasscodeViewController/Views/Shared/TOPasscodeFixedInputView.h; sourceTree = "<group>"; };
+		6B9DAD284263DB5978E7D85FBEB78532 /* LightboxTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LightboxTransition.swift; path = Source/Library/LightboxTransition.swift; sourceTree = "<group>"; };
+		6BFFB12A4A36C7F72ECA636EFD7D22E6 /* TOPasscodeKeypadView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOPasscodeKeypadView.h; path = TOPasscodeViewController/Views/Main/TOPasscodeKeypadView.h; sourceTree = "<group>"; };
+		6D1149F1A55F8B76C6F0E24DEC0D13CE /* SwiftHash-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftHash-prefix.pch"; sourceTree = "<group>"; };
+		6D67A5473EA797E0BE47F11E856B6C3C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D96CE14DE04964347A52E8B9187F43F /* ja.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = ja.lproj; path = NohanaImagePicker/ja.lproj; sourceTree = "<group>"; };
+		6D9D6957DA6B06350EE02520090ADA14 /* Imaginary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Imaginary.framework; path = Imaginary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FE1F66CDFF3E746E9426C5AC0D46F4F /* LightboxConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LightboxConfig.swift; path = Source/LightboxConfig.swift; sourceTree = "<group>"; };
+		70D9163A75A9B2D9BEC3712CB9E91A44 /* Decompressor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Decompressor.swift; path = Sources/iOS/Decompressor.swift; sourceTree = "<group>"; };
+		714FE742CACCCF87CDB0EEACEDFF8788 /* AssetManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssetManager.swift; path = Source/AssetManager.swift; sourceTree = "<group>"; };
+		71786A6417DFFAC424FC70F3B707ED23 /* TOPasscodeInputField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOPasscodeInputField.h; path = TOPasscodeViewController/Views/Shared/TOPasscodeInputField.h; sourceTree = "<group>"; };
 		719D2EDB4D73866AEE80683B21FB4038 /* SwiftHash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftHash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		73174B43063C419B13D1457AFC29CF83 /* ImageViewDisplayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageViewDisplayer.swift; path = Sources/iOS/ImageViewDisplayer.swift; sourceTree = "<group>"; };
-		733D9054A46578249514AA2451E73D73 /* NohanaImagePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = NohanaImagePicker.framework; path = NohanaImagePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7308B5CF0B16D694D233153B822636AF /* ImageProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageProcessor.swift; path = Sources/Shared/Library/ImageProcessor.swift; sourceTree = "<group>"; };
 		74E2AAAF53BBB8F6141E9309799140D1 /* Pods-PrivateMemories-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PrivateMemories-dummy.m"; sourceTree = "<group>"; };
-		754E6E2ADF36D90C5338597FF4604934 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Sources/Shared/Library/Result.swift; sourceTree = "<group>"; };
-		766E5D74C5CC45C35811AE4F9E4B7707 /* EmptyIndicatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EmptyIndicatable.swift; path = NohanaImagePicker/EmptyIndicatable.swift; sourceTree = "<group>"; };
-		76AA5DB9E4984D8EABA22E574F03BD21 /* PhotoKitAssetList.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PhotoKitAssetList.swift; path = NohanaImagePicker/PhotoKitAssetList.swift; sourceTree = "<group>"; };
-		7774907A4D9E1CE1AF895CFFD53E8CAD /* Imaginary-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Imaginary-umbrella.h"; sourceTree = "<group>"; };
-		7B3B4AB73162622BCFDCEF1BADAD1633 /* ItemList.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ItemList.swift; path = NohanaImagePicker/ItemList.swift; sourceTree = "<group>"; };
-		7D43784D59D024E21DD29CD0CBB14BBE /* ru.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = ru.lproj; path = NohanaImagePicker/ru.lproj; sourceTree = "<group>"; };
-		80D7506061939C94C855758C23187543 /* ButtonBackgroundDisplayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ButtonBackgroundDisplayer.swift; path = Sources/iOS/ButtonBackgroundDisplayer.swift; sourceTree = "<group>"; };
-		82BC985D3E84A09027A559EE63528B8C /* SwiftHash-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftHash-umbrella.h"; sourceTree = "<group>"; };
-		83E6622B5B97B4E369830C57004FF4E7 /* Option.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Option.swift; path = Sources/Shared/Library/Option.swift; sourceTree = "<group>"; };
+		74F3534E76C2AEE9464BC279FD8D53C0 /* ExpirationMode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpirationMode.swift; path = Source/Shared/Library/ExpirationMode.swift; sourceTree = "<group>"; };
+		761AA4627434DA82BB044472CADFEF8E /* NohanaImagePicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NohanaImagePicker.xcconfig; sourceTree = "<group>"; };
+		7ACE2D7BB6A91FC896512205F853B250 /* ContractingAnimationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ContractingAnimationController.swift; path = NohanaImagePicker/ContractingAnimationController.swift; sourceTree = "<group>"; };
+		7AEA97CC4089328CE90798BD23C2E316 /* TOPasscodeViewControllerAnimatedTransitioning.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOPasscodeViewControllerAnimatedTransitioning.h; path = TOPasscodeViewController/Models/TOPasscodeViewControllerAnimatedTransitioning.h; sourceTree = "<group>"; };
+		7B50B4B64F3FFC334B2142FD67E2793F /* ImageFetcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageFetcher.swift; path = Sources/Shared/Fetcher/ImageFetcher.swift; sourceTree = "<group>"; };
+		7CA829F2CD84041D1A67B978621F8341 /* ButtonDisplayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ButtonDisplayer.swift; path = Sources/iOS/ButtonDisplayer.swift; sourceTree = "<group>"; };
+		7D4C0A64661BBD44E9D451CC2A0AD928 /* Configuration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Configuration.swift; path = Sources/Shared/Library/Configuration.swift; sourceTree = "<group>"; };
+		7DEDBFF7E4B3E1C0E8F2525FBA619C73 /* TOPasscodeSettingsViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOPasscodeSettingsViewController.h; path = TOPasscodeViewController/TOPasscodeSettingsViewController.h; sourceTree = "<group>"; };
+		7E0138912484AA1C1C6A7F5DFA91C0E1 /* HybridStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HybridStorage.swift; path = Source/Shared/Storage/HybridStorage.swift; sourceTree = "<group>"; };
+		7E6E75879AD5A0F8BBB8FE8BB770F108 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F5CF69FF0F5A63D7384EA13E1289388 /* Lightbox-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Lightbox-prefix.pch"; sourceTree = "<group>"; };
+		7FF9A7A97B03E046206739273A1E2769 /* PickedAssetList.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PickedAssetList.swift; path = NohanaImagePicker/PickedAssetList.swift; sourceTree = "<group>"; };
+		80F3C2EEB4BB31A95458DBF05B05434C /* AlbumListViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlbumListViewController.swift; path = NohanaImagePicker/AlbumListViewController.swift; sourceTree = "<group>"; };
+		8182CA61F93C23E920B6C3A1934DF6AC /* SwiftHash.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftHash.modulemap; sourceTree = "<group>"; };
+		82E7287D742B5A972876499FCDC03CB5 /* AsyncStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncStorage.swift; path = Source/Shared/Storage/AsyncStorage.swift; sourceTree = "<group>"; };
 		84667754457393CB87DA7C611A991920 /* Pods-PrivateMemories-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PrivateMemories-frameworks.sh"; sourceTree = "<group>"; };
-		8725AEECB39672E3DE748176417F5CCF /* AlbumCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlbumCell.swift; path = NohanaImagePicker/AlbumCell.swift; sourceTree = "<group>"; };
-		8780944BD5D6FD35839C1DB176989029 /* SwiftHash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftHash.framework; path = SwiftHash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		899B3F49F04DA9460ACBDD05D33AAD83 /* Cache-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cache-prefix.pch"; sourceTree = "<group>"; };
-		8A39556CF5ABBD094CA8803504EC8641 /* Types.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Types.swift; path = Source/Shared/Library/Types.swift; sourceTree = "<group>"; };
-		8E48D4DFBDF44798031D904F413D5990 /* ResourceBundle-NohanaImagePicker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-NohanaImagePicker-Info.plist"; sourceTree = "<group>"; };
+		861A5D6C00181A747C6BB3E93AE1D523 /* AlbumListEmptyIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlbumListEmptyIndicator.swift; path = NohanaImagePicker/AlbumListEmptyIndicator.swift; sourceTree = "<group>"; };
+		86EA2ACB0B041E1B1516088C9A4E8C23 /* Cache.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Cache.modulemap; sourceTree = "<group>"; };
+		8CB4E68C851196CFD662EE5CC9354C59 /* TOPasscodeSettingsWarningLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOPasscodeSettingsWarningLabel.m; path = TOPasscodeViewController/Views/Settings/TOPasscodeSettingsWarningLabel.m; sourceTree = "<group>"; };
 		8E5D6AA8ED47372E023665718EF958F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		8F6015C009075D6D9A88E7D792C327C6 /* MultipleImageFetcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipleImageFetcher.swift; path = Sources/Shared/Fetcher/MultipleImageFetcher.swift; sourceTree = "<group>"; };
 		8F92E5A6AC9A5C137DAAD1DD28E4C66D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8FFFABD2E21DEEB0F850EB9AA5DA1463 /* LightboxImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LightboxImage.swift; path = Source/LightboxImage.swift; sourceTree = "<group>"; };
+		8FDE8E5D15FFD9B55F0E94D1FEB5C477 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90372AA59FE8BCF07426DE1B2ECC9986 /* AssetDetailCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssetDetailCell.swift; path = NohanaImagePicker/AssetDetailCell.swift; sourceTree = "<group>"; };
 		910AAFA8914053D4D757F71C9F0B4A2D /* Pods-PrivateMemories.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PrivateMemories.release.xcconfig"; sourceTree = "<group>"; };
-		922B7F2B202BDE5BC4871803E15BBC60 /* PickedAssetList.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PickedAssetList.swift; path = NohanaImagePicker/PickedAssetList.swift; sourceTree = "<group>"; };
+		91C31447DA4D27FB360C84308E8DADC6 /* LightboxController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LightboxController.swift; path = Source/LightboxController.swift; sourceTree = "<group>"; };
+		921B995D4A0F4D38F1F2819ACD8F59FD /* Lightbox.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Lightbox.modulemap; sourceTree = "<group>"; };
+		937D0A234D9DCCCD4FE1F039238A45C1 /* Hue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Hue.framework; path = Hue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		94E5A20ED0D520B81FEE41CA95C4B5D9 /* Hue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Hue.framework; path = Hue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		95729F8A8CA4350048C5C28FD5A4DDFE /* Lightbox-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Lightbox-umbrella.h"; sourceTree = "<group>"; };
-		96EF68F6FFB0919A6A5E6FC6F1794670 /* ImageWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageWrapper.swift; path = Source/Shared/Library/ImageWrapper.swift; sourceTree = "<group>"; };
-		99646057FBDAD4739A0BF82EA2F7A729 /* StorageAware.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StorageAware.swift; path = Source/Shared/Storage/StorageAware.swift; sourceTree = "<group>"; };
-		9A5127B5D456F1CC29ED2FAC1A0C9AE9 /* UIImage+Hue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+Hue.swift"; path = "Source/iOS/UIImage+Hue.swift"; sourceTree = "<group>"; };
-		9A573947F8C4CEDD89A32E7090FCB4E6 /* Hue-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Hue-dummy.m"; sourceTree = "<group>"; };
-		9A5C4AAEB0C0B3C1C0ED2D11047951CF /* SwipeInteractionController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeInteractionController.swift; path = NohanaImagePicker/SwipeInteractionController.swift; sourceTree = "<group>"; };
-		9C1321367788004AFD7DF0531E8D6749 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9C29505DA4C8E2E700929660EE34CE3A /* Size.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Size.swift; path = NohanaImagePicker/Size.swift; sourceTree = "<group>"; };
-		9CC041E093EA0C4D1BB73E19FB936806 /* Cache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Cache.framework; path = Cache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9FE64445349892C1F67B2E9BD60101FC /* AlbumListViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlbumListViewController.swift; path = NohanaImagePicker/AlbumListViewController.swift; sourceTree = "<group>"; };
-		A277FFFF3A3A3D98B3C74D0A83EBD713 /* MomentCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MomentCell.swift; path = NohanaImagePicker/MomentCell.swift; sourceTree = "<group>"; };
-		A65143708AA9846E0C14684CBF097ECA /* PhotoKitAsset.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PhotoKitAsset.swift; path = NohanaImagePicker/PhotoKitAsset.swift; sourceTree = "<group>"; };
-		A659292FA9FAF890E194BCA5F9B20D46 /* AlbumListEmptyIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlbumListEmptyIndicator.swift; path = NohanaImagePicker/AlbumListEmptyIndicator.swift; sourceTree = "<group>"; };
-		AD3274D4E41C7ACC1E1E6A3B82BB0326 /* SwiftHash-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftHash-dummy.m"; sourceTree = "<group>"; };
-		B3ADA51C617A936C9A91F11094B841DA /* Cache.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Cache.modulemap; sourceTree = "<group>"; };
-		B487372E9A4CBF1AA1B6E269759F0E60 /* MD5.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MD5.swift; path = Sources/MD5.swift; sourceTree = "<group>"; };
-		B4FB68BFD28CF812DABEEA3395CFF38C /* Lightbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Lightbox.framework; path = Lightbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BAD7A1D48DC2638BCA411ABA68EF3CC1 /* Lightbox-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Lightbox-dummy.m"; sourceTree = "<group>"; };
-		BB10842E7A492702480B24A936F2AFC6 /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = en.lproj; path = NohanaImagePicker/en.lproj; sourceTree = "<group>"; };
+		97E3C0E971148CC1178CA4216548BE60 /* ObjectSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObjectSerializer.swift; path = Source/Shared/Library/ObjectSerializer.swift; sourceTree = "<group>"; };
+		991CD57255C2447FC7FE42FC5C6DC9B7 /* Cache-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cache-prefix.pch"; sourceTree = "<group>"; };
+		9A7E3ED134CDDE83B1BAD2C6B04CABA0 /* TOPasscodeViewContentLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOPasscodeViewContentLayout.m; path = TOPasscodeViewController/Models/TOPasscodeViewContentLayout.m; sourceTree = "<group>"; };
+		9BE7801031C807F5BA4D03D39B630D7B /* MemoryConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MemoryConfig.swift; path = Source/Shared/Configuration/MemoryConfig.swift; sourceTree = "<group>"; };
+		9CD34C45F3F781B2D7C124F1FC6ED0C9 /* Lightbox-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Lightbox-dummy.m"; sourceTree = "<group>"; };
+		9D9041B61550239E37645DFB338E985C /* TOPasscodeSettingsKeypadView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOPasscodeSettingsKeypadView.h; path = TOPasscodeViewController/Views/Settings/TOPasscodeSettingsKeypadView.h; sourceTree = "<group>"; };
+		9E1DA7991EEEEC9EC996EB540E146974 /* TOPasscodeSettingsWarningLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOPasscodeSettingsWarningLabel.h; path = TOPasscodeViewController/Views/Settings/TOPasscodeSettingsWarningLabel.h; sourceTree = "<group>"; };
+		9FDEBE65658CEDEF81014B944B9B4720 /* Lightbox-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Lightbox-umbrella.h"; sourceTree = "<group>"; };
+		A0408F97B08727FA1E09DFC304F45009 /* PhotoKitAlbumList.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PhotoKitAlbumList.swift; path = NohanaImagePicker/PhotoKitAlbumList.swift; sourceTree = "<group>"; };
+		A073F62BB261281AE14C2753658E0F2A /* LoadingIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoadingIndicator.swift; path = Source/Views/LoadingIndicator.swift; sourceTree = "<group>"; };
+		A0B5F84B047D1C65FF0CD06149629FB0 /* DiskConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DiskConfig.swift; path = Source/Shared/Configuration/DiskConfig.swift; sourceTree = "<group>"; };
+		A2DF8A379BE3E7A2400176BD0AE99E57 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2E41790429EF9DC8DF4FE4CF1D6A336 /* TOPasscodeViewControllerConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOPasscodeViewControllerConstants.h; path = TOPasscodeViewController/Supporting/TOPasscodeViewControllerConstants.h; sourceTree = "<group>"; };
+		A454319C935D489A88CF8FC2003FDCC5 /* Size.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Size.swift; path = NohanaImagePicker/Size.swift; sourceTree = "<group>"; };
+		A77EA8E0EB5E4C7D817190016A31F527 /* ItemList.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ItemList.swift; path = NohanaImagePicker/ItemList.swift; sourceTree = "<group>"; };
+		A8225BA1F21124C0476692A866A4717A /* ImageViewDisplayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageViewDisplayer.swift; path = Sources/iOS/ImageViewDisplayer.swift; sourceTree = "<group>"; };
+		A9042C44E12AF45EAC2EBD5CBDD53D4A /* UIImage+Hue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+Hue.swift"; path = "Source/iOS/UIImage+Hue.swift"; sourceTree = "<group>"; };
+		A95C167E016A36192ED69386B24D3728 /* ImageDisplayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageDisplayer.swift; path = Sources/Shared/Library/ImageDisplayer.swift; sourceTree = "<group>"; };
+		A9FB47F144FB17030E57251EA5CEE615 /* UIView+Gradient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Gradient.swift"; path = "Source/Library/UIView+Gradient.swift"; sourceTree = "<group>"; };
+		AA6B0BFAAC6D436998A86BFE69828B47 /* UIColor+Hue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+Hue.swift"; path = "Source/iOS/UIColor+Hue.swift"; sourceTree = "<group>"; };
+		ADC8088FC19E77618E8CFFF02B50A014 /* TOPasscodeView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOPasscodeView.h; path = TOPasscodeViewController/Views/Main/TOPasscodeView.h; sourceTree = "<group>"; };
+		AED9494267327BDE65217E5FD3077FFA /* AlbumCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlbumCell.swift; path = NohanaImagePicker/AlbumCell.swift; sourceTree = "<group>"; };
+		B3BF0914BBE53C8AAFFCEE14E965F5CE /* TOPasscodeCircleView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOPasscodeCircleView.h; path = TOPasscodeViewController/Views/Shared/TOPasscodeCircleView.h; sourceTree = "<group>"; };
+		B41B4647CA2FF6F0B4D5DA1A3377D5BB /* TOSettingsKeypadImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOSettingsKeypadImage.h; path = TOPasscodeViewController/Models/TOSettingsKeypadImage.h; sourceTree = "<group>"; };
+		B5B0ED2B6C0B303CF4553F048CBD05FF /* LayoutConfigurable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConfigurable.swift; path = Source/Library/LayoutConfigurable.swift; sourceTree = "<group>"; };
+		B8BF26018250ECF528E1F26B7B9D0C2C /* Expiry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Expiry.swift; path = Source/Shared/Library/Expiry.swift; sourceTree = "<group>"; };
+		B9FD620D5E1468C34BE3EC49F0B5BD5A /* SHA1.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SHA1.swift; path = Sources/SHA1.swift; sourceTree = "<group>"; };
+		BB14CF7911719FD1B313C6EC54FABD36 /* TOPasscodeCircleView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOPasscodeCircleView.m; path = TOPasscodeViewController/Views/Shared/TOPasscodeCircleView.m; sourceTree = "<group>"; };
+		BB2A60ED9154C4109DA9A65283F13C3C /* Cache-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Cache-dummy.m"; sourceTree = "<group>"; };
 		BC8EBD762065619C7594E84BC21C3147 /* Hue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Hue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BCF1E30E09FB01AB9CAD48C0DDF50CD8 /* Entry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Entry.swift; path = Source/Shared/Library/Entry.swift; sourceTree = "<group>"; };
-		BCFFA83F514C1C63A187AD170196CDC5 /* LightboxController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LightboxController.swift; path = Source/LightboxController.swift; sourceTree = "<group>"; };
+		BDC71651C5F35FA63C565650339278B6 /* PhotoKitAssetList.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PhotoKitAssetList.swift; path = NohanaImagePicker/PhotoKitAssetList.swift; sourceTree = "<group>"; };
+		BDF51DFE38E52195F228B6E4AC3E7359 /* TOPasscodeViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TOPasscodeViewController-umbrella.h"; sourceTree = "<group>"; };
 		BF824B1237E0BB9E1FBB4EF322509D22 /* Pods-PrivateMemories-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PrivateMemories-acknowledgements.markdown"; sourceTree = "<group>"; };
-		BF86578A626A0FC8667AD8DFCAF64CF4 /* HybridStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HybridStorage.swift; path = Source/Shared/Storage/HybridStorage.swift; sourceTree = "<group>"; };
-		C0651944B4BC9F6335887382EECAA456 /* ExpandingAnimationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpandingAnimationController.swift; path = NohanaImagePicker/ExpandingAnimationController.swift; sourceTree = "<group>"; };
-		C47F2B63CF759A1FD3F656D90443D72D /* Imaginary.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Imaginary.modulemap; sourceTree = "<group>"; };
-		C498F79325E2EAC73B39C374C1223E2C /* AssetManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssetManager.swift; path = Source/AssetManager.swift; sourceTree = "<group>"; };
-		C5F9F87F85F1BCA2FCE8FD8FED875222 /* Hue-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Hue-umbrella.h"; sourceTree = "<group>"; };
-		CB7435283379A3717CFEC6AB04DCF7F4 /* NohanaImagePicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NohanaImagePicker-prefix.pch"; sourceTree = "<group>"; };
-		CB9F2E69E9F04BDD6FEFCA84E32DA48A /* View+Imaginary.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "View+Imaginary.swift"; path = "Sources/Shared/Extensions/View+Imaginary.swift"; sourceTree = "<group>"; };
-		CC6E0BECFBC4AE14270794F02BBA3D88 /* SyncStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SyncStorage.swift; path = Source/Shared/Storage/SyncStorage.swift; sourceTree = "<group>"; };
-		CCFEC4BC1DEE584272B21E405B1C2CA3 /* ImageProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageProcessor.swift; path = Sources/Shared/Library/ImageProcessor.swift; sourceTree = "<group>"; };
+		C001A43306173477239688706F1E923F /* ResourceBundle-NohanaImagePicker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-NohanaImagePicker-Info.plist"; sourceTree = "<group>"; };
+		C12D5F00BE966027261957DC53D59363 /* SyncStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SyncStorage.swift; path = Source/Shared/Storage/SyncStorage.swift; sourceTree = "<group>"; };
+		C16E999C1EA2C7D07758EF30E936D5B4 /* TOPasscodeViewControllerAnimatedTransitioning.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOPasscodeViewControllerAnimatedTransitioning.m; path = TOPasscodeViewController/Models/TOPasscodeViewControllerAnimatedTransitioning.m; sourceTree = "<group>"; };
+		C382A717095542E9F62D5DC763E0829A /* ExpandingAnimationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpandingAnimationController.swift; path = NohanaImagePicker/ExpandingAnimationController.swift; sourceTree = "<group>"; };
+		C59B8C72A52C69D0E0DD74CF99CD06A8 /* ImaginaryError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImaginaryError.swift; path = Sources/Shared/Library/ImaginaryError.swift; sourceTree = "<group>"; };
+		C5A59384B8E7CB7AE07B7C60019C4C53 /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = en.lproj; path = NohanaImagePicker/en.lproj; sourceTree = "<group>"; };
+		C6C5FDD8C651D91C19528F580DE4D34D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6D0AEFB5FF607FF4DA1EA44595B0B8F /* Cache-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cache-umbrella.h"; sourceTree = "<group>"; };
+		C82ECC86F82432B22BA313E26568E72A /* TOPasscodeCircleButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOPasscodeCircleButton.m; path = TOPasscodeViewController/Views/Main/TOPasscodeCircleButton.m; sourceTree = "<group>"; };
+		C9ADD28DDCE8881D263AB8940A79561D /* TOPasscodeViewController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = TOPasscodeViewController.modulemap; sourceTree = "<group>"; };
+		CA80C35000B6634B38253E6C15DF2F89 /* DataSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataSerializer.swift; path = Source/Shared/Library/DataSerializer.swift; sourceTree = "<group>"; };
+		CA94BDA53C71D532661FF0202083BF4F /* NohanaImagePicker.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = NohanaImagePicker.storyboard; path = NohanaImagePicker/NohanaImagePicker.storyboard; sourceTree = "<group>"; };
 		CD3AE67FCC94CD98EF29D337A78CAF8C /* Pods-PrivateMemories.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-PrivateMemories.modulemap"; sourceTree = "<group>"; };
-		CE5C54C0B054D57CDD7FB70D800F360A /* PhotoKitAlbumList.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PhotoKitAlbumList.swift; path = NohanaImagePicker/PhotoKitAlbumList.swift; sourceTree = "<group>"; };
-		CEBCDC166DD3BA08C4D315531FD184B4 /* Imaginary.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Imaginary.xcconfig; sourceTree = "<group>"; };
-		CEEF1AD88EB4E99859CB058C6B6A6CC1 /* ContractingAnimationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ContractingAnimationController.swift; path = NohanaImagePicker/ContractingAnimationController.swift; sourceTree = "<group>"; };
-		D2DCFADA17E6C1406C9A6D3BAFC62256 /* ButtonDisplayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ButtonDisplayer.swift; path = Sources/iOS/ButtonDisplayer.swift; sourceTree = "<group>"; };
-		D3618EEE1BBD20345AA7DEA2B4827126 /* MomentViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MomentViewController.swift; path = NohanaImagePicker/MomentViewController.swift; sourceTree = "<group>"; };
-		D70D6B2CE59E60BD1A2AA10ED2A51876 /* Lightbox.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Lightbox.xcconfig; sourceTree = "<group>"; };
-		DAC562B1C33AA82142684758CE62823B /* AsyncStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncStorage.swift; path = Source/Shared/Storage/AsyncStorage.swift; sourceTree = "<group>"; };
+		CE0FB8D2D3F4A134A496788BEE683C24 /* Cache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Cache.framework; path = Cache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CED032525F6E21B79D348CC76AB79C6C /* AsyncStorageAware.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncStorageAware.swift; path = Source/Shared/Storage/AsyncStorageAware.swift; sourceTree = "<group>"; };
+		CF3BF8899A9BF36F17B9BD364275A073 /* EmptyIndicatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EmptyIndicatable.swift; path = NohanaImagePicker/EmptyIndicatable.swift; sourceTree = "<group>"; };
+		D0C2158E6223D7F1C2058762261DC52F /* ActivityIndicatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ActivityIndicatable.swift; path = NohanaImagePicker/ActivityIndicatable.swift; sourceTree = "<group>"; };
+		D1FA0EC5FB9DDDEC1B6ED172C8EC5EE7 /* NohanaImagePicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NohanaImagePicker-dummy.m"; sourceTree = "<group>"; };
+		D2D2CC6F5B508B7B167E60B72F7215D1 /* Storage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Storage.swift; path = Source/Shared/Storage/Storage.swift; sourceTree = "<group>"; };
+		D32B1B7691BED3A082214F6A1A413028 /* TOPasscodeVariableInputView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOPasscodeVariableInputView.m; path = TOPasscodeViewController/Views/Shared/TOPasscodeVariableInputView.m; sourceTree = "<group>"; };
+		D3F2DCF928A7A6CAAD5C5089E9653F98 /* Imaginary-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Imaginary-umbrella.h"; sourceTree = "<group>"; };
+		D509294BAE8CF1258E72A7069B721F70 /* NohanaImagePicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = NohanaImagePicker.modulemap; sourceTree = "<group>"; };
+		D51709CB0E2BF867F70C5BC6E642A932 /* TOPasscodeVariableInputView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOPasscodeVariableInputView.h; path = TOPasscodeViewController/Views/Shared/TOPasscodeVariableInputView.h; sourceTree = "<group>"; };
+		D595BC919898A51828EA5ED36B57C492 /* SwipeInteractionController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeInteractionController.swift; path = NohanaImagePicker/SwipeInteractionController.swift; sourceTree = "<group>"; };
+		D5FD1EFF408230D2120C3BDA862CD56C /* Cache.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Cache.xcconfig; sourceTree = "<group>"; };
+		D688D3D9DDB0D84A07BF77EF541C8992 /* Option.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Option.swift; path = Sources/Shared/Library/Option.swift; sourceTree = "<group>"; };
+		D7E3347993BC66930B73A156B0B532B0 /* ImageWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageWrapper.swift; path = Source/Shared/Library/ImageWrapper.swift; sourceTree = "<group>"; };
+		D80D8929C4FF6BB71FD7E975A23C9607 /* PageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageView.swift; path = Source/Views/PageView.swift; sourceTree = "<group>"; };
+		D865C0ECA5231CA72854A22D577C394D /* StorageError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StorageError.swift; path = Source/Shared/Library/StorageError.swift; sourceTree = "<group>"; };
+		D9CD42AC0EA206A77A47346767EA3EFC /* Hue.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Hue.modulemap; sourceTree = "<group>"; };
+		DB5A1D9120E3BA1423832C00BD3D8A4B /* TOPasscodeCircleButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOPasscodeCircleButton.h; path = TOPasscodeViewController/Views/Main/TOPasscodeCircleButton.h; sourceTree = "<group>"; };
 		DC205BD0E567CBCD5D368736824F19FE /* Cache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DC3189659830B9F56C59DECB8EE81E62 /* LoadingIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoadingIndicator.swift; path = Source/Views/LoadingIndicator.swift; sourceTree = "<group>"; };
-		DC9942651B33E0788019F11154EF3C60 /* UIColor+Hue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+Hue.swift"; path = "Source/iOS/UIColor+Hue.swift"; sourceTree = "<group>"; };
-		DCD0CA92362C4864D0EEE2A498AC3D47 /* NotificationInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NotificationInfo.swift; path = NohanaImagePicker/NotificationInfo.swift; sourceTree = "<group>"; };
-		DD016E4E0CA39929F2A7A03CD491CCB4 /* Expiry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Expiry.swift; path = Source/Shared/Library/Expiry.swift; sourceTree = "<group>"; };
+		DCB7ED7C05EC4C73B44022347DE23B86 /* View+Imaginary.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "View+Imaginary.swift"; path = "Sources/Shared/Extensions/View+Imaginary.swift"; sourceTree = "<group>"; };
+		DCFFE573FC4B028471C6DA9669A3A730 /* Hue.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Hue.xcconfig; sourceTree = "<group>"; };
+		DEBA9644E57F144DD9B0A8C3DC7872BE /* TOPasscodeView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOPasscodeView.m; path = TOPasscodeViewController/Views/Main/TOPasscodeView.m; sourceTree = "<group>"; };
+		DEEF5B767776C2BF6ECE78A20D86DF3B /* UIImage+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+Extensions.swift"; path = "Source/iOS/UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		E0412A3873AFE190F08946A26EA546D4 /* MomentCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MomentCell.swift; path = NohanaImagePicker/MomentCell.swift; sourceTree = "<group>"; };
 		E0495873BF0E59F825E4B010FC229812 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		E050DB54311404516F84E77FF8DEE156 /* ImageDownloader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageDownloader.swift; path = Sources/Shared/Fetcher/ImageDownloader.swift; sourceTree = "<group>"; };
-		E2A84D248A66D0C34561F4991BEFC220 /* Imaginary-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Imaginary-prefix.pch"; sourceTree = "<group>"; };
-		E3041051AC6A605347C64DA7FC0D4E67 /* MemoryStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MemoryStorage.swift; path = Source/Shared/Storage/MemoryStorage.swift; sourceTree = "<group>"; };
-		E49475B4A139FABA24F3AA3AD7D32DAE /* Hue.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Hue.modulemap; sourceTree = "<group>"; };
-		E521B466B6636649FD2548F2DA7D10BD /* ExpirationMode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpirationMode.swift; path = Source/Shared/Library/ExpirationMode.swift; sourceTree = "<group>"; };
-		E5E91CA04FF2D087DC9B3F796B59C7B5 /* NohanaImagePicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NohanaImagePicker-umbrella.h"; sourceTree = "<group>"; };
-		EC47B27736492314B52F08B09C1A550B /* TypeWrapperStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TypeWrapperStorage.swift; path = Source/Shared/Storage/TypeWrapperStorage.swift; sourceTree = "<group>"; };
-		EC7FBC524E1966E77C92318D88CFB954 /* Storage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Storage.swift; path = Source/Shared/Storage/Storage.swift; sourceTree = "<group>"; };
-		ED79DC5409E3E49A013BEA2E95A1C67B /* NohanaImagePicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NohanaImagePicker-dummy.m"; sourceTree = "<group>"; };
-		EE7B710A5DA2A2B75A8363B75AFFC7E1 /* LayoutConfigurable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConfigurable.swift; path = Source/Library/LayoutConfigurable.swift; sourceTree = "<group>"; };
+		E0F665834F13C6BEAEAFC457E37BDDE2 /* Types.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Types.swift; path = Sources/Shared/Library/Types.swift; sourceTree = "<group>"; };
+		E28F4D0959EFB2827665CD9A07625A08 /* SwiftHash-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftHash-dummy.m"; sourceTree = "<group>"; };
+		E3D832CEFEEE4862B073F6A1BBA4DA75 /* SwiftHash.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftHash.xcconfig; sourceTree = "<group>"; };
+		EB326D185AD48EC1113570924B5A8188 /* ImageDownloader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageDownloader.swift; path = Sources/Shared/Fetcher/ImageDownloader.swift; sourceTree = "<group>"; };
+		ECB3E096ADC4BBBC0F72B8C83D61D510 /* TOPasscodeSettingsViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOPasscodeSettingsViewController.m; path = TOPasscodeViewController/TOPasscodeSettingsViewController.m; sourceTree = "<group>"; };
+		ED6BBD5A425E148B41371608827A94D5 /* AssetCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssetCell.swift; path = NohanaImagePicker/AssetCell.swift; sourceTree = "<group>"; };
 		EFECABCE52D5451A33D3428783CF29D8 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Photos.framework; sourceTree = DEVELOPER_DIR; };
 		F12F2C30E73B0C663EFEAF13BD57AB70 /* Pods-PrivateMemories-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PrivateMemories-resources.sh"; sourceTree = "<group>"; };
-		F3AA526EC842C84FFDEE8612949F4E55 /* Imaginary-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Imaginary-dummy.m"; sourceTree = "<group>"; };
-		F47900EC55887212330A1FB65C1A20B1 /* NohanaImagePicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = NohanaImagePicker.modulemap; sourceTree = "<group>"; };
-		F70433B155E6495706279C62FD69231C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F9DC4989493C128DE109803F1275EFB8 /* AnimatableNavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatableNavigationController.swift; path = NohanaImagePicker/AnimatableNavigationController.swift; sourceTree = "<group>"; };
-		FC073192572F491ECEE2305713855729 /* ImageFetcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageFetcher.swift; path = Sources/Shared/Fetcher/ImageFetcher.swift; sourceTree = "<group>"; };
-		FC4102637F7DA3AD7D233E231B678995 /* ActivityIndicatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ActivityIndicatable.swift; path = NohanaImagePicker/ActivityIndicatable.swift; sourceTree = "<group>"; };
+		F137A28FE9E58B5E9B96A3FA55D5CF6B /* InfoLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InfoLabel.swift; path = Source/Views/InfoLabel.swift; sourceTree = "<group>"; };
+		F32D9F51115D20B30C20BB5AF57D1464 /* NohanaImagePicker.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = NohanaImagePicker.xcassets; path = NohanaImagePicker/NohanaImagePicker.xcassets; sourceTree = "<group>"; };
+		F3F0F8ED9DB034DD406072E5FEC18BD9 /* AssetDetailListViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssetDetailListViewController.swift; path = NohanaImagePicker/AssetDetailListViewController.swift; sourceTree = "<group>"; };
+		F450BE0117B2EC742C45184C745354E4 /* Date+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Date+Extensions.swift"; path = "Source/Shared/Extensions/Date+Extensions.swift"; sourceTree = "<group>"; };
+		F7572E99D9EE1F04409A105BE0A73524 /* FooterView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FooterView.swift; path = Source/Views/FooterView.swift; sourceTree = "<group>"; };
+		FA54C853C8EA4A6C2A5627E645A38838 /* TintImageProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TintImageProcessor.swift; path = Sources/iOS/TintImageProcessor.swift; sourceTree = "<group>"; };
+		FB055EE9C342A010E1E713E9E27E2E91 /* NohanaImagePicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NohanaImagePicker-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -406,12 +493,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		26D2B044D09E39B7F846F62D356EBDDB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04362D4FF705985508A11744375B479F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		32B76C4FA20016B3C5D8EC8EBE04E5A5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				FA7E417BCE287E6ABAFD1A96B51570BD /* Foundation.framework in Frameworks */,
 				9798D1F161F65BEE3E68401DDB175FC9 /* SwiftHash.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7132A0194FFC844EF09CB11B6C809CD8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF05838AD7C6466705AE830DE44BB270 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,14 +530,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C006DCDF4F4F25DC2FC981C116CF7D69 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DF40A1A688C5B6732F3F64DA9830860A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				309D2D31FFC42D7ED9BA3FF607525961 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,189 +556,134 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		09DFD9388432174F13896A200BD2E6ED /* SwiftHash */ = {
+		2051549A0959BF9D08803FF80453C27D /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				B487372E9A4CBF1AA1B6E269759F0E60 /* MD5.swift */,
-				0CC1E6B91D990614681019C81A69D82B /* SHA1.swift */,
-				EBE6A77A7F65E53D5B22C21C28C75AD4 /* Support Files */,
-			);
-			name = SwiftHash;
-			path = SwiftHash;
-			sourceTree = "<group>";
-		};
-		21338868CAB4751F5A9C2E06500B940C /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				BB10842E7A492702480B24A936F2AFC6 /* en.lproj */,
-				4D96A1F5E734298BE928B3185C5DC656 /* ja.lproj */,
-				2E858573957AF986758C76D244798071 /* NohanaImagePicker.storyboard */,
-				44E4EE59AC94129DB135F43CD0AF2107 /* NohanaImagePicker.xcassets */,
-				7D43784D59D024E21DD29CD0CBB14BBE /* ru.lproj */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		227832A2BB9417EA01867BB8F855A74D /* Imaginary */ = {
-			isa = PBXGroup;
-			children = (
-				80D7506061939C94C855758C23187543 /* ButtonBackgroundDisplayer.swift */,
-				D2DCFADA17E6C1406C9A6D3BAFC62256 /* ButtonDisplayer.swift */,
-				1D2054AA97489B58EE567A005EFA9970 /* Configuration.swift */,
-				689DC54077C2118F26989BA519344B8B /* Decompressor.swift */,
-				083F4274C5933C75AFAE596B7FB815BF /* ImageDisplayer.swift */,
-				E050DB54311404516F84E77FF8DEE156 /* ImageDownloader.swift */,
-				FC073192572F491ECEE2305713855729 /* ImageFetcher.swift */,
-				CCFEC4BC1DEE584272B21E405B1C2CA3 /* ImageProcessor.swift */,
-				73174B43063C419B13D1457AFC29CF83 /* ImageViewDisplayer.swift */,
-				1D60E3C8E8836769744F9F3A253904B7 /* ImaginaryError.swift */,
-				29150F6A883FDEBBA8088E5E5146C5A5 /* MultipleImageFetcher.swift */,
-				83E6622B5B97B4E369830C57004FF4E7 /* Option.swift */,
-				754E6E2ADF36D90C5338597FF4604934 /* Result.swift */,
-				6F000A96220B1165A23906BD7CFD8BE7 /* TintImageProcessor.swift */,
-				1BD57438DA3CFB22B838A8AFF996AE76 /* Types.swift */,
-				CB9F2E69E9F04BDD6FEFCA84E32DA48A /* View+Imaginary.swift */,
-				2FBB0B9D45322B0A6E492F6DBA1E3E57 /* Support Files */,
-			);
-			name = Imaginary;
-			path = Imaginary;
-			sourceTree = "<group>";
-		};
-		2CDD7B0C97C07219758568C655F1EA41 /* Hue */ = {
-			isa = PBXGroup;
-			children = (
-				DC9942651B33E0788019F11154EF3C60 /* UIColor+Hue.swift */,
-				9A5127B5D456F1CC29ED2FAC1A0C9AE9 /* UIImage+Hue.swift */,
-				6F520EEF59FFF0DB5ADDB523CBB790C6 /* Support Files */,
-			);
-			name = Hue;
-			path = Hue;
-			sourceTree = "<group>";
-		};
-		2FBB0B9D45322B0A6E492F6DBA1E3E57 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				C47F2B63CF759A1FD3F656D90443D72D /* Imaginary.modulemap */,
-				CEBCDC166DD3BA08C4D315531FD184B4 /* Imaginary.xcconfig */,
-				F3AA526EC842C84FFDEE8612949F4E55 /* Imaginary-dummy.m */,
-				E2A84D248A66D0C34561F4991BEFC220 /* Imaginary-prefix.pch */,
-				7774907A4D9E1CE1AF895CFFD53E8CAD /* Imaginary-umbrella.h */,
-				27B8ED0750F4DC4DAEE970D6AE0CA0B8 /* Info.plist */,
+				48A8F9529CD2D537692DFC1BB839175E /* Imaginary.modulemap */,
+				361F45D24D278D6E69A55C66327A9FCC /* Imaginary.xcconfig */,
+				42F6D81AB2BB4BA803809D4E74931491 /* Imaginary-dummy.m */,
+				45FE2D5D7878F91350B648EE5AE20D84 /* Imaginary-prefix.pch */,
+				D3F2DCF928A7A6CAAD5C5089E9653F98 /* Imaginary-umbrella.h */,
+				1508EBBCA7E6215BBBCC964C4E6C46D9 /* Info.plist */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Imaginary";
 			sourceTree = "<group>";
 		};
-		40FF5874C7AE4A4168D3BDA164980121 /* Lightbox */ = {
+		22EFDEEE61566D5217B755B20A8B5E3E /* Lightbox */ = {
 			isa = PBXGroup;
 			children = (
-				C498F79325E2EAC73B39C374C1223E2C /* AssetManager.swift */,
-				3C72DC3AA66905BBD631A655BEEEA74A /* FooterView.swift */,
-				38FB2925532D01429B05EFFA8041ADAF /* HeaderView.swift */,
-				07650C82A28A2DCB3B43F2DA2345EC94 /* InfoLabel.swift */,
-				EE7B710A5DA2A2B75A8363B75AFFC7E1 /* LayoutConfigurable.swift */,
-				1F4F51FC0D472E369F12C4A09D219263 /* LightboxConfig.swift */,
-				BCFFA83F514C1C63A187AD170196CDC5 /* LightboxController.swift */,
-				8FFFABD2E21DEEB0F850EB9AA5DA1463 /* LightboxImage.swift */,
-				20A71BF047EEEE0E12FE0083B5057606 /* LightboxTransition.swift */,
-				DC3189659830B9F56C59DECB8EE81E62 /* LoadingIndicator.swift */,
-				2816ED33D70CDE5D07C98CD9D1FFC5B5 /* PageView.swift */,
-				446DE7CD5E1D330E1B03709AA09FCC90 /* UIView+Gradient.swift */,
-				815E3BA6BBBA5FAE82421B89F15C065C /* Resources */,
-				A836374DAD2BAF18FF4F3E8A2A59F682 /* Support Files */,
+				714FE742CACCCF87CDB0EEACEDFF8788 /* AssetManager.swift */,
+				F7572E99D9EE1F04409A105BE0A73524 /* FooterView.swift */,
+				1A96C9D62D22CB6A31D7268752A0833F /* HeaderView.swift */,
+				F137A28FE9E58B5E9B96A3FA55D5CF6B /* InfoLabel.swift */,
+				B5B0ED2B6C0B303CF4553F048CBD05FF /* LayoutConfigurable.swift */,
+				6FE1F66CDFF3E746E9426C5AC0D46F4F /* LightboxConfig.swift */,
+				91C31447DA4D27FB360C84308E8DADC6 /* LightboxController.swift */,
+				43ADCD9CF7BDF3DF561365D1325F3693 /* LightboxImage.swift */,
+				6B9DAD284263DB5978E7D85FBEB78532 /* LightboxTransition.swift */,
+				A073F62BB261281AE14C2753658E0F2A /* LoadingIndicator.swift */,
+				D80D8929C4FF6BB71FD7E975A23C9607 /* PageView.swift */,
+				A9FB47F144FB17030E57251EA5CEE615 /* UIView+Gradient.swift */,
+				C476F661DC1B81A23D5473AADA7A1072 /* Resources */,
+				CFB8E8760EF161D35BA14B5FB9BB6C7D /* Support Files */,
 			);
 			name = Lightbox;
 			path = Lightbox;
 			sourceTree = "<group>";
 		};
-		44955F2D2B1685803B9D812731F54068 /* NohanaImagePicker */ = {
+		39A72D86C8C8CA86E35F7E4FB6F0B547 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				FC4102637F7DA3AD7D233E231B678995 /* ActivityIndicatable.swift */,
-				8725AEECB39672E3DE748176417F5CCF /* AlbumCell.swift */,
-				A659292FA9FAF890E194BCA5F9B20D46 /* AlbumListEmptyIndicator.swift */,
-				9FE64445349892C1F67B2E9BD60101FC /* AlbumListViewController.swift */,
-				F9DC4989493C128DE109803F1275EFB8 /* AnimatableNavigationController.swift */,
-				105FF43ACBD96E5AB4078AC84D1E899A /* AssetCell.swift */,
-				39D3ED07C280B26F266C42C54B241CEF /* AssetDetailCell.swift */,
-				1D6BBCBBBD433C9B04F56019C3B9760A /* AssetDetailListViewController.swift */,
-				35306E488D5D4E8DCA9EA2403315F222 /* AssetListViewController.swift */,
-				CEEF1AD88EB4E99859CB058C6B6A6CC1 /* ContractingAnimationController.swift */,
-				766E5D74C5CC45C35811AE4F9E4B7707 /* EmptyIndicatable.swift */,
-				C0651944B4BC9F6335887382EECAA456 /* ExpandingAnimationController.swift */,
-				7B3B4AB73162622BCFDCEF1BADAD1633 /* ItemList.swift */,
-				A277FFFF3A3A3D98B3C74D0A83EBD713 /* MomentCell.swift */,
-				12A4ACF64D2F6AFF6332E37FDEA08D86 /* MomentSectionHeaderView.swift */,
-				D3618EEE1BBD20345AA7DEA2B4827126 /* MomentViewController.swift */,
-				37D4783A301CFDE49361C4EFAEBD297C /* NohanaImagePickerController.swift */,
-				DCD0CA92362C4864D0EEE2A498AC3D47 /* NotificationInfo.swift */,
-				CE5C54C0B054D57CDD7FB70D800F360A /* PhotoKitAlbumList.swift */,
-				A65143708AA9846E0C14684CBF097ECA /* PhotoKitAsset.swift */,
-				76AA5DB9E4984D8EABA22E574F03BD21 /* PhotoKitAssetList.swift */,
-				922B7F2B202BDE5BC4871803E15BBC60 /* PickedAssetList.swift */,
-				9C29505DA4C8E2E700929660EE34CE3A /* Size.swift */,
-				9A5C4AAEB0C0B3C1C0ED2D11047951CF /* SwipeInteractionController.swift */,
-				21338868CAB4751F5A9C2E06500B940C /* Resources */,
-				73BB1FB4460D566F1B10952F2B085EAC /* Support Files */,
-			);
-			name = NohanaImagePicker;
-			path = NohanaImagePicker;
-			sourceTree = "<group>";
-		};
-		6131E9FCFD5FE5D0A00E4E0B6114523A /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				B3ADA51C617A936C9A91F11094B841DA /* Cache.modulemap */,
-				2EB190A8B4D4D9FB72A68F9501ACBE2C /* Cache.xcconfig */,
-				63EF2C72173F0E273C85C69B01558260 /* Cache-dummy.m */,
-				899B3F49F04DA9460ACBDD05D33AAD83 /* Cache-prefix.pch */,
-				0FAC3BE0BD8A8EC59800CFACF860F82B /* Cache-umbrella.h */,
-				2B10DAE7E483760BC2257B3601BAFC67 /* Info.plist */,
+				86EA2ACB0B041E1B1516088C9A4E8C23 /* Cache.modulemap */,
+				D5FD1EFF408230D2120C3BDA862CD56C /* Cache.xcconfig */,
+				BB2A60ED9154C4109DA9A65283F13C3C /* Cache-dummy.m */,
+				991CD57255C2447FC7FE42FC5C6DC9B7 /* Cache-prefix.pch */,
+				C6D0AEFB5FF607FF4DA1EA44595B0B8F /* Cache-umbrella.h */,
+				8FDE8E5D15FFD9B55F0E94D1FEB5C477 /* Info.plist */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Cache";
 			sourceTree = "<group>";
 		};
-		6F520EEF59FFF0DB5ADDB523CBB790C6 /* Support Files */ = {
+		61E6865177B778DD37C969CF4370E0F7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E49475B4A139FABA24F3AA3AD7D32DAE /* Hue.modulemap */,
-				37872B19075DCDCFD32416FD5D451D0C /* Hue.xcconfig */,
-				9A573947F8C4CEDD89A32E7090FCB4E6 /* Hue-dummy.m */,
-				6D89D1971FA8EED13330C7DA88553FDF /* Hue-prefix.pch */,
-				C5F9F87F85F1BCA2FCE8FD8FED875222 /* Hue-umbrella.h */,
-				F70433B155E6495706279C62FD69231C /* Info.plist */,
+				C5A59384B8E7CB7AE07B7C60019C4C53 /* en.lproj */,
+				6D96CE14DE04964347A52E8B9187F43F /* ja.lproj */,
+				CA94BDA53C71D532661FF0202083BF4F /* NohanaImagePicker.storyboard */,
+				F32D9F51115D20B30C20BB5AF57D1464 /* NohanaImagePicker.xcassets */,
+				03FEB7B7C2F484D83BC26C7BE6836D5C /* ru.lproj */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/Hue";
+			name = Resources;
 			sourceTree = "<group>";
 		};
-		6FCDB0402F21691C2E3BD3AF55D43495 /* Pods */ = {
+		622A767DCF13338264FFED4B4C101C8B /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				D75CFF439669D321834CAF535153A07A /* Cache */,
-				2CDD7B0C97C07219758568C655F1EA41 /* Hue */,
-				227832A2BB9417EA01867BB8F855A74D /* Imaginary */,
-				40FF5874C7AE4A4168D3BDA164980121 /* Lightbox */,
-				44955F2D2B1685803B9D812731F54068 /* NohanaImagePicker */,
-				09DFD9388432174F13896A200BD2E6ED /* SwiftHash */,
+				3635AD26B199D3AB35BB05F4BCBC6B14 /* Info.plist */,
+				D509294BAE8CF1258E72A7069B721F70 /* NohanaImagePicker.modulemap */,
+				761AA4627434DA82BB044472CADFEF8E /* NohanaImagePicker.xcconfig */,
+				D1FA0EC5FB9DDDEC1B6ED172C8EC5EE7 /* NohanaImagePicker-dummy.m */,
+				1740005AEA94DD12388777B9511AC8A1 /* NohanaImagePicker-prefix.pch */,
+				FB055EE9C342A010E1E713E9E27E2E91 /* NohanaImagePicker-umbrella.h */,
+				C001A43306173477239688706F1E923F /* ResourceBundle-NohanaImagePicker-Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/NohanaImagePicker";
+			sourceTree = "<group>";
+		};
+		671665E2B92A919F0CB88514C7376A47 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EEABD7F7599809E890E9B3BEF9641D05 /* Cache */,
+				CD6E3BB3854DD8E41C9EC5C26CE9B1F3 /* Hue */,
+				B0A2297FC32FFB1AEC4B2EF30BE3C62B /* Imaginary */,
+				22EFDEEE61566D5217B755B20A8B5E3E /* Lightbox */,
+				A04AA3C07F508DFBF0B8F528A3B35E51 /* NohanaImagePicker */,
+				6DA125F35E27CEEBFD2E8CD143B20993 /* SwiftHash */,
+				B0B04D2DEA7C14A25CF41CEE2A7C81F4 /* TOPasscodeViewController */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		73BB1FB4460D566F1B10952F2B085EAC /* Support Files */ = {
+		6DA125F35E27CEEBFD2E8CD143B20993 /* SwiftHash */ = {
 			isa = PBXGroup;
 			children = (
-				9C1321367788004AFD7DF0531E8D6749 /* Info.plist */,
-				F47900EC55887212330A1FB65C1A20B1 /* NohanaImagePicker.modulemap */,
-				674B7BF9DF593ED0CE2A5F22973B2FC6 /* NohanaImagePicker.xcconfig */,
-				ED79DC5409E3E49A013BEA2E95A1C67B /* NohanaImagePicker-dummy.m */,
-				CB7435283379A3717CFEC6AB04DCF7F4 /* NohanaImagePicker-prefix.pch */,
-				E5E91CA04FF2D087DC9B3F796B59C7B5 /* NohanaImagePicker-umbrella.h */,
-				8E48D4DFBDF44798031D904F413D5990 /* ResourceBundle-NohanaImagePicker-Info.plist */,
+				299121A6F7BD06D109AB823EC273AFAA /* MD5.swift */,
+				B9FD620D5E1468C34BE3EC49F0B5BD5A /* SHA1.swift */,
+				770B873686464328E1391081A8D5122D /* Support Files */,
+			);
+			name = SwiftHash;
+			path = SwiftHash;
+			sourceTree = "<group>";
+		};
+		770B873686464328E1391081A8D5122D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7E6E75879AD5A0F8BBB8FE8BB770F108 /* Info.plist */,
+				8182CA61F93C23E920B6C3A1934DF6AC /* SwiftHash.modulemap */,
+				E3D832CEFEEE4862B073F6A1BBA4DA75 /* SwiftHash.xcconfig */,
+				E28F4D0959EFB2827665CD9A07625A08 /* SwiftHash-dummy.m */,
+				6D1149F1A55F8B76C6F0E24DEC0D13CE /* SwiftHash-prefix.pch */,
+				0720DD2B3743E1EA7686E938924069CA /* SwiftHash-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/NohanaImagePicker";
+			path = "../Target Support Files/SwiftHash";
+			sourceTree = "<group>";
+		};
+		77140AF71FD745F1EF0B232B81CCB3A3 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C6C5FDD8C651D91C19528F580DE4D34D /* Info.plist */,
+				C9ADD28DDCE8881D263AB8940A79561D /* TOPasscodeViewController.modulemap */,
+				185AF1D9B029FC7E16EE3145303C9BDF /* TOPasscodeViewController.xcconfig */,
+				688669E22A03DD74C77685D1DFDDDA25 /* TOPasscodeViewController-dummy.m */,
+				0FCA07CFDE6C8340C5C6304258040D8E /* TOPasscodeViewController-prefix.pch */,
+				BDF51DFE38E52195F228B6E4AC3E7359 /* TOPasscodeViewController-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/TOPasscodeViewController";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -651,8 +691,8 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				ACC3B44D53776CD6B8E144E887019BC2 /* Frameworks */,
-				6FCDB0402F21691C2E3BD3AF55D43495 /* Pods */,
-				F28E713BBAD13025999173121F231E49 /* Products */,
+				671665E2B92A919F0CB88514C7376A47 /* Pods */,
+				CC7F015287D75AD69D3944AA627A3FB0 /* Products */,
 				7E691FF891C1C6DC56ADCED7CBC6B657 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -665,26 +705,52 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		815E3BA6BBBA5FAE82421B89F15C065C /* Resources */ = {
+		A04AA3C07F508DFBF0B8F528A3B35E51 /* NohanaImagePicker */ = {
 			isa = PBXGroup;
 			children = (
-				2461751F1833CF1FE5CE5F3D5C17944D /* Lightbox.bundle */,
+				D0C2158E6223D7F1C2058762261DC52F /* ActivityIndicatable.swift */,
+				AED9494267327BDE65217E5FD3077FFA /* AlbumCell.swift */,
+				861A5D6C00181A747C6BB3E93AE1D523 /* AlbumListEmptyIndicator.swift */,
+				80F3C2EEB4BB31A95458DBF05B05434C /* AlbumListViewController.swift */,
+				51E2E504DB4B28506023EAA06D024DEA /* AnimatableNavigationController.swift */,
+				ED6BBD5A425E148B41371608827A94D5 /* AssetCell.swift */,
+				90372AA59FE8BCF07426DE1B2ECC9986 /* AssetDetailCell.swift */,
+				F3F0F8ED9DB034DD406072E5FEC18BD9 /* AssetDetailListViewController.swift */,
+				3D2F7B3E6EFEF4CD8F4E1ED2C7852DA1 /* AssetListViewController.swift */,
+				7ACE2D7BB6A91FC896512205F853B250 /* ContractingAnimationController.swift */,
+				CF3BF8899A9BF36F17B9BD364275A073 /* EmptyIndicatable.swift */,
+				C382A717095542E9F62D5DC763E0829A /* ExpandingAnimationController.swift */,
+				A77EA8E0EB5E4C7D817190016A31F527 /* ItemList.swift */,
+				E0412A3873AFE190F08946A26EA546D4 /* MomentCell.swift */,
+				1107B9D1676CEF4ED114E0F15F597D38 /* MomentSectionHeaderView.swift */,
+				1F7A6B119841CD4B92BEE59AC8072BDB /* MomentViewController.swift */,
+				256D946B6CF36F61E5954F1E07AD812D /* NohanaImagePickerController.swift */,
+				62605429D19EA226ED020FFE6E6BF730 /* NotificationInfo.swift */,
+				A0408F97B08727FA1E09DFC304F45009 /* PhotoKitAlbumList.swift */,
+				43D360101482F952FA931C1E19D756AA /* PhotoKitAsset.swift */,
+				BDC71651C5F35FA63C565650339278B6 /* PhotoKitAssetList.swift */,
+				7FF9A7A97B03E046206739273A1E2769 /* PickedAssetList.swift */,
+				A454319C935D489A88CF8FC2003FDCC5 /* Size.swift */,
+				D595BC919898A51828EA5ED36B57C492 /* SwipeInteractionController.swift */,
+				61E6865177B778DD37C969CF4370E0F7 /* Resources */,
+				622A767DCF13338264FFED4B4C101C8B /* Support Files */,
 			);
-			name = Resources;
+			name = NohanaImagePicker;
+			path = NohanaImagePicker;
 			sourceTree = "<group>";
 		};
-		A836374DAD2BAF18FF4F3E8A2A59F682 /* Support Files */ = {
+		A5654DB8F530B48EDB7D544346294FAE /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				4A996BAA7F99BB22FC2E79C19C53474A /* Info.plist */,
-				61A36D2D6A14692EFED7773FFD46A66D /* Lightbox.modulemap */,
-				D70D6B2CE59E60BD1A2AA10ED2A51876 /* Lightbox.xcconfig */,
-				BAD7A1D48DC2638BCA411ABA68EF3CC1 /* Lightbox-dummy.m */,
-				341229C8A8A5DE40B269A6F9D4145808 /* Lightbox-prefix.pch */,
-				95729F8A8CA4350048C5C28FD5A4DDFE /* Lightbox-umbrella.h */,
+				D9CD42AC0EA206A77A47346767EA3EFC /* Hue.modulemap */,
+				DCFFE573FC4B028471C6DA9669A3A730 /* Hue.xcconfig */,
+				369DC97E1A89FD868E552F26103FEB09 /* Hue-dummy.m */,
+				147C905CFF9578F5C1763D05C7803197 /* Hue-prefix.pch */,
+				3F8FF550FA3973B9E635252739315FCC /* Hue-umbrella.h */,
+				6D67A5473EA797E0BE47F11E856B6C3C /* Info.plist */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/Lightbox";
+			path = "../Target Support Files/Hue";
 			sourceTree = "<group>";
 		};
 		ACC3B44D53776CD6B8E144E887019BC2 /* Frameworks */ = {
@@ -699,6 +765,110 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B0A2297FC32FFB1AEC4B2EF30BE3C62B /* Imaginary */ = {
+			isa = PBXGroup;
+			children = (
+				5B558B2048C0A562C8FDBF3C8AEAF11B /* ButtonBackgroundDisplayer.swift */,
+				7CA829F2CD84041D1A67B978621F8341 /* ButtonDisplayer.swift */,
+				7D4C0A64661BBD44E9D451CC2A0AD928 /* Configuration.swift */,
+				70D9163A75A9B2D9BEC3712CB9E91A44 /* Decompressor.swift */,
+				A95C167E016A36192ED69386B24D3728 /* ImageDisplayer.swift */,
+				EB326D185AD48EC1113570924B5A8188 /* ImageDownloader.swift */,
+				7B50B4B64F3FFC334B2142FD67E2793F /* ImageFetcher.swift */,
+				7308B5CF0B16D694D233153B822636AF /* ImageProcessor.swift */,
+				A8225BA1F21124C0476692A866A4717A /* ImageViewDisplayer.swift */,
+				C59B8C72A52C69D0E0DD74CF99CD06A8 /* ImaginaryError.swift */,
+				8F6015C009075D6D9A88E7D792C327C6 /* MultipleImageFetcher.swift */,
+				D688D3D9DDB0D84A07BF77EF541C8992 /* Option.swift */,
+				56C8177A68333FB47B41FDF8EB2771BE /* Result.swift */,
+				FA54C853C8EA4A6C2A5627E645A38838 /* TintImageProcessor.swift */,
+				E0F665834F13C6BEAEAFC457E37BDDE2 /* Types.swift */,
+				DCB7ED7C05EC4C73B44022347DE23B86 /* View+Imaginary.swift */,
+				2051549A0959BF9D08803FF80453C27D /* Support Files */,
+			);
+			name = Imaginary;
+			path = Imaginary;
+			sourceTree = "<group>";
+		};
+		B0B04D2DEA7C14A25CF41CEE2A7C81F4 /* TOPasscodeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3E252C05414AD5A65D6FBDA1A2601D7D /* TOPasscodeButtonLabel.h */,
+				524DA83B5921A8243DC7732478806F7B /* TOPasscodeButtonLabel.m */,
+				DB5A1D9120E3BA1423832C00BD3D8A4B /* TOPasscodeCircleButton.h */,
+				C82ECC86F82432B22BA313E26568E72A /* TOPasscodeCircleButton.m */,
+				0B0BAEF36DCA7DF18E5103BE73364F15 /* TOPasscodeCircleImage.h */,
+				18F3B62B23F8BF0D519304E435BF276A /* TOPasscodeCircleImage.m */,
+				B3BF0914BBE53C8AAFFCEE14E965F5CE /* TOPasscodeCircleView.h */,
+				BB14CF7911719FD1B313C6EC54FABD36 /* TOPasscodeCircleView.m */,
+				6B4745DDE99A9A31FF428228F1370A57 /* TOPasscodeFixedInputView.h */,
+				526AC166CF727A86AC7F5D5597DDBB61 /* TOPasscodeFixedInputView.m */,
+				71786A6417DFFAC424FC70F3B707ED23 /* TOPasscodeInputField.h */,
+				5FA528E7C310B7359C90A8652D62667E /* TOPasscodeInputField.m */,
+				6BFFB12A4A36C7F72ECA636EFD7D22E6 /* TOPasscodeKeypadView.h */,
+				561289CCD2BD96DF215612FC6B555A79 /* TOPasscodeKeypadView.m */,
+				6AD4DF9F0C8C9369F34D122E11F99F79 /* TOPasscodeSettingsKeypadButton.h */,
+				4C8C3B219F72405F0B2A37DBF995189F /* TOPasscodeSettingsKeypadButton.m */,
+				9D9041B61550239E37645DFB338E985C /* TOPasscodeSettingsKeypadView.h */,
+				15538A01B33EB52B5B0CF59461A16570 /* TOPasscodeSettingsKeypadView.m */,
+				7DEDBFF7E4B3E1C0E8F2525FBA619C73 /* TOPasscodeSettingsViewController.h */,
+				ECB3E096ADC4BBBC0F72B8C83D61D510 /* TOPasscodeSettingsViewController.m */,
+				9E1DA7991EEEEC9EC996EB540E146974 /* TOPasscodeSettingsWarningLabel.h */,
+				8CB4E68C851196CFD662EE5CC9354C59 /* TOPasscodeSettingsWarningLabel.m */,
+				D51709CB0E2BF867F70C5BC6E642A932 /* TOPasscodeVariableInputView.h */,
+				D32B1B7691BED3A082214F6A1A413028 /* TOPasscodeVariableInputView.m */,
+				ADC8088FC19E77618E8CFFF02B50A014 /* TOPasscodeView.h */,
+				DEBA9644E57F144DD9B0A8C3DC7872BE /* TOPasscodeView.m */,
+				01BA8C813AD4CEB12175BCF0A342C594 /* TOPasscodeViewContentLayout.h */,
+				9A7E3ED134CDDE83B1BAD2C6B04CABA0 /* TOPasscodeViewContentLayout.m */,
+				32011238FB9E6EE9510DC12D2DF13E16 /* TOPasscodeViewController.h */,
+				1935BAB9DC65734CDD026E31601C3CFE /* TOPasscodeViewController.m */,
+				7AEA97CC4089328CE90798BD23C2E316 /* TOPasscodeViewControllerAnimatedTransitioning.h */,
+				C16E999C1EA2C7D07758EF30E936D5B4 /* TOPasscodeViewControllerAnimatedTransitioning.m */,
+				A2E41790429EF9DC8DF4FE4CF1D6A336 /* TOPasscodeViewControllerConstants.h */,
+				B41B4647CA2FF6F0B4D5DA1A3377D5BB /* TOSettingsKeypadImage.h */,
+				1C8B236A0CE8DC3043AD0B2761E23286 /* TOSettingsKeypadImage.m */,
+				77140AF71FD745F1EF0B232B81CCB3A3 /* Support Files */,
+			);
+			name = TOPasscodeViewController;
+			path = TOPasscodeViewController;
+			sourceTree = "<group>";
+		};
+		C476F661DC1B81A23D5473AADA7A1072 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3EF13828FA26F4CF3B6EE089F2AB6046 /* Lightbox.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		CC7F015287D75AD69D3944AA627A3FB0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE0FB8D2D3F4A134A496788BEE683C24 /* Cache.framework */,
+				937D0A234D9DCCCD4FE1F039238A45C1 /* Hue.framework */,
+				6D9D6957DA6B06350EE02520090ADA14 /* Imaginary.framework */,
+				40AE8A037A1E72EDB742FCD39DA4A4B0 /* Lightbox.framework */,
+				0E0A71FF16B33974C3DA8BBEA272DCCE /* NohanaImagePicker.bundle */,
+				31CF7746EB5E3DC7E40E516F1A52D29E /* NohanaImagePicker.framework */,
+				5F6E6480FFBCFBC480E7A611F2BBD39B /* Pods_PrivateMemories.framework */,
+				1E9DA1165FA1BC8E140E5FF5E0D4A0D1 /* SwiftHash.framework */,
+				53CEF5AFD8F3C3A100D5DC7D4EF2A891 /* TOPasscodeViewController.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CD6E3BB3854DD8E41C9EC5C26CE9B1F3 /* Hue */ = {
+			isa = PBXGroup;
+			children = (
+				AA6B0BFAAC6D436998A86BFE69828B47 /* UIColor+Hue.swift */,
+				A9042C44E12AF45EAC2EBD5CBDD53D4A /* UIImage+Hue.swift */,
+				A5654DB8F530B48EDB7D544346294FAE /* Support Files */,
+			);
+			name = Hue;
+			path = Hue;
+			sourceTree = "<group>";
+		};
 		CD71D1C481ED1ECD9D1A8025E66BF4BB /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -709,6 +879,20 @@
 				E0495873BF0E59F825E4B010FC229812 /* UIKit.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		CFB8E8760EF161D35BA14B5FB9BB6C7D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A2DF8A379BE3E7A2400176BD0AE99E57 /* Info.plist */,
+				921B995D4A0F4D38F1F2819ACD8F59FD /* Lightbox.modulemap */,
+				64B009B06F954E82CB661F328AC3BB44 /* Lightbox.xcconfig */,
+				9CD34C45F3F781B2D7C124F1FC6ED0C9 /* Lightbox-dummy.m */,
+				7F5CF69FF0F5A63D7384EA13E1289388 /* Lightbox-prefix.pch */,
+				9FDEBE65658CEDEF81014B944B9B4720 /* Lightbox-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Lightbox";
 			sourceTree = "<group>";
 		};
 		D5031640CA1A3E59D245C50853314D49 /* Pods-PrivateMemories */ = {
@@ -729,64 +913,35 @@
 			path = "Target Support Files/Pods-PrivateMemories";
 			sourceTree = "<group>";
 		};
-		D75CFF439669D321834CAF535153A07A /* Cache */ = {
+		EEABD7F7599809E890E9B3BEF9641D05 /* Cache */ = {
 			isa = PBXGroup;
 			children = (
-				DAC562B1C33AA82142684758CE62823B /* AsyncStorage.swift */,
-				12223418B8ABE5066E2E48E286010E20 /* AsyncStorageAware.swift */,
-				638913AEE56B0EDDF95CDC9A0E64D6CF /* DataSerializer.swift */,
-				357D2411131FDA1E897965A4D4C252CB /* Date+Extensions.swift */,
-				31ECEEA8A39F44D222B710975279E5FB /* DiskConfig.swift */,
-				02462E228B79F00EF761F833B0075C93 /* DiskStorage.swift */,
-				BCF1E30E09FB01AB9CAD48C0DDF50CD8 /* Entry.swift */,
-				E521B466B6636649FD2548F2DA7D10BD /* ExpirationMode.swift */,
-				DD016E4E0CA39929F2A7A03CD491CCB4 /* Expiry.swift */,
-				BF86578A626A0FC8667AD8DFCAF64CF4 /* HybridStorage.swift */,
-				96EF68F6FFB0919A6A5E6FC6F1794670 /* ImageWrapper.swift */,
-				1352DDEEDB20BC76E6DC338B74F0D1D1 /* MemoryConfig.swift */,
-				E3041051AC6A605347C64DA7FC0D4E67 /* MemoryStorage.swift */,
-				526111D85286F12C047CADC2421D3622 /* ObjectSerializer.swift */,
-				0FFB8D8A1B3A8DB8D4870B3A545BEC7A /* Result.swift */,
-				EC7FBC524E1966E77C92318D88CFB954 /* Storage.swift */,
-				99646057FBDAD4739A0BF82EA2F7A729 /* StorageAware.swift */,
-				0DA25A7E48AD7059D9B2F33B905934B0 /* StorageError.swift */,
-				CC6E0BECFBC4AE14270794F02BBA3D88 /* SyncStorage.swift */,
-				8A39556CF5ABBD094CA8803504EC8641 /* Types.swift */,
-				EC47B27736492314B52F08B09C1A550B /* TypeWrapperStorage.swift */,
-				0A339A58E58D122E14C6B5DABB234887 /* UIImage+Extensions.swift */,
-				6131E9FCFD5FE5D0A00E4E0B6114523A /* Support Files */,
+				82E7287D742B5A972876499FCDC03CB5 /* AsyncStorage.swift */,
+				CED032525F6E21B79D348CC76AB79C6C /* AsyncStorageAware.swift */,
+				CA80C35000B6634B38253E6C15DF2F89 /* DataSerializer.swift */,
+				F450BE0117B2EC742C45184C745354E4 /* Date+Extensions.swift */,
+				A0B5F84B047D1C65FF0CD06149629FB0 /* DiskConfig.swift */,
+				5FDCC6F36DCCA91B52CE0C3486396663 /* DiskStorage.swift */,
+				69825345D64F33221C911F2F8609B48A /* Entry.swift */,
+				74F3534E76C2AEE9464BC279FD8D53C0 /* ExpirationMode.swift */,
+				B8BF26018250ECF528E1F26B7B9D0C2C /* Expiry.swift */,
+				7E0138912484AA1C1C6A7F5DFA91C0E1 /* HybridStorage.swift */,
+				D7E3347993BC66930B73A156B0B532B0 /* ImageWrapper.swift */,
+				9BE7801031C807F5BA4D03D39B630D7B /* MemoryConfig.swift */,
+				569F3B5B0C5948F68FCD9FBD33FAA8EB /* MemoryStorage.swift */,
+				97E3C0E971148CC1178CA4216548BE60 /* ObjectSerializer.swift */,
+				1A5B586C1BD993DDEA6C8FEF7B3ECCEF /* Result.swift */,
+				D2D2CC6F5B508B7B167E60B72F7215D1 /* Storage.swift */,
+				039C5121CC39A29F04FD0D3F7C62897D /* StorageAware.swift */,
+				D865C0ECA5231CA72854A22D577C394D /* StorageError.swift */,
+				C12D5F00BE966027261957DC53D59363 /* SyncStorage.swift */,
+				4B5DCF78F24A4B5C0EEC50FDCB528D8A /* Types.swift */,
+				0155760F05652FCEA90178C559A985D0 /* TypeWrapperStorage.swift */,
+				DEEF5B767776C2BF6ECE78A20D86DF3B /* UIImage+Extensions.swift */,
+				39A72D86C8C8CA86E35F7E4FB6F0B547 /* Support Files */,
 			);
 			name = Cache;
 			path = Cache;
-			sourceTree = "<group>";
-		};
-		EBE6A77A7F65E53D5B22C21C28C75AD4 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				6F5F7E45460DAFABDD1DA5746F9443EB /* Info.plist */,
-				14DC89AF4546C420D6A4DB66B0558F77 /* SwiftHash.modulemap */,
-				4D1C3CA8FD011EE507A96311F3AD0C11 /* SwiftHash.xcconfig */,
-				AD3274D4E41C7ACC1E1E6A3B82BB0326 /* SwiftHash-dummy.m */,
-				15F81B11FF6F9CD6E476B9B8061A5A06 /* SwiftHash-prefix.pch */,
-				82BC985D3E84A09027A559EE63528B8C /* SwiftHash-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/SwiftHash";
-			sourceTree = "<group>";
-		};
-		F28E713BBAD13025999173121F231E49 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				9CC041E093EA0C4D1BB73E19FB936806 /* Cache.framework */,
-				94E5A20ED0D520B81FEE41CA95C4B5D9 /* Hue.framework */,
-				5E4CFD3A30CBE7C1BD3982AF6ECE7F94 /* Imaginary.framework */,
-				B4FB68BFD28CF812DABEEA3395CFF38C /* Lightbox.framework */,
-				034BC8929DC78C6863BBBA4BA05F8708 /* NohanaImagePicker.bundle */,
-				733D9054A46578249514AA2451E73D73 /* NohanaImagePicker.framework */,
-				6A339E2FF1B000739784B129611A10B2 /* Pods_PrivateMemories.framework */,
-				8780944BD5D6FD35839C1DB176989029 /* SwiftHash.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -816,6 +971,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		537A99A92EABE031203AB8A6FE2928E0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				670E6A14A10DAA2D71169092B5620AAC /* TOPasscodeButtonLabel.h in Headers */,
+				9A2B5F71166B5C849D79609A13C899B5 /* TOPasscodeCircleButton.h in Headers */,
+				7262FE24F422C5937920E14D254E7136 /* TOPasscodeCircleImage.h in Headers */,
+				7EE85D36271A5746CABF49129D9483F5 /* TOPasscodeCircleView.h in Headers */,
+				C13137E2BE65ED75479499417DD36AC5 /* TOPasscodeFixedInputView.h in Headers */,
+				688DE9DC1810821DD50B3ADE3469342A /* TOPasscodeInputField.h in Headers */,
+				B6B2D1C92DD76242F8C517396C65A305 /* TOPasscodeKeypadView.h in Headers */,
+				A1A75D40E6002EF7DF9900258D899BB5 /* TOPasscodeSettingsKeypadButton.h in Headers */,
+				9BA0F622C015976CB64C4EC1C9636449 /* TOPasscodeSettingsKeypadView.h in Headers */,
+				867A5CF30B8262A9BA12314115863180 /* TOPasscodeSettingsViewController.h in Headers */,
+				EA1739F537AA65A941A346022AADC46F /* TOPasscodeSettingsWarningLabel.h in Headers */,
+				677DC031681021C295D2D50C7E53B1C9 /* TOPasscodeVariableInputView.h in Headers */,
+				A864FF98A5EB2F86FAEEB88A879E6DE9 /* TOPasscodeView.h in Headers */,
+				1454DE2EB90CDCFFA60D55A563460844 /* TOPasscodeViewContentLayout.h in Headers */,
+				9D932DB29A380CC808FA800542514C41 /* TOPasscodeViewController-umbrella.h in Headers */,
+				F20B8241CDA9BB213900F979898797FE /* TOPasscodeViewController.h in Headers */,
+				BA00480A69699E57DED59ED2082CF498 /* TOPasscodeViewControllerAnimatedTransitioning.h in Headers */,
+				5C97238E8AF34A576B156D9084BE9DCA /* TOPasscodeViewControllerConstants.h in Headers */,
+				F03F4E432B5B8540718910A7C57B3469 /* TOSettingsKeypadImage.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		673BF09867A718FF3227E90F7E7DF5BE /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -824,11 +1005,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7E3E4444F00AD206D3A972AFB8177EB8 /* Headers */ = {
+		E1166529D3D307E72C03934617070835 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAD53445B82138941AFFE31286E461B4 /* Pods-PrivateMemories-umbrella.h in Headers */,
+				193CA2E21883CB5E85332ED5FF8B8AC0 /* Pods-PrivateMemories-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -870,7 +1051,7 @@
 			);
 			name = Lightbox;
 			productName = Lightbox;
-			productReference = B4FB68BFD28CF812DABEEA3395CFF38C /* Lightbox.framework */;
+			productReference = 40AE8A037A1E72EDB742FCD39DA4A4B0 /* Lightbox.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		3BF669C38F8201499DF8CC8E83D4E54F /* SwiftHash */ = {
@@ -887,30 +1068,24 @@
 			);
 			name = SwiftHash;
 			productName = SwiftHash;
-			productReference = 8780944BD5D6FD35839C1DB176989029 /* SwiftHash.framework */;
+			productReference = 1E9DA1165FA1BC8E140E5FF5E0D4A0D1 /* SwiftHash.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		5B89D5FDC4C2D42A502F5B039E7FABC2 /* Pods-PrivateMemories */ = {
+		761D2CC23066461B9B6FBAEF6AB0DCE2 /* TOPasscodeViewController */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C5F32BA8AB6256E35995BB11CAB38FAC /* Build configuration list for PBXNativeTarget "Pods-PrivateMemories" */;
+			buildConfigurationList = C97335A34F7C4309DE5FF9DDA90B25C0 /* Build configuration list for PBXNativeTarget "TOPasscodeViewController" */;
 			buildPhases = (
-				5F96A152E52B305CDE316E322D13E5DE /* Sources */,
-				DF40A1A688C5B6732F3F64DA9830860A /* Frameworks */,
-				7E3E4444F00AD206D3A972AFB8177EB8 /* Headers */,
+				C2A1A1E3A77EB18DEB79C25DEF1DE5C4 /* Sources */,
+				7132A0194FFC844EF09CB11B6C809CD8 /* Frameworks */,
+				537A99A92EABE031203AB8A6FE2928E0 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				8B03CDED3E5471E23E9D2E97438D7374 /* PBXTargetDependency */,
-				91AA58A8FB970DBC09782F4EC2CD668F /* PBXTargetDependency */,
-				4394C2D31F0B95C208F81FDA33DD46B7 /* PBXTargetDependency */,
-				95E51B70C72A6EAF56E194837EE2D804 /* PBXTargetDependency */,
-				95F4E677E93C390B95E58C7B85DB867E /* PBXTargetDependency */,
-				9A9883B6114A5B56DB0E5B8FDA78EB83 /* PBXTargetDependency */,
 			);
-			name = "Pods-PrivateMemories";
-			productName = "Pods-PrivateMemories";
-			productReference = 6A339E2FF1B000739784B129611A10B2 /* Pods_PrivateMemories.framework */;
+			name = TOPasscodeViewController;
+			productName = TOPasscodeViewController;
+			productReference = 53CEF5AFD8F3C3A100D5DC7D4EF2A891 /* TOPasscodeViewController.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		8133599DD97BEA328310E0A966FC3E99 /* NohanaImagePicker-NohanaImagePicker */ = {
@@ -927,7 +1102,7 @@
 			);
 			name = "NohanaImagePicker-NohanaImagePicker";
 			productName = "NohanaImagePicker-NohanaImagePicker";
-			productReference = 034BC8929DC78C6863BBBA4BA05F8708 /* NohanaImagePicker.bundle */;
+			productReference = 0E0A71FF16B33974C3DA8BBEA272DCCE /* NohanaImagePicker.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		9612E4F19A4EE371553FB485C2B6DEBF /* Cache */ = {
@@ -945,7 +1120,7 @@
 			);
 			name = Cache;
 			productName = Cache;
-			productReference = 9CC041E093EA0C4D1BB73E19FB936806 /* Cache.framework */;
+			productReference = CE0FB8D2D3F4A134A496788BEE683C24 /* Cache.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		B2542602E50EDF091ADB18B4688DF34F /* Hue */ = {
@@ -962,7 +1137,7 @@
 			);
 			name = Hue;
 			productName = Hue;
-			productReference = 94E5A20ED0D520B81FEE41CA95C4B5D9 /* Hue.framework */;
+			productReference = 937D0A234D9DCCCD4FE1F039238A45C1 /* Hue.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		ECDD29E5BB6DE98C82D1208813048C9C /* Imaginary */ = {
@@ -981,7 +1156,31 @@
 			);
 			name = Imaginary;
 			productName = Imaginary;
-			productReference = 5E4CFD3A30CBE7C1BD3982AF6ECE7F94 /* Imaginary.framework */;
+			productReference = 6D9D6957DA6B06350EE02520090ADA14 /* Imaginary.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F52E522D19B215D1D751E30F9C0C7DB0 /* Pods-PrivateMemories */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 029262B3BAF468F1FB43CA8584F896B5 /* Build configuration list for PBXNativeTarget "Pods-PrivateMemories" */;
+			buildPhases = (
+				BE55792D3A655E91B5F98CD80F34BF78 /* Sources */,
+				26D2B044D09E39B7F846F62D356EBDDB /* Frameworks */,
+				E1166529D3D307E72C03934617070835 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3A81D775FF64568FE52AF2C06799CBD1 /* PBXTargetDependency */,
+				FEB13CE657FCD601C96CD7A045E05686 /* PBXTargetDependency */,
+				A506E2AEF0E178F165A4838D8EADCE42 /* PBXTargetDependency */,
+				D8B1B052ACD9C85D6FE9FBEED08BD945 /* PBXTargetDependency */,
+				0F0F47217830012CF35DE66AB4D235FE /* PBXTargetDependency */,
+				1DA005324CFA672252A1F777F6C63016 /* PBXTargetDependency */,
+				9B818297B3722D19DB71ABB14D0C7F65 /* PBXTargetDependency */,
+			);
+			name = "Pods-PrivateMemories";
+			productName = "Pods-PrivateMemories";
+			productReference = 5F6E6480FFBCFBC480E7A611F2BBD39B /* Pods_PrivateMemories.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		F53A817D1C391BE79CB22B25868E784B /* NohanaImagePicker */ = {
@@ -1000,7 +1199,7 @@
 			);
 			name = NohanaImagePicker;
 			productName = NohanaImagePicker;
-			productReference = 733D9054A46578249514AA2451E73D73 /* NohanaImagePicker.framework */;
+			productReference = 31CF7746EB5E3DC7E40E516F1A52D29E /* NohanaImagePicker.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -1020,7 +1219,7 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = F28E713BBAD13025999173121F231E49 /* Products */;
+			productRefGroup = CC7F015287D75AD69D3944AA627A3FB0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -1030,8 +1229,9 @@
 				1A0140D3954476BEA98E574F3277619A /* Lightbox */,
 				F53A817D1C391BE79CB22B25868E784B /* NohanaImagePicker */,
 				8133599DD97BEA328310E0A966FC3E99 /* NohanaImagePicker-NohanaImagePicker */,
-				5B89D5FDC4C2D42A502F5B039E7FABC2 /* Pods-PrivateMemories */,
+				F52E522D19B215D1D751E30F9C0C7DB0 /* Pods-PrivateMemories */,
 				3BF669C38F8201499DF8CC8E83D4E54F /* SwiftHash */,
+				761D2CC23066461B9B6FBAEF6AB0DCE2 /* TOPasscodeViewController */,
 			);
 		};
 /* End PBXProject section */
@@ -1109,14 +1309,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5F96A152E52B305CDE316E322D13E5DE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7A7BDFE2FBD366A5ED4F87E27E49C033 /* Pods-PrivateMemories-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7A260EBFCCE5DC9B4C0EA76C8E9DC6C8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1177,6 +1369,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BE55792D3A655E91B5F98CD80F34BF78 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02520A478C0465BD26AB6E0C8CE4ED5C /* Pods-PrivateMemories-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2A1A1E3A77EB18DEB79C25DEF1DE5C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D728FCA071FABB7B68039861CC6E848 /* TOPasscodeButtonLabel.m in Sources */,
+				CEBF0E6986FFE4B4841B10210DB69EC0 /* TOPasscodeCircleButton.m in Sources */,
+				2F3BDB5328F9D4F4E4A227C46C720804 /* TOPasscodeCircleImage.m in Sources */,
+				DD4D9992DC7F38C13D4F0D8EF837A485 /* TOPasscodeCircleView.m in Sources */,
+				CA014CE4F8104062F6CC9F4C319210D8 /* TOPasscodeFixedInputView.m in Sources */,
+				5A209DAB9059B928A04973000525AE8F /* TOPasscodeInputField.m in Sources */,
+				28CAF7B450A94F8703BCCB4484AB8353 /* TOPasscodeKeypadView.m in Sources */,
+				16736C6A30F1DA9E1D847623F0797952 /* TOPasscodeSettingsKeypadButton.m in Sources */,
+				3070789E1D27C5AA5135DB38C401F88F /* TOPasscodeSettingsKeypadView.m in Sources */,
+				8DFA89BF45B986C0DC84D9ED228AC379 /* TOPasscodeSettingsViewController.m in Sources */,
+				FEB8643C4A1BF09F324D21205CA09C53 /* TOPasscodeSettingsWarningLabel.m in Sources */,
+				ADA0C9876DE8832350D7F4984CF69A45 /* TOPasscodeVariableInputView.m in Sources */,
+				3C0C60C15371C3ADBBA7303731F2C5AE /* TOPasscodeView.m in Sources */,
+				0F55A9135B7C4571C9E0038A23956ADA /* TOPasscodeViewContentLayout.m in Sources */,
+				BE171A58816DA54D01EA41B954C4F2F5 /* TOPasscodeViewController-dummy.m in Sources */,
+				9409ED0879F1D6335A4DB49D9A3093BC /* TOPasscodeViewController.m in Sources */,
+				E9684C619BDB75F897417C198BE69044 /* TOPasscodeViewControllerAnimatedTransitioning.m in Sources */,
+				24A6121DB402DFF6226BB06B1D486C01 /* TOSettingsKeypadImage.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DB0C7712ABA211B4470BF9A58C307B63 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1224,11 +1449,23 @@
 			target = 8133599DD97BEA328310E0A966FC3E99 /* NohanaImagePicker-NohanaImagePicker */;
 			targetProxy = 0E0522029B1C9CF021044E8638CAC4B0 /* PBXContainerItemProxy */;
 		};
-		4394C2D31F0B95C208F81FDA33DD46B7 /* PBXTargetDependency */ = {
+		0F0F47217830012CF35DE66AB4D235FE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Imaginary;
-			target = ECDD29E5BB6DE98C82D1208813048C9C /* Imaginary */;
-			targetProxy = 012B25C9BCECACD043CD46ABFFAD1572 /* PBXContainerItemProxy */;
+			name = NohanaImagePicker;
+			target = F53A817D1C391BE79CB22B25868E784B /* NohanaImagePicker */;
+			targetProxy = 41C6131A80CB4CED12B0354C42FD596A /* PBXContainerItemProxy */;
+		};
+		1DA005324CFA672252A1F777F6C63016 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftHash;
+			target = 3BF669C38F8201499DF8CC8E83D4E54F /* SwiftHash */;
+			targetProxy = E09B6F4832B630E602AAAA9D500DFCA7 /* PBXContainerItemProxy */;
+		};
+		3A81D775FF64568FE52AF2C06799CBD1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Cache;
+			target = 9612E4F19A4EE371553FB485C2B6DEBF /* Cache */;
+			targetProxy = B8147EAA6A706CE5C28B9E6F3E126410 /* PBXContainerItemProxy */;
 		};
 		4CB73A74652CB0A1EA00A9CBE9D3BB4B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1254,35 +1491,17 @@
 			target = 3BF669C38F8201499DF8CC8E83D4E54F /* SwiftHash */;
 			targetProxy = 0B7A592A3D705675D26B33310E47AA26 /* PBXContainerItemProxy */;
 		};
-		8B03CDED3E5471E23E9D2E97438D7374 /* PBXTargetDependency */ = {
+		9B818297B3722D19DB71ABB14D0C7F65 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Cache;
-			target = 9612E4F19A4EE371553FB485C2B6DEBF /* Cache */;
-			targetProxy = 756032805545A747D9FEF71BCE7E2C56 /* PBXContainerItemProxy */;
+			name = TOPasscodeViewController;
+			target = 761D2CC23066461B9B6FBAEF6AB0DCE2 /* TOPasscodeViewController */;
+			targetProxy = CA2ADDEA445C3CE9DBCFEF2AC607E445 /* PBXContainerItemProxy */;
 		};
-		91AA58A8FB970DBC09782F4EC2CD668F /* PBXTargetDependency */ = {
+		A506E2AEF0E178F165A4838D8EADCE42 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Hue;
-			target = B2542602E50EDF091ADB18B4688DF34F /* Hue */;
-			targetProxy = 457E1582A96B8237BEAB355AB042F745 /* PBXContainerItemProxy */;
-		};
-		95E51B70C72A6EAF56E194837EE2D804 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Lightbox;
-			target = 1A0140D3954476BEA98E574F3277619A /* Lightbox */;
-			targetProxy = 05C11FE890A70AF72D488FCC350F76EF /* PBXContainerItemProxy */;
-		};
-		95F4E677E93C390B95E58C7B85DB867E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = NohanaImagePicker;
-			target = F53A817D1C391BE79CB22B25868E784B /* NohanaImagePicker */;
-			targetProxy = 393F6753340CB6E3DCD18A7C72DC23FD /* PBXContainerItemProxy */;
-		};
-		9A9883B6114A5B56DB0E5B8FDA78EB83 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SwiftHash;
-			target = 3BF669C38F8201499DF8CC8E83D4E54F /* SwiftHash */;
-			targetProxy = C2E0D58B84661E3EAFE1869C9566A813 /* PBXContainerItemProxy */;
+			name = Imaginary;
+			target = ECDD29E5BB6DE98C82D1208813048C9C /* Imaginary */;
+			targetProxy = CB0DEC11F5613D08643716B90CBAD933 /* PBXContainerItemProxy */;
 		};
 		C860EE9D475214867903B3ACB33515A0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1290,18 +1509,30 @@
 			target = 9612E4F19A4EE371553FB485C2B6DEBF /* Cache */;
 			targetProxy = E14E4FE3D3A188A0B359953F94073079 /* PBXContainerItemProxy */;
 		};
+		D8B1B052ACD9C85D6FE9FBEED08BD945 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Lightbox;
+			target = 1A0140D3954476BEA98E574F3277619A /* Lightbox */;
+			targetProxy = FEBD2818504D7A66F587EA3EC9F1ABC3 /* PBXContainerItemProxy */;
+		};
 		E0A836EF9C2D7CB4BB4199D9C8C709B3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Imaginary;
 			target = ECDD29E5BB6DE98C82D1208813048C9C /* Imaginary */;
 			targetProxy = 523B69DCC6039456714B56A034940A0F /* PBXContainerItemProxy */;
 		};
+		FEB13CE657FCD601C96CD7A045E05686 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Hue;
+			target = B2542602E50EDF091ADB18B4688DF34F /* Hue */;
+			targetProxy = 1A724946034826076E6FAF9936D54382 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1A1B6744DFD051FB274063FC10067484 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 674B7BF9DF593ED0CE2A5F22973B2FC6 /* NohanaImagePicker.xcconfig */;
+			baseConfigurationReference = 761AA4627434DA82BB044472CADFEF8E /* NohanaImagePicker.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1378,7 +1609,7 @@
 			};
 			name = Release;
 		};
-		27775BE1282F6D14049D9E1D6EE89700 /* Debug */ = {
+		3B30F54F5993CF0B809FA22C9AD7D398 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3BEDF79341C16B0CAD70FEF4DA27EC73 /* Pods-PrivateMemories.debug.xcconfig */;
 			buildSettings = {
@@ -1417,47 +1648,9 @@
 			};
 			name = Debug;
 		};
-		593A48CEDC879E7A172C8F16B46297BE /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 910AAFA8914053D4D757F71C9F0B4A2D /* Pods-PrivateMemories.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-PrivateMemories/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-PrivateMemories/Pods-PrivateMemories.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_PrivateMemories;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		5C0260C27A7C591F8073A7D4F132EED3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4D1C3CA8FD011EE507A96311F3AD0C11 /* SwiftHash.xcconfig */;
+			baseConfigurationReference = E3D832CEFEEE4862B073F6A1BBA4DA75 /* SwiftHash.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1489,9 +1682,42 @@
 			};
 			name = Release;
 		};
+		671A8519449C598F4DF0F940970DEE05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 185AF1D9B029FC7E16EE3145303C9BDF /* TOPasscodeViewController.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/TOPasscodeViewController/TOPasscodeViewController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TOPasscodeViewController/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TOPasscodeViewController/TOPasscodeViewController.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = TOPasscodeViewController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		7CBED0BE9A2D93D9F95EC3A4B8A59897 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 674B7BF9DF593ED0CE2A5F22973B2FC6 /* NohanaImagePicker.xcconfig */;
+			baseConfigurationReference = 761AA4627434DA82BB044472CADFEF8E /* NohanaImagePicker.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1573,7 +1799,7 @@
 		};
 		872EA3B244E71FCA6FB7511471145BB3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4D1C3CA8FD011EE507A96311F3AD0C11 /* SwiftHash.xcconfig */;
+			baseConfigurationReference = E3D832CEFEEE4862B073F6A1BBA4DA75 /* SwiftHash.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1608,7 +1834,7 @@
 		};
 		8A739CBCC277BCCB095DE27D95991F6E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D70D6B2CE59E60BD1A2AA10ED2A51876 /* Lightbox.xcconfig */;
+			baseConfigurationReference = 64B009B06F954E82CB661F328AC3BB44 /* Lightbox.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1642,7 +1868,7 @@
 		};
 		8B2746E1463D37117803CFFC62CE5EFB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2EB190A8B4D4D9FB72A68F9501ACBE2C /* Cache.xcconfig */;
+			baseConfigurationReference = D5FD1EFF408230D2120C3BDA862CD56C /* Cache.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1676,7 +1902,7 @@
 		};
 		9680A3A3E7EB324059577C04EB8AC22E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 37872B19075DCDCFD32416FD5D451D0C /* Hue.xcconfig */;
+			baseConfigurationReference = DCFFE573FC4B028471C6DA9669A3A730 /* Hue.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1710,7 +1936,7 @@
 		};
 		A2E5B504B900244138B97D6DEB8C61BD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 674B7BF9DF593ED0CE2A5F22973B2FC6 /* NohanaImagePicker.xcconfig */;
+			baseConfigurationReference = 761AA4627434DA82BB044472CADFEF8E /* NohanaImagePicker.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/NohanaImagePicker";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1727,7 +1953,7 @@
 		};
 		AF3656E1B8D2ED4105173FC24E57677A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 674B7BF9DF593ED0CE2A5F22973B2FC6 /* NohanaImagePicker.xcconfig */;
+			baseConfigurationReference = 761AA4627434DA82BB044472CADFEF8E /* NohanaImagePicker.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/NohanaImagePicker";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1742,9 +1968,47 @@
 			};
 			name = Release;
 		};
+		B0AF610846682DFC872306D896B3E418 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 910AAFA8914053D4D757F71C9F0B4A2D /* Pods-PrivateMemories.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PrivateMemories/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PrivateMemories/Pods-PrivateMemories.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_PrivateMemories;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		B9CF000E4B1E996FD776CD8156609A40 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CEBCDC166DD3BA08C4D315531FD184B4 /* Imaginary.xcconfig */;
+			baseConfigurationReference = 361F45D24D278D6E69A55C66327A9FCC /* Imaginary.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1778,7 +2042,7 @@
 		};
 		BDA4032FB5DDC22A895E5555F1F7B220 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D70D6B2CE59E60BD1A2AA10ED2A51876 /* Lightbox.xcconfig */;
+			baseConfigurationReference = 64B009B06F954E82CB661F328AC3BB44 /* Lightbox.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1811,9 +2075,42 @@
 			};
 			name = Debug;
 		};
+		CA56646885B9D175D4CCBD512BF168CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 185AF1D9B029FC7E16EE3145303C9BDF /* TOPasscodeViewController.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/TOPasscodeViewController/TOPasscodeViewController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TOPasscodeViewController/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TOPasscodeViewController/TOPasscodeViewController.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = TOPasscodeViewController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		D6761B42D710060F0BBEE757462F8AED /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2EB190A8B4D4D9FB72A68F9501ACBE2C /* Cache.xcconfig */;
+			baseConfigurationReference = D5FD1EFF408230D2120C3BDA862CD56C /* Cache.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1848,7 +2145,7 @@
 		};
 		E0C59B904B29DA6ADAAACF642C6A7174 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CEBCDC166DD3BA08C4D315531FD184B4 /* Imaginary.xcconfig */;
+			baseConfigurationReference = 361F45D24D278D6E69A55C66327A9FCC /* Imaginary.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1883,7 +2180,7 @@
 		};
 		EBF817AD69620A8D9E8288653B925E19 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 37872B19075DCDCFD32416FD5D451D0C /* Hue.xcconfig */;
+			baseConfigurationReference = DCFFE573FC4B028471C6DA9669A3A730 /* Hue.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1919,6 +2216,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		029262B3BAF468F1FB43CA8584F896B5 /* Build configuration list for PBXNativeTarget "Pods-PrivateMemories" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B30F54F5993CF0B809FA22C9AD7D398 /* Debug */,
+				B0AF610846682DFC872306D896B3E418 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1973,20 +2279,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C5F32BA8AB6256E35995BB11CAB38FAC /* Build configuration list for PBXNativeTarget "Pods-PrivateMemories" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				27775BE1282F6D14049D9E1D6EE89700 /* Debug */,
-				593A48CEDC879E7A172C8F16B46297BE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		C7517784A4541FCDE27289AB3A48C7E6 /* Build configuration list for PBXNativeTarget "Hue" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EBF817AD69620A8D9E8288653B925E19 /* Debug */,
 				9680A3A3E7EB324059577C04EB8AC22E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C97335A34F7C4309DE5FF9DDA90B25C0 /* Build configuration list for PBXNativeTarget "TOPasscodeViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA56646885B9D175D4CCBD512BF168CB /* Debug */,
+				671A8519449C598F4DF0F940970DEE05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

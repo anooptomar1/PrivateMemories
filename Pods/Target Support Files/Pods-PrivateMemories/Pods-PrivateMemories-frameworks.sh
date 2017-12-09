@@ -95,6 +95,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Lightbox/Lightbox.framework"
   install_framework "$BUILT_PRODUCTS_DIR/NohanaImagePicker/NohanaImagePicker.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftHash/SwiftHash.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/TOPasscodeViewController/TOPasscodeViewController.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Cache/Cache.framework"
@@ -103,6 +104,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Lightbox/Lightbox.framework"
   install_framework "$BUILT_PRODUCTS_DIR/NohanaImagePicker/NohanaImagePicker.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftHash/SwiftHash.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/TOPasscodeViewController/TOPasscodeViewController.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

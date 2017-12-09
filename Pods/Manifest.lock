@@ -9,10 +9,12 @@ PODS:
     - Imaginary (~> 3.0)
   - NohanaImagePicker (0.9.0)
   - SwiftHash (2.0.0)
+  - TOPasscodeViewController (0.0.1)
 
 DEPENDENCIES:
   - Lightbox
   - NohanaImagePicker
+  - TOPasscodeViewController
 
 SPEC CHECKSUMS:
   Cache: 363b6899cee63c82ccbd291e64a6c202abc17a88
@@ -21,7 +23,8 @@ SPEC CHECKSUMS:
   Lightbox: 83ec9f4aba4c79fc7bb9bcd263386df9969f09bb
   NohanaImagePicker: b39fa5623cabab69597ea6f6a2d6729b9895cd2b
   SwiftHash: d2e09b13495447178cdfb8e46e54a5c46f15f5a9
+  TOPasscodeViewController: 56df8490d9b5711ca1c1f9de7d8d119022f6bbe3
 
-PODFILE CHECKSUM: 49979c318da02e819dfe64afc8d275af1a494d22
+PODFILE CHECKSUM: 8d64e502cc54e41dfa87431377908831242b74a6
 
 COCOAPODS: 1.2.1

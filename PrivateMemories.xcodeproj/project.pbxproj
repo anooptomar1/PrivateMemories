@@ -30,6 +30,8 @@
 		E22788E61FC868CF00C45139 /* GalleryCollectionViewController+GalleryViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22788E51FC868CF00C45139 /* GalleryCollectionViewController+GalleryViewModelDelegate.swift */; };
 		E22788E81FC8F7B700C45139 /* GalleryCollectionViewController+UISearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22788E71FC8F7B700C45139 /* GalleryCollectionViewController+UISearch.swift */; };
 		E22B96251FC7AD2800EEF31E /* GalleryViewModel+NSFetchedResultsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22B96241FC7AD2700EEF31E /* GalleryViewModel+NSFetchedResultsControllerDelegate.swift */; };
+		E22C33671FDA17A20006490A /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22C33661FDA17A20006490A /* DesignableView.swift */; };
+		E22C33691FDB782E0006490A /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22C33681FDB782E0006490A /* SettingsTableViewCell.swift */; };
 		E22E4F921FCF7C5A002A3CB2 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22E4F911FCF7C5A002A3CB2 /* GridView.swift */; };
 		E2310DCF1FBE749400A7B3B2 /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2310DCE1FBE749400A7B3B2 /* PhotoViewModel.swift */; };
 		E2310DD21FBE77C700A7B3B2 /* PickedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2310DD11FBE77C700A7B3B2 /* PickedImage.swift */; };
@@ -73,6 +75,8 @@
 		E22788E71FC8F7B700C45139 /* GalleryCollectionViewController+UISearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalleryCollectionViewController+UISearch.swift"; sourceTree = "<group>"; };
 		E228CC991FB29BE900453952 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E22B96241FC7AD2700EEF31E /* GalleryViewModel+NSFetchedResultsControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalleryViewModel+NSFetchedResultsControllerDelegate.swift"; sourceTree = "<group>"; };
+		E22C33661FDA17A20006490A /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
+		E22C33681FDB782E0006490A /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		E22E4F911FCF7C5A002A3CB2 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		E2310DCE1FBE749400A7B3B2 /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
 		E2310DD11FBE77C700A7B3B2 /* PickedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickedImage.swift; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				E22501401FCD01C000C10DA3 /* LayoutConstants.swift */,
+				E22C33661FDA17A20006490A /* DesignableView.swift */,
 				E22E4F911FCF7C5A002A3CB2 /* GridView.swift */,
 				E22510E51FCD9AAD00F54494 /* AlbumCollectionViewLayout.swift */,
 			);
@@ -190,6 +195,7 @@
 			children = (
 				E22501351FCCED9A00C10DA3 /* GalleryCollectionViewCell.swift */,
 				E22510E31FCD97BD00F54494 /* AlbumCollectionViewCell.swift */,
+				E22C33681FDB782E0006490A /* SettingsTableViewCell.swift */,
 				E22501361FCCED9A00C10DA3 /* TagCollectionViewCell.swift */,
 			);
 			name = Cell;
@@ -407,6 +413,7 @@
 			files = (
 				E22501321FCCED7800C10DA3 /* UIViewExtension.swift in Sources */,
 				E22501331FCCED7800C10DA3 /* StringExtension.swift in Sources */,
+				E22C33691FDB782E0006490A /* SettingsTableViewCell.swift in Sources */,
 				E2A7B6261FD772B9000DB556 /* SettingsViewController.swift in Sources */,
 				E22510E21FCD975600F54494 /* AlbumCollectionViewController.swift in Sources */,
 				E2310DD21FBE77C700A7B3B2 /* PickedImage.swift in Sources */,
@@ -423,6 +430,7 @@
 				E22501381FCCED9B00C10DA3 /* TagCollectionViewCell.swift in Sources */,
 				E22788E61FC868CF00C45139 /* GalleryCollectionViewController+GalleryViewModelDelegate.swift in Sources */,
 				E23EA3FF1FC3A7590078A366 /* GalleryViewModel.swift in Sources */,
+				E22C33671FDA17A20006490A /* DesignableView.swift in Sources */,
 				E2310DD41FBE862100A7B3B2 /* PhotoDetailsViewController+CollectionViewDataSource.swift in Sources */,
 				E2DA42011FA7BEC300DED69C /* PhotoDetailsViewController.swift in Sources */,
 				E226035C1FBEFE0F0055568F /* GalleryCollectionViewController+ImagePicker.swift in Sources */,
