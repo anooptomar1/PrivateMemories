@@ -83,8 +83,10 @@ class GalleryViewModel: NSObject {
         for photo in pickedPhotos {
             let imageToSave = photo.getImage()
             var locationToSave = CLLocation()
+            print("COORDINATES 1: \(locationToSave.coordinate.latitude)")
             if let assetLocation = photo.location {
                 locationToSave = assetLocation
+                print("COORDINATES 2: \(locationToSave.coordinate.latitude)")
             }
             var dateToSave = Date()
             if let assetDate = photo.creationDate {
@@ -95,15 +97,15 @@ class GalleryViewModel: NSObject {
             let thumbnailToSave = NSEntityDescription.insertNewObject(forEntityName: "Thumbnail", into: context) as? Thumbnail
             
             photoToSave!.fullsizePhoto = UIImageJPEGRepresentation(imageToSave, 1.0)
-            photoToSave!.location = String(describing: locationToSave)
+            photoToSave!.locationLat = locationToSave.coordinate.latitude
+            photoToSave!.locationLon = locationToSave.coordinate.longitude
             photoToSave!.dateStamp = dateToSave
+            print("SAVING WITH COORDINATES - lat: \(photoToSave!.locationLat), lon: \(photoToSave!.locationLon)")
             
             thumbnailToSave!.thumbnailImage = getThumbnailData(from: imageToSave)
             thumbnailToSave!.id = NSDate().timeIntervalSince1970
             thumbnailToSave!.fullsizePhoto = photoToSave
             thumbnailToSave!.gallery = fetchedGallery
-            print(thumbnailToSave!.gallery?.name)
-            print(thumbnailToSave?.gallery)
         }
         
         appDelegate.saveContext()

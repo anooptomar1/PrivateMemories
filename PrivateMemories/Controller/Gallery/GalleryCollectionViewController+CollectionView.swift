@@ -22,7 +22,6 @@ extension GalleryCollectionViewController: UICollectionViewDataSource {
 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("NUMBER OF FETCHED OBJECTS: \(self.galleryViewModel?.getNumberOfFetchedObjects())")
         return self.galleryViewModel?.getNumberOfFetchedObjects() ?? 0
     }
     

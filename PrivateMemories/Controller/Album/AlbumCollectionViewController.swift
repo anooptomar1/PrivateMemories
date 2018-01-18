@@ -71,7 +71,6 @@ class AlbumCollectionViewController: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("NUMBER OF FETCHED OBJECTS: \(self.albumViewModel.getNumberOfFetchedObjects())")
         return self.albumViewModel.getNumberOfFetchedObjects()
     }
 

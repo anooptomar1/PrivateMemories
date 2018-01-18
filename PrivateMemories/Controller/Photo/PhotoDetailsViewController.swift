@@ -36,7 +36,13 @@ class PhotoDetailsViewController: UIViewController {
         
         if let viewModel = photoViewModel {
             photoImageView.image = viewModel.fullsizePhoto
-            likesLabel.text = viewModel.location
+            if let presentCityName = viewModel.cityName {
+                likesLabel.text = presentCityName
+            } else {
+                viewModel.getCityName(completion: { (cityName) in
+                    self.likesLabel.text = cityName
+                })
+            }
             postLabel.text = viewModel.dateStamp
         }
     }

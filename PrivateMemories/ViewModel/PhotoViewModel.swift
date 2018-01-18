@@ -19,7 +19,9 @@ class PhotoViewModel: NSObject {
     var thumbnail: Thumbnail?
     var isFavorite: Bool = false
     var dateStamp: String = ""
-    var location: String = ""
+    var cityName: String?
+    var locationLat: Double?
+    var locationLon: Double?
     var tags: String = ""
     var fullsizePhoto: UIImage = UIImage()
     var thumbnailId: Double = NSDate().timeIntervalSince1970
@@ -32,16 +34,20 @@ class PhotoViewModel: NSObject {
         if let photo = self.thumbnail?.fullsizePhoto {
             self.isFavorite = photo.isFavorite
             if let _date = photo.dateStamp { self.dateStamp = getString(from: _date) }
-            if let _location = photo.location { self.location = _location }
             if let _tags = photo.tags { self.tags = _tags }
             if let _photoData = photo.fullsizePhoto { self.fullsizePhoto = getImage(from: _photoData) }
+            locationLat = photo.locationLat
+            locationLon = photo.locationLon
+            print("THUMBNAIL INIT - CITYNAME: \(photo.cityName ?? "NO CITYNAME")")
+            if let cityName = photo.cityName { self.cityName = cityName }
         }
     }
     
     init(from pickedImage: PickedImage) {
         super.init()
         dateStamp = getString(from: pickedImage.date)
-        location = getString(from: pickedImage.location)
+        locationLat = pickedImage.location.coordinate.latitude
+        locationLon = pickedImage.location.coordinate.longitude
         fullsizePhoto = pickedImage.image
     }
     
@@ -59,21 +65,20 @@ class PhotoViewModel: NSObject {
         return dateFormatter.string(from: date)
     }
     
-    fileprivate func getString(from location: CLLocation) -> String {
+    func getCityName(completion: @escaping (String?) -> ()) {
         let geocoder = CLGeocoder()
-        var locationString = "\(location.coordinate.longitude), \(location.coordinate.latitude)"
-        
+        let location = CLLocation(latitude: locationLat!, longitude: locationLon!)
             geocoder.reverseGeocodeLocation(location) { (placemarks, error) -> Void in
                 if let placemarksArray = placemarks {
                     let firstPlacemark = placemarksArray[0]
                         if let locality = firstPlacemark.locality, let country = firstPlacemark.country {
-                            locationString = "\(String(describing: locality)), \(String(describing: country))"
-                            
+                            let locationString = "\(String(describing: locality)), \(String(describing: country))"
+                            self.cityName = locationString
+                            completion(locationString)
+                            self.saveImage(asNewObject: false)
                         }
                 }
-                
             }
-            return locationString
     }
     
     
@@ -107,7 +112,6 @@ class PhotoViewModel: NSObject {
         let fetchRequest: NSFetchRequest<Thumbnail> = Thumbnail.fetchRequest()
         let predicate = NSPredicate(format: "id == %lf", id)
         fetchRequest.predicate = predicate
-        print("FETCHED ITEM ID: \(id)")
         
         do {
             let fetched = try context?.fetch(fetchRequest)
@@ -140,7 +144,9 @@ class PhotoViewModel: NSObject {
         }
         
         photoToSave!.fullsizePhoto = UIImageJPEGRepresentation(self.fullsizePhoto, 1.0)
-        photoToSave!.location = self.location
+        photoToSave!.locationLon = locationLon!
+        photoToSave!.locationLat = locationLat!
+        photoToSave!.cityName = cityName
         photoToSave!.dateStamp = getDate(from: self.dateStamp)
         
         thumbnailToSave!.thumbnailImage = getThumbnailData(from: self.fullsizePhoto)
