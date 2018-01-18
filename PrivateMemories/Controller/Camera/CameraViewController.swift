@@ -56,10 +56,19 @@ class CameraViewController: UIViewController {
         setupCaptureButtonStyle()
         setupCaptureSession()
         setupDevices()
-        setupInputOutput()
-        setupPreviewLayer()
-        startCaptureSession()
         addGestureRecognizers()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupInputOutput()
+        startCaptureSession()
+        setupVision()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        setupPreviewLayer()
     }
     
     // MARK: Gestures handling
@@ -222,11 +231,11 @@ class CameraViewController: UIViewController {
         do {
             inputDevice = try AVCaptureDeviceInput(device: currentCamera)
             
-            
             photoOutput = AVCapturePhotoOutput()
             photoOutput.setPreparedPhotoSettingsArray([AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])], completionHandler: nil)
             
             videoOutput = AVCaptureVideoDataOutput()
+            videoOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: Int(kCVPixelFormatType_32BGRA)]
             videoOutput.setSampleBufferDelegate(self, queue: videoDispatchQueue)
 
             captureSession.addInput(inputDevice)
@@ -288,10 +297,17 @@ class CameraViewController: UIViewController {
         photoOutput.capturePhoto(with: currentSettings, delegate: self)
     }
     
+    @IBAction func visionSetButtonPressed(_ sender: Any) {
+        
+    }
+    
     @IBAction func flashButtonPressed(_ sender: Any) {
         setNextFlashMode()
     }
     
+    @IBAction func dismissButtonPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func cancelPickingPhotoButtonPressed(_ sender: Any) {
         startCaptureSession()
@@ -335,11 +351,15 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         guard let recognizeModel = try? VNCoreMLModel(for: Resnet50().model) else { return }
         let recognizeRequest = VNCoreMLRequest(model: recognizeModel) { (finishedRequest, error) in
             guard let results = finishedRequest.results as? [VNClassificationObservation] else { return }
-            guard let firstResult = results.first else { return }
-            
-            self.updateRecognizedObjectLabel(with: "\(firstResult.identifier), \(firstResult.confidence) %")
-            print("\(firstResult.identifier), \(firstResult.confidence) %")
-            
+            let classifications = results
+                .filter({ $0.confidence > 0.4 })
+                .sorted(by: { $0.confidence > $1.confidence })
+                .map {
+                    (prediction: VNClassificationObservation) -> String in
+                    return "\(round(prediction.confidence * 100 * 100)/100)%: \(prediction.identifier)"
+            }
+            guard let firstResult = classifications.first else { return }
+            self.updateRecognizedObjectLabel(with: firstResult)
         }
         try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([recognizeRequest])
         

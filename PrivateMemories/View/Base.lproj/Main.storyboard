@@ -349,9 +349,29 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmV-St-gnQ">
+                                <rect key="frame" x="23" y="602" width="60" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="DISMISS"/>
+                                <connections>
+                                    <action selector="dismissButtonPressed:" destination="Nor-MN-PiJ" eventType="touchUpInside" id="fex-Q1-ecr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4z-u4-sQh">
+                                <rect key="frame" x="306" y="602" width="49" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="VISION"/>
+                                <connections>
+                                    <action selector="dismissButtonPressed:" destination="Nor-MN-PiJ" eventType="touchUpInside" id="ADX-6U-Ryb"/>
+                                    <action selector="visionSetButtonPressed:" destination="Nor-MN-PiJ" eventType="touchUpInside" id="y4J-Sk-80l"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="dmV-St-gnQ" firstAttribute="leading" secondItem="c6i-1g-SoZ" secondAttribute="leading" constant="23" id="4VZ-dO-WKu"/>
+                            <constraint firstItem="c6i-1g-SoZ" firstAttribute="bottom" secondItem="dmV-St-gnQ" secondAttribute="bottom" constant="35" id="6oR-ZI-V2H"/>
+                            <constraint firstItem="c6i-1g-SoZ" firstAttribute="trailing" secondItem="f4z-u4-sQh" secondAttribute="trailing" constant="20" id="83D-P6-apu"/>
                             <constraint firstItem="c6i-1g-SoZ" firstAttribute="trailing" secondItem="LCQ-pX-Wy0" secondAttribute="trailing" constant="60" id="9dg-QR-RMb"/>
                             <constraint firstItem="OwO-X9-DD4" firstAttribute="trailing" secondItem="c6i-1g-SoZ" secondAttribute="trailing" id="Fm6-MH-krn"/>
                             <constraint firstItem="eOj-9n-8Py" firstAttribute="top" secondItem="c6i-1g-SoZ" secondAttribute="top" constant="20" id="Gs4-ad-dhl"/>
@@ -367,6 +387,7 @@
                             <constraint firstItem="c6i-1g-SoZ" firstAttribute="bottom" secondItem="4Xe-b1-g2I" secondAttribute="bottom" constant="20" id="k07-XW-fgs"/>
                             <constraint firstItem="4Xe-b1-g2I" firstAttribute="centerX" secondItem="y32-Du-kpy" secondAttribute="centerX" id="mc3-vx-eSP"/>
                             <constraint firstItem="Y06-cq-cFJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="y32-Du-kpy" secondAttribute="leading" constant="20" symbolic="YES" id="qMD-wn-Q1H"/>
+                            <constraint firstItem="c6i-1g-SoZ" firstAttribute="bottom" secondItem="f4z-u4-sQh" secondAttribute="bottom" constant="35" id="t5P-47-Pv2"/>
                             <constraint firstItem="OwO-X9-DD4" firstAttribute="top" secondItem="c6i-1g-SoZ" secondAttribute="top" constant="-20" id="tdu-yv-LHc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="c6i-1g-SoZ"/>
