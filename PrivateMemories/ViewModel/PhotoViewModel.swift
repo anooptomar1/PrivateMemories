@@ -32,12 +32,12 @@ class PhotoViewModel: NSObject {
         super.init()
         self.thumbnail = fetchThumbnail(id: thumbnailId)
         if let photo = self.thumbnail?.fullsizePhoto {
+            locationLat = photo.locationLat
+            locationLon = photo.locationLon
             if let _date = photo.dateStamp { self.dateStamp = getString(from: _date) }
             if let _tags = photo.tags { self.tags = _tags }
             if let _photoData = photo.fullsizePhoto { self.fullsizePhoto = getImage(from: _photoData) }
-            locationLat = photo.locationLat
-            locationLon = photo.locationLon
-            print("THUMBNAIL INIT - CITYNAME: \(photo.cityName ?? "NO CITYNAME")")
+            if let descriptionText = photo.descriptionText { self.descriptionText = descriptionText }
             if let cityName = photo.cityName { self.cityName = cityName }
         }
     }
@@ -140,13 +140,14 @@ class PhotoViewModel: NSObject {
             thumbnailToSave = self.thumbnail
             photoToSave = self.thumbnail?.fullsizePhoto
         }
-        
         photoToSave!.fullsizePhoto = UIImageJPEGRepresentation(self.fullsizePhoto, 1.0)
         photoToSave!.locationLon = locationLon!
         photoToSave!.locationLat = locationLat!
         photoToSave!.cityName = cityName
         photoToSave!.dateStamp = getDate(from: self.dateStamp)
         photoToSave!.tags = tags
+        photoToSave!.descriptionText = descriptionText
+        print("SAVED WITH TEXT: \(descriptionText)")
         
         thumbnailToSave!.thumbnailImage = getThumbnailData(from: self.fullsizePhoto)
         thumbnailToSave!.id = self.thumbnailId

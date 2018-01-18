@@ -33,6 +33,7 @@ class PhotoDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         provideGestureRecognizing()
+        descriptionTextView.delegate = self
         setData()
     }
     

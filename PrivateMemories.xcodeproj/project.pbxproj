@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B6BCF7E0C53973377205383 /* Pods_PrivateMemories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDC8BB9C836EFA79E5BDE57 /* Pods_PrivateMemories.framework */; };
+		E22121A020114EFA00CBAFE1 /* PhotoDetailsViewController+UITextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E221219F20114EFA00CBAFE1 /* PhotoDetailsViewController+UITextViewDelegate.swift */; };
 		E2235B251FDCC67A00DC7B5D /* ImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2235B241FDCC67A00DC7B5D /* ImageProvider.swift */; };
 		E225012E1FCCED7800C10DA3 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22501271FCCED7700C10DA3 /* UIImageExtension.swift */; };
 		E225012F1FCCED7800C10DA3 /* AspectFitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22501281FCCED7700C10DA3 /* AspectFitButton.swift */; };
@@ -53,6 +54,7 @@
 /* Begin PBXFileReference section */
 		162604763F4B554FA347A637 /* Pods-PrivateMemories.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrivateMemories.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrivateMemories/Pods-PrivateMemories.debug.xcconfig"; sourceTree = "<group>"; };
 		1BF1283AFD6C408288903DDF /* Pods-PrivateMemories.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrivateMemories.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrivateMemories/Pods-PrivateMemories.release.xcconfig"; sourceTree = "<group>"; };
+		E221219F20114EFA00CBAFE1 /* PhotoDetailsViewController+UITextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoDetailsViewController+UITextViewDelegate.swift"; sourceTree = "<group>"; };
 		E2235B241FDCC67A00DC7B5D /* ImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProvider.swift; sourceTree = "<group>"; };
 		E22501271FCCED7700C10DA3 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImageExtension.swift; path = PrivateMemories/Extension/UIImageExtension.swift; sourceTree = SOURCE_ROOT; };
 		E22501281FCCED7700C10DA3 /* AspectFitButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AspectFitButton.swift; path = PrivateMemories/Extension/AspectFitButton.swift; sourceTree = SOURCE_ROOT; };
@@ -223,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				E2DA42001FA7BEC300DED69C /* PhotoDetailsViewController.swift */,
+				E221219F20114EFA00CBAFE1 /* PhotoDetailsViewController+UITextViewDelegate.swift */,
 				E2310DD51FBE863900A7B3B2 /* PhotoDetailsViewController+CollectionViewDelegateFlowLayout.swift */,
 				E2310DD31FBE862100A7B3B2 /* PhotoDetailsViewController+CollectionViewDataSource.swift */,
 			);
@@ -421,6 +424,7 @@
 				E22510E21FCD975600F54494 /* AlbumCollectionViewController.swift in Sources */,
 				E2310DD21FBE77C700A7B3B2 /* PickedImage.swift in Sources */,
 				E226035A1FBEFD7D0055568F /* GalleryCollectionViewController+CollectionView.swift in Sources */,
+				E22121A020114EFA00CBAFE1 /* PhotoDetailsViewController+UITextViewDelegate.swift in Sources */,
 				E22501341FCCED7800C10DA3 /* PHAssetExtension.swift in Sources */,
 				E22501411FCD01C000C10DA3 /* LayoutConstants.swift in Sources */,
 				E22501311FCCED7800C10DA3 /* CGSizeExtension.swift in Sources */,
