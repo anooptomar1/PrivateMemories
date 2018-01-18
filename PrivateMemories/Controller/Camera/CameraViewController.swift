@@ -51,6 +51,7 @@ class CameraViewController: UIViewController {
         super.viewDidLoad()
         
         setupGridView()
+        setNextFlashMode()
         setElementsVisibility(isCurrentlyPicking: true)
         setupCaptureButtonStyle()
         setupCaptureSession()
@@ -60,6 +61,8 @@ class CameraViewController: UIViewController {
         startCaptureSession()
         addGestureRecognizers()
     }
+    
+    // MARK: Gestures handling
     
     func addGestureRecognizers() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(focus(on:)))
@@ -137,13 +140,7 @@ class CameraViewController: UIViewController {
         }
     }
     
-    func setupGridView() {
-        let offset: CGFloat = (self.view.frame.height - self.view.frame.width)/2
-        let gridFrame = CGRect(x: 0, y: offset, width: self.view.frame.width, height: self.view.frame.width)
-        gridView = GridView(frame: gridFrame, columns: 3)
-        gridView?.isHidden = true
-    }
-
+    // MARK: UIElements
     
     func setElementsVisibility(isCurrentlyPicking: Bool) {
         capturedImageView.isHidden = isCurrentlyPicking
@@ -155,10 +152,15 @@ class CameraViewController: UIViewController {
         gridButton.isHidden = !isCurrentlyPicking
     }
     
+    func setupGridView() {
+        let offset: CGFloat = (self.view.frame.height - self.view.frame.width)/2
+        let gridFrame = CGRect(x: 0, y: offset, width: self.view.frame.width, height: self.view.frame.width)
+        gridView = GridView(frame: gridFrame, columns: 3)
+        gridView?.isHidden = true
+    }
+    
     func setNextFlashMode() {
-        
         var buttonTitle = ""
-        
             switch currentFlashMode {
                 case .off:
                     currentFlashMode = .auto
@@ -172,9 +174,17 @@ class CameraViewController: UIViewController {
             }
         
             flashButton.setTitle(buttonTitle, for: .normal)
-
-            print("TORCH MODE IS: \(currentFlashMode)")
     }
+    
+    func setupCaptureButtonStyle() {
+        captureButton.clipsToBounds = true
+        captureButton.layer.cornerRadius = captureButton.frame.height/2
+        captureButton.layer.borderColor = UIColor.turquoise.cgColor
+        captureButton.layer.borderWidth = 6
+        captureButton.backgroundColor = UIColor.clear
+    }
+    
+    // MARK: Camera
     
     func getSettings(camera: AVCaptureDevice, flashMode: CurrentFlashMode) -> AVCapturePhotoSettings {
         let settings = AVCapturePhotoSettings()
@@ -271,6 +281,8 @@ class CameraViewController: UIViewController {
         return true
     }
     
+    // MARK: IBActions
+    
     @IBAction func captureButtonPressed(_ sender: UIButton) {
         let currentSettings = getSettings(camera: currentCamera, flashMode: currentFlashMode)
         photoOutput.capturePhoto(with: currentSettings, delegate: self)
@@ -299,14 +311,6 @@ class CameraViewController: UIViewController {
         let currentVisibilityState: Bool = gridView!.isHidden
         gridView?.isHidden = !currentVisibilityState
         self.view.addSubview(gridView!)
-    }
-    
-    fileprivate func setupCaptureButtonStyle() {
-        captureButton.clipsToBounds = true
-        captureButton.layer.cornerRadius = captureButton.frame.height/2
-        captureButton.layer.borderColor = UIColor.turquoise.cgColor
-        captureButton.layer.borderWidth = 6
-        captureButton.backgroundColor = UIColor.clear
     }
     
 }

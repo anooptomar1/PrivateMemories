@@ -17,15 +17,13 @@ extension GalleryCollectionViewController: NohanaImagePickerControllerDelegate {
     
     func nohanaImagePicker(_ picker: NohanaImagePickerController, didFinishPickingPhotoKitAssets pickedAssts: [PHAsset]) {
         dismiss(animated: true) {
-            self.galleryViewModel.save(pickedPhotos: pickedAssts, completion: {
+            self.galleryViewModel?.save(pickedPhotos: pickedAssts, completion: {
                //self.animateGalleryFlip()
             })
             
         }
         
     }
-    
-    
     
     func pickMultiplePhotos() {
         checkIfAuthorizedToAccessPhotos { isAuthorized in

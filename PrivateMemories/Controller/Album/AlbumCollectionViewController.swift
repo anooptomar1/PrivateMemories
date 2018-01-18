@@ -56,10 +56,8 @@ class AlbumCollectionViewController: UICollectionViewController {
         
         self.present(alert, animated: true, completion: nil)
     }
-    
-    // MARK: - Navigation
- 
 
+    
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -89,9 +87,14 @@ class AlbumCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDelegate
 
-//    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        //TODO - pushGalleryViewController
-//        super.collectionView(collectionView, didSelectItemAt: indexPath)
-//    }
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let galleryVC = GalleryCollectionViewController()
+        let selectedGallery: (name: String, creationDate: String) = albumViewModel.getDataOfFetchedObject(at: indexPath)
+        print("PUSHING VC")
+        galleryVC.selectedGalleryName = selectedGallery.name
+        print(selectedGallery.name)
+        navigationController?.pushViewController(galleryVC, animated: true)
+        
+    }
 
 }

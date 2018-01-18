@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B6BCF7E0C53973377205383 /* Pods_PrivateMemories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDC8BB9C836EFA79E5BDE57 /* Pods_PrivateMemories.framework */; };
+		E2235B251FDCC67A00DC7B5D /* ImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2235B241FDCC67A00DC7B5D /* ImageProvider.swift */; };
 		E225012E1FCCED7800C10DA3 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22501271FCCED7700C10DA3 /* UIImageExtension.swift */; };
 		E225012F1FCCED7800C10DA3 /* AspectFitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22501281FCCED7700C10DA3 /* AspectFitButton.swift */; };
 		E22501301FCCED7800C10DA3 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22501291FCCED7700C10DA3 /* ColorExtension.swift */; };
@@ -52,6 +53,7 @@
 /* Begin PBXFileReference section */
 		162604763F4B554FA347A637 /* Pods-PrivateMemories.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrivateMemories.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrivateMemories/Pods-PrivateMemories.debug.xcconfig"; sourceTree = "<group>"; };
 		1BF1283AFD6C408288903DDF /* Pods-PrivateMemories.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrivateMemories.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrivateMemories/Pods-PrivateMemories.release.xcconfig"; sourceTree = "<group>"; };
+		E2235B241FDCC67A00DC7B5D /* ImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProvider.swift; sourceTree = "<group>"; };
 		E22501271FCCED7700C10DA3 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImageExtension.swift; path = PrivateMemories/Extension/UIImageExtension.swift; sourceTree = SOURCE_ROOT; };
 		E22501281FCCED7700C10DA3 /* AspectFitButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AspectFitButton.swift; path = PrivateMemories/Extension/AspectFitButton.swift; sourceTree = SOURCE_ROOT; };
 		E22501291FCCED7700C10DA3 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorExtension.swift; path = PrivateMemories/Extension/ColorExtension.swift; sourceTree = SOURCE_ROOT; };
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				E22501401FCD01C000C10DA3 /* LayoutConstants.swift */,
+				E2235B241FDCC67A00DC7B5D /* ImageProvider.swift */,
 				E22C33661FDA17A20006490A /* DesignableView.swift */,
 				E22E4F911FCF7C5A002A3CB2 /* GridView.swift */,
 				E22510E51FCD9AAD00F54494 /* AlbumCollectionViewLayout.swift */,
@@ -433,6 +436,7 @@
 				E22C33671FDA17A20006490A /* DesignableView.swift in Sources */,
 				E2310DD41FBE862100A7B3B2 /* PhotoDetailsViewController+CollectionViewDataSource.swift in Sources */,
 				E2DA42011FA7BEC300DED69C /* PhotoDetailsViewController.swift in Sources */,
+				E2235B251FDCC67A00DC7B5D /* ImageProvider.swift in Sources */,
 				E226035C1FBEFE0F0055568F /* GalleryCollectionViewController+ImagePicker.swift in Sources */,
 				E2DA41E61FA77BF800DED69C /* AppDelegate.swift in Sources */,
 				E22788E81FC8F7B700C45139 /* GalleryCollectionViewController+UISearch.swift in Sources */,

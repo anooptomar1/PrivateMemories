@@ -16,11 +16,18 @@ class GalleryViewModel: NSObject {
     
     internal var delegate: GalleryViewModelDelegate? = nil
     var ascendingSortDescriptor: Bool = true
+    var galleryName: String?
     
     private lazy var fetchedResultsController: NSFetchedResultsController<Thumbnail> = {
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         let context = appDelegate?.persistentContainer.viewContext
         let fetchRequest: NSFetchRequest<Thumbnail> = Thumbnail.fetchRequest()
+        if let galleryName = galleryName {
+            print("PREDICATE ADDED")
+            print(galleryName)
+            fetchRequest.predicate = NSPredicate(format: "gallery.name == %@", galleryName)
+        }
+        print("FETCHING")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "id", ascending: true)]
         fetchRequest.propertiesToFetch = ["thumbnailImage"]
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context!, sectionNameKeyPath: nil, cacheName: nil)
@@ -28,12 +35,17 @@ class GalleryViewModel: NSObject {
         return fetchedResultsController
     }()
     
+    init(galleryName: String) {
+        super.init()
+        self.galleryName = galleryName
+    }
+    
     
     // - MARK: CoreData methods
     
     func fetchData() {
         do {
-            try self.fetchedResultsController.performFetch()
+            try fetchedResultsController.performFetch()
         } catch {
             let fetchError = error as NSError
             print("Unable to perform fetch request: \(fetchError), \(fetchError.localizedDescription)")

@@ -11,7 +11,7 @@ import UIKit
 extension GalleryCollectionViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        if let sections = self.galleryViewModel.getSections() {
+        if let sections = self.galleryViewModel?.getSections() {
             return sections.count
         } else {
             return 0
@@ -22,13 +22,15 @@ extension GalleryCollectionViewController: UICollectionViewDataSource {
 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("NUMBER OF FETCHED OBJECTS: \(self.galleryViewModel.getNumberOfFetchedObjects())")
-        return self.galleryViewModel.getNumberOfFetchedObjects()
+        print("NUMBER OF FETCHED OBJECTS: \(self.galleryViewModel?.getNumberOfFetchedObjects())")
+        return self.galleryViewModel?.getNumberOfFetchedObjects() ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! GalleryCollectionViewCell
-        let fetchedThumbnail: (id: Double, image: UIImage) = self.galleryViewModel.getDataOfFetchedObject(at: indexPath)
+        guard let fetchedThumbnail: (id: Double, image: UIImage) = self.galleryViewModel?.getDataOfFetchedObject(at: indexPath) else {
+            return UICollectionViewCell()
+        }
         
         cell.photoImageView.image = fetchedThumbnail.image
         cell.thumbnailId = fetchedThumbnail.id

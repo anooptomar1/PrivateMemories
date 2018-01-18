@@ -18,14 +18,24 @@ class GalleryCollectionViewController: UIViewController {
     internal var padding: CGFloat = 2.0
     internal var numberOfItemsInRow = 3
     
-    internal let galleryViewModel = GalleryViewModel()
+    internal var galleryViewModel: GalleryViewModel?
     internal var blockOperations: [BlockOperation] = []
     internal var shouldReloadCollectionView = false
     internal var searchController = UISearchController(searchResultsController: nil)
+    internal var selectedGalleryName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        galleryViewModel.delegate = self
+        print("CHECKING GALLERY NAME")
+        guard let selectedGalleryName = selectedGalleryName else {
+            navigationController?.popViewController(animated: true)
+            print("GALLERY NAME NOT FOUND")
+            return
+        }
+        print("CHECKED")
+        galleryViewModel = GalleryViewModel(galleryName: selectedGalleryName)
+        galleryViewModel?.delegate = self
+        print("LOADING PHOTOS")
         loadPhotos()
         addReloadingObserver()
         setTitlelessBackButton()
@@ -54,24 +64,24 @@ class GalleryCollectionViewController: UIViewController {
     //--------------------------------------------
     
     func loadPhotos() {
-        self.galleryViewModel.fetchData()
+        self.galleryViewModel?.fetchData()
     }
     
     func setTitlelessBackButton() {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
-    override func setEditing(_ editing: Bool, animated: Bool) {
-        super.setEditing(editing, animated: true)
-        self.collectionView.allowsMultipleSelection = editing
+    override func setEditing(_ isEditing: Bool, animated: Bool) {
+        super.setEditing(isEditing, animated: true)
+        self.collectionView.allowsMultipleSelection = isEditing
         let visibleItemsIndexPaths: [IndexPath] = self.collectionView.indexPathsForVisibleItems
         
         for indexPath in visibleItemsIndexPaths {
             self.collectionView.deselectItem(at: indexPath, animated: false)
             let cell: GalleryCollectionViewCell = self.collectionView.cellForItem(at: indexPath) as! GalleryCollectionViewCell
-            cell.isEditing = editing
+            cell.isEditing = isEditing
             
-            if editing {
+            if isEditing {
                 self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Delete", style: .plain, target: self, action: #selector(self.deleteSelectedImages))
             } else {
                 self.navigationItem.leftBarButtonItem = nil
@@ -83,7 +93,7 @@ class GalleryCollectionViewController: UIViewController {
     
     @objc func deleteSelectedImages() {
         if let selectedItemsIndexPaths = self.collectionView.indexPathsForSelectedItems {
-            self.galleryViewModel.deleteObjects(at: selectedItemsIndexPaths)
+            self.galleryViewModel?.deleteObjects(at: selectedItemsIndexPaths)
         }
         setEditing(false, animated: true)
     }
@@ -94,8 +104,7 @@ class GalleryCollectionViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let identifier = segue.identifier
         
-        if identifier == modelToDetailsSegueIdentifier {
-            let photoDetailsViewController = segue.destination as! PhotoDetailsViewController
+        if identifier == modelToDetailsSegueIdentifier, let photoDetailsViewController = segue.destination as? PhotoDetailsViewController {
             photoDetailsViewController.isGettingDataFromPicker = false
             let selectedCellIndexPath = sender as! IndexPath
             let selectedCell = self.collectionView.cellForItem(at: selectedCellIndexPath) as! GalleryCollectionViewCell
@@ -106,7 +115,7 @@ class GalleryCollectionViewController: UIViewController {
     // MARK: IBActions
 
     @IBAction func sortButtonPressed(_ sender: Any) {
-        self.galleryViewModel.sortData()
+        self.galleryViewModel?.sortData()
         self.collectionView.reloadData()
     }
     

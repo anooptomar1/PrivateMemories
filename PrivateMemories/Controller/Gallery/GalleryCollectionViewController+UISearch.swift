@@ -35,9 +35,9 @@ extension GalleryCollectionViewController: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
         if searchController.searchBar.text != "" {
-            self.galleryViewModel.searchForObjects(withLocation: searchController.searchBar.text!)
+            self.galleryViewModel?.searchForObjects(withLocation: searchController.searchBar.text!)
         } else {
-            self.galleryViewModel.clearPredicatesAndFetch()
+            self.galleryViewModel?.clearPredicatesAndFetch()
         }
         self.collectionView.reloadData()
     }
@@ -45,7 +45,7 @@ extension GalleryCollectionViewController: UISearchResultsUpdating {
 
 extension GalleryCollectionViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        self.galleryViewModel.clearPredicatesAndFetch()
+        self.galleryViewModel?.clearPredicatesAndFetch()
         self.collectionView.reloadData()
         self.searchController.searchBar.resignFirstResponder()
         self.navigationItem.searchController = nil
