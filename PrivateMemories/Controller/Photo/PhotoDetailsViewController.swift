@@ -13,9 +13,12 @@ class PhotoDetailsViewController: UIViewController {
     
     //MARK: IB Outlets
     
+    @IBOutlet weak var tagView: UIView!
+    @IBOutlet weak var insertTagView: UIView!
     @IBOutlet weak var photoImageView: UIImageView!
-    @IBOutlet weak var likesLabel: UILabel!
-    @IBOutlet weak var postLabel: UILabel!
+    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     var tags: [String] = ["example", "photo", "tag", "sample", "ksjskdsjkdsajdaskd", "test", "gallery"]
     
     //MARK: Properties
@@ -37,13 +40,13 @@ class PhotoDetailsViewController: UIViewController {
         if let viewModel = photoViewModel {
             photoImageView.image = viewModel.fullsizePhoto
             if let presentCityName = viewModel.cityName {
-                likesLabel.text = presentCityName
+                locationLabel.text = presentCityName
             } else {
                 viewModel.getCityName(completion: { (cityName) in
-                    self.likesLabel.text = cityName
+                    self.locationLabel.text = cityName
                 })
             }
-            postLabel.text = viewModel.dateStamp
+            dateLabel.text = viewModel.dateStamp
         }
     }
     
@@ -54,7 +57,34 @@ class PhotoDetailsViewController: UIViewController {
             photoViewModel = PhotoViewModel(from: thumbnailId!)
         }
     }
+    
+    @IBAction func addTagButtonPressed(_ sender: Any) {
+        flipImageViews(showTextField: true)
+    }
+    
+    @IBAction func confirmAddTagButtonPressed(_ sender: Any) {
+        //addTag
+        //reloadCollectionView
+        flipImageViews(showTextField: false)
+    }
+    
 
+    @IBAction func cancelAddButtonPressed(_ sender: Any) {
+        flipImageViews(showTextField: false)
+    }
+
+    @IBAction func shareButtonPressed(_ sender: Any) {
+        let activityVC = UIActivityViewController(activityItems: [photoImageView.image!, descriptionTextView.text], applicationActivities: [])
+        activityVC.excludedActivityTypes = [.addToReadingList,.copyToPasteboard, .openInIBooks, .markupAsPDF, .postToVimeo, .postToWeibo]
+        present(activityVC, animated: true)
+    }
+    
+    @IBAction func deleteButtonPressed(_ sender: Any) {
+        if let viewModel = photoViewModel {
+            viewModel.deleteImage()
+            navigationController?.popViewController(animated: true)
+        }
+    }
 
 @IBAction func saveImagePressed(_ sender: Any) {
     if let viewModel = photoViewModel {
@@ -82,6 +112,16 @@ class PhotoDetailsViewController: UIViewController {
         controller.dynamicBackground = true
         LightboxConfig.PageIndicator.enabled = false
         present(controller, animated: true, completion: nil)
+    }
+    
+    func flipImageViews(showTextField: Bool) {
+        let transitionOptions: UIViewAnimationOptions = [.transitionFlipFromTop, .showHideTransitionViews]
+        UIView.transition(with: insertTagView, duration: 0.5, options: transitionOptions, animations: {
+            self.insertTagView.isHidden = !showTextField
+        })
+        UIView.transition(with: tagView, duration: 0.5, options: transitionOptions, animations: {
+            self.tagView.isHidden = showTextField
+        })
     }
 
 }

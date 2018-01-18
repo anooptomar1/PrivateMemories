@@ -12,17 +12,17 @@ import CoreData
 
 class PhotoViewModel: NSObject {
     
-    //TODO : Dodać DataManager
     let notificationName = "reloadGallery"
+    let appDelegate = UIApplication.shared.delegate as? AppDelegate
     
     // - MARK: Properties
     var thumbnail: Thumbnail?
-    var isFavorite: Bool = false
     var dateStamp: String = ""
     var cityName: String?
     var locationLat: Double?
     var locationLon: Double?
-    var tags: String = ""
+    var tags: [String] = [""]
+    var descriptionText: String = ""
     var fullsizePhoto: UIImage = UIImage()
     var thumbnailId: Double = NSDate().timeIntervalSince1970
     
@@ -32,7 +32,6 @@ class PhotoViewModel: NSObject {
         super.init()
         self.thumbnail = fetchThumbnail(id: thumbnailId)
         if let photo = self.thumbnail?.fullsizePhoto {
-            self.isFavorite = photo.isFavorite
             if let _date = photo.dateStamp { self.dateStamp = getString(from: _date) }
             if let _tags = photo.tags { self.tags = _tags }
             if let _photoData = photo.fullsizePhoto { self.fullsizePhoto = getImage(from: _photoData) }
@@ -49,6 +48,7 @@ class PhotoViewModel: NSObject {
         locationLat = pickedImage.location.coordinate.latitude
         locationLon = pickedImage.location.coordinate.longitude
         fullsizePhoto = pickedImage.image
+        tags.append(pickedImage.tagRecognition)
     }
     
     // - MARK: Data parsing methods
@@ -105,7 +105,6 @@ class PhotoViewModel: NSObject {
     // - MARK: CoreData methods
     
     func fetchThumbnail(id: Double) -> Thumbnail {
-        let appDelegate = UIApplication.shared.delegate as? AppDelegate
         let context = appDelegate?.persistentContainer.viewContext
         
         var fetchedThumbnail: Thumbnail?
@@ -129,8 +128,7 @@ class PhotoViewModel: NSObject {
     }
     
     func saveImage(asNewObject: Bool) {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        let context = appDelegate.persistentContainer.viewContext
+        let context = appDelegate!.persistentContainer.viewContext
         
         let photoToSave: Photo?
         let thumbnailToSave: Thumbnail?
@@ -148,15 +146,23 @@ class PhotoViewModel: NSObject {
         photoToSave!.locationLat = locationLat!
         photoToSave!.cityName = cityName
         photoToSave!.dateStamp = getDate(from: self.dateStamp)
+        photoToSave!.tags = tags
         
         thumbnailToSave!.thumbnailImage = getThumbnailData(from: self.fullsizePhoto)
         thumbnailToSave!.id = self.thumbnailId
         thumbnailToSave!.fullsizePhoto = photoToSave
         
-        appDelegate.saveContext()
+        appDelegate?.saveContext()
         context.refreshAllObjects()
         
         //notifyAboutReloadingGallery()
+    }
+    
+    func deleteImage() {
+        let context = appDelegate!.persistentContainer.viewContext
+        context.delete(thumbnail!)
+        appDelegate?.saveContext()
+        context.refreshAllObjects()
     }
     
 }
