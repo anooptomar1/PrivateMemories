@@ -45,6 +45,8 @@ class GalleryViewModel: NSObject {
     
     func fetchData() {
         do {
+            print("FETCHING")
+            print(fetchedResultsController.fetchRequest.predicate.debugDescription)
             try fetchedResultsController.performFetch()
         } catch {
             let fetchError = error as NSError
@@ -72,8 +74,16 @@ class GalleryViewModel: NSObject {
     
     
     func save(pickedPhotos: [PHAsset], completion: () -> Void) {
+        print("SAVING")
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let context = appDelegate.persistentContainer.viewContext
+        let galleryFetchRequest: NSFetchRequest<Gallery> = Gallery.fetchRequest()
+        if let galleryName = galleryName {
+            print("GALLERY FETCH PREDICATE ADDED")
+            print(galleryName)
+            galleryFetchRequest.predicate = NSPredicate(format: "name == %@", galleryName)
+        }
+        guard let fetchedGallery = try? context.fetch(galleryFetchRequest).first else { return }
         
         for photo in pickedPhotos {
             let imageToSave = photo.getImage()
@@ -96,9 +106,13 @@ class GalleryViewModel: NSObject {
             thumbnailToSave!.thumbnailImage = getThumbnailData(from: imageToSave)
             thumbnailToSave!.id = NSDate().timeIntervalSince1970
             thumbnailToSave!.fullsizePhoto = photoToSave
+            thumbnailToSave!.gallery = fetchedGallery
+            print(thumbnailToSave!.gallery?.name)
+            print(thumbnailToSave?.gallery)
         }
         
         appDelegate.saveContext()
+        print("SAVED")
         context.refreshAllObjects()
         completion()
     }

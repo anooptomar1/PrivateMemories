@@ -13,6 +13,7 @@ private let reuseIdentifier = "AlbumCollectionViewCell"
 class AlbumCollectionViewController: UICollectionViewController {
 
     fileprivate let albumViewModel = AlbumViewModel()
+    fileprivate let gallerySegueIdentifier = "toGallerySegue"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,17 +85,17 @@ class AlbumCollectionViewController: UICollectionViewController {
         
         return cell
     }
-
-    // MARK: UICollectionViewDelegate
-
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let galleryVC = GalleryCollectionViewController()
-        let selectedGallery: (name: String, creationDate: String) = albumViewModel.getDataOfFetchedObject(at: indexPath)
-        print("PUSHING VC")
-        galleryVC.selectedGalleryName = selectedGallery.name
-        print(selectedGallery.name)
-        navigationController?.pushViewController(galleryVC, animated: true)
+    
+    // MARK: Navigation methods
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let identifier = segue.identifier
         
+        if identifier == gallerySegueIdentifier, let galleryVC = segue.destination as? GalleryCollectionViewController {
+            let selectedCellIndexPath = collectionView?.indexPath(for: (sender as! UICollectionViewCell))
+            let selectedGallery: (name: String, creationDate: String) = albumViewModel.getDataOfFetchedObject(at: selectedCellIndexPath!)
+            print("PUSHING VC")
+            galleryVC.selectedGalleryName = selectedGallery.name
+        }
     }
-
 }

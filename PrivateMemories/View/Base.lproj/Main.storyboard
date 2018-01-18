@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j5a-NI-yLH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j5a-NI-yLH">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
@@ -26,11 +26,11 @@
             <objects>
                 <viewController id="bhP-pl-ja2" customClass="GalleryCollectionViewController" customModule="PrivateMemories" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="stn-Ot-A3u">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LIJ-3M-txN">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="bqH-mj-0Tz">
                                     <size key="itemSize" width="120" height="120"/>
@@ -77,7 +77,7 @@
                                 </connections>
                             </collectionView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8GH-zA-tFS" userLabel="ButtonStack">
-                                <rect key="frame" x="50" y="622" width="275" height="40"/>
+                                <rect key="frame" x="50" y="558" width="275" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbw-WB-3SG" userLabel="Sort Button">
                                         <rect key="frame" x="0.0" y="5" width="30" height="30"/>
@@ -390,18 +390,18 @@
             <objects>
                 <viewController id="Qmv-qQ-xuV" customClass="PhotoDetailsViewController" customModule="PrivateMemories" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ssu-Ku-PUp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aCV-hY-6Pk" userLabel="SeparatorLine">
-                                <rect key="frame" x="0.0" y="603" width="375" height="1"/>
+                                <rect key="frame" x="0.0" y="539" width="375" height="1"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="lZR-NU-cKC"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCw-6N-W9v">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c0E-rk-J3c" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="460"/>
@@ -574,7 +574,7 @@
                                 </connections>
                             </scrollView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bZp-E6-Meq" userLabel="ButtonStack">
-                                <rect key="frame" x="20" y="609" width="335" height="53"/>
+                                <rect key="frame" x="20" y="545" width="335" height="53"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYH-FA-uhc" userLabel="DeleteButton">
                                         <rect key="frame" x="0.0" y="11.5" width="30" height="30"/>
@@ -731,6 +731,7 @@
                                     <outlet property="imageView" destination="cHb-0L-SOd" id="52r-CW-bid"/>
                                     <outlet property="subtitleLabel" destination="G6h-Mu-7a7" id="bFd-fw-s9k"/>
                                     <outlet property="titleLabel" destination="qI9-7D-9Bu" id="WRN-Wg-pTK"/>
+                                    <segue destination="bhP-pl-ja2" kind="show" identifier="toGallerySegue" id="5ZO-Tk-KDC"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -752,9 +753,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <segue destination="bhP-pl-ja2" kind="showDetail" id="AgL-08-XSd"/>
-                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rlq-kn-5mG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
