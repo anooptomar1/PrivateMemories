@@ -23,17 +23,21 @@ class AlbumViewModel: NSObject {
     
     func fetchData() {
         do {
-            try self.fetchedResultsController.performFetch()
+            try fetchedResultsController.performFetch()
         } catch {
             let fetchError = error as NSError
             print("Unable to perform fetch request: \(fetchError), \(fetchError.localizedDescription)")
         }
     }
     
-    func saveGallery(named: String) {
+    func saveGallery(named: String, completion: (_ endedSuccessfully: Bool) -> ()) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let context = appDelegate.persistentContainer.viewContext
         
+        guard checkIfAlreadyExists(named) == false else {
+            completion(false)
+            return
+        }
         let galleryToSave: Gallery = NSEntityDescription.insertNewObject(forEntityName: "Gallery", into: context) as! Gallery
         
         galleryToSave.name = named
@@ -41,6 +45,7 @@ class AlbumViewModel: NSObject {
         
         appDelegate.saveContext()
         context.refreshAllObjects()
+        completion(true)
     }
     
     func delete(at indexPath: IndexPath) {
@@ -65,6 +70,12 @@ class AlbumViewModel: NSObject {
         print("DELETING GALLERY \(galleryToDelete.name ?? "UNKNOWN NAME")")
         context.delete(galleryToDelete)
         appDelegate.saveContext()
+    }
+    
+    func checkIfAlreadyExists(_ name: String) -> Bool {
+        guard let allGalleries = fetchedResultsController.fetchedObjects else { return false }
+        let galleriesWithSameName = allGalleries.filter { $0.name == name }
+        return !galleriesWithSameName.isEmpty
     }
     
     fileprivate func getString(from date: Date) -> String {

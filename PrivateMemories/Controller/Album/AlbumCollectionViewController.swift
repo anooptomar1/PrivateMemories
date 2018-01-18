@@ -47,7 +47,11 @@ class AlbumCollectionViewController: UICollectionViewController {
             let textField = alert?.textFields![0]
             if let galleryName = textField?.text {
                 if galleryName != "" {
-                    self.albumViewModel.saveGallery(named: galleryName)
+                    self.albumViewModel.saveGallery(named: galleryName, completion: { (addedSuccessfully) in
+                        if !addedSuccessfully {
+                            print("This gallery name is already taken")
+                        }
+                    })
                     self.reloadAlbum()
                 }
             }
