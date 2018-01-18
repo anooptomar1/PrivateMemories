@@ -13,13 +13,15 @@ class PhotoDetailsViewController: UIViewController {
     
     //MARK: IB Outlets
     
+    @IBOutlet weak var tagCollectionView: UICollectionView!
     @IBOutlet weak var tagView: UIView!
     @IBOutlet weak var insertTagView: UIView!
+    @IBOutlet weak var tagTextField: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    var tags: [String] = ["example", "photo", "tag", "sample", "ksjskdsjkdsajdaskd", "test", "gallery"]
+    var tags: [String] = []
     
     //MARK: Properties
     
@@ -39,6 +41,9 @@ class PhotoDetailsViewController: UIViewController {
         
         if let viewModel = photoViewModel {
             photoImageView.image = viewModel.fullsizePhoto
+            dateLabel.text = viewModel.dateStamp
+            tags.append(contentsOf: viewModel.tags)
+            descriptionTextView.text = viewModel.descriptionText
             if let presentCityName = viewModel.cityName {
                 locationLabel.text = presentCityName
             } else {
@@ -46,7 +51,6 @@ class PhotoDetailsViewController: UIViewController {
                     self.locationLabel.text = cityName
                 })
             }
-            dateLabel.text = viewModel.dateStamp
         }
     }
     
@@ -63,9 +67,13 @@ class PhotoDetailsViewController: UIViewController {
     }
     
     @IBAction func confirmAddTagButtonPressed(_ sender: Any) {
-        //addTag
-        //reloadCollectionView
+        if let newTag = tagTextField.text {
+            tags.append(newTag)
+            photoViewModel?.tags.append(newTag)
+            tagCollectionView.reloadData()
+        }
         flipImageViews(showTextField: false)
+        photoViewModel?.saveImage(asNewObject: false)
     }
     
 
@@ -80,16 +88,12 @@ class PhotoDetailsViewController: UIViewController {
     }
     
     @IBAction func deleteButtonPressed(_ sender: Any) {
-        if let viewModel = photoViewModel {
-            viewModel.deleteImage()
-            navigationController?.popViewController(animated: true)
-        }
+        photoViewModel?.deleteImage()
+        navigationController?.popViewController(animated: true)
     }
 
 @IBAction func saveImagePressed(_ sender: Any) {
-    if let viewModel = photoViewModel {
-        viewModel.saveImage(asNewObject: isGettingDataFromPicker)
-    }
+        photoViewModel?.saveImage(asNewObject: isGettingDataFromPicker)
 }
 
 // - MARK: Image preview

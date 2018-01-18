@@ -490,14 +490,20 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="85" height="40"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C4b-IF-nzG">
-                                                                    <rect key="frame" x="5" y="5" width="37" height="30"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="characterWrap" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C4b-IF-nzG">
+                                                                    <rect key="frame" x="5" y="5" width="40" height="30"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="iSJ-Xp-MuR"/>
+                                                                    </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                     <color key="textColor" red="0.93333333333333335" green="0.34901960784313724" blue="0.42352941176470588" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOs-k1-RAV">
-                                                                    <rect key="frame" x="47" y="5" width="33" height="30"/>
+                                                                    <rect key="frame" x="50" y="5" width="30" height="30"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="30" id="iuv-ZK-VIz"/>
+                                                                    </constraints>
                                                                     <state key="normal" title="X"/>
                                                                 </button>
                                                             </subviews>
@@ -512,6 +518,7 @@
                                                             <constraint firstAttribute="trailing" secondItem="YOs-k1-RAV" secondAttribute="trailing" constant="5" id="yhb-tx-oBe"/>
                                                         </constraints>
                                                         <connections>
+                                                            <outlet property="deleteButton" destination="YOs-k1-RAV" id="Kbm-OI-4bd"/>
                                                             <outlet property="tagLabel" destination="C4b-IF-nzG" id="Jao-rF-3xL"/>
                                                         </connections>
                                                     </collectionViewCell>
@@ -612,7 +619,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="c0E-rk-J3c" secondAttribute="trailing" id="2HV-NL-G26"/>
                                     <constraint firstAttribute="bottom" secondItem="c0E-rk-J3c" secondAttribute="bottom" constant="228" id="9Ny-9u-HAz"/>
@@ -687,6 +694,8 @@
                         <outlet property="insertTagView" destination="UE2-jD-yWH" id="jOv-xx-Dmk"/>
                         <outlet property="locationLabel" destination="UB9-TR-APy" id="9Tr-Dt-9xN"/>
                         <outlet property="photoImageView" destination="Rw2-Gp-Szb" id="6UM-2F-fUo"/>
+                        <outlet property="tagCollectionView" destination="cAp-HQ-H6U" id="WpC-Ei-H6M"/>
+                        <outlet property="tagTextField" destination="g1h-Ag-JLB" id="Phk-2X-h1d"/>
                         <outlet property="tagView" destination="4AB-EO-Kd4" id="7J8-lP-2gX"/>
                     </connections>
                 </viewController>

@@ -11,7 +11,6 @@ import UIKit
 private let reuseIdentifier = "AlbumCollectionViewCell"
 
 class AlbumCollectionViewController: UICollectionViewController {
-
     fileprivate let albumViewModel = AlbumViewModel()
     fileprivate let gallerySegueIdentifier = "toGallerySegue"
     

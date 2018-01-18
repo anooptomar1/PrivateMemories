@@ -21,7 +21,7 @@ class PhotoViewModel: NSObject {
     var cityName: String?
     var locationLat: Double?
     var locationLon: Double?
-    var tags: [String] = [""]
+    var tags: [String] = []
     var descriptionText: String = ""
     var fullsizePhoto: UIImage = UIImage()
     var thumbnailId: Double = NSDate().timeIntervalSince1970
