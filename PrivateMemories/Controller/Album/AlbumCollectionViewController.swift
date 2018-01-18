@@ -93,7 +93,7 @@ class AlbumCollectionViewController: UICollectionViewController {
         albumViewModel.delete(at: indexPathOfDeletedGallery)
         reloadAlbum()
     }
-    
+
     // MARK: Navigation methods
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

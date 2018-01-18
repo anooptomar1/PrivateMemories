@@ -44,6 +44,24 @@ extension GalleryCollectionViewController: UICollectionViewDataSource {
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+                let cellContent = cell
+                let rotationAngleDegrees: Double = -30
+                let rotationAngleRadians = rotationAngleDegrees * (Double.pi/180)
+                let offsetPositioning = CGPoint(x: collectionView.bounds.size.width, y: -20)
+                var transform = CATransform3DIdentity
+                transform = CATransform3DRotate(transform, CGFloat(rotationAngleRadians), -50, 0, 1)
+                transform = CATransform3DTranslate(transform, offsetPositioning.x, offsetPositioning.y, -50)
+                
+                cellContent.layer.transform = transform
+                cellContent.layer.opacity = 0.2
+                
+                let delay = 0.06 * Double(indexPath.row)
+                UIView.animate(withDuration: 0.8, delay:delay , usingSpringWithDamping: 0.8, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: { () -> Void in
+                    cellContent.layer.transform = CATransform3DIdentity
+                    cellContent.layer.opacity = 1
+                })
+    }
 }
 
 extension GalleryCollectionViewController: UICollectionViewDelegateFlowLayout {
