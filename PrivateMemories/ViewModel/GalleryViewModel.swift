@@ -16,18 +16,13 @@ class GalleryViewModel: NSObject {
     
     internal var delegate: GalleryViewModelDelegate? = nil
     var ascendingSortDescriptor: Bool = true
-    var galleryName: String?
+    var galleryName: String!
     
     private lazy var fetchedResultsController: NSFetchedResultsController<Thumbnail> = {
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         let context = appDelegate?.persistentContainer.viewContext
         let fetchRequest: NSFetchRequest<Thumbnail> = Thumbnail.fetchRequest()
-        if let galleryName = galleryName {
-            print("PREDICATE ADDED")
-            print(galleryName)
-            fetchRequest.predicate = NSPredicate(format: "gallery.name == %@", galleryName)
-        }
-        print("FETCHING")
+        fetchRequest.predicate = NSPredicate(format: "gallery.name == %@", galleryName)
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "id", ascending: true)]
         fetchRequest.propertiesToFetch = ["thumbnailImage"]
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context!, sectionNameKeyPath: nil, cacheName: nil)
@@ -55,7 +50,7 @@ class GalleryViewModel: NSObject {
     }
     
     func searchForObjects(withLocation location: String) {
-        self.fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "fullsizePhoto.location CONTAINS[cd] %@", location) //[c]ase and [d]iacritic insensitive
+        self.fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "gallery.name == %@ AND fullsizePhoto.location CONTAINS[cd] %@", galleryName, location) //[c]ase and [d]iacritic insensitive
         fetchData()
     }
     
@@ -68,7 +63,7 @@ class GalleryViewModel: NSObject {
     }
     
     func clearPredicatesAndFetch() {
-        self.fetchedResultsController.fetchRequest.predicate = nil
+        fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "gallery.name == %@", galleryName)
         fetchData()
     }
     
