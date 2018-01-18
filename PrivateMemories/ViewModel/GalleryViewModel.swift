@@ -123,6 +123,9 @@ class GalleryViewModel: NSObject {
         
         for indexPath in indexPaths {
             let objectToDelete = self.fetchedResultsController.object(at: indexPath)
+            if let relatedPhoto = objectToDelete.fullsizePhoto {
+                context.delete(relatedPhoto)
+            }
             context.delete(objectToDelete)
         }
         

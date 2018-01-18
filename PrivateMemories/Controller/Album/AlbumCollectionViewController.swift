@@ -62,11 +62,7 @@ class AlbumCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        if let sections = self.albumViewModel.getSections() {
-            return sections.count
-        } else {
-            return 0
-        }
+        return 1
     }
 
 
@@ -82,8 +78,16 @@ class AlbumCollectionViewController: UICollectionViewController {
         cell.titleLabel.text = fetchedThumbnail.name
         cell.subtitleLabel.text = fetchedThumbnail.creationDate
         cell.imageView.image = UIImage(named: "photo")!
+        cell.deleteButton.tag = indexPath.row
+        cell.deleteButton.addTarget(self, action: #selector(deleteButtonPressed(_:)), for: .touchUpInside)
         
         return cell
+    }
+    
+    @objc func deleteButtonPressed(_ sender: UIButton) {
+        let indexPathOfDeletedGallery = IndexPath(row: sender.tag, section: 0)
+        albumViewModel.delete(at: indexPathOfDeletedGallery)
+        reloadAlbum()
     }
     
     // MARK: Navigation methods

@@ -34,7 +34,6 @@ class AlbumCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func deleteButtonPressed(_ sender: Any) {
-        
     }
     
     

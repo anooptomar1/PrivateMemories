@@ -43,15 +43,27 @@ class AlbumViewModel: NSObject {
         context.refreshAllObjects()
     }
     
-    func deleteObjects(at indexPaths: [IndexPath]) {
+    func delete(at indexPath: IndexPath) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let context = appDelegate.persistentContainer.viewContext
+        let galleryToDelete = self.fetchedResultsController.object(at: indexPath)
         
-        for indexPath in indexPaths {
-            let objectToDelete = self.fetchedResultsController.object(at: indexPath)
-            context.delete(objectToDelete)
+        if let galleryName = galleryToDelete.name {
+            let thumbnailFetchRequest: NSFetchRequest<Thumbnail> = Thumbnail.fetchRequest()
+            thumbnailFetchRequest.predicate = NSPredicate(format: "gallery.name == %@", galleryName)
+            if let thumbnailsToDelete = try? context.fetch(thumbnailFetchRequest) {
+                print("DELETING THUMBNAILS")
+                for thumbnail in thumbnailsToDelete {
+                    if let photo = thumbnail.fullsizePhoto {
+                        context.delete(photo)
+                    }
+                    print("DELETING THUMBNAIL WITH ID: \(thumbnail.id)")
+                    context.delete(thumbnail)
+                }
+            }
         }
-        
+        print("DELETING GALLERY \(galleryToDelete.name ?? "UNKNOWN NAME")")
+        context.delete(galleryToDelete)
         appDelegate.saveContext()
     }
     
