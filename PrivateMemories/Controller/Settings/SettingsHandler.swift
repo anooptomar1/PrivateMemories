@@ -40,8 +40,11 @@ final class SettingsHandler {
     }
     
     var isPasscodeRequired: Bool {
-        get { return defaults.value(forKey: isPasscodeRequiredKey) as! Bool}
+        get {
+            print("PASSCODE REQUIRED: \(defaults.value(forKey: isPasscodeRequiredKey) as! Bool)")
+            return defaults.value(forKey: isPasscodeRequiredKey) as! Bool}
         set {
+            print("SETTING IS PASSCODE REQUIRED: \(newValue)")
             defaults.setValue(newValue, forKey: isPasscodeRequiredKey)
             defaults.synchronize()
         }
@@ -51,10 +54,6 @@ final class SettingsHandler {
     func setDefault() {
         defaults.setValue(true, forKey: isNotFirstRunKey)
         defaults.setValue(true, forKey: isPasscodeRequiredKey)
-        
-        
-        //TODO: USUNAC
-        defaults.setValue("123456", forKey: passcodeKey)
         
         defaults.synchronize()
     }

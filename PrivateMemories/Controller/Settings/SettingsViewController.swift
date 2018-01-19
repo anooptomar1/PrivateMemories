@@ -139,7 +139,7 @@ extension SettingsViewController: UITableViewDataSource {
         switchCode = UISwitch(frame: CGRect(x: 0, y: 0, width: 50, height: 30))
         cell.accessoryView = switchCode
         switchCode.onTintColor = UIColor.turquoise
-        switchCode.isOn = true // TODO: z ustawień
+        switchCode.isOn = preferences.isPasscodeRequired
         switchCode.addTarget(self, action: #selector(changeCodeRequired(_:)), for: .valueChanged)
     }
 

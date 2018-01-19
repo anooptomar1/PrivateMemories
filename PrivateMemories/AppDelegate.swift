@@ -17,11 +17,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     let settingsHandler = SettingsHandler.instance
 
-    //TODO: Logika dla galerii, alerty, dodać ViewAnimator, touchID (w ustawieniach również)
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        var initialVC = storyboard.instantiateViewController(withIdentifier: "PermissionVC")
+        
+        if settingsHandler.isNotFirstRun {
+            initialVC = storyboard.instantiateViewController(withIdentifier: "MainNavController")
+        }
+        
+        window?.rootViewController = initialVC
+        window?.makeKeyAndVisible()
+        
         configureLayoutAppearance()
-        configureSettings()
+        authorize()
         
         return true
     }
@@ -33,10 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-        print("IS NOT FIRST RUN: \(settingsHandler.isNotFirstRun)")
-        if settingsHandler.isNotFirstRun == true, settingsHandler.isPasscodeRequired {
-            presentCodeView(animated: false)
-        }
+        authorize()
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -46,17 +54,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.saveContext()
     }
     
-    func setNewPassword() {
-        guard let rootViewController = getTopViewController() else { print("PRESENT CODE VIEW FAILED"); return }
-        let passcodeSettingsViewController = TOPasscodeSettingsViewController(style: .dark)
-        passcodeSettingsViewController.delegate = self
-        passcodeSettingsViewController.passcodeType = .sixDigits
-        passcodeSettingsViewController.requireCurrentPasscode = true
-        rootViewController.present(passcodeSettingsViewController, animated: true, completion: nil)
+    func authorize() {
+        print("AUTHORIZATION")
+        print("\(settingsHandler.isNotFirstRun),\(settingsHandler.isPasscodeRequired)")
+        if settingsHandler.isNotFirstRun == true, settingsHandler.isPasscodeRequired {
+            presentCodeView(animated: false)
+        }
     }
 
     func presentCodeView(animated: Bool) {
-        print("PRESENT CODE VIEW")
         guard let rootViewController = getTopViewController() else { print("PRESENT CODE VIEW FAILED"); return }
         let passcodeViewController = TOPasscodeViewController(style: .translucentDark, passcodeType: .sixDigits)
         passcodeViewController.allowBiometricValidation = false //checkIfTouchIDAvailable()
@@ -92,17 +98,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: "button-back")
     }
 
-    // MARK: - Settings configuration
-    
-    func configureSettings() {
-        print("CONFIGURING SETTINGS")
-        if settingsHandler.isNotFirstRun == false {
-            print("IS FIRST RUN")
-            settingsHandler.setDefault()
-            print("SET DEFAULT")
-            //presentOnboardingView
-        }
-    }
     
     // MARK: - Core Data stack
 
@@ -140,17 +135,6 @@ extension AppDelegate: TOPasscodeViewControllerDelegate {
     
     func didInputCorrectPasscode(in passcodeViewController: TOPasscodeViewController) {
         passcodeViewController.dismiss(animated: true, completion: nil)
-    }
-    
-    func didPerformBiometricValidationRequest(in passcodeViewController: TOPasscodeViewController) {
-        //let authContext = LAContext()
-    }
-}
-
-extension AppDelegate: TOPasscodeSettingsViewControllerDelegate {
-    func passcodeSettingsViewController(_ passcodeSettingsViewController: TOPasscodeSettingsViewController, didChangeToNewPasscode passcode: String, of type: TOPasscodeType) {
-        settingsHandler.passcode = passcode
-        passcodeSettingsViewController.dismiss(animated: true, completion: nil)
     }
 }
 

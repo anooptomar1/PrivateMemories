@@ -308,8 +308,7 @@ class CameraViewController: UIViewController {
     }
     
     @IBAction func gridButtonPressed(_ sender: Any) {
-        let currentVisibilityState: Bool = gridView!.isHidden
-        gridView?.isHidden = !currentVisibilityState
+        gridView?.isHidden = gridView!.isHidden
         self.view.addSubview(gridView!)
     }
     
@@ -324,6 +323,7 @@ extension CameraViewController: AVCapturePhotoCaptureDelegate {
             recognizedObjectLabel.text = "Analyzing..."
             setupInterface(isCameraActive:false)
             recognizedObjectView.isHidden = false
+            gridView?.isHidden = true
             recognizeObject()
         }
     }
