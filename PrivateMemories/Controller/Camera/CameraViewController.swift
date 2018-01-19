@@ -30,6 +30,7 @@ class CameraViewController: UIViewController {
     var galleryName: String?
     var userLocation: CLLocation?
     var locationManager: CLLocationManager?
+    var isRecognizing = true
     
     var gridView: GridView?
     var captureSession = AVCaptureSession()
@@ -319,6 +320,8 @@ extension CameraViewController: AVCapturePhotoCaptureDelegate {
         if let imageData = photo.fileDataRepresentation() {
             capturedImageView.image = UIImage(data: imageData)
             locationManager?.startUpdatingLocation()
+            isRecognizing = true
+            recognizedObjectLabel.text = "Analyzing..."
             setupInterface(isCameraActive:false)
             recognizedObjectView.isHidden = false
             recognizeObject()

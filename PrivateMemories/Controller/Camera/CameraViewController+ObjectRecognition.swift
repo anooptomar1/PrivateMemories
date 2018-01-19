@@ -14,21 +14,21 @@ extension CameraViewController {
     
     func recognizeObject() {
         guard let capturedImage = capturedImageView.image, let image = CIImage(image: capturedImage) else { return }
-        
-        recognizedObjectLabel.text = "Analyzing image..."
-            
-        guard let model = try? VNCoreMLModel(for: Resnet50().model) else {
-            return
-        }
+        guard let model = try? VNCoreMLModel(for: Resnet50().model) else { return }
             
         let request = VNCoreMLRequest(model: model) { [weak self] request, error in
-            guard let results = request.results as? [VNClassificationObservation],
-                let bestResult = results.first else {
-                    return
-            }
+        guard let results = request.results as? [VNClassificationObservation],
+                let bestResult = results.first else { return }
                 
             DispatchQueue.main.async { [weak self] in
-                self?.recognizedObjectLabel.text = "\(bestResult.identifier)"
+                let identifier: String = "\(bestResult.identifier)"
+                let semicolon: String = ","
+                print(bestResult.identifier)
+                if let firstPart: String = identifier.components(separatedBy: semicolon).first {
+                    self?.recognizedObjectLabel.text = "\(firstPart)"
+                } else {
+                    self?.recognizedObjectLabel.text = identifier
+                }
             }
         }
 
@@ -43,15 +43,16 @@ extension CameraViewController {
     }
     
     func discardRecognition() {
-        //isRecognizing = false
-        //recognizedObjectView.isHidden = true
+        isRecognizing = false
+        recognizedObjectView.isHidden = true
     }
     
     func savePhoto() {
         print("TRYING TO SAVE PHOTO")
         guard let currentLocation = userLocation, let capturedPhoto = capturedImageView.image, let galleryName = galleryName else { return }
         print("SAVING PHOTO")
-        let pickedImage = PickedImage(galleryName: galleryName, image: capturedPhoto, location: currentLocation, date: Date(), recognizedObjectDescription: recognizedObjectLabel.text)
+        let pickedImage = PickedImage(galleryName: galleryName, image: capturedPhoto, location: currentLocation, date: Date(), recognizedObjectDescription: isRecognizing ? recognizedObjectLabel.text : nil)
+        print("RECOGNIZED: \(pickedImage.tagRecognition ?? "NIL")")
         let photoViewModel = PhotoViewModel(from: pickedImage)
         photoViewModel.saveImage(asNewObject: true)
     }
