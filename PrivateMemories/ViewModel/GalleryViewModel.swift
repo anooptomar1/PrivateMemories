@@ -49,8 +49,12 @@ class GalleryViewModel: NSObject {
         }
     }
     
-    func searchForObjects(withLocation text: String) {
-        self.fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "gallery.name == %@ AND (fullsizePhoto.cityName CONTAINS[cd] %@ OR fullsizePhoto.tags CONTAINS[cd] %@)", galleryName, text, text) //[c]ase and [d]iacritic insensitive
+    func searchForObjects(withLocation text: String, index: Int) {
+        switch index {
+        case 1: fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "gallery.name == %@ AND fullsizePhoto.cityName CONTAINS[cd] %@", galleryName, text) //[c]ase and [d]iacritic insensitive
+        case 2: fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "gallery.name == %@ AND fullsizePhoto.tags CONTAINS[cd] %@", galleryName, text) //[c]ase and [d]iacritic insensitive
+        default: fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "gallery.name == %@ AND (fullsizePhoto.cityName CONTAINS[cd] %@ OR fullsizePhoto.tags CONTAINS[cd] %@)", galleryName, text, text) //[c]ase and [d]iacritic insensitive
+        }
         fetchData()
     }
     

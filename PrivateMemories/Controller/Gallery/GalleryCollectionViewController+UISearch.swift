@@ -19,6 +19,7 @@ extension GalleryCollectionViewController: UISearchResultsUpdating {
         searchController.searchResultsUpdater = self
         //searchController.hidesNavigationBarDuringPresentation = false
         searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchBar.scopeButtonTitles = ["All", "Location", "Tags"]
         
         let searchBar = searchController.searchBar
         //searchBar.scopeButtonTitles = ["All", "Tags", "Location"]
@@ -36,7 +37,7 @@ extension GalleryCollectionViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         if searchController.searchBar.text != "" {
             isCurrentlySearching = true
-            self.galleryViewModel?.searchForObjects(withLocation: searchController.searchBar.text!)
+            self.galleryViewModel?.searchForObjects(withLocation: searchController.searchBar.text!, index: searchController.searchBar.selectedScopeButtonIndex)
         } else {
             self.galleryViewModel?.clearPredicatesAndFetch()
         }
