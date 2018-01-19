@@ -40,6 +40,7 @@
 		E2310DD21FBE77C700A7B3B2 /* PickedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2310DD11FBE77C700A7B3B2 /* PickedImage.swift */; };
 		E2310DD41FBE862100A7B3B2 /* PhotoDetailsViewController+CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2310DD31FBE862100A7B3B2 /* PhotoDetailsViewController+CollectionViewDataSource.swift */; };
 		E2310DD61FBE863900A7B3B2 /* PhotoDetailsViewController+CollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2310DD51FBE863900A7B3B2 /* PhotoDetailsViewController+CollectionViewDelegateFlowLayout.swift */; };
+		E2386C70201251FA000C2D22 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2386C6F201251FA000C2D22 /* OnboardingViewController.swift */; };
 		E23EA3FF1FC3A7590078A366 /* GalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23EA3FE1FC3A7590078A366 /* GalleryViewModel.swift */; };
 		E24694911FD780D80093AFB0 /* SettingsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24694901FD780D80093AFB0 /* SettingsHandler.swift */; };
 		E255B7391FC7391C001F0E27 /* GalleryCollectionViewController+NohanaImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E255B7381FC7391C001F0E27 /* GalleryCollectionViewController+NohanaImagePicker.swift */; };
@@ -88,6 +89,7 @@
 		E2310DD11FBE77C700A7B3B2 /* PickedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickedImage.swift; sourceTree = "<group>"; };
 		E2310DD31FBE862100A7B3B2 /* PhotoDetailsViewController+CollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoDetailsViewController+CollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		E2310DD51FBE863900A7B3B2 /* PhotoDetailsViewController+CollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoDetailsViewController+CollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
+		E2386C6F201251FA000C2D22 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		E23EA3FE1FC3A7590078A366 /* GalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewModel.swift; sourceTree = "<group>"; };
 		E24694901FD780D80093AFB0 /* SettingsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHandler.swift; sourceTree = "<group>"; };
 		E255B7381FC7391C001F0E27 /* GalleryCollectionViewController+NohanaImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalleryCollectionViewController+NohanaImagePicker.swift"; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				E22501261FCCED2700C10DA3 /* Album */,
 				E22510EF1FCDC6EC00F54494 /* Camera */,
 				E22CE4931FBDDFA00051BF71 /* Gallery */,
+				E2386C6E20125193000C2D22 /* Onboarding */,
 				E22CE4941FBDDFA60051BF71 /* Photo */,
 				E2A7B6241FD7729D000DB556 /* Settings */,
 			);
@@ -244,6 +247,14 @@
 				E2310DCE1FBE749400A7B3B2 /* PhotoViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E2386C6E20125193000C2D22 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				E2386C6F201251FA000C2D22 /* OnboardingViewController.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		E2A7B6241FD7729D000DB556 /* Settings */ = {
@@ -447,6 +458,7 @@
 				E2235B251FDCC67A00DC7B5D /* ImageProvider.swift in Sources */,
 				E226035C1FBEFE0F0055568F /* GalleryCollectionViewController+ImagePicker.swift in Sources */,
 				E2DA41E61FA77BF800DED69C /* AppDelegate.swift in Sources */,
+				E2386C70201251FA000C2D22 /* OnboardingViewController.swift in Sources */,
 				E22788E81FC8F7B700C45139 /* GalleryCollectionViewController+UISearch.swift in Sources */,
 				E22501301FCCED7800C10DA3 /* ColorExtension.swift in Sources */,
 				E2DA41EE1FA77BF800DED69C /* PrivateMemories.xcdatamodeld in Sources */,

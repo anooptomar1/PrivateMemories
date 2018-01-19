@@ -8,16 +8,17 @@
 
 import Foundation
 
-class SettingsHandler {
-    fileprivate let appVersionKey = "app_version"
+final class SettingsHandler {
     fileprivate let isNotFirstRunKey = "first_run"
-    fileprivate let isAppRatedKey = "app_rated"
     fileprivate let passcodeKey = "code"
-    //TODO: fileprivate let dummyPasscode = "dummy_code"
+    fileprivate let isPasscodeRequiredKey = "isPasscodeRequired"
     
+    static let instance = SettingsHandler()
     fileprivate let defaults = UserDefaults.standard
     
     var appVersion: String { get { return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String } }
+    
+    var appBuild: String { get { return Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String } }
     
     var isNotFirstRun: Bool {
         get {
@@ -30,32 +31,31 @@ class SettingsHandler {
         }
     }
     
-    var isAppRated: Bool {
-        get { return defaults.value(forKey: isAppRatedKey) as! Bool}
-        set {
-            defaults.setValue(newValue, forKey: isAppRatedKey)
-            defaults.synchronize()
-        }
-    }
-    
     var passcode: String {
-        get {
-            if let passcode = defaults.value(forKey: passcodeKey) {
-            return passcode as! String
-        } else {
-                return "123456"
-        }}
+        get { return defaults.value(forKey: passcodeKey) as! String }
         set {
             defaults.setValue(newValue, forKey: passcodeKey)
             defaults.synchronize()
         }
     }
     
+    var isPasscodeRequired: Bool {
+        get { return defaults.value(forKey: isPasscodeRequiredKey) as! Bool}
+        set {
+            defaults.setValue(newValue, forKey: isPasscodeRequiredKey)
+            defaults.synchronize()
+        }
+    }
+    
+    
     func setDefault() {
         defaults.setValue(true, forKey: isNotFirstRunKey)
-        defaults.setValue(false, forKey: isAppRatedKey)
-        //TODO: Zmienić
+        defaults.setValue(true, forKey: isPasscodeRequiredKey)
+        
+        
+        //TODO: USUNAC
         defaults.setValue("123456", forKey: passcodeKey)
+        
         defaults.synchronize()
     }
     

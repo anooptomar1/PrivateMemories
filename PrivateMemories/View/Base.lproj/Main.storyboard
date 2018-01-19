@@ -163,6 +163,48 @@
             </objects>
             <point key="canvasLocation" x="544.79999999999995" y="98.50074962518741"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="OZQ-Ja-nby">
+            <objects>
+                <viewController id="H12-ao-i9g" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eyS-as-y3f">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sPi-Ce-wux">
+                                <rect key="frame" x="107" y="50" width="124" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Enable location"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DK2-dI-Kp1">
+                                <rect key="frame" x="66" y="135" width="165" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Enable camera usage"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uXw-B1-Poq">
+                                <rect key="frame" x="42" y="235" width="189" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Using gallery permission"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oab-Ly-HJs">
+                                <rect key="frame" x="185" y="330" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Sd-tt-dtj">
+                                <rect key="frame" x="164" y="495" width="122" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Go to the app"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="3IR-7C-K2H"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0e6-1T-8wm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1087.2" y="892.80359820089961"/>
+        </scene>
         <!--Settings View Controller-->
         <scene sceneID="JMK-fI-ffc">
             <objects>
@@ -263,13 +305,29 @@
                                     <constraint firstAttribute="trailingMargin" secondItem="IZd-Ea-ySm" secondAttribute="trailing" constant="12" id="uFo-Oc-fvB"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SLE-wn-frS">
+                                <rect key="frame" x="10" y="30" width="50" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="6Pv-PS-1Ke"/>
+                                    <constraint firstAttribute="width" constant="50" id="UDC-l4-4Cf"/>
+                                </constraints>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissButtonPressed:" destination="ZUj-p4-vR7" eventType="touchUpInside" id="yDr-u2-efE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.19607843137254902" green="0.87843137250000003" blue="0.81568627449999997" alpha="0.53000000000000003" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="52Y-Xh-BeB" firstAttribute="width" secondItem="azi-4x-HqM" secondAttribute="width" id="2YN-dY-VtA"/>
                             <constraint firstItem="IZd-Ea-ySm" firstAttribute="height" secondItem="azi-4x-HqM" secondAttribute="height" constant="-48" id="55d-vF-4ru"/>
+                            <constraint firstItem="SLE-wn-frS" firstAttribute="leading" secondItem="2s5-Oh-ItV" secondAttribute="leading" constant="10" id="GmV-LX-AR0"/>
                             <constraint firstItem="2s5-Oh-ItV" firstAttribute="bottom" secondItem="52Y-Xh-BeB" secondAttribute="bottom" id="LyJ-F7-sTz"/>
                             <constraint firstItem="IZd-Ea-ySm" firstAttribute="width" secondItem="azi-4x-HqM" secondAttribute="width" constant="-40" id="Pf5-G3-sUN"/>
+                            <constraint firstItem="SLE-wn-frS" firstAttribute="top" secondItem="2s5-Oh-ItV" secondAttribute="top" constant="10" id="Q6S-v6-Ngb"/>
                             <constraint firstItem="2s5-Oh-ItV" firstAttribute="trailing" secondItem="52Y-Xh-BeB" secondAttribute="trailing" id="XMK-vm-2fb"/>
                             <constraint firstItem="52Y-Xh-BeB" firstAttribute="leading" secondItem="2s5-Oh-ItV" secondAttribute="leading" id="keB-xu-b07"/>
                             <constraint firstItem="52Y-Xh-BeB" firstAttribute="top" secondItem="2s5-Oh-ItV" secondAttribute="top" id="sPr-fQ-Nh2"/>

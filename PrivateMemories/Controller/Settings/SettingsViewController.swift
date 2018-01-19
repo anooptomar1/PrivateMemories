@@ -11,47 +11,30 @@ import TOPasscodeViewController
 
 struct CellIdentifiers {
     static let setCode = IndexPath(row: 0, section: 0)
-    static let clearCode = IndexPath(row: 1, section: 0)
-    static let codeRequired = IndexPath(row: 2, section: 0)
+    static let codeRequired = IndexPath(row: 1, section: 0)
     static let opensourceLibraries = IndexPath(row: 0, section: 1)
     static let appVersion = IndexPath(row: 1, section: 1)
-    static let rateApp = IndexPath(row: 0, section: 2)
-    static let reportIssue = IndexPath(row: 1, section: 2)
+    static let appBuild = IndexPath(row: 2, section: 1)
+    static let reportIssue = IndexPath(row: 0, section: 2)
 }
 
 class SettingsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    var switchCode: UISwitch!
+    
     let settingsCellIdentifier = "SettingsTableViewCell"
-    let preferences = SettingsHandler()
-    let sections = ["Code", "About application", " "]
+    let preferences = SettingsHandler.instance
+    let sections = ["Code", "About application", ""]
+    
     let rowHeight: CGFloat = 70.0
     let headerHeight: CGFloat = 50.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureTableView()
-    }
-    
-    func configureTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        let footer = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 100))
-        footer.backgroundColor = UIColor.lightGray
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50))
-        label.center = footer.center
-        label.text = "Footer"
-        label.textAlignment = .center
-        footer.addSubview(label)
-        tableView.tableFooterView = footer
     }
-    
-    @objc func changeCodeRequired(_ sender: UISwitch) {
-        let value = sender.isOn
-        print("SWITCH IS \(value)")
-    }
-    
-    // - MARK: IBActions
     
     func setNewCode() {
         let passcodeSettingsViewController = TOPasscodeSettingsViewController(style: .dark)
@@ -59,6 +42,32 @@ class SettingsViewController: UIViewController {
         passcodeSettingsViewController.passcodeType = .sixDigits
         passcodeSettingsViewController.requireCurrentPasscode = true
         self.present(passcodeSettingsViewController, animated: true, completion: nil)
+    }
+    
+    func presentCodeView() {
+        let passcodeViewController = TOPasscodeViewController(style: .translucentDark, passcodeType: .sixDigits)
+        passcodeViewController.allowBiometricValidation = false //checkIfTouchIDAvailable()
+        passcodeViewController.rightAccessoryButton = UIButton()
+        passcodeViewController.accessoryButtonTintColor = UIColor.turquoise
+        passcodeViewController.inputProgressViewTintColor = UIColor.turquoise
+        passcodeViewController.keypadButtonTextColor = UIColor.turquoise
+        passcodeViewController.delegate = self
+        self.present(passcodeViewController, animated: true, completion: nil)
+    }
+    
+    // - MARK: IBActions
+
+    @IBAction func dismissButtonPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func changeCodeRequired(_ sender: UISwitch) {
+        if !sender.isOn {
+            presentCodeView()
+            switchCode.setOn(true, animated: false)
+        } else {
+            preferences.isPasscodeRequired = true
+        }
     }
 }
 
@@ -77,43 +86,61 @@ extension SettingsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let numberOfRows = (section == 0) ? 3 : 2
+        var numberOfRows = 0
+        switch section {
+            case 0: numberOfRows = 2
+            case 1: numberOfRows = 3
+            case 2: numberOfRows = 1
+            default: break
+        }
         return numberOfRows
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: settingsCellIdentifier) as! SettingsTableViewCell
-        var content: (description: String, icon: UIImage) = ("", UIImage())
+        var cellContent: (description: String, icon: UIImage) = ("", UIImage())
         
         switch indexPath {
-            case CellIdentifiers.setCode: content = ("Set new code", UIImage(named: "del")!)
-            case CellIdentifiers.clearCode: content = ("Clear code", UIImage(named: "edi")!)
+            case CellIdentifiers.setCode:
+                cellContent = ("Set new code", UIImage(named: "del")!)
             case CellIdentifiers.codeRequired:
-                content = ("Require code", UIImage(named: "hea")!)
                 cell.selectionStyle = .none
-                let switchCode = UISwitch(frame: CGRect(x: 0, y: 0, width: 50, height: 30))
-                cell.accessoryView = switchCode
-                switchCode.onTintColor = UIColor.turquoise
-                switchCode.isOn = false // TODO: z ustawień
-                switchCode.addTarget(self, action: #selector(changeCodeRequired(_:)), for: .valueChanged)
+                cellContent = ("Require code", UIImage(named: "hea")!)
+                addConfiguredSwitch(to: cell)
             case CellIdentifiers.opensourceLibraries:
-                content = ("Open-source libraries", UIImage(named: "del")!)
+                cellContent = ("Open-source libraries", UIImage(named: "del")!)
                 cell.accessoryType = .disclosureIndicator
             case CellIdentifiers.appVersion:
-                content = ("Application version", UIImage(named: "edi")!)
-                cell.selectionStyle = .none
-                let versionLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-                cell.accessoryView = versionLabel
-                versionLabel.text = preferences.appVersion
-                versionLabel.textColor = UIColor.darkGray
-            case CellIdentifiers.rateApp: content = ("Rate the app", UIImage(named: "hea")!)
-            case CellIdentifiers.reportIssue: content = ("Report bug/Contact", UIImage(named: "del")!)
+                cellContent = ("Version", UIImage(named: "edi")!)
+                addAccessoryLabel(to: cell, with: preferences.appVersion)
+            case CellIdentifiers.appBuild:
+                cellContent = ("Build", UIImage(named: "hea")!)
+                addAccessoryLabel(to: cell, with: preferences.appBuild)
+            case CellIdentifiers.reportIssue:
+                cellContent = ("Report bug/Contact", UIImage(named: "del")!)
             default: break
         }
         
-        cell.descriptionLabel.text = content.description
-        cell.iconImageView.image = content.icon
+        cell.descriptionLabel.text = cellContent.description
+        cell.iconImageView.image = cellContent.icon
         return cell
+    }
+    
+    func addAccessoryLabel(to cell: UITableViewCell, with text: String) {
+        cell.selectionStyle = .none
+        let accessoryLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        cell.accessoryView = accessoryLabel
+        accessoryLabel.text = text
+        accessoryLabel.textColor = UIColor.darkGray
+    }
+    
+    func addConfiguredSwitch(to cell: UITableViewCell) {
+        cell.selectionStyle = .none
+        switchCode = UISwitch(frame: CGRect(x: 0, y: 0, width: 50, height: 30))
+        cell.accessoryView = switchCode
+        switchCode.onTintColor = UIColor.turquoise
+        switchCode.isOn = true // TODO: z ustawień
+        switchCode.addTarget(self, action: #selector(changeCodeRequired(_:)), for: .valueChanged)
     }
 
     
@@ -126,7 +153,14 @@ extension SettingsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath {
-            case CellIdentifiers.setCode: setNewCode()
+        case CellIdentifiers.setCode:
+                setNewCode()
+        case CellIdentifiers.opensourceLibraries:
+                print("OPEN SOURCE TAPPED")
+        case CellIdentifiers.reportIssue:
+            if let url = URL(string: "mailto:hello@iBabis.com)") {
+                UIApplication.shared.open(url)
+            }
             default: break
         }
     }
@@ -140,5 +174,20 @@ extension SettingsViewController: TOPasscodeSettingsViewControllerDelegate {
     func passcodeSettingsViewController(_ passcodeSettingsViewController: TOPasscodeSettingsViewController, didChangeToNewPasscode passcode: String, of type: TOPasscodeType) {
         preferences.passcode = passcode
         passcodeSettingsViewController.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension SettingsViewController: TOPasscodeViewControllerDelegate {
+    func didInputCorrectPasscode(in passcodeViewController: TOPasscodeViewController) {
+        print("CORRECT CODE")
+        switchCode.setOn(false, animated: false)
+        print("SETTING ON")
+        preferences.isPasscodeRequired = false
+        print("CHANGED PREFERENCES")
+        passcodeViewController.dismiss(animated: true, completion: nil)
+    }
+    
+    func passcodeViewController(_ passcodeViewController: TOPasscodeViewController, isCorrectCode code: String) -> Bool {
+        return code == SettingsHandler().passcode
     }
 }

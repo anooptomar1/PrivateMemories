@@ -15,6 +15,7 @@ import LocalAuthentication
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let settingsHandler = SettingsHandler.instance
 
     //TODO: Logika dla galerii, alerty, dodać ViewAnimator, touchID (w ustawieniach również)
 
@@ -32,7 +33,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-        presentCodeView(animated: false)
+        print("IS NOT FIRST RUN: \(settingsHandler.isNotFirstRun)")
+        if settingsHandler.isNotFirstRun == true, settingsHandler.isPasscodeRequired {
+            presentCodeView(animated: false)
+        }
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -42,6 +46,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.saveContext()
     }
     
+    func setNewPassword() {
+        guard let rootViewController = getTopViewController() else { print("PRESENT CODE VIEW FAILED"); return }
+        let passcodeSettingsViewController = TOPasscodeSettingsViewController(style: .dark)
+        passcodeSettingsViewController.delegate = self
+        passcodeSettingsViewController.passcodeType = .sixDigits
+        passcodeSettingsViewController.requireCurrentPasscode = true
+        rootViewController.present(passcodeSettingsViewController, animated: true, completion: nil)
+    }
+
     func presentCodeView(animated: Bool) {
         print("PRESENT CODE VIEW")
         guard let rootViewController = getTopViewController() else { print("PRESENT CODE VIEW FAILED"); return }
@@ -82,10 +95,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Settings configuration
     
     func configureSettings() {
-        let settingsHandler = SettingsHandler()
+        print("CONFIGURING SETTINGS")
         if settingsHandler.isNotFirstRun == false {
-            print("KONFIGURACJA")
+            print("IS FIRST RUN")
             settingsHandler.setDefault()
+            print("SET DEFAULT")
+            //presentOnboardingView
         }
     }
     
@@ -123,16 +138,19 @@ extension AppDelegate: TOPasscodeViewControllerDelegate {
         return code == SettingsHandler().passcode
     }
     
-    func didTapCancel(in passcodeViewController: TOPasscodeViewController) {
-        passcodeViewController.dismiss(animated: true, completion: nil)
-    }
-    
     func didInputCorrectPasscode(in passcodeViewController: TOPasscodeViewController) {
         passcodeViewController.dismiss(animated: true, completion: nil)
     }
     
     func didPerformBiometricValidationRequest(in passcodeViewController: TOPasscodeViewController) {
         //let authContext = LAContext()
+    }
+}
+
+extension AppDelegate: TOPasscodeSettingsViewControllerDelegate {
+    func passcodeSettingsViewController(_ passcodeSettingsViewController: TOPasscodeSettingsViewController, didChangeToNewPasscode passcode: String, of type: TOPasscodeType) {
+        settingsHandler.passcode = passcode
+        passcodeSettingsViewController.dismiss(animated: true, completion: nil)
     }
 }
 
