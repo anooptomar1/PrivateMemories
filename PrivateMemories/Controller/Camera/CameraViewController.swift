@@ -9,6 +9,7 @@
 import UIKit
 import AVKit
 import Vision
+import CoreLocation
 
 enum CurrentFlashMode {
     case off
@@ -16,30 +17,27 @@ enum CurrentFlashMode {
     case auto
 }
 
-//TODO: Ustawić widoczność elementów, ARKit w CoreML
-
 class CameraViewController: UIViewController {
-
-    @IBOutlet weak var cancelPickingPhotoButton: UIButton!
+    @IBOutlet weak var capturedPhotoView: UIView!
+    @IBOutlet weak var recognizedObjectView: UIView!
+    @IBOutlet weak var recognizedObjectLabel: UILabel!
     @IBOutlet weak var capturedImageView: UIImageView!
     @IBOutlet weak var captureButton: UIButton!
     @IBOutlet weak var flipButton: UIButton!
     @IBOutlet weak var gridButton: UIButton!
     @IBOutlet weak var flashButton: UIButton!
-    @IBOutlet weak var recognizedObjectLabel: UILabel!
+    
+    var galleryName: String?
+    var userLocation: CLLocation?
+    var locationManager: CLLocationManager?
     
     var gridView: GridView?
-    
     var captureSession = AVCaptureSession()
     var backCamera: AVCaptureDevice!
     var frontCamera: AVCaptureDevice!
     var currentCamera: AVCaptureDevice!
     var inputDevice: AVCaptureDeviceInput!
     var photoOutput: AVCapturePhotoOutput!
-    
-    let videoDispatchQueue = DispatchQueue(label: "VideoDispatchQueue")
-    var videoOutput: AVCaptureVideoDataOutput!
-    
     var previewLayer: AVCaptureVideoPreviewLayer!
     var currentFlashMode: CurrentFlashMode = .off
     
@@ -49,26 +47,21 @@ class CameraViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configureLocationManager()
         setupGridView()
         setNextFlashMode()
-        setElementsVisibility(isCurrentlyPicking: true)
+        setupInterface(isCameraActive:true)
         setupCaptureButtonStyle()
         setupCaptureSession()
         setupDevices()
         addGestureRecognizers()
+        setupPreviewLayer()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupInputOutput()
         startCaptureSession()
-        setupVision()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        setupPreviewLayer()
     }
     
     // MARK: Gestures handling
@@ -151,14 +144,8 @@ class CameraViewController: UIViewController {
     
     // MARK: UIElements
     
-    func setElementsVisibility(isCurrentlyPicking: Bool) {
-        capturedImageView.isHidden = isCurrentlyPicking
-        cancelPickingPhotoButton.isHidden = isCurrentlyPicking
-        
-        captureButton.isHidden = !isCurrentlyPicking
-        flipButton.isHidden = !isCurrentlyPicking
-        gridView?.isHidden = !isCurrentlyPicking
-        gridButton.isHidden = !isCurrentlyPicking
+    func setupInterface(isCameraActive: Bool) {
+        capturedPhotoView.isHidden = isCameraActive
     }
     
     func setupGridView() {
@@ -233,23 +220,12 @@ class CameraViewController: UIViewController {
             
             photoOutput = AVCapturePhotoOutput()
             photoOutput.setPreparedPhotoSettingsArray([AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])], completionHandler: nil)
-            
-            videoOutput = AVCaptureVideoDataOutput()
-            videoOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: Int(kCVPixelFormatType_32BGRA)]
-            videoOutput.setSampleBufferDelegate(self, queue: videoDispatchQueue)
 
             captureSession.addInput(inputDevice)
             captureSession.addOutput(photoOutput)
-            captureSession.addOutput(videoOutput)
             
         } catch {
             print(error.localizedDescription)
-        }
-    }
-    
-    func updateRecognizedObjectLabel(with text: String) {
-        DispatchQueue.main.async {
-            self.recognizedObjectLabel.text = text
         }
     }
     
@@ -297,10 +273,6 @@ class CameraViewController: UIViewController {
         photoOutput.capturePhoto(with: currentSettings, delegate: self)
     }
     
-    @IBAction func visionSetButtonPressed(_ sender: Any) {
-        
-    }
-    
     @IBAction func flashButtonPressed(_ sender: Any) {
         setNextFlashMode()
     }
@@ -311,8 +283,19 @@ class CameraViewController: UIViewController {
     
     @IBAction func cancelPickingPhotoButtonPressed(_ sender: Any) {
         startCaptureSession()
-        setElementsVisibility(isCurrentlyPicking: true)
+        setupInterface(isCameraActive:true)
     }
+
+    @IBAction func discardRecognitionButtonPressed(_ sender: Any) {
+        discardRecognition()
+    }
+    
+    @IBAction func acceptPhotoButtonPressed(_ sender: Any) {
+        startCaptureSession()
+        setupInterface(isCameraActive: true)
+        savePhoto()
+    }
+    
     
     @IBAction func flipCameraButtonPressed(_ sender: UIButton) {
         captureSession.stopRunning()
@@ -332,36 +315,13 @@ class CameraViewController: UIViewController {
 }
 
 extension CameraViewController: AVCapturePhotoCaptureDelegate {
-    
-    
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
-        
         if let imageData = photo.fileDataRepresentation() {
             capturedImageView.image = UIImage(data: imageData)
-            setElementsVisibility(isCurrentlyPicking: false)
+            locationManager?.startUpdatingLocation()
+            setupInterface(isCameraActive:false)
+            recognizedObjectView.isHidden = false
+            recognizeObject()
         }
-    }
-}
-
-extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
-    
-    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        
-        guard let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
-        guard let recognizeModel = try? VNCoreMLModel(for: Resnet50().model) else { return }
-        let recognizeRequest = VNCoreMLRequest(model: recognizeModel) { (finishedRequest, error) in
-            guard let results = finishedRequest.results as? [VNClassificationObservation] else { return }
-            let classifications = results
-                .filter({ $0.confidence > 0.4 })
-                .sorted(by: { $0.confidence > $1.confidence })
-                .map {
-                    (prediction: VNClassificationObservation) -> String in
-                    return "\(round(prediction.confidence * 100 * 100)/100)%: \(prediction.identifier)"
-            }
-            guard let firstResult = classifications.first else { return }
-            self.updateRecognizedObjectLabel(with: firstResult)
-        }
-        try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([recognizeRequest])
-        
     }
 }

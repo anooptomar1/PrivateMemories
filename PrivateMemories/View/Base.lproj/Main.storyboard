@@ -149,7 +149,7 @@
                             <barButtonItem systemItem="add" id="eUe-Yg-fvY">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="Nor-MN-PiJ" kind="presentation" modalPresentationStyle="currentContext" modalTransitionStyle="coverVertical" id="FKa-ax-pRU"/>
+                                    <segue destination="Nor-MN-PiJ" kind="presentation" identifier="toCameraSegue" modalPresentationStyle="currentContext" modalTransitionStyle="coverVertical" id="FKa-ax-pRU"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -292,9 +292,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OwO-X9-DD4">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cK9-iR-K7l">
                                 <rect key="frame" x="238" y="40" width="37" height="30"/>
                                 <state key="normal" title="Flash"/>
@@ -317,16 +314,6 @@
                                 <state key="normal" title="Flip"/>
                                 <connections>
                                     <action selector="flipCameraButtonPressed:" destination="Nor-MN-PiJ" eventType="touchUpInside" id="FSD-wQ-s2S"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOj-9n-8Py">
-                                <rect key="frame" x="20" y="40" width="48" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="WpX-bv-g5B"/>
-                                </constraints>
-                                <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <action selector="cancelPickingPhotoButtonPressed:" destination="Nor-MN-PiJ" eventType="touchUpInside" id="HiF-Vh-eEK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Xe-b1-g2I">
@@ -357,49 +344,113 @@
                                     <action selector="dismissButtonPressed:" destination="Nor-MN-PiJ" eventType="touchUpInside" id="fex-Q1-ecr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4z-u4-sQh">
-                                <rect key="frame" x="306" y="602" width="49" height="30"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dZQ-1Q-2Vy" userLabel="PhotoView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OwO-X9-DD4">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I93-1O-iXl" userLabel="RecognitionView">
+                                        <rect key="frame" x="20" y="607" width="275" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SX4-nh-01N" userLabel="DiscardRecognitionButton">
+                                                <rect key="frame" x="5" y="5" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="0Ag-zn-R1w"/>
+                                                    <constraint firstAttribute="width" constant="40" id="EVx-XA-nVx"/>
+                                                </constraints>
+                                                <state key="normal" title="X"/>
+                                                <connections>
+                                                    <action selector="discardRecognitionButtonPressed:" destination="Nor-MN-PiJ" eventType="touchUpInside" id="1kJ-om-SM8"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppG-Qt-u6t" userLabel="RecognitionLabel">
+                                                <rect key="frame" x="50" y="0.0" width="225" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="A6Y-AS-igp"/>
+                                            <constraint firstItem="SX4-nh-01N" firstAttribute="leading" secondItem="I93-1O-iXl" secondAttribute="leading" constant="5" id="Jvb-44-YCA"/>
+                                            <constraint firstItem="ppG-Qt-u6t" firstAttribute="leading" secondItem="SX4-nh-01N" secondAttribute="trailing" constant="5" id="Osh-9U-APc"/>
+                                            <constraint firstAttribute="bottom" secondItem="SX4-nh-01N" secondAttribute="bottom" constant="5" id="U9b-IF-rww"/>
+                                            <constraint firstAttribute="bottom" secondItem="ppG-Qt-u6t" secondAttribute="bottom" id="VQx-gT-2yS"/>
+                                            <constraint firstItem="ppG-Qt-u6t" firstAttribute="top" secondItem="I93-1O-iXl" secondAttribute="top" id="cnQ-7T-GtQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="ppG-Qt-u6t" secondAttribute="trailing" id="ot2-jd-wBF"/>
+                                            <constraint firstItem="SX4-nh-01N" firstAttribute="top" secondItem="I93-1O-iXl" secondAttribute="top" constant="5" id="yoO-WY-N5e"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zYU-Y3-FJS">
+                                        <rect key="frame" x="315" y="607" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="7Ep-Lq-ERq"/>
+                                            <constraint firstAttribute="width" constant="50" id="t2c-og-J03"/>
+                                        </constraints>
+                                        <state key="normal" title="Accept"/>
+                                        <connections>
+                                            <action selector="acceptPhotoButtonPressed:" destination="Nor-MN-PiJ" eventType="touchUpInside" id="Reh-h8-KWb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOj-9n-8Py">
+                                        <rect key="frame" x="10" y="10" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="ZCV-Jq-Zc7"/>
+                                            <constraint firstAttribute="height" constant="50" id="mHX-Bx-IPQ"/>
+                                        </constraints>
+                                        <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="cancelPickingPhotoButtonPressed:" destination="Nor-MN-PiJ" eventType="touchUpInside" id="HiF-Vh-eEK"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="VISION"/>
-                                <connections>
-                                    <action selector="dismissButtonPressed:" destination="Nor-MN-PiJ" eventType="touchUpInside" id="ADX-6U-Ryb"/>
-                                    <action selector="visionSetButtonPressed:" destination="Nor-MN-PiJ" eventType="touchUpInside" id="y4J-Sk-80l"/>
-                                </connections>
-                            </button>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="zYU-Y3-FJS" secondAttribute="trailing" constant="10" id="9WH-pA-vwf"/>
+                                    <constraint firstAttribute="bottom" secondItem="I93-1O-iXl" secondAttribute="bottom" constant="10" id="FPn-Zl-lG0"/>
+                                    <constraint firstItem="zYU-Y3-FJS" firstAttribute="leading" secondItem="I93-1O-iXl" secondAttribute="trailing" constant="20" id="MCH-o8-lbt"/>
+                                    <constraint firstAttribute="bottom" secondItem="OwO-X9-DD4" secondAttribute="bottom" id="YS2-lE-ktM"/>
+                                    <constraint firstItem="I93-1O-iXl" firstAttribute="leading" secondItem="dZQ-1Q-2Vy" secondAttribute="leading" constant="20" id="YtB-do-KRO"/>
+                                    <constraint firstAttribute="trailing" secondItem="OwO-X9-DD4" secondAttribute="trailing" id="bsA-oA-XjV"/>
+                                    <constraint firstAttribute="bottom" secondItem="zYU-Y3-FJS" secondAttribute="bottom" constant="10" id="cyC-Nm-1tR"/>
+                                    <constraint firstItem="eOj-9n-8Py" firstAttribute="top" secondItem="dZQ-1Q-2Vy" secondAttribute="top" constant="10" id="dek-mx-21z"/>
+                                    <constraint firstItem="OwO-X9-DD4" firstAttribute="leading" secondItem="dZQ-1Q-2Vy" secondAttribute="leading" id="gSk-OP-HC7"/>
+                                    <constraint firstItem="OwO-X9-DD4" firstAttribute="top" secondItem="dZQ-1Q-2Vy" secondAttribute="top" id="ltF-Nz-e0U"/>
+                                    <constraint firstItem="eOj-9n-8Py" firstAttribute="leading" secondItem="dZQ-1Q-2Vy" secondAttribute="leading" constant="10" id="rcE-vP-ocM"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="dmV-St-gnQ" firstAttribute="leading" secondItem="c6i-1g-SoZ" secondAttribute="leading" constant="23" id="4VZ-dO-WKu"/>
                             <constraint firstItem="c6i-1g-SoZ" firstAttribute="bottom" secondItem="dmV-St-gnQ" secondAttribute="bottom" constant="35" id="6oR-ZI-V2H"/>
-                            <constraint firstItem="c6i-1g-SoZ" firstAttribute="trailing" secondItem="f4z-u4-sQh" secondAttribute="trailing" constant="20" id="83D-P6-apu"/>
                             <constraint firstItem="c6i-1g-SoZ" firstAttribute="trailing" secondItem="LCQ-pX-Wy0" secondAttribute="trailing" constant="60" id="9dg-QR-RMb"/>
-                            <constraint firstItem="OwO-X9-DD4" firstAttribute="trailing" secondItem="c6i-1g-SoZ" secondAttribute="trailing" id="Fm6-MH-krn"/>
-                            <constraint firstItem="eOj-9n-8Py" firstAttribute="top" secondItem="c6i-1g-SoZ" secondAttribute="top" constant="20" id="Gs4-ad-dhl"/>
-                            <constraint firstItem="OwO-X9-DD4" firstAttribute="bottom" secondItem="c6i-1g-SoZ" secondAttribute="bottom" id="JGw-XB-lZI"/>
+                            <constraint firstItem="dZQ-1Q-2Vy" firstAttribute="leading" secondItem="c6i-1g-SoZ" secondAttribute="leading" id="BPZ-9Y-EeQ"/>
                             <constraint firstItem="c6i-1g-SoZ" firstAttribute="trailing" secondItem="Y06-cq-cFJ" secondAttribute="trailing" constant="20" id="PFH-xf-ABN"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eOj-9n-8Py" secondAttribute="trailing" constant="20" symbolic="YES" id="QiX-3U-CPT"/>
-                            <constraint firstItem="OwO-X9-DD4" firstAttribute="leading" secondItem="c6i-1g-SoZ" secondAttribute="leading" id="bT7-Fr-aL6"/>
+                            <constraint firstItem="dZQ-1Q-2Vy" firstAttribute="trailing" secondItem="c6i-1g-SoZ" secondAttribute="trailing" id="aok-ec-3Pe"/>
+                            <constraint firstItem="dZQ-1Q-2Vy" firstAttribute="top" secondItem="y32-Du-kpy" secondAttribute="top" id="bWQ-mX-soD"/>
                             <constraint firstItem="cK9-iR-K7l" firstAttribute="top" secondItem="c6i-1g-SoZ" secondAttribute="top" constant="20" id="btg-qU-XKt"/>
                             <constraint firstItem="c6i-1g-SoZ" firstAttribute="trailing" secondItem="cK9-iR-K7l" secondAttribute="trailing" constant="100" id="fiL-JE-1mc"/>
                             <constraint firstItem="LCQ-pX-Wy0" firstAttribute="top" secondItem="c6i-1g-SoZ" secondAttribute="top" constant="20" id="g8N-Sq-UeB"/>
-                            <constraint firstItem="eOj-9n-8Py" firstAttribute="leading" secondItem="c6i-1g-SoZ" secondAttribute="leading" constant="20" id="gMO-0x-ZpM"/>
                             <constraint firstItem="Y06-cq-cFJ" firstAttribute="top" secondItem="c6i-1g-SoZ" secondAttribute="top" constant="20" id="hll-Eg-AGu"/>
                             <constraint firstItem="c6i-1g-SoZ" firstAttribute="bottom" secondItem="4Xe-b1-g2I" secondAttribute="bottom" constant="20" id="k07-XW-fgs"/>
                             <constraint firstItem="4Xe-b1-g2I" firstAttribute="centerX" secondItem="y32-Du-kpy" secondAttribute="centerX" id="mc3-vx-eSP"/>
                             <constraint firstItem="Y06-cq-cFJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="y32-Du-kpy" secondAttribute="leading" constant="20" symbolic="YES" id="qMD-wn-Q1H"/>
-                            <constraint firstItem="c6i-1g-SoZ" firstAttribute="bottom" secondItem="f4z-u4-sQh" secondAttribute="bottom" constant="35" id="t5P-47-Pv2"/>
-                            <constraint firstItem="OwO-X9-DD4" firstAttribute="top" secondItem="c6i-1g-SoZ" secondAttribute="top" constant="-20" id="tdu-yv-LHc"/>
+                            <constraint firstItem="dZQ-1Q-2Vy" firstAttribute="bottom" secondItem="c6i-1g-SoZ" secondAttribute="bottom" id="vz7-qo-QOH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="c6i-1g-SoZ"/>
                     </view>
                     <connections>
-                        <outlet property="cancelPickingPhotoButton" destination="eOj-9n-8Py" id="4PT-yJ-7I4"/>
                         <outlet property="captureButton" destination="4Xe-b1-g2I" id="GZJ-s4-u4E"/>
                         <outlet property="capturedImageView" destination="OwO-X9-DD4" id="bHj-xc-eg3"/>
+                        <outlet property="capturedPhotoView" destination="dZQ-1Q-2Vy" id="0al-z7-4XO"/>
                         <outlet property="flashButton" destination="cK9-iR-K7l" id="cXR-It-Wqx"/>
                         <outlet property="flipButton" destination="Y06-cq-cFJ" id="F15-no-fh2"/>
                         <outlet property="gridButton" destination="LCQ-pX-Wy0" id="Lu4-dh-LbB"/>
-                        <outlet property="recognizedObjectLabel" destination="iwD-AB-STm" id="uot-FR-tTR"/>
+                        <outlet property="recognizedObjectLabel" destination="ppG-Qt-u6t" id="GlO-Ix-Qha"/>
+                        <outlet property="recognizedObjectView" destination="I93-1O-iXl" id="n2F-z7-yQF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kfI-XL-xLM" userLabel="First Responder" sceneMemberID="firstResponder"/>

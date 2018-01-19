@@ -11,12 +11,14 @@ import UIKit
 import CoreLocation
 
 struct PickedImage {
+    var galleryName: String
     var image: UIImage
     var location: CLLocation
     var date: Date
-    var tagRecognition: String
+    var tagRecognition: String?
     
-    init(image: UIImage, location: CLLocation, date: Date, recognizedObjectDescription: String = "") {
+    init(galleryName: String, image: UIImage, location: CLLocation, date: Date, recognizedObjectDescription: String? = nil) {
+        self.galleryName = galleryName
         self.image = image
         self.location = location
         self.date = date

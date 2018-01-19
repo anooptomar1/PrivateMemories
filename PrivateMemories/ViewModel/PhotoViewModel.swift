@@ -25,6 +25,7 @@ class PhotoViewModel: NSObject {
     var descriptionText: String = ""
     var fullsizePhoto: UIImage = UIImage()
     var thumbnailId: Double = NSDate().timeIntervalSince1970
+    var galleryName: String?
     
     // - MARK: Initializers
     
@@ -44,11 +45,14 @@ class PhotoViewModel: NSObject {
     
     init(from pickedImage: PickedImage) {
         super.init()
+        galleryName = pickedImage.galleryName
         dateStamp = getString(from: pickedImage.date)
         locationLat = pickedImage.location.coordinate.latitude
         locationLon = pickedImage.location.coordinate.longitude
         fullsizePhoto = pickedImage.image
-        tags.append(pickedImage.tagRecognition)
+        if let recognitionTag = pickedImage.tagRecognition {
+            tags.append(recognitionTag)
+        }
     }
     
     // - MARK: Data parsing methods
@@ -127,6 +131,13 @@ class PhotoViewModel: NSObject {
         return fetchedThumbnail!
     }
     
+    func getGallery(named: String) -> Gallery? {
+        let context = appDelegate?.persistentContainer.viewContext
+        let galleryFetchRequest: NSFetchRequest<Gallery> = Gallery.fetchRequest()
+        galleryFetchRequest.predicate = NSPredicate(format: "name == %@", named)
+        return try! context?.fetch(galleryFetchRequest).first
+    }
+    
     func saveImage(asNewObject: Bool) {
         let context = appDelegate!.persistentContainer.viewContext
         
@@ -136,6 +147,8 @@ class PhotoViewModel: NSObject {
         if asNewObject {
             photoToSave = NSEntityDescription.insertNewObject(forEntityName: "Photo", into: context) as? Photo
             thumbnailToSave = NSEntityDescription.insertNewObject(forEntityName: "Thumbnail", into: context) as? Thumbnail
+            thumbnailToSave?.gallery = getGallery(named: galleryName!)
+            print("SAVING NEW PICTURE FOR GALLERY \(galleryName!)")
         } else {
             thumbnailToSave = self.thumbnail
             photoToSave = self.thumbnail?.fullsizePhoto

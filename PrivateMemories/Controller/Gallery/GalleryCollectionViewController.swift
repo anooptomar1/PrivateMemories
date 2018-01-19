@@ -109,6 +109,10 @@ class GalleryCollectionViewController: UIViewController {
             let selectedCellIndexPath = sender as! IndexPath
             let selectedCell = self.collectionView.cellForItem(at: selectedCellIndexPath) as! GalleryCollectionViewCell
             photoDetailsViewController.thumbnailId = selectedCell.thumbnailId
+        } else {
+            if let cameraViewController = segue.destination as? CameraViewController {
+                cameraViewController.galleryName = galleryViewModel?.galleryName
+            }
         }
     }
     
