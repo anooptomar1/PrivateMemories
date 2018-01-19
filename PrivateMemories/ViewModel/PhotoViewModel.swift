@@ -36,12 +36,16 @@ class PhotoViewModel: NSObject {
             locationLat = photo.locationLat
             locationLon = photo.locationLon
             if let _date = photo.dateStamp { self.dateStamp = getString(from: _date) }
-            if let _tags = photo.tags { self.tags = _tags }
+            if let _tags = photo.tags { self.tags = _tags.components(separatedBy: ",")
+                for tag in tags {
+                    print("TAG: \(tag)")
+                }
+            }
             if let _photoData = photo.fullsizePhoto { self.fullsizePhoto = getImage(from: _photoData) }
             if let descriptionText = photo.descriptionText { self.descriptionText = descriptionText }
             if let cityName = photo.cityName { self.cityName = cityName }
+            }
         }
-    }
     
     init(from pickedImage: PickedImage) {
         super.init()
@@ -52,6 +56,9 @@ class PhotoViewModel: NSObject {
         fullsizePhoto = pickedImage.image
         if let recognitionTag = pickedImage.tagRecognition {
             tags.append(recognitionTag)
+            for tag in tags {
+                print("TAG: \(tag)")
+            }
         }
     }
     
@@ -137,6 +144,14 @@ class PhotoViewModel: NSObject {
         galleryFetchRequest.predicate = NSPredicate(format: "name == %@", named)
         return try! context?.fetch(galleryFetchRequest).first
     }
+        
+        func concatenate(array: [String]) -> String {
+            var concatenatedString = ""
+            for single in array {
+                concatenatedString.append("\(single),")
+            }
+            return concatenatedString
+        }
     
     func saveImage(asNewObject: Bool) {
         let context = appDelegate!.persistentContainer.viewContext
@@ -158,7 +173,11 @@ class PhotoViewModel: NSObject {
         photoToSave!.locationLat = locationLat!
         photoToSave!.cityName = cityName
         photoToSave!.dateStamp = getDate(from: self.dateStamp)
-        photoToSave!.tags = tags
+        for tag in tags {
+            print("SAVING TAG: \(tag)")
+        }
+        photoToSave!.tags = concatenate(array: tags)
+        print("SAVED: \(concatenate(array: tags))")
         photoToSave!.descriptionText = descriptionText
         print("SAVED WITH TEXT: \(descriptionText)")
         
