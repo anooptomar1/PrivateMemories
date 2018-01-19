@@ -24,6 +24,8 @@ class GalleryCollectionViewController: UIViewController {
     internal var searchController = UISearchController(searchResultsController: nil)
     internal var selectedGalleryName: String?
     
+    internal var isCurrentlySearching = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("CHECKING GALLERY NAME")

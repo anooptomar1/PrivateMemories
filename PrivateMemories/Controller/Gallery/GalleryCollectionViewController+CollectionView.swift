@@ -38,7 +38,7 @@ extension GalleryCollectionViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if !isEditing {
+        if !isEditing, !isCurrentlySearching {
             performSegue(withIdentifier: modelToDetailsSegueIdentifier, sender: indexPath)
         }
     }

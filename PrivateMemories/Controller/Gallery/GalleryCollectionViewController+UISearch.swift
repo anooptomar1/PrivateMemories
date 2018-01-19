@@ -22,7 +22,7 @@ extension GalleryCollectionViewController: UISearchResultsUpdating {
         
         let searchBar = searchController.searchBar
         //searchBar.scopeButtonTitles = ["All", "Tags", "Location"]
-        searchBar.placeholder = "Search photos by location"
+        searchBar.placeholder = "Enter the location or tag"
         searchBar.becomeFirstResponder()
         searchBar.backgroundColor = UIColor.white.alpha(0.5)
         searchBar.tintColor = UIColor.turquoise
@@ -35,6 +35,7 @@ extension GalleryCollectionViewController: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
         if searchController.searchBar.text != "" {
+            isCurrentlySearching = true
             self.galleryViewModel?.searchForObjects(withLocation: searchController.searchBar.text!)
         } else {
             self.galleryViewModel?.clearPredicatesAndFetch()
@@ -45,6 +46,7 @@ extension GalleryCollectionViewController: UISearchResultsUpdating {
 
 extension GalleryCollectionViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        isCurrentlySearching = false
         self.galleryViewModel?.clearPredicatesAndFetch()
         self.collectionView.reloadData()
         self.searchController.searchBar.resignFirstResponder()

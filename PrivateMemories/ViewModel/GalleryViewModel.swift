@@ -49,8 +49,8 @@ class GalleryViewModel: NSObject {
         }
     }
     
-    func searchForObjects(withLocation location: String) {
-        self.fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "gallery.name == %@ AND fullsizePhoto.location CONTAINS[cd] %@", galleryName, location) //[c]ase and [d]iacritic insensitive
+    func searchForObjects(withLocation text: String) {
+        self.fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "gallery.name == %@ AND fullsizePhoto.cityName CONTAINS[cd] %@", galleryName, text, text) //[c]ase and [d]iacritic insensitive
         fetchData()
     }
     
