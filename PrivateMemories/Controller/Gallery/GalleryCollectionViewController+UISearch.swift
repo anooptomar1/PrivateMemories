@@ -28,7 +28,7 @@ extension GalleryCollectionViewController: UISearchResultsUpdating {
         searchBar.searchBarStyle = .prominent
         searchBar.setSearchFieldBackgroundImage(UIImage(named: "whiteboard"), for: .normal)
         let textfieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField
-        textfieldInsideSearchBar?.textColor = UIColor.xPurple
+        textfieldInsideSearchBar?.textColor = UIColor.white
         searchBar.delegate = self
     }
     

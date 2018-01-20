@@ -18,6 +18,12 @@ class GalleryCollectionViewController: UIViewController {
     internal var padding: CGFloat = 10.0
     internal var numberOfItemsInRow = 3
     
+    @IBOutlet weak var galleryButton: FancyRoundedButton!
+    @IBOutlet weak var cameraButton: FancyRoundedButton!
+    @IBOutlet weak var sortButton: FancyRoundedButton!
+    @IBOutlet weak var addButton: FancyRoundedButton!
+    @IBOutlet weak var editButton: FancyRoundedButton!
+    
     internal var galleryViewModel: GalleryViewModel?
     internal var blockOperations: [BlockOperation] = []
     internal var shouldReloadCollectionView = false

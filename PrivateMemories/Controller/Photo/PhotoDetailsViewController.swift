@@ -38,6 +38,7 @@ class PhotoDetailsViewController: UIViewController {
         provideGestureRecognizing()
         //setupTextView()
         descriptionTextView.delegate = self
+        descriptionTextView.layer.cornerRadius = 10
         addBorders()
         setData()
     }

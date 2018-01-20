@@ -103,22 +103,22 @@ extension SettingsViewController: UITableViewDataSource {
         
         switch indexPath {
             case CellIdentifiers.setCode:
-                cellContent = ("Set new code", UIImage(named: "del")!)
+                cellContent = ("Set new code", UIImage(named: "padlock")!)
             case CellIdentifiers.codeRequired:
                 cell.selectionStyle = .none
-                cellContent = ("Require code", UIImage(named: "hea")!)
+                cellContent = ("Require code", UIImage(named: "key")!)
                 addConfiguredSwitch(to: cell)
             case CellIdentifiers.opensourceLibraries:
-                cellContent = ("Open-source libraries", UIImage(named: "del")!)
+                cellContent = ("Open-source libraries", UIImage(named: "code")!)
                 cell.accessoryType = .disclosureIndicator
             case CellIdentifiers.appVersion:
-                cellContent = ("Version", UIImage(named: "edi")!)
+                cellContent = ("Version", UIImage(named: "info")!)
                 addAccessoryLabel(to: cell, with: preferences.appVersion)
             case CellIdentifiers.appBuild:
-                cellContent = ("Build", UIImage(named: "hea")!)
+                cellContent = ("Build", UIImage(named: "tools")!)
                 addAccessoryLabel(to: cell, with: preferences.appBuild)
             case CellIdentifiers.reportIssue:
-                cellContent = ("Report bug/Contact", UIImage(named: "del")!)
+                cellContent = ("Report bug/Contact", UIImage(named: "contact")!)
             default: break
         }
         

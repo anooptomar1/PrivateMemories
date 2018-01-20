@@ -10,7 +10,7 @@ import UIKit
 
 class GalleryCollectionViewCell: UICollectionViewCell {
     
-    let checkedImageName = "checked"
+    let checkedImageName = "delete"
     
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var checkboxImageView: UIImageView!
