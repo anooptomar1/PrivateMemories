@@ -103,9 +103,10 @@ extension AlbumViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! AlbumCollectionViewCell
         let fetchedThumbnail: (name: String, creationDate: String) = self.albumViewModel.getDataOfFetchedObject(at: indexPath)
         
+        cell.layer.cornerRadius = 10
         cell.titleLabel.text = fetchedThumbnail.name
         cell.subtitleLabel.text = fetchedThumbnail.creationDate
-        cell.imageView.image = UIImage(named: "photo")!
+        cell.imageView.image = UIImage(named: "cellBg\((indexPath.row)%8)")!
         cell.deleteButton.tag = indexPath.row
         cell.deleteButton.addTarget(self, action: #selector(deleteButtonPressed(_:)), for: .touchUpInside)
         

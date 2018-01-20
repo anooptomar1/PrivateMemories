@@ -291,12 +291,12 @@
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ckt-C0-hpc">
-                                                            <rect key="frame" x="5" y="5" width="45" height="30"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ckt-C0-hpc">
+                                                            <rect key="frame" x="5" y="5" width="32" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="Uz7-6w-FRk"/>
                                                             </constraints>
-                                                            <state key="normal" title="Delete"/>
+                                                            <state key="normal" image="delete"/>
                                                             <connections>
                                                                 <action selector="deleteButtonPressed:" destination="FZG-fh-Y7o" eventType="touchUpInside" id="fYQ-Ri-Dki"/>
                                                             </connections>

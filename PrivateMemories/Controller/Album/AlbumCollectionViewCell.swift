@@ -33,8 +33,7 @@ class AlbumCollectionViewCell: UICollectionViewCell {
         titleLabel.transform = CGAffineTransform(scaleX: scale, y: scale)
     }
     
-    @IBAction func deleteButtonPressed(_ sender: Any) {
-    }
+    @IBAction func deleteButtonPressed(_ sender: Any) {}
     
     
 }
