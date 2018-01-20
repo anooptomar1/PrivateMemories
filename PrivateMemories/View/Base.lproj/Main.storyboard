@@ -697,7 +697,7 @@
             </objects>
             <point key="canvasLocation" x="544.79999999999995" y="857.72113943028489"/>
         </scene>
-        <!--Photo-->
+        <!--Photo Details View Controller-->
         <scene sceneID="0jD-Ht-Vu3">
             <objects>
                 <viewController id="Qmv-qQ-xuV" customClass="PhotoDetailsViewController" customModule="PrivateMemories" customModuleProvider="target" sceneMemberID="viewController">
@@ -1011,7 +1011,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Gmo-mn-E8u"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Photo" id="JaW-z1-atN"/>
+                    <navigationItem key="navigationItem" id="JaW-z1-atN"/>
                     <connections>
                         <outlet property="dateLabel" destination="t4G-02-exS" id="AxN-mg-wRK"/>
                         <outlet property="descriptionTextView" destination="199-yc-0Tl" id="y2j-kE-mZ0"/>
