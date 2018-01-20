@@ -361,12 +361,12 @@
                         <viewLayoutGuide key="safeArea" id="3dv-nt-IRr"/>
                     </view>
                     <navigationItem key="navigationItem" title="Galleries" id="CeA-cb-Rgk">
-                        <barButtonItem key="leftBarButtonItem" image="settings" id="YFg-Ro-YI2">
+                        <barButtonItem key="leftBarButtonItem" image="settings_bar" id="YFg-Ro-YI2">
                             <connections>
                                 <segue destination="ZUj-p4-vR7" kind="presentation" id="LjR-d5-rhU"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="add" id="KIP-lC-0aO">
+                        <barButtonItem key="rightBarButtonItem" image="add_bar" id="KIP-lC-0aO">
                             <connections>
                                 <action selector="addGalleryButtonPressed:" destination="fx3-7o-ume" id="lwJ-1S-r5x"/>
                             </connections>
@@ -1060,6 +1060,7 @@
     </scenes>
     <resources>
         <image name="add" width="32" height="32"/>
+        <image name="add_bar" width="24" height="24"/>
         <image name="arrow" width="32" height="32"/>
         <image name="backgroundImage" width="397" height="706"/>
         <image name="camera" width="32" height="32"/>
@@ -1075,6 +1076,7 @@
         <image name="grid" width="16" height="16"/>
         <image name="location" width="32" height="32"/>
         <image name="settings" width="32" height="32"/>
+        <image name="settings_bar" width="24" height="24"/>
         <image name="share" width="32" height="32"/>
         <image name="sort" width="32" height="32"/>
     </resources>
