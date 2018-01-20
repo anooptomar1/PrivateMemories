@@ -41,6 +41,7 @@ class GalleryCollectionViewController: UIViewController {
             return
         }
         print("CHECKED")
+        self.title = selectedGalleryName
         galleryViewModel = GalleryViewModel(galleryName: selectedGalleryName)
         galleryViewModel?.delegate = self
         print("LOADING PHOTOS")

@@ -256,7 +256,7 @@
             </objects>
             <point key="canvasLocation" x="-1983" y="99"/>
         </scene>
-        <!--Album View Controller-->
+        <!--Galleries-->
         <scene sceneID="CdH-Bw-cdV">
             <objects>
                 <viewController id="fx3-7o-ume" customClass="AlbumViewController" customModule="PrivateMemories" customModuleProvider="target" sceneMemberID="viewController">
@@ -360,7 +360,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3dv-nt-IRr"/>
                     </view>
-                    <navigationItem key="navigationItem" id="CeA-cb-Rgk">
+                    <navigationItem key="navigationItem" title="Galleries" id="CeA-cb-Rgk">
                         <barButtonItem key="leftBarButtonItem" image="settings" id="YFg-Ro-YI2">
                             <connections>
                                 <segue destination="ZUj-p4-vR7" kind="presentation" id="LjR-d5-rhU"/>

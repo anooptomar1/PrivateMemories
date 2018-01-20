@@ -69,13 +69,12 @@ class AlbumViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
             let textField = alert?.textFields![0]
             if let galleryName = textField?.text {
-                print("ADDING GALLERY")
                 if galleryName != "" {
                     self.albumViewModel.saveGallery(named: galleryName, completion: { (addedSuccessfully) in
                         if !addedSuccessfully {
-                            print("This gallery name is already taken")
-                        } else {
-                            print("SUCCESSFULLY ADDED")
+                            let alert = UIAlertController(title: "Error", message: "This gallery name is already taken", preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                            self.present(alert, animated: true, completion: nil)
                         }
                     })
                     self.reloadAlbum()
@@ -97,13 +96,11 @@ extension AlbumViewController: UICollectionViewDataSource {
 
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("NUMBER OF ITEMS IN SECTION: \(self.albumViewModel.getNumberOfFetchedObjects())")
         return self.albumViewModel.getNumberOfFetchedObjects()
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! AlbumCollectionViewCell
-        print("CELL FOR ROW \(indexPath.row)")
         let fetchedThumbnail: (name: String, creationDate: String) = self.albumViewModel.getDataOfFetchedObject(at: indexPath)
         
         cell.titleLabel.text = fetchedThumbnail.name

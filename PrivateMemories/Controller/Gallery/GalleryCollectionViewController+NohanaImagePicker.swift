@@ -30,7 +30,7 @@ extension GalleryCollectionViewController: NohanaImagePickerControllerDelegate {
                     self.showLargeThumbnailPicker()
                 } else {
                     let alert = UIAlertController(title: "Error", message: "Denied access to photos.", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
                     self.present(alert, animated: true, completion: nil)
                 }
             })
