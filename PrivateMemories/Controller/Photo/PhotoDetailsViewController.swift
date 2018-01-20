@@ -12,7 +12,8 @@ import Lightbox
 class PhotoDetailsViewController: UIViewController {
     
     //MARK: IB Outlets
-    
+
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var tagCollectionView: UICollectionView!
     @IBOutlet weak var tagView: UIView!
     @IBOutlet weak var insertTagView: UIView!
@@ -30,23 +31,76 @@ class PhotoDetailsViewController: UIViewController {
     
     var isGettingDataFromPicker: Bool = false
     var photoFromPicker: PickedImage?
-    var thumbnailId: Double? // czy może id thumbnaila?
+    var thumbnailId: Double?
     var photoViewModel: PhotoViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         provideGestureRecognizing()
-        //setupTextView()
         descriptionTextView.delegate = self
         descriptionTextView.layer.cornerRadius = 10
         descriptionTextView.backgroundColor = UIColor.xBackground
         addBorders()
         setData()
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapView(gesture:)))
+        self.view.addGestureRecognizer(tapGesture)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        addObservers()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        removeObservers()
+    }
+    
+    // MARK: Notifications for the keyboard
+    
+    @objc func didTapView(gesture: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
+    func addObservers() {
+        NotificationCenter.default.addObserver(forName: .UIKeyboardWillShow, object: nil, queue: nil) {
+            notification in
+            self.keyboardWillShow(notification: notification)
+        }
+        NotificationCenter.default.addObserver(forName: .UIKeyboardWillHide, object: nil, queue: nil) { (notification) in
+            self.keyboardWillHide(notification: notification)
+        }
+    }
+
+    func removeObservers() {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    func keyboardWillShow(notification: Notification) {
+        guard let userInfo = notification.userInfo,
+            let frame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+                return
+        }
+        let contentInset = UIEdgeInsets(top: 0, left: 0, bottom: frame.height, right: 0)
+        scrollView.contentInset = contentInset
+    }
+    
+    func keyboardWillHide(notification: Notification) {
+        scrollView.contentInset = UIEdgeInsets.zero
+    }
+    
+    // MARK: ViewModel
+    
+    func setViewModel(fromPicker: Bool) {
+        if fromPicker {
+            photoViewModel = PhotoViewModel(from: photoFromPicker!)
+        } else {
+            photoViewModel = PhotoViewModel(from: thumbnailId!)
+        }
     }
     
     func setData() {
         setViewModel(fromPicker: isGettingDataFromPicker)
-        
         if let viewModel = photoViewModel {
             photoImageView.image = viewModel.fullsizePhoto
             dateLabel.text = viewModel.dateStamp
@@ -62,6 +116,8 @@ class PhotoDetailsViewController: UIViewController {
         }
     }
     
+    // MARK: Layout
+    
     func setupTextView() {
         let imagePathLeft = UIBezierPath(rect: quotationMarkLeft.frame)
         let imagePathRight = UIBezierPath(rect: quotationMarkRight.frame)
@@ -75,13 +131,7 @@ class PhotoDetailsViewController: UIViewController {
         insertTagView.layer.borderColor = UIColor.purple.cgColor
     }
     
-    func setViewModel(fromPicker: Bool) {
-        if fromPicker {
-            photoViewModel = PhotoViewModel(from: photoFromPicker!)
-        } else {
-            photoViewModel = PhotoViewModel(from: thumbnailId!)
-        }
-    }
+    // MARK: IBActions
     
     @IBAction func addTagButtonPressed(_ sender: Any) {
         flipImageViews(showTextField: true)

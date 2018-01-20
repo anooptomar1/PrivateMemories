@@ -502,7 +502,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="52Y-Xh-BeB" firstAttribute="width" secondItem="azi-4x-HqM" secondAttribute="width" id="2YN-dY-VtA"/>
                             <constraint firstItem="IZd-Ea-ySm" firstAttribute="height" secondItem="azi-4x-HqM" secondAttribute="height" constant="-48" id="55d-vF-4ru"/>
@@ -1020,6 +1020,7 @@
                         <outlet property="photoImageView" destination="Rw2-Gp-Szb" id="6UM-2F-fUo"/>
                         <outlet property="quotationMarkLeft" destination="KF7-fB-O6r" id="QYV-RP-L5Y"/>
                         <outlet property="quotationMarkRight" destination="9c0-Xa-RWi" id="vkp-GB-1cf"/>
+                        <outlet property="scrollView" destination="CCw-6N-W9v" id="65q-Yi-L7W"/>
                         <outlet property="tagCollectionView" destination="cAp-HQ-H6U" id="WpC-Ei-H6M"/>
                         <outlet property="tagTextField" destination="g1h-Ag-JLB" id="Phk-2X-h1d"/>
                         <outlet property="tagView" destination="4AB-EO-Kd4" id="7J8-lP-2gX"/>
