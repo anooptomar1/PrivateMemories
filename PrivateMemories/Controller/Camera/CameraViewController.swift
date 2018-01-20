@@ -50,6 +50,7 @@ class CameraViewController: UIViewController {
         super.viewDidLoad()
         configureLocationManager()
         setupGridView()
+        recognizedObjectView.layer.cornerRadius = 10
         setNextFlashMode()
         setupInterface(isCameraActive:true)
         setupCaptureButtonStyle()
@@ -153,24 +154,25 @@ class CameraViewController: UIViewController {
         let offset: CGFloat = (self.view.frame.height - self.view.frame.width)/2
         let gridFrame = CGRect(x: 0, y: offset, width: self.view.frame.width, height: self.view.frame.width)
         gridView = GridView(frame: gridFrame, columns: 3)
-        gridView?.isHidden = true
+        self.view.addSubview(gridView!)
+        setGridView(hidden: true)
     }
     
     func setNextFlashMode() {
-        var buttonTitle = ""
+        var imageName = ""
             switch currentFlashMode {
                 case .off:
                     currentFlashMode = .auto
-                    buttonTitle = "Auto"
+                    imageName = "camera_auto"
                 case .auto:
                     currentFlashMode = .on
-                    buttonTitle = "On"
+                    imageName = "camera_flash"
                 default:
                     currentFlashMode = .off
-                    buttonTitle = "Off"
+                    imageName = "camera_noFlash"
             }
         
-            flashButton.setTitle(buttonTitle, for: .normal)
+        flashButton.setImage(UIImage(named: imageName), for: .normal)
     }
     
     func setupCaptureButtonStyle() {
@@ -308,8 +310,14 @@ class CameraViewController: UIViewController {
     }
     
     @IBAction func gridButtonPressed(_ sender: Any) {
-        gridView?.isHidden = gridView!.isHidden
-        self.view.addSubview(gridView!)
+        setGridView(hidden: !gridView!.isHidden)
+    }
+    
+    func setGridView(hidden: Bool) {
+        print("SETTING GRID VIEW \(hidden)")
+        gridView?.isHidden = hidden
+        let imageName = hidden ? "cameraNoGrid" : "cameraGrid"
+        gridButton.setImage(UIImage(named: imageName)!, for: .normal)
     }
     
 }
@@ -323,7 +331,7 @@ extension CameraViewController: AVCapturePhotoCaptureDelegate {
             recognizedObjectLabel.text = "Analyzing..."
             setupInterface(isCameraActive:false)
             recognizedObjectView.isHidden = false
-            gridView?.isHidden = true
+            setGridView(hidden: true)
             recognizeObject()
         }
     }
