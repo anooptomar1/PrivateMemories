@@ -23,7 +23,7 @@
 		E225013D1FCCEDB100C10DA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E22501391FCCEDB000C10DA3 /* Main.storyboard */; };
 		E225013E1FCCEDB100C10DA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E225013B1FCCEDB100C10DA3 /* LaunchScreen.storyboard */; };
 		E22501411FCD01C000C10DA3 /* LayoutConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22501401FCD01C000C10DA3 /* LayoutConstants.swift */; };
-		E22510E21FCD975600F54494 /* AlbumCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22510E11FCD975600F54494 /* AlbumCollectionViewController.swift */; };
+		E22510E21FCD975600F54494 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22510E11FCD975600F54494 /* AlbumViewController.swift */; };
 		E22510E41FCD97BD00F54494 /* AlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22510E31FCD97BD00F54494 /* AlbumCollectionViewCell.swift */; };
 		E22510E61FCD9AAD00F54494 /* AlbumCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22510E51FCD9AAD00F54494 /* AlbumCollectionViewLayout.swift */; };
 		E22510E81FCDA40400F54494 /* AlbumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22510E71FCDA40400F54494 /* AlbumViewModel.swift */; };
@@ -73,7 +73,7 @@
 		E225013A1FCCEDB000C10DA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = PrivateMemories/View/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		E225013C1FCCEDB100C10DA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = PrivateMemories/View/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		E22501401FCD01C000C10DA3 /* LayoutConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutConstants.swift; sourceTree = "<group>"; };
-		E22510E11FCD975600F54494 /* AlbumCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewController.swift; sourceTree = "<group>"; };
+		E22510E11FCD975600F54494 /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
 		E22510E31FCD97BD00F54494 /* AlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlbumCollectionViewCell.swift; path = PrivateMemories/Controller/Album/AlbumCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		E22510E51FCD9AAD00F54494 /* AlbumCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewLayout.swift; sourceTree = "<group>"; };
 		E22510E71FCDA40400F54494 /* AlbumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewModel.swift; sourceTree = "<group>"; };
@@ -131,7 +131,7 @@
 		E22501261FCCED2700C10DA3 /* Album */ = {
 			isa = PBXGroup;
 			children = (
-				E22510E11FCD975600F54494 /* AlbumCollectionViewController.swift */,
+				E22510E11FCD975600F54494 /* AlbumViewController.swift */,
 			);
 			path = Album;
 			sourceTree = "<group>";
@@ -442,7 +442,7 @@
 				E22C33691FDB782E0006490A /* SettingsTableViewCell.swift in Sources */,
 				E2A7B6261FD772B9000DB556 /* SettingsViewController.swift in Sources */,
 				E2386C742012C04F000C2D22 /* UIViewControllerExtension.swift in Sources */,
-				E22510E21FCD975600F54494 /* AlbumCollectionViewController.swift in Sources */,
+				E22510E21FCD975600F54494 /* AlbumViewController.swift in Sources */,
 				E2310DD21FBE77C700A7B3B2 /* PickedImage.swift in Sources */,
 				E226035A1FBEFD7D0055568F /* GalleryCollectionViewController+CollectionView.swift in Sources */,
 				E22121A020114EFA00CBAFE1 /* PhotoDetailsViewController+UITextViewDelegate.swift in Sources */,
