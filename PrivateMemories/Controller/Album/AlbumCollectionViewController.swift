@@ -22,8 +22,11 @@ class AlbumCollectionViewController: UICollectionViewController {
     
     func setupLayout() {
         view.backgroundColor = UIColor.darkGray
-        collectionView!.backgroundColor = UIColor.clear
-        collectionView!.decelerationRate = UIScrollViewDecelerationRateFast
+        collectionView?.decelerationRate = UIScrollViewDecelerationRateFast
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
     }
     
     func reloadAlbum() {

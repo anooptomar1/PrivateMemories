@@ -26,6 +26,7 @@ class PhotoViewModel: NSObject {
     var fullsizePhoto: UIImage = UIImage()
     var thumbnailId: Double = NSDate().timeIntervalSince1970
     var galleryName: String?
+    let descriptionPlaceholder = "Add text describing the photo, e.g. \"Amazing holidays in New York\""
     
     // - MARK: Initializers
     
@@ -42,7 +43,7 @@ class PhotoViewModel: NSObject {
                 }
             }
             if let _photoData = photo.fullsizePhoto { self.fullsizePhoto = getImage(from: _photoData) }
-            if let descriptionText = photo.descriptionText { self.descriptionText = descriptionText }
+            if let descriptionText = photo.descriptionText { self.descriptionText = (descriptionText == "") ? descriptionPlaceholder : descriptionText }
             if let cityName = photo.cityName { self.cityName = cityName }
             }
         }
@@ -54,6 +55,7 @@ class PhotoViewModel: NSObject {
         locationLat = pickedImage.location.coordinate.latitude
         locationLon = pickedImage.location.coordinate.longitude
         fullsizePhoto = pickedImage.image
+        descriptionText = descriptionPlaceholder
         if let recognitionTag = pickedImage.tagRecognition {
             tags.append(recognitionTag)
             for tag in tags {
@@ -163,7 +165,6 @@ class PhotoViewModel: NSObject {
             photoToSave = NSEntityDescription.insertNewObject(forEntityName: "Photo", into: context) as? Photo
             thumbnailToSave = NSEntityDescription.insertNewObject(forEntityName: "Thumbnail", into: context) as? Thumbnail
             thumbnailToSave?.gallery = getGallery(named: galleryName!)
-            print("SAVING NEW PICTURE FOR GALLERY \(galleryName!)")
         } else {
             thumbnailToSave = self.thumbnail
             photoToSave = self.thumbnail?.fullsizePhoto
@@ -173,13 +174,8 @@ class PhotoViewModel: NSObject {
         photoToSave!.locationLat = locationLat!
         photoToSave!.cityName = cityName
         photoToSave!.dateStamp = getDate(from: self.dateStamp)
-        for tag in tags {
-            print("SAVING TAG: \(tag)")
-        }
         photoToSave!.tags = concatenate(array: tags)
-        print("SAVED: \(concatenate(array: tags))")
-        photoToSave!.descriptionText = descriptionText
-        print("SAVED WITH TEXT: \(descriptionText)")
+        photoToSave!.descriptionText = (descriptionText == descriptionPlaceholder) ? "" : descriptionText
         
         thumbnailToSave!.thumbnailImage = getThumbnailData(from: self.fullsizePhoto)
         thumbnailToSave!.id = self.thumbnailId
@@ -187,8 +183,6 @@ class PhotoViewModel: NSObject {
         
         appDelegate?.saveContext()
         context.refreshAllObjects()
-        
-        //notifyAboutReloadingGallery()
     }
     
     func deleteImage() {

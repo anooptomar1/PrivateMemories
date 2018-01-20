@@ -21,6 +21,9 @@ class PhotoDetailsViewController: UIViewController {
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var quotationMarkLeft: UIImageView!
+    @IBOutlet weak var quotationMarkRight: UIImageView!
+    
     var tags: [String] = []
     
     //MARK: Properties
@@ -33,7 +36,9 @@ class PhotoDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         provideGestureRecognizing()
+        //setupTextView()
         descriptionTextView.delegate = self
+        addBorders()
         setData()
     }
     
@@ -53,6 +58,19 @@ class PhotoDetailsViewController: UIViewController {
                 })
             }
         }
+    }
+    
+    func setupTextView() {
+        let imagePathLeft = UIBezierPath(rect: quotationMarkLeft.frame)
+        let imagePathRight = UIBezierPath(rect: quotationMarkRight.frame)
+        descriptionTextView.textContainer.exclusionPaths = [imagePathLeft, imagePathRight]
+    }
+    
+    func addBorders() {
+        tagView.layer.borderWidth = 1.0
+        tagView.layer.borderColor = UIColor.xPurple.cgColor
+        insertTagView.layer.borderWidth = 1.0
+        insertTagView.layer.borderColor = UIColor.purple.cgColor
     }
     
     func setViewModel(fromPicker: Bool) {

@@ -176,7 +176,7 @@ class CameraViewController: UIViewController {
     func setupCaptureButtonStyle() {
         captureButton.clipsToBounds = true
         captureButton.layer.cornerRadius = captureButton.frame.height/2
-        captureButton.layer.borderColor = UIColor.turquoise.cgColor
+        captureButton.layer.borderColor = UIColor.red.cgColor
         captureButton.layer.borderWidth = 6
         captureButton.backgroundColor = UIColor.clear
     }

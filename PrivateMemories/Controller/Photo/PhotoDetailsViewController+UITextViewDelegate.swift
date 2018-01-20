@@ -25,13 +25,13 @@ extension PhotoDetailsViewController: UITextViewDelegate {
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        print("TEXTVIEW STARTED EDITING")
+        if textView.text == photoViewModel?.descriptionPlaceholder {
+            textView.text = ""
+        }
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
         photoViewModel?.descriptionText = textView.text
-        print("SAVING WITH TEXT: \(textView.text)")
         photoViewModel?.saveImage(asNewObject: false)
-        print("VIEW MODEL TEXT: \(photoViewModel?.descriptionText)")
     }
 }

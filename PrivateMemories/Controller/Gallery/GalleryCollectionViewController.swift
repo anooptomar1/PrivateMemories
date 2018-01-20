@@ -15,7 +15,7 @@ class GalleryCollectionViewController: UIViewController {
     let notificationName = "reloadGallery"
     
     @IBOutlet weak var collectionView: UICollectionView!
-    internal var padding: CGFloat = 2.0
+    internal var padding: CGFloat = 10.0
     internal var numberOfItemsInRow = 3
     
     internal var galleryViewModel: GalleryViewModel?

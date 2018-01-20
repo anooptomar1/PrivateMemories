@@ -41,6 +41,8 @@
 		E2310DD41FBE862100A7B3B2 /* PhotoDetailsViewController+CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2310DD31FBE862100A7B3B2 /* PhotoDetailsViewController+CollectionViewDataSource.swift */; };
 		E2310DD61FBE863900A7B3B2 /* PhotoDetailsViewController+CollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2310DD51FBE863900A7B3B2 /* PhotoDetailsViewController+CollectionViewDelegateFlowLayout.swift */; };
 		E2386C70201251FA000C2D22 /* PermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2386C6F201251FA000C2D22 /* PermissionViewController.swift */; };
+		E2386C742012C04F000C2D22 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2386C732012C04F000C2D22 /* UIViewControllerExtension.swift */; };
+		E2386C762012D064000C2D22 /* FancyRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2386C752012D064000C2D22 /* FancyRoundedButton.swift */; };
 		E23EA3FF1FC3A7590078A366 /* GalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23EA3FE1FC3A7590078A366 /* GalleryViewModel.swift */; };
 		E24694911FD780D80093AFB0 /* SettingsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24694901FD780D80093AFB0 /* SettingsHandler.swift */; };
 		E255B7391FC7391C001F0E27 /* GalleryCollectionViewController+NohanaImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E255B7381FC7391C001F0E27 /* GalleryCollectionViewController+NohanaImagePicker.swift */; };
@@ -90,6 +92,8 @@
 		E2310DD31FBE862100A7B3B2 /* PhotoDetailsViewController+CollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoDetailsViewController+CollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		E2310DD51FBE863900A7B3B2 /* PhotoDetailsViewController+CollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoDetailsViewController+CollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
 		E2386C6F201251FA000C2D22 /* PermissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionViewController.swift; sourceTree = "<group>"; };
+		E2386C732012C04F000C2D22 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		E2386C752012D064000C2D22 /* FancyRoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FancyRoundedButton.swift; sourceTree = "<group>"; };
 		E23EA3FE1FC3A7590078A366 /* GalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewModel.swift; sourceTree = "<group>"; };
 		E24694901FD780D80093AFB0 /* SettingsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHandler.swift; sourceTree = "<group>"; };
 		E255B7381FC7391C001F0E27 /* GalleryCollectionViewController+NohanaImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalleryCollectionViewController+NohanaImagePicker.swift"; sourceTree = "<group>"; };
@@ -138,6 +142,7 @@
 				E22501401FCD01C000C10DA3 /* LayoutConstants.swift */,
 				E2235B241FDCC67A00DC7B5D /* ImageProvider.swift */,
 				E22C33661FDA17A20006490A /* DesignableView.swift */,
+				E2386C752012D064000C2D22 /* FancyRoundedButton.swift */,
 				E22E4F911FCF7C5A002A3CB2 /* GridView.swift */,
 				E22510E51FCD9AAD00F54494 /* AlbumCollectionViewLayout.swift */,
 			);
@@ -194,6 +199,7 @@
 				E225012A1FCCED7700C10DA3 /* CGSizeExtension.swift */,
 				E22501291FCCED7700C10DA3 /* ColorExtension.swift */,
 				E225012D1FCCED7800C10DA3 /* PHAssetExtension.swift */,
+				E2386C732012C04F000C2D22 /* UIViewControllerExtension.swift */,
 				E225012C1FCCED7800C10DA3 /* StringExtension.swift */,
 				E22501271FCCED7700C10DA3 /* UIImageExtension.swift */,
 				E225012B1FCCED7700C10DA3 /* UIViewExtension.swift */,
@@ -435,6 +441,7 @@
 				E22501331FCCED7800C10DA3 /* StringExtension.swift in Sources */,
 				E22C33691FDB782E0006490A /* SettingsTableViewCell.swift in Sources */,
 				E2A7B6261FD772B9000DB556 /* SettingsViewController.swift in Sources */,
+				E2386C742012C04F000C2D22 /* UIViewControllerExtension.swift in Sources */,
 				E22510E21FCD975600F54494 /* AlbumCollectionViewController.swift in Sources */,
 				E2310DD21FBE77C700A7B3B2 /* PickedImage.swift in Sources */,
 				E226035A1FBEFD7D0055568F /* GalleryCollectionViewController+CollectionView.swift in Sources */,
@@ -463,6 +470,7 @@
 				E22501301FCCED7800C10DA3 /* ColorExtension.swift in Sources */,
 				E2DA41EE1FA77BF800DED69C /* PrivateMemories.xcdatamodeld in Sources */,
 				E22E4F921FCF7C5A002A3CB2 /* GridView.swift in Sources */,
+				E2386C762012D064000C2D22 /* FancyRoundedButton.swift in Sources */,
 				E22510E81FCDA40400F54494 /* AlbumViewModel.swift in Sources */,
 				E225012F1FCCED7800C10DA3 /* AspectFitButton.swift in Sources */,
 				E2DA41FB1FA77D9D00DED69C /* GalleryCollectionViewController.swift in Sources */,

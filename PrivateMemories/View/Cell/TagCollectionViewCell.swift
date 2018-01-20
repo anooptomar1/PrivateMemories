@@ -18,7 +18,7 @@ class TagCollectionViewCell: UICollectionViewCell {
     }
     
     func setupLayout() {
-        self.backgroundColor = UIColor.black
+        self.backgroundColor = UIColor.xPurple
         self.tagLabel.textColor = UIColor.white
         self.layer.cornerRadius = 10.0
     }

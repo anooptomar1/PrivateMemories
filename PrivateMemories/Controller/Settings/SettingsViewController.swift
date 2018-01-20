@@ -34,6 +34,7 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.layer.cornerRadius = 10.0
     }
     
     func setNewCode() {
@@ -48,9 +49,9 @@ class SettingsViewController: UIViewController {
         let passcodeViewController = TOPasscodeViewController(style: .translucentDark, passcodeType: .sixDigits)
         passcodeViewController.allowBiometricValidation = false //checkIfTouchIDAvailable()
         passcodeViewController.rightAccessoryButton = UIButton()
-        passcodeViewController.accessoryButtonTintColor = UIColor.turquoise
-        passcodeViewController.inputProgressViewTintColor = UIColor.turquoise
-        passcodeViewController.keypadButtonTextColor = UIColor.turquoise
+        passcodeViewController.accessoryButtonTintColor = UIColor.white
+        passcodeViewController.inputProgressViewTintColor = UIColor.white
+        passcodeViewController.keypadButtonTextColor = UIColor.white
         passcodeViewController.delegate = self
         self.present(passcodeViewController, animated: true, completion: nil)
     }
@@ -138,7 +139,7 @@ extension SettingsViewController: UITableViewDataSource {
         cell.selectionStyle = .none
         switchCode = UISwitch(frame: CGRect(x: 0, y: 0, width: 50, height: 30))
         cell.accessoryView = switchCode
-        switchCode.onTintColor = UIColor.turquoise
+        switchCode.onTintColor = UIColor.xPurple
         switchCode.isOn = preferences.isPasscodeRequired
         switchCode.addTarget(self, action: #selector(changeCodeRequired(_:)), for: .valueChanged)
     }

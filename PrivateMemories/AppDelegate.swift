@@ -67,9 +67,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let passcodeViewController = TOPasscodeViewController(style: .translucentDark, passcodeType: .sixDigits)
         passcodeViewController.allowBiometricValidation = false //checkIfTouchIDAvailable()
         passcodeViewController.rightAccessoryButton = UIButton()
-        passcodeViewController.accessoryButtonTintColor = UIColor.turquoise
-        passcodeViewController.inputProgressViewTintColor = UIColor.turquoise
-        passcodeViewController.keypadButtonTextColor = UIColor.turquoise
         passcodeViewController.delegate = self
         rootViewController.present(passcodeViewController, animated: animated, completion: nil)
     }

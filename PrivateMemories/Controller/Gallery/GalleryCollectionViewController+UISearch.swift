@@ -22,11 +22,13 @@ extension GalleryCollectionViewController: UISearchResultsUpdating {
         searchController.searchBar.scopeButtonTitles = ["All", "Location", "Tags"]
         
         let searchBar = searchController.searchBar
-        //searchBar.scopeButtonTitles = ["All", "Tags", "Location"]
         searchBar.placeholder = "Enter the location or tag"
         searchBar.becomeFirstResponder()
-        searchBar.backgroundColor = UIColor.white.alpha(0.5)
-        searchBar.tintColor = UIColor.turquoise
+        searchBar.tintColor = UIColor.white
+        searchBar.searchBarStyle = .prominent
+        searchBar.setSearchFieldBackgroundImage(UIImage(named: "whiteboard"), for: .normal)
+        let textfieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField
+        textfieldInsideSearchBar?.textColor = UIColor.xPurple
         searchBar.delegate = self
     }
     
