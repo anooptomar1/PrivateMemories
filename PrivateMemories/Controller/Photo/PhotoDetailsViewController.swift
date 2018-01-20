@@ -39,6 +39,7 @@ class PhotoDetailsViewController: UIViewController {
         //setupTextView()
         descriptionTextView.delegate = self
         descriptionTextView.layer.cornerRadius = 10
+        descriptionTextView.backgroundColor = UIColor.xBackground
         addBorders()
         setData()
     }
