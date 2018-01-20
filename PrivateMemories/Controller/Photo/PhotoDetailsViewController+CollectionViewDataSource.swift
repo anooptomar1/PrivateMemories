@@ -15,24 +15,21 @@ extension PhotoDetailsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCollectionViewCell", for: indexPath) as! TagCollectionViewCell
         cell.tagLabel.text = "#\(tags[indexPath.row])"
-
-        cell.deleteButton.tag = indexPath.row
-        cell.deleteButton.addTarget(self, action: #selector(deleteTagButtonPressed(_:)), for: .touchUpInside)
         
         return cell
-    }
-    
-    @objc func deleteTagButtonPressed(_ sender: UIButton) {
-        photoViewModel?.tags.remove(at: sender.tag)
-        tags.remove(at: sender.tag)
-        print(sender.tag)
-        tagCollectionView.reloadData()
-        photoViewModel?.saveImage(asNewObject: false)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-    
-    
+}
+
+extension PhotoDetailsViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("TAPPED: \(indexPath.row)")
+        photoViewModel?.tags.remove(at: indexPath.row)
+        tags.remove(at: indexPath.row)
+        tagCollectionView.reloadData()
+        photoViewModel?.saveImage(asNewObject: false)
+    }
 }

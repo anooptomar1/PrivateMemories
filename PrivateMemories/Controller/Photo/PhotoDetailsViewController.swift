@@ -25,6 +25,8 @@ class PhotoDetailsViewController: UIViewController {
     @IBOutlet weak var quotationMarkLeft: UIImageView!
     @IBOutlet weak var quotationMarkRight: UIImageView!
     
+    var tapGesture: UITapGestureRecognizer?
+    
     var tags: [String] = []
     
     //MARK: Properties
@@ -37,13 +39,14 @@ class PhotoDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         provideGestureRecognizing()
+        tagCollectionView.dataSource = self
+        tagCollectionView.delegate = self
+        tagTextField.delegate = self
         descriptionTextView.delegate = self
         descriptionTextView.layer.cornerRadius = 10
         descriptionTextView.backgroundColor = UIColor.xBackground
         addBorders()
         setData()
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapView(gesture:)))
-        self.view.addGestureRecognizer(tapGesture)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,7 +62,11 @@ class PhotoDetailsViewController: UIViewController {
     // MARK: Notifications for the keyboard
     
     @objc func didTapView(gesture: UITapGestureRecognizer) {
+        print("TAPPED VIEW")
         view.endEditing(true)
+        if let gestureRecognizer = tapGesture {
+            self.view.removeGestureRecognizer(gestureRecognizer)
+        }
     }
     
     func addObservers() {
@@ -199,5 +206,12 @@ class PhotoDetailsViewController: UIViewController {
         })
     }
 
+}
+
+extension PhotoDetailsViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapView(gesture:)))
+        self.view.addGestureRecognizer(tapGesture!)
+    }
 }
 

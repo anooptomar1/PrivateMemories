@@ -28,6 +28,8 @@ extension PhotoDetailsViewController: UITextViewDelegate {
         if textView.text == photoViewModel?.descriptionPlaceholder {
             textView.text = ""
         }
+        tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapView(gesture:)))
+        self.view.addGestureRecognizer(tapGesture!)
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {

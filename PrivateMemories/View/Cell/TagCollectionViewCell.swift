@@ -10,7 +10,6 @@ import UIKit
 
 class TagCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var tagLabel: UILabel!
-    @IBOutlet weak var deleteButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,5 +20,8 @@ class TagCollectionViewCell: UICollectionViewCell {
         self.backgroundColor = UIColor.xBackground
         self.tagLabel.textColor = UIColor.white
         self.layer.cornerRadius = 10.0
+        tagLabel.sizeToFit()
+        tagLabel.numberOfLines = 0
+        tagLabel.lineBreakMode = .byCharWrapping
     }
 }
