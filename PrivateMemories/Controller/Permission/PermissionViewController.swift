@@ -14,12 +14,14 @@ import TOPasscodeViewController
 
 class PermissionViewController: UIViewController {
 
+    let toAppSegueIdentifier = "toAppSegue"
+    
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var locationButton: UIButton!
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var galleryButton: UIButton!
     @IBOutlet weak var passcodeButton: UIButton!
-    @IBOutlet weak var goToAppButton: UIButton!
-    
+
     let settingsHandler = SettingsHandler.instance
     let locationManager = CLLocationManager()
     
@@ -30,22 +32,37 @@ class PermissionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        goToAppButton.isHidden = true
+        locationManager.delegate = self
+        setup(buttons: [locationButton, cameraButton, galleryButton, passcodeButton], radius: 10.0)
     }
     
     func setAuthorizedStyle(for button: UIButton) {
         DispatchQueue.main.async {
-            button.isEnabled = false
-            //TODO: Style
+            button.setImage(UIImage(named: "perm_checkmark"), for: .normal)
+            button.backgroundColor = UIColor.xPurple
+            button.setTitleColor(UIColor.white, for: .normal)
+            button.isUserInteractionEnabled = false
+        }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        containerView.layer.masksToBounds = true
+        containerView.layer.cornerRadius = 10
+    }
+    
+    func setup(buttons: [UIButton], radius: CGFloat) {
+        for button in buttons {
+            button.layer.cornerRadius = radius
+            button.layer.borderColor = UIColor.xPurple.cgColor
+            button.layer.borderWidth = 2.0
         }
     }
     
     func checkIfCompleted() {
         if isLocationAuthorized, isCameraAuthorized, isGalleryAuthorized, isPasscodeSet {
             settingsHandler.setDefault()
-            UIView.animate(withDuration: 0.7, animations: {
-                self.goToAppButton.isHidden = false
-            })
+            performSegue(withIdentifier: toAppSegueIdentifier, sender: self)
         }
     }
     
@@ -61,25 +78,27 @@ class PermissionViewController: UIViewController {
     
     @IBAction func locationButtonPressed(_ sender: Any) {
         locationManager.requestWhenInUseAuthorization()
-        //TODO: Observe status value change
-        self.isLocationAuthorized = true
-        self.setAuthorizedStyle(for: locationButton)
-        checkIfCompleted()
     }
     
     @IBAction func cameraButtonPressed(_ sender: Any) {
         AVCaptureDevice.requestAccess(for: AVMediaType.video) { (granted) in
-            self.isCameraAuthorized = true
-            self.setAuthorizedStyle(for: self.cameraButton)
-            self.checkIfCompleted()
+            if granted == true {
+                print("AUTHORIZED")
+                self.isCameraAuthorized = true
+                self.setAuthorizedStyle(for: self.cameraButton)
+                self.checkIfCompleted()
+            }
         }
     }
     
     @IBAction func galleryButtonPressed(_ sender: Any) {
         PHPhotoLibrary.requestAuthorization { (granted) in
-            self.isGalleryAuthorized = true
-            self.setAuthorizedStyle(for: self.galleryButton)
-            self.checkIfCompleted()
+            if granted.rawValue == 3 {
+                print("AUTHORIZED")
+                self.isGalleryAuthorized = true
+                self.setAuthorizedStyle(for: self.galleryButton)
+                self.checkIfCompleted()
+            }
         }
     }
     
@@ -87,6 +106,16 @@ class PermissionViewController: UIViewController {
         presentCodeSettingView()
     }
     
+}
+
+extension PermissionViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
+            self.isLocationAuthorized = true
+            self.setAuthorizedStyle(for: locationButton)
+            checkIfCompleted()
+        }
+    }
 }
 
 extension PermissionViewController: TOPasscodeSettingsViewControllerDelegate {

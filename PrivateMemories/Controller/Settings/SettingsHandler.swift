@@ -41,7 +41,6 @@ final class SettingsHandler {
     
     var isPasscodeRequired: Bool {
         get {
-            print("PASSCODE REQUIRED: \(defaults.value(forKey: isPasscodeRequiredKey) as! Bool)")
             return defaults.value(forKey: isPasscodeRequiredKey) as! Bool}
         set {
             print("SETTING IS PASSCODE REQUIRED: \(newValue)")

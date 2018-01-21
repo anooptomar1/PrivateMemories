@@ -200,61 +200,123 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sPi-Ce-wux">
-                                <rect key="frame" x="107" y="50" width="124" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Enable location"/>
-                                <connections>
-                                    <action selector="locationButtonPressed:" destination="H12-ao-i9g" eventType="touchUpInside" id="bgX-LB-eiC"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DK2-dI-Kp1">
-                                <rect key="frame" x="91" y="135" width="165" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Enable camera usage"/>
-                                <connections>
-                                    <action selector="cameraButtonPressed:" destination="H12-ao-i9g" eventType="touchUpInside" id="fU1-jC-LjT"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uXw-B1-Poq">
-                                <rect key="frame" x="79" y="231" width="189" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Using gallery permission"/>
-                                <connections>
-                                    <action selector="galleryButtonPressed:" destination="H12-ao-i9g" eventType="touchUpInside" id="qrF-h6-qH4"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oab-Ly-HJs">
-                                <rect key="frame" x="103" y="318" width="140" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Set passcode"/>
-                                <connections>
-                                    <action selector="setPasscodeButtonPressed:" destination="H12-ao-i9g" eventType="touchUpInside" id="Jmj-HI-EKI"/>
-                                </connections>
-                            </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Sd-tt-dtj">
-                                <rect key="frame" x="112" y="563" width="122" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Go to the app"/>
-                                <connections>
-                                    <segue destination="j5a-NI-yLH" kind="show" id="EEd-yG-jtj"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pHK-Wy-smm">
+                                <rect key="frame" x="20" y="70" width="335" height="547"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="fbl-Fd-EMy">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="547"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Nls-GO-jlC" userLabel="ButtonStack">
+                                        <rect key="frame" x="20" y="201" width="295" height="266"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sPi-Ce-wux">
+                                                <rect key="frame" x="0.0" y="0.0" width="295" height="51.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                                <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="Enable location" image="perm_location">
+                                                    <color key="titleColor" red="0.23921568630000001" green="0.4039215686" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="locationButtonPressed:" destination="H12-ao-i9g" eventType="touchUpInside" id="bgX-LB-eiC"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DK2-dI-Kp1">
+                                                <rect key="frame" x="0.0" y="71.5" width="295" height="51.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                                <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                                <state key="normal" title="Enable camera usage" image="perm_camera">
+                                                    <color key="titleColor" red="0.23921568630000001" green="0.4039215686" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="cameraButtonPressed:" destination="H12-ao-i9g" eventType="touchUpInside" id="fU1-jC-LjT"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uXw-B1-Poq">
+                                                <rect key="frame" x="0.0" y="143" width="295" height="51.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                                <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                                <state key="normal" title="Enable photo library usage" image="perm_gallery">
+                                                    <color key="titleColor" red="0.23921568630000001" green="0.4039215686" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="galleryButtonPressed:" destination="H12-ao-i9g" eventType="touchUpInside" id="qrF-h6-qH4"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oab-Ly-HJs">
+                                                <rect key="frame" x="0.0" y="214.5" width="295" height="51.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                                <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="Set passcode" image="perm_padlock">
+                                                    <color key="titleColor" red="0.23921568630000001" green="0.4039215686" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="setPasscodeButtonPressed:" destination="H12-ao-i9g" eventType="touchUpInside" id="Jmj-HI-EKI"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="axN-Ku-jf4">
+                                        <rect key="frame" x="5" y="20" width="325" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="i0o-Hq-bPz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Application needs your permissions to work properly" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yhw-fM-FpY">
+                                        <rect key="frame" x="5" y="70" width="325" height="51"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Nls-GO-jlC" secondAttribute="trailing" constant="20" id="4Gq-LH-r05"/>
+                                    <constraint firstItem="yhw-fM-FpY" firstAttribute="leading" secondItem="pHK-Wy-smm" secondAttribute="leading" constant="5" id="8l0-vJ-d4Z"/>
+                                    <constraint firstItem="yhw-fM-FpY" firstAttribute="top" secondItem="axN-Ku-jf4" secondAttribute="bottom" constant="15" id="AVo-Wt-goe"/>
+                                    <constraint firstAttribute="bottom" secondItem="Nls-GO-jlC" secondAttribute="bottom" constant="80" id="Ktu-Xx-PcS"/>
+                                    <constraint firstAttribute="trailing" secondItem="axN-Ku-jf4" secondAttribute="trailing" constant="5" id="RZL-1d-XWP"/>
+                                    <constraint firstAttribute="trailing" secondItem="yhw-fM-FpY" secondAttribute="trailing" constant="5" id="Sd7-4Z-AgI"/>
+                                    <constraint firstItem="fbl-Fd-EMy" firstAttribute="top" secondItem="pHK-Wy-smm" secondAttribute="top" id="SpB-AF-ueI"/>
+                                    <constraint firstAttribute="bottom" secondItem="fbl-Fd-EMy" secondAttribute="bottom" id="Y4V-m3-5oG"/>
+                                    <constraint firstAttribute="trailing" secondItem="fbl-Fd-EMy" secondAttribute="trailing" id="Y9G-QY-8l6"/>
+                                    <constraint firstItem="axN-Ku-jf4" firstAttribute="leading" secondItem="pHK-Wy-smm" secondAttribute="leading" constant="5" id="aNW-UB-L0r"/>
+                                    <constraint firstItem="Nls-GO-jlC" firstAttribute="leading" secondItem="pHK-Wy-smm" secondAttribute="leading" constant="20" id="fgR-pz-JLd"/>
+                                    <constraint firstItem="axN-Ku-jf4" firstAttribute="top" secondItem="pHK-Wy-smm" secondAttribute="top" constant="20" id="odu-Iz-BOY"/>
+                                    <constraint firstItem="Nls-GO-jlC" firstAttribute="top" secondItem="yhw-fM-FpY" secondAttribute="bottom" constant="80" id="qJd-vb-STN"/>
+                                    <constraint firstItem="fbl-Fd-EMy" firstAttribute="leading" secondItem="pHK-Wy-smm" secondAttribute="leading" id="znC-lb-ZQS"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.83529411760000005" green="0.73725490199999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="pHK-Wy-smm" firstAttribute="leading" secondItem="3IR-7C-K2H" secondAttribute="leading" constant="20" id="HpH-7P-lzD"/>
+                            <constraint firstItem="3IR-7C-K2H" firstAttribute="trailing" secondItem="pHK-Wy-smm" secondAttribute="trailing" constant="20" id="MHM-Rd-8J7"/>
+                            <constraint firstItem="3IR-7C-K2H" firstAttribute="bottom" secondItem="pHK-Wy-smm" secondAttribute="bottom" constant="50" id="jqx-yY-4gF"/>
+                            <constraint firstItem="pHK-Wy-smm" firstAttribute="top" secondItem="3IR-7C-K2H" secondAttribute="top" constant="50" id="wXU-Gn-cjd"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="3IR-7C-K2H"/>
                     </view>
                     <connections>
                         <outlet property="cameraButton" destination="DK2-dI-Kp1" id="g0b-6g-dwK"/>
+                        <outlet property="containerView" destination="pHK-Wy-smm" id="wjr-9V-MuM"/>
                         <outlet property="galleryButton" destination="uXw-B1-Poq" id="lLF-pc-FPu"/>
-                        <outlet property="goToAppButton" destination="2Sd-tt-dtj" id="JFL-Rg-wUL"/>
                         <outlet property="locationButton" destination="sPi-Ce-wux" id="Nf0-Dy-N6d"/>
                         <outlet property="passcodeButton" destination="oab-Ly-HJs" id="kxP-2z-IZ5"/>
+                        <segue destination="j5a-NI-yLH" kind="show" identifier="toAppSegue" id="0Or-pv-LBU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0e6-1T-8wm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1983" y="99"/>
+            <point key="canvasLocation" x="-1983.2" y="98.50074962518741"/>
         </scene>
         <!--Galleries-->
         <scene sceneID="CdH-Bw-cdV">
@@ -1058,6 +1120,10 @@
         <image name="gallery" width="32" height="32"/>
         <image name="grid" width="16" height="16"/>
         <image name="location" width="32" height="32"/>
+        <image name="perm_camera" width="16" height="16"/>
+        <image name="perm_gallery" width="16" height="16"/>
+        <image name="perm_location" width="16" height="16"/>
+        <image name="perm_padlock" width="16" height="16"/>
         <image name="settings" width="32" height="32"/>
         <image name="settings_bar" width="24" height="24"/>
         <image name="share" width="32" height="32"/>
