@@ -22,13 +22,20 @@ extension GalleryCollectionViewController: UISearchResultsUpdating {
         searchController.searchBar.scopeButtonTitles = ["All", "Location", "Tags"]
         
         let searchBar = searchController.searchBar
-        searchBar.placeholder = "Enter the location or tag"
         searchBar.becomeFirstResponder()
         searchBar.tintColor = UIColor.white
         searchBar.searchBarStyle = .prominent
         searchBar.setSearchFieldBackgroundImage(UIImage(named: "whiteboard"), for: .normal)
         let textfieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField
         textfieldInsideSearchBar?.textColor = UIColor.white
+        let searchTextField: UITextField? = searchBar.value(forKey: "searchField") as? UITextField
+        if let imageView = searchTextField?.leftView as? UIImageView {
+            imageView.image = imageView.image?.transform(withNewColor: UIColor.white)
+        }
+        if searchTextField!.responds(to: #selector(getter: UITextField.attributedPlaceholder)) {
+            let attributeDict = [NSAttributedStringKey.foregroundColor: UIColor.white]
+            searchTextField!.attributedPlaceholder = NSAttributedString(string: "Enter the location or tag", attributes: attributeDict)
+        }
         searchBar.delegate = self
     }
     
