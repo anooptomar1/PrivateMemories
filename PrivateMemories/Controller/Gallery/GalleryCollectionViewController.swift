@@ -24,6 +24,13 @@ class GalleryCollectionViewController: UIViewController {
     @IBOutlet weak var addButton: FancyRoundedButton!
     @IBOutlet weak var editButton: FancyRoundedButton!
     
+    @IBOutlet weak var galleryButtonConstraint: NSLayoutConstraint!
+    @IBOutlet weak var cameraButtonConstraint: NSLayoutConstraint!
+    @IBOutlet weak var sortButtonLeftConstraint: NSLayoutConstraint!
+    @IBOutlet weak var sortButtonLowerConstraint: NSLayoutConstraint!
+    @IBOutlet weak var editButtonRightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var addButtonLowerConstraint: NSLayoutConstraint!
+    
     internal var galleryViewModel: GalleryViewModel?
     internal var blockOperations: [BlockOperation] = []
     internal var shouldReloadCollectionView = false
@@ -31,6 +38,7 @@ class GalleryCollectionViewController: UIViewController {
     internal var selectedGalleryName: String?
     
     internal var isCurrentlySearching = false
+    internal var isCurrentlyAdding = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,6 +113,7 @@ class GalleryCollectionViewController: UIViewController {
             self.galleryViewModel?.deleteObjects(at: selectedItemsIndexPaths)
         }
         setEditing(false, animated: true)
+        setEditingMode(active: isEditing)
     }
     
     
@@ -138,12 +147,17 @@ class GalleryCollectionViewController: UIViewController {
     
     @IBAction func editButtonPressed(_ sender: Any) {
         setEditing(!isEditing, animated: true)
+        setEditingMode(active: isEditing)
     }
     
     @IBAction func searchButtonPressed(_ sender: UIBarButtonItem) {
         loadSearchBar()
     }
     
+    @IBAction func addButtonPressed(_ sender: Any) {
+        isCurrentlyAdding = !isCurrentlyAdding
+        setAddingMode(active: isCurrentlyAdding)
+    }
     
     @IBAction func changeLayoutButtonPressed(_ sender: Any) {
         UIView.transition(with: self.collectionView, duration: 0.5, options: .transitionFlipFromRight, animations: {
@@ -156,5 +170,6 @@ class GalleryCollectionViewController: UIViewController {
         
         self.numberOfItemsInRow = (numberOfItemsInRow == 3) ? 2 : 3
     }
+
 }
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       

@@ -9,7 +9,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -79,58 +78,8 @@
                                     <outlet property="delegate" destination="bhP-pl-ja2" id="gfv-3w-quc"/>
                                 </connections>
                             </collectionView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8GH-zA-tFS" userLabel="ButtonStack">
-                                <rect key="frame" x="50" y="538" width="275" height="60"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbw-WB-3SG" userLabel="Sort Button" customClass="FancyRoundedButton" customModule="PrivateMemories" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                                        <color key="backgroundColor" red="0.23921568630000001" green="0.4039215686" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="60" id="iAp-8z-xvn"/>
-                                            <constraint firstAttribute="width" secondItem="wbw-WB-3SG" secondAttribute="height" multiplier="1:1" id="vRl-4O-Ii9"/>
-                                        </constraints>
-                                        <state key="normal" image="sort"/>
-                                        <connections>
-                                            <action selector="sortButtonPressed:" destination="bhP-pl-ja2" eventType="touchUpInside" id="EFL-mw-Ovc"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcr-q9-yMx" userLabel="Add Button" customClass="FancyRoundedButton" customModule="PrivateMemories" customModuleProvider="target">
-                                        <rect key="frame" x="107.5" y="0.0" width="60" height="60"/>
-                                        <color key="backgroundColor" red="0.23921568630000001" green="0.4039215686" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="60" id="8uH-ig-QFz"/>
-                                            <constraint firstAttribute="width" secondItem="bcr-q9-yMx" secondAttribute="height" multiplier="1:1" id="E2q-BG-VCy"/>
-                                        </constraints>
-                                        <state key="normal" image="add"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNi-xC-BBz" userLabel="Edit Button" customClass="FancyRoundedButton" customModule="PrivateMemories" customModuleProvider="target">
-                                        <rect key="frame" x="215" y="0.0" width="60" height="60"/>
-                                        <color key="backgroundColor" red="0.23921568630000001" green="0.4039215686" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="XNi-xC-BBz" secondAttribute="height" multiplier="1:1" id="5cr-t5-dzU"/>
-                                            <constraint firstAttribute="height" constant="60" id="vXr-d6-rqz"/>
-                                        </constraints>
-                                        <state key="normal" image="edit"/>
-                                        <connections>
-                                            <action selector="editButtonPressed:" destination="bhP-pl-ja2" eventType="touchUpInside" id="5x9-7r-3Mo"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9r8-Py-6Oi" customClass="FancyRoundedButton" customModule="PrivateMemories" customModuleProvider="target">
-                                <rect key="frame" x="107.5" y="458" width="60" height="60"/>
-                                <color key="backgroundColor" red="0.23921568630000001" green="0.4039215686" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="AzQ-ib-Ymm"/>
-                                    <constraint firstAttribute="width" constant="60" id="fBs-Zk-7DQ"/>
-                                </constraints>
-                                <state key="normal" image="gallery"/>
-                                <connections>
-                                    <action selector="pickMultipleButtonPressed:" destination="bhP-pl-ja2" eventType="touchUpInside" id="KJ1-iK-I4f"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mED-6P-31H" customClass="FancyRoundedButton" customModule="PrivateMemories" customModuleProvider="target">
-                                <rect key="frame" x="207.5" y="458" width="60" height="60"/>
+                                <rect key="frame" x="417.5" y="523" width="60" height="60"/>
                                 <color key="backgroundColor" red="0.23921568630000001" green="0.4039215686" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="0gJ-1e-Lj0"/>
@@ -141,22 +90,74 @@
                                     <segue destination="Nor-MN-PiJ" kind="presentation" id="HPr-uT-QuU"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbw-WB-3SG" userLabel="Sort Button" customClass="FancyRoundedButton" customModule="PrivateMemories" customModuleProvider="target">
+                                <rect key="frame" x="47.5" y="523" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.23921568630000001" green="0.4039215686" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="iAp-8z-xvn"/>
+                                    <constraint firstAttribute="width" secondItem="wbw-WB-3SG" secondAttribute="height" multiplier="1:1" id="vRl-4O-Ii9"/>
+                                </constraints>
+                                <state key="normal" image="sort"/>
+                                <connections>
+                                    <action selector="sortButtonPressed:" destination="bhP-pl-ja2" eventType="touchUpInside" id="EFL-mw-Ovc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcr-q9-yMx" userLabel="Add Button" customClass="FancyRoundedButton" customModule="PrivateMemories" customModuleProvider="target">
+                                <rect key="frame" x="157.5" y="523" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.23921568630000001" green="0.4039215686" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="8uH-ig-QFz"/>
+                                    <constraint firstAttribute="width" secondItem="bcr-q9-yMx" secondAttribute="height" multiplier="1:1" id="E2q-BG-VCy"/>
+                                </constraints>
+                                <state key="normal" image="add"/>
+                                <connections>
+                                    <action selector="addButtonPressed:" destination="bhP-pl-ja2" eventType="touchUpInside" id="nyg-SN-nSM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9r8-Py-6Oi" customClass="FancyRoundedButton" customModule="PrivateMemories" customModuleProvider="target">
+                                <rect key="frame" x="-102.5" y="523" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.23921568630000001" green="0.4039215686" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="AzQ-ib-Ymm"/>
+                                    <constraint firstAttribute="width" constant="60" id="fBs-Zk-7DQ"/>
+                                </constraints>
+                                <state key="normal" image="gallery"/>
+                                <connections>
+                                    <action selector="pickMultipleButtonPressed:" destination="bhP-pl-ja2" eventType="touchUpInside" id="KJ1-iK-I4f"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNi-xC-BBz" userLabel="Edit Button" customClass="FancyRoundedButton" customModule="PrivateMemories" customModuleProvider="target">
+                                <rect key="frame" x="267.5" y="523" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.23921568630000001" green="0.4039215686" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="XNi-xC-BBz" secondAttribute="height" multiplier="1:1" id="5cr-t5-dzU"/>
+                                    <constraint firstAttribute="height" constant="60" id="vXr-d6-rqz"/>
+                                </constraints>
+                                <state key="normal" image="edit"/>
+                                <connections>
+                                    <action selector="editButtonPressed:" destination="bhP-pl-ja2" eventType="touchUpInside" id="5x9-7r-3Mo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="mED-6P-31H" firstAttribute="centerX" secondItem="stn-Ot-A3u" secondAttribute="centerX" constant="50" id="DMV-JT-TvN"/>
-                            <constraint firstItem="8GH-zA-tFS" firstAttribute="top" secondItem="9r8-Py-6Oi" secondAttribute="bottom" constant="20" id="DXj-Ed-nv9"/>
+                            <constraint firstItem="bcr-q9-yMx" firstAttribute="centerX" secondItem="stn-Ot-A3u" secondAttribute="centerX" id="1gj-4s-iSG"/>
+                            <constraint firstItem="XNi-xC-BBz" firstAttribute="leading" secondItem="bcr-q9-yMx" secondAttribute="trailing" constant="50" id="8Mk-Lj-aoG"/>
+                            <constraint firstItem="bcr-q9-yMx" firstAttribute="leading" secondItem="wbw-WB-3SG" secondAttribute="trailing" constant="50" id="F5K-Nd-mVH"/>
                             <constraint firstItem="iWR-IT-WQ9" firstAttribute="bottom" secondItem="OUc-d7-7zD" secondAttribute="bottom" id="I4f-jK-knx"/>
                             <constraint firstItem="iWR-IT-WQ9" firstAttribute="bottom" secondItem="LIJ-3M-txN" secondAttribute="bottom" id="I6n-GJ-f0g"/>
                             <constraint firstItem="OUc-d7-7zD" firstAttribute="leading" secondItem="iWR-IT-WQ9" secondAttribute="leading" id="JZU-Qy-YsD"/>
-                            <constraint firstItem="iWR-IT-WQ9" firstAttribute="bottom" secondItem="8GH-zA-tFS" secondAttribute="bottom" constant="5" id="Kmd-Bv-7N0"/>
-                            <constraint firstItem="8GH-zA-tFS" firstAttribute="top" secondItem="mED-6P-31H" secondAttribute="bottom" constant="20" id="LsB-kE-sLG"/>
+                            <constraint firstItem="iWR-IT-WQ9" firstAttribute="bottom" secondItem="mED-6P-31H" secondAttribute="bottom" constant="20" id="KQe-JI-ZBg"/>
                             <constraint firstItem="OUc-d7-7zD" firstAttribute="trailing" secondItem="iWR-IT-WQ9" secondAttribute="trailing" id="QSD-YJ-suF"/>
-                            <constraint firstItem="9r8-Py-6Oi" firstAttribute="centerX" secondItem="stn-Ot-A3u" secondAttribute="centerX" constant="-50" id="bP2-fu-REF"/>
+                            <constraint firstItem="iWR-IT-WQ9" firstAttribute="bottom" secondItem="9r8-Py-6Oi" secondAttribute="bottom" constant="20" id="XB5-Vs-dFp"/>
+                            <constraint firstItem="bcr-q9-yMx" firstAttribute="leading" secondItem="9r8-Py-6Oi" secondAttribute="trailing" constant="200" id="eBw-Pq-l8y"/>
                             <constraint firstItem="LIJ-3M-txN" firstAttribute="leading" secondItem="iWR-IT-WQ9" secondAttribute="leading" constant="5" id="gI1-0r-J00"/>
-                            <constraint firstItem="iWR-IT-WQ9" firstAttribute="trailing" secondItem="8GH-zA-tFS" secondAttribute="trailing" constant="50" id="ht4-EJ-y4q"/>
+                            <constraint firstItem="iWR-IT-WQ9" firstAttribute="bottom" secondItem="bcr-q9-yMx" secondAttribute="bottom" constant="20" id="hsl-Ll-vo5"/>
+                            <constraint firstItem="mED-6P-31H" firstAttribute="leading" secondItem="bcr-q9-yMx" secondAttribute="trailing" constant="200" id="hyr-2q-p9p"/>
                             <constraint firstItem="LIJ-3M-txN" firstAttribute="top" secondItem="iWR-IT-WQ9" secondAttribute="top" constant="30" id="iJa-9C-LR0"/>
+                            <constraint firstItem="iWR-IT-WQ9" firstAttribute="bottom" secondItem="wbw-WB-3SG" secondAttribute="bottom" constant="20" id="iaY-Ct-v2u"/>
+                            <constraint firstItem="iWR-IT-WQ9" firstAttribute="bottom" secondItem="XNi-xC-BBz" secondAttribute="bottom" constant="20" id="ism-yy-btJ"/>
                             <constraint firstItem="LIJ-3M-txN" firstAttribute="trailing" secondItem="iWR-IT-WQ9" secondAttribute="trailing" constant="-5" id="mlW-lU-6nq"/>
-                            <constraint firstItem="8GH-zA-tFS" firstAttribute="leading" secondItem="iWR-IT-WQ9" secondAttribute="leading" constant="50" id="x5L-gB-uCp"/>
+                            <constraint firstItem="iWR-IT-WQ9" firstAttribute="bottom" secondItem="9r8-Py-6Oi" secondAttribute="bottom" constant="20" id="wVN-Jw-HgQ"/>
                             <constraint firstItem="OUc-d7-7zD" firstAttribute="top" secondItem="stn-Ot-A3u" secondAttribute="top" constant="-64" id="zxv-XP-PTw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iWR-IT-WQ9"/>
@@ -180,11 +181,17 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addButton" destination="bcr-q9-yMx" id="Zth-zv-5Kw"/>
+                        <outlet property="addButtonLowerConstraint" destination="hsl-Ll-vo5" id="KXO-5X-aTh"/>
                         <outlet property="cameraButton" destination="mED-6P-31H" id="Hte-aJ-tTB"/>
+                        <outlet property="cameraButtonConstraint" destination="hyr-2q-p9p" id="fTZ-At-iAF"/>
                         <outlet property="collectionView" destination="LIJ-3M-txN" id="4nL-bD-Ms3"/>
                         <outlet property="editButton" destination="XNi-xC-BBz" id="WpD-zA-7q6"/>
+                        <outlet property="editButtonRightConstraint" destination="8Mk-Lj-aoG" id="1PN-7a-ekC"/>
                         <outlet property="galleryButton" destination="9r8-Py-6Oi" id="LSI-s9-R9v"/>
+                        <outlet property="galleryButtonConstraint" destination="eBw-Pq-l8y" id="dFe-Ww-eeP"/>
                         <outlet property="sortButton" destination="wbw-WB-3SG" id="JLk-bc-28w"/>
+                        <outlet property="sortButtonLeftConstraint" destination="F5K-Nd-mVH" id="m7a-pl-Naq"/>
+                        <outlet property="sortButtonLowerConstraint" destination="iaY-Ct-v2u" id="YIF-RM-seE"/>
                         <segue destination="Qmv-qQ-xuV" kind="show" identifier="collectionToDetailsViewController" id="PCs-ww-KU2"/>
                     </connections>
                 </viewController>
