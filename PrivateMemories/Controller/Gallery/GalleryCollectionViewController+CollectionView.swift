@@ -22,7 +22,7 @@ extension GalleryCollectionViewController: UICollectionViewDataSource {
 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let isNotEmpty = (self.galleryViewModel?.getNumberOfFetchedObjects() != 0)
+        let isNotEmpty = (self.galleryViewModel?.getNumberOfFetchedObjects() != 0) || isCurrentlySearching
             setBackgroundView(hidden: isNotEmpty)
         return self.galleryViewModel?.getNumberOfFetchedObjects() ?? 0
     }
