@@ -22,6 +22,8 @@ extension GalleryCollectionViewController: UICollectionViewDataSource {
 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        let isNotEmpty = (self.galleryViewModel?.getNumberOfFetchedObjects() != 0)
+            setBackgroundView(hidden: isNotEmpty)
         return self.galleryViewModel?.getNumberOfFetchedObjects() ?? 0
     }
     

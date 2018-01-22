@@ -55,7 +55,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func authorize() {
-        print("AUTHORIZATION")
         if settingsHandler.isNotFirstRun == true {
             if settingsHandler.isPasscodeRequired {
                 presentCodeView(animated: false)

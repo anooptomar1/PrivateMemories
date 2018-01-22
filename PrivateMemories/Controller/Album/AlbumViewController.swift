@@ -12,6 +12,7 @@ private let reuseIdentifier = "AlbumCollectionViewCell"
 
 class AlbumViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var backgroundView: UIView!
     fileprivate let albumViewModel = AlbumViewModel()
     fileprivate let gallerySegueIdentifier = "toGallerySegue"
     
@@ -86,6 +87,10 @@ class AlbumViewController: UIViewController {
         
         self.present(alert, animated: true, completion: nil)
     }
+    
+    func setBackgroundView(hidden: Bool) {
+        backgroundView.isHidden = hidden
+    }
 }
     
 extension AlbumViewController: UICollectionViewDataSource {
@@ -96,7 +101,9 @@ extension AlbumViewController: UICollectionViewDataSource {
 
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.albumViewModel.getNumberOfFetchedObjects()
+            let isNotEmpty = (self.albumViewModel.getNumberOfFetchedObjects() != 0)
+            setBackgroundView(hidden: isNotEmpty)
+            return self.albumViewModel.getNumberOfFetchedObjects()
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

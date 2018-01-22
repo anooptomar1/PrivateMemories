@@ -23,13 +23,7 @@ class GalleryCollectionViewController: UIViewController {
     @IBOutlet weak var sortButton: FancyRoundedButton!
     @IBOutlet weak var addButton: FancyRoundedButton!
     @IBOutlet weak var editButton: FancyRoundedButton!
-    
-    @IBOutlet weak var galleryButtonConstraint: NSLayoutConstraint!
-    @IBOutlet weak var cameraButtonConstraint: NSLayoutConstraint!
-    @IBOutlet weak var sortButtonLeftConstraint: NSLayoutConstraint!
-    @IBOutlet weak var sortButtonLowerConstraint: NSLayoutConstraint!
-    @IBOutlet weak var editButtonRightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var addButtonLowerConstraint: NSLayoutConstraint!
+    @IBOutlet weak var backgroundView: UIView!
     
     internal var galleryViewModel: GalleryViewModel?
     internal var blockOperations: [BlockOperation] = []
@@ -103,7 +97,6 @@ class GalleryCollectionViewController: UIViewController {
             } else {
                 self.navigationItem.leftBarButtonItem = nil
             }
-            
         }
         
     }
@@ -114,6 +107,10 @@ class GalleryCollectionViewController: UIViewController {
         }
         setEditing(false, animated: true)
         setEditingMode(active: isEditing)
+    }
+    
+    func setBackgroundView(hidden: Bool) {
+        backgroundView.isHidden = hidden
     }
     
     
